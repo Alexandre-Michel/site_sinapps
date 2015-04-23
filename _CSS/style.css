@@ -5,7 +5,7 @@
 	src: url('../_FONT/espacio_novo/Espacio Novo Medium.ttf') format('truetype');
 }
 */
-.body
+body
 {
 	font-family: 'Espacio', 'Amaranth', sans-serif;
 }
