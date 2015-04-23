@@ -144,6 +144,9 @@ HTML
 {$this->head}
     </head>
     <body>
+        <div id='head_fixe'>
+        <img class='logo_sinapps' src =''>
+        </div>
         <div id='page'>
 {$this->body}
             <div class='valid'>
