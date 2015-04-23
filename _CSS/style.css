@@ -8,3 +8,8 @@
 	font-weight: 800;
 	color: #121A1B;
 }
+
+#onglets{
+	display: inline-block;
+	float : left;
+}
