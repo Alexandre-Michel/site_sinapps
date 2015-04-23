@@ -9,6 +9,12 @@
 	color: #121A1B;
 }
 
+#head_fixe {
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 1000px;
+}
 
 #onglets {
 	width: 80%;
