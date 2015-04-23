@@ -172,6 +172,9 @@ HTML
         		<a href="./index.php" target="_self">Contactez-nous</a>
         	</div>
         </div>
+        <div id="banniere">
+            <img src="./site_sinapps/_IMG/imgHeaderSin.jpg" alt="header"/>
+        </div>
         <div id='page'>
 {$this->body}
         </div>
