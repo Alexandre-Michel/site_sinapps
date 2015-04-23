@@ -1,9 +1,10 @@
-.content
+.welcome
 {
 	text-align: center;
 }
 
-.msg_welcome
-{
-	color: green;
+.title{
+	font-size: 70px;
+	font-weight: 800;
+	color: #121A1B;
 }
