@@ -13,3 +13,5 @@ $p->appendContent(<<<HTML
 </div>
 HTML
 );
+
+echo $p->toHTML();
