@@ -1,3 +1,14 @@
+@font-face
+{
+	font-family: 'Espacio';
+	src : url(../_FONT/espacio_novo/Espacio Novo Medium.ttf);
+}
+
+.body
+{
+	font-family: 'Espacio';
+}
+
 .welcome
 {
 	text-align: center;
