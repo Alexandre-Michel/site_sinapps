@@ -146,7 +146,7 @@ HTML
     </head>
     <body>
         <div id='head_fixe'>
-            <img class='logo_sinapps' src ="./site_sinapps/_IMG/Test logo.jpg" alt='logo' width='384' height='216'/><br/>
+            <img id='logo_sinapps' src ="./site_sinapps/_IMG/Test logo.jpg" alt='logo' width='384' height='216'/><br/>
             <div id='onglets'>
             	<div id='accueil'>
             		<a href="./index.php" target="_self">Accueil</a>
