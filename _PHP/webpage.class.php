@@ -23,6 +23,7 @@ class WebPage {
      */
     public function __construct($title=null) {
         $this->setTitle($title) ;
+        $this->appendCssUrl("./site_sinapps/_CSS/style.css");
     }
 
     /**

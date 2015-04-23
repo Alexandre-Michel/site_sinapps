@@ -9,7 +9,24 @@
 	color: #121A1B;
 }
 
-#onglets{
-	display: inline-block;
+
+#onglets {
+	width: 100%;
+	height: 50px;
+}
+
+#accueil{
+	border: 1px solid black;
+	display: inline;
 	float : left;
+	min-width: 125px;
+	text-align: center;
+}
+
+#agence {
+	border: 1px solid black;
+	display: inline;
+	float: left;
+	min-width: 125px;
+	text-align: center;
 }
