@@ -146,31 +146,32 @@ HTML
     </head>
     <body>
         <div id='head_fixe'>
-        <img class='logo_sinapps' src ="./site_sinapps/_IMG/Test logo.jpg" alt='logo' width='384' height='216'/><br/>
-        <div id='onglets'>
-        	<div id='accueil'>
-        		<a href="./index.php" target="_self">Accueil</a>
-        	</div>
+            <img class='logo_sinapps' src ="./site_sinapps/_IMG/Test logo.jpg" alt='logo' width='384' height='216'/><br/>
+            <div id='onglets'>
+            	<div id='accueil'>
+            		<a href="./index.php" target="_self">Accueil</a>
+            	</div>
 
-        	<div id='agence'>
-        		<a href="./index.php" target="_self">Agence</a>
-        	</div>
+            	<div id='agence'>
+            		<a href="./index.php" target="_self">Agence</a>
+            	</div>
 
-        	<div id='offres'>
-        		<a href="./index.php" target="_self">Offres</a>
-        	</div>
+            	<div id='offres'>
+            		<a href="./index.php" target="_self">Offres</a>
+            	</div>
 
-        	<div id='prestations'>
-        		<a href="./index.php" target="_self">Prestations</a>
-        	</div>
+            	<div id='prestations'>
+            		<a href="./index.php" target="_self">Prestations</a>
+            	</div>
 
-        	<div id='espace_perso'>
-        		<a href="./index.php" target="_self">Espace personnel</a>
-        	</div>
+            	<div id='espace_perso'>
+            		<a href="./index.php" target="_self">Espace personnel</a>
+            	</div>
 
-        	<div id='contact'>
-        		<a href="./index.php" target="_self">Contactez-nous</a>
-        	</div>
+            	<div id='contact'>
+            		<a href="./index.php" target="_self">Contactez-nous</a>
+            	</div>
+            </div>
         </div>
         <div id="banniere">
             
