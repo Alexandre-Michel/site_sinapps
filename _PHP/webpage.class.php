@@ -145,7 +145,7 @@ HTML
     </head>
     <body>
         <div id='head_fixe'>
-        <img class='logo_sinapps' src =''>
+        <img class='logo_sinapps' src ="../_IMG/Test logo.jpg" alt='logo'/>
         </div>
         <div id='page'>
 {$this->body}
