@@ -1,7 +1,7 @@
 @font-face
 {
 	font-family: 'Espacio';
-	src : url(../_FONT/espacio_novo/Espacio Novo Medium.ttf);
+	src: url('../_FONT/espacio_novo/Espacio Novo Medium.ttf') format('truetype');
 }
 
 .body
