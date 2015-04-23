@@ -11,7 +11,7 @@
 
 
 #onglets {
-	width: 100%;
+	width: 80%;
 	height: 50px;
 }
 
@@ -24,6 +24,38 @@
 }
 
 #agence {
+	border: 1px solid black;
+	display: inline;
+	float: left;
+	min-width: 125px;
+	text-align: center;
+}
+
+#offres{
+	border: 1px solid black;
+	display: inline;
+	float : left;
+	min-width: 125px;
+	text-align: center;
+}
+
+#prestations {
+	border: 1px solid black;
+	display: inline;
+	float: left;
+	min-width: 125px;
+	text-align: center;
+}
+
+#espace_perso{
+	border: 1px solid black;
+	display: inline;
+	float : left;
+	min-width: 125px;
+	text-align: center;
+}
+
+#contact {
 	border: 1px solid black;
 	display: inline;
 	float: left;
