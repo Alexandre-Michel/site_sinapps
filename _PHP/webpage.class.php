@@ -173,7 +173,7 @@ HTML
         	</div>
         </div>
         <div id="banniere">
-            <img id="header" src="./site_sinapps/_IMG/imgHeaderSin.jpg" alt="header"/>
+            
         </div>
         <div id='page'>
 {$this->body}
@@ -184,3 +184,4 @@ HTML;
     }
 }
 
+//<img id="header" src="./site_sinapps/_IMG/imgHeaderSin.jpg" alt="header"/>
