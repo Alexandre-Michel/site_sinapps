@@ -8,7 +8,7 @@
 body
 {
 	font-family: 'Espacio', 'Amaranth', sans-serif;
-	outline-offset : 0;
+	margin : 0px;
 }
 
 .welcome
