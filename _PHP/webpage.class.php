@@ -134,7 +134,6 @@ HTML
             throw new Exception(__CLASS__ . ": title not set") ;
         }
 
-        $lastmod = strftime("Dernière modification de cette page le %d/%m/%Y à %Hh%M", getlastmod()) ;
         return <<<HTML
 <!doctype html>
 <html lang="fr">
@@ -145,21 +144,34 @@ HTML
     </head>
     <body>
         <div id='head_fixe'>
-        <img class='logo_sinapps' src ="./site_sinapps/_IMG/Test logo.jpg" alt='logo'/>
+        <img class='logo_sinapps' src ="./site_sinapps/_IMG/Test logo.jpg" alt='logo' width='384 heihgt='216'/><br/>
+        <div id='onglets'>
+        	<div id='accueil'>
+        		<a href="./index.php" target="_self">Accueil</a>
+        	</div>
+
+        	<div id='agence'>
+        		<a href="./index.php" target="_self">Agence</a>
+        	</div>
+
+        	<div id='offres'>
+        		<a href="./index.php" target="_self">Offres</a>
+        	</div>
+
+        	<div id='prestations'>
+        		<a href="./index.php" target="_self">Prestations</a>
+        	</div>
+
+        	<div id='espace_perso'>
+        		<a href="./index.php" target="_self">Espace personnel</a>
+        	</div>
+
+        	<div id='contact'>
+        		<a href="./index.php" target="_self">Contactez-nous</a>
+        	</div>
         </div>
         <div id='page'>
 {$this->body}
-            <div class='valid'>
-                <a href='http://w3c-validator/w3c-validator/check?uri=referer'>
-                   <img src="/css/images/valid-html401.gif"
-                        alt="Valid HTML 4.01!" height="31" width="88"></a>
-                <a href="http://wwwdoc/css-validator/check/referer">
-                   <img src="/css/images/vcss.gif"
-                        alt="Valid CSS!" height="31" width="88"></a>
-            </div>
-            <span id='lastmodified'>
-                {$lastmod}
-            </span>
         </div>
     </body>
 </html>
