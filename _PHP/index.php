@@ -6,14 +6,10 @@ $p = new WebPage("Accueil");
 
 $p->appendContent(<<<HTML
 <div class = "content">
-	<div class "msg_welcome">
-		<div class = "title welcome">
-			<h1>Bienvenue chez SINAPP'S</h1>
-		</div>
-		<div class = "st welcome">
-			<h2>Agence de maintenance informatique dédiée aux professionnels.</h2>
-		</div>
-	<div>
+	<div class = "welcome">
+		<div class = "th1">Bienvenue chez SINAPP'S</div>
+		<div class = "th2">Agence de maintenance informatique dédiée aux professionnels.</div>
+	</div>
 	<div class = "intro">
 		<h2>
 			<span class = "titre_intro">Que faisons-nous ?</span>

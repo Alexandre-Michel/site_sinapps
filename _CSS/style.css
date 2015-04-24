@@ -97,23 +97,25 @@ h3
 
 /************************************/
 
+.th1
+{
+	font-size: 70px;
+	font-weight: 800;
+	color: #555555;
+}
+
+.th2
+{
+	font-size: 28px;
+	font-weight: 300;
+	color: #8D8D8D;
+}
+
 .welcome
 {
 	text-align: center;
 }
 
-.title
-{
-	font-size: 35px;
-	font-weight: 800;
-	color: #555555;
-}
-
-.st
-{
-	font-size: 19px;
-	color: #8D8D8D;
-}
 .content
 {
 	text-align: center;
