@@ -18,6 +18,11 @@ class WebPage {
     private $body  = null ;
 
     /**
+    * Numéro pour l'onglet selectionné
+    */
+    private $numOnglet = null;
+
+    /**
      * Constructeur
      * @param string $title Titre de la page
      */
@@ -43,6 +48,15 @@ class WebPage {
      */
     public function setTitle($title) {
         $this->title = $title ;
+    }
+
+
+    /**
+     * Affecter le numéro de la page
+     * @param int $num le numero
+     */
+    public function setTitle($num) {
+        $this->numOnglet = $num ;
     }
 
     /**
@@ -146,7 +160,7 @@ HTML
     </head>
     <body>
         <div id='head_fixe'>
-            <img id='logo_sinapps' src ="../_IMG/logo_sinapps.png" alt='logo'/><br/>
+            <a href="./index.php"><img id='logo_sinapps' src ="../_IMG/logo_sinapps.png" alt='logo'/></a><br/>
             <div id='onglets'>
                 <ul class="header_onglets">
                 	<li id="accueil">
@@ -154,23 +168,23 @@ HTML
                 	</li>
 
                 	<li>
-                		<a href="./index.php" target="_self">Agence</a>
+                		<a href="./agence.php" target="_self">Agence</a>
                 	</li>
 
                 	<li>
-                		<a href="./index.php" target="_self">Offres</a>
+                		<a href="./offres.php" target="_self">Offres</a>
                 	</li>
 
                 	<li>
-                		<a href="./index.php" target="_self">Prestations</a>
+                		<a href="./prestations.php" target="_self">Prestations</a>
                 	</li>
 
                 	<li>
-                		<a href="./index.php" target="_self">Espace personnel</a>
+                		<a href="./perso.php" target="_self">Espace personnel</a>
                 	</li>
 
                 	<li>
-                		<a href="./index.php" target="_self">Contactez-nous</a>
+                		<a href="./contact.php" target="_self">Contactez-nous</a>
                 	</li>
                 </ul>
             </div>
