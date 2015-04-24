@@ -76,6 +76,7 @@ body
 	height: 250px;
 	width : 100%;
 	background: url("../_IMG/background_bas.jpg") no-repeat center bottom;
+	border-top : 10px solid #002d5b;
 }
 
 a {
@@ -125,6 +126,8 @@ strong
 .content
 {
 	text-align: center;
+	background-image: url("../_IMG/background.jpg");
+	border-top : 10px solid #e8e8e8;
 }
 
 .welcome
