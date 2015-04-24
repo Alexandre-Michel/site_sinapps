@@ -90,35 +90,35 @@ h3
 
 /************************************/
 
-#content
+.content
 {
 	text-align: center;
 }
 
-#intro
+.intro
 {
 
 }
 
-#titre_intro
+.titre_intro
 {
 
 }
 
-#intro_box
+.intro_box
 {
 	width: 900px;
 	/*onglets = 1000px*/
 }
 
-#presta
+.presta
 {
 	width: 300px;
 	background-color: lime;
 	float: left;
 }
 
-#txt_box
+.txt_box
 {
 
 }
