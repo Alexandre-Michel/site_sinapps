@@ -109,16 +109,17 @@ h3
 {
 	width: 900px;		/*onglets = 1000px*/
 	margin: auto;
+	background-color: lime;
 }
 
 .presta
 {
-	width: 300px;
-	background-color: lime;
+	width: 250px;
+	background-color: yellow;
 	float: left;
 }
 
 .txt_box
 {
-	
+
 }
