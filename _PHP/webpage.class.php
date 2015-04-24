@@ -149,7 +149,7 @@ HTML
             <img id='logo_sinapps' src ="./site_sinapps/_IMG/Test logo.jpg" alt='logo' width='384' height='216'/><br/>
             <div id='onglets'>
                 <ul class="header_onglets">
-                	<li>
+                	<li id="accueil">
                 		<a href="./index.php" target="_self">Accueil</a>
                 	</li>
 
