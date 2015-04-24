@@ -25,6 +25,9 @@ body
 #logo_sinapps {
 	width: 281px;
 	height: 74px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
 }
 
 #head_fixe {
