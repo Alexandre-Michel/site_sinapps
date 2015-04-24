@@ -35,7 +35,6 @@ body
 }
 
 .header_onglets {
-	border: 1px solid black;
 	display: inline;
 	float: left;
 	min-width: 125px;
@@ -43,7 +42,13 @@ body
 	line-height: 49px;
 	text-transform: uppercase;
 	text-align: center;
-	background-color: #d6d6d6;
+	list-style: none;
+}
+
+.header_onglets li {
+	display: inline;
+	color : red;
+	border-right: 1px solid black;
 }
 
 #banniere {
