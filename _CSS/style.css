@@ -111,9 +111,9 @@ h3
 	color: #8D8D8D;
 }
 
-.welcome
+strong
 {
-	text-align: center;
+	color: blue;
 }
 
 .content
@@ -121,14 +121,21 @@ h3
 	text-align: center;
 }
 
-.intro
+.welcome
 {
 
 }
 
-.titre_intro
+.intro
 {
+	font-weight: 100;
+	color: #7f7f7f;
+}
 
+.i1
+{
+	font-weight: 200;
+	color: #00b0b9;
 }
 
 .intro_box
