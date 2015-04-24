@@ -104,7 +104,7 @@ h2
 
 h3
 {
-
+	text-transform : uppercase;
 }
 
 /************************************/
@@ -126,7 +126,7 @@ h3
 
 .intro_box
 {
-	width: 900px;		/*onglets = 1000px*/
+	width: 1000px;
 	overflow: auto;
 	margin: 0 auto;
 
@@ -135,13 +135,15 @@ h3
 
 .box_container
 {
-	width: 300px;
+	width: 33.33%;
+	float: left;
+
+	background-color: blue;
 }
 
 .presta
 {
-	width: 99%
-	margin: 0 auto;
+	margin: 1%;
 	float: left;
 
 	background-color: yellow;
@@ -149,5 +151,6 @@ h3
 
 .txt_box
 {
-
+	font-size: 12px;
+	margin: 10px;
 }
