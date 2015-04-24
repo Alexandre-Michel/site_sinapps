@@ -1,10 +1,10 @@
-/*
-@font-face
-{
-	font-family: 'Espacio';
-	src: url('../_FONT/espacio_novo/Espacio Novo Medium.ttf') format('truetype');
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
 }
-*/
+
 body
 {
 	font-family: 'Espacio', 'Amaranth', sans-serif;
@@ -37,8 +37,6 @@ body
 .header_onglets {
 	display: inline;
 	float: left;
-	min-width: 125px;
-	min-height: 49px;
 	line-height: 49px;
 	text-transform: uppercase;
 	list-style: none;
@@ -52,6 +50,8 @@ body
 	display: inline;
 	color : red;
 	border-right: 1px solid black;
+	min-width: 165px;
+	min-height: 49px;
 }
 
 .header_onglets hover {
@@ -66,4 +66,8 @@ body
 #banniere {
 	background: url("../_IMG/imgHeaderSin.jpg") no-repeat center top;
 	height: 600px;
+}
+
+a {
+	text-decoration: none;
 }
