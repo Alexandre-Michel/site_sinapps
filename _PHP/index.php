@@ -12,9 +12,9 @@ $p->appendContent(<<<HTML
 	</div>
 	<div class = "intro">
 		<h2>
-			<span>Que pouvons-nous faire</span>
+			<span>Ce que nous faisons</span>
 			<span class = "i1">pour vous</span>
-			<span> ?</span>
+			<span>...</span>
 		</h2>
 	</div>
 	<div class = "intro_box">

@@ -118,6 +118,11 @@ h3
 	color: #8D8D8D;
 }
 
+.th3
+{
+	vertical-align: middle;
+}
+
 strong
 {
 	color: blue;
@@ -169,13 +174,7 @@ strong
 	margin: 10%;
 	float: left;
 
-	background-color: yellow;
-}
-
-.th3
-{
-	text-align: center;
-	vertical-align: middle;
+	/*background-color: yellow;*/
 }
 
 .txt_box
