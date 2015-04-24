@@ -116,17 +116,24 @@ h3
 .intro_box
 {
 	width: 900px;		/*onglets = 1000px*/
-	margin: auto;
-	background-color: lime;
 	overflow: auto;
+	margin: 0 auto;
+
+	background-color: lime;
+}
+
+.box_container
+{
+	width: 300px;
 }
 
 .presta
 {
-	width: 250px;
-	background-color: yellow;
-	float: left;
+	width: 99%
 	margin: 0 auto;
+	float: left;
+
+	background-color: yellow;
 }
 
 .txt_box
