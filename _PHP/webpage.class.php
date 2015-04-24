@@ -20,7 +20,7 @@ class WebPage {
     /**
     * Numéro pour l'onglet selectionné
     */
-    private $numOnglet = null;
+    //private $numOnglet = null;
 
     /**
      * Constructeur
@@ -55,9 +55,9 @@ class WebPage {
      * Affecter le numéro de la page
      * @param int $num le numero
      */
-    public function setTitle($num) {
+    /*public function setNumOnglet($num) {
         $this->numOnglet = $num ;
-    }
+    }*/
 
     /**
      * Ajouter un contenu dans head
