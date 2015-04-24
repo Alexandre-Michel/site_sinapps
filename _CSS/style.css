@@ -72,6 +72,12 @@ body
 	height: 600px;
 }
 
+#bandeau_bas {
+	height: 250px;
+	width : 100%;
+	background: url("../_IMG/bandeau_bas.jpg") no-repeat center top;
+}
+
 a {
 	text-decoration: none;
 	color : black;

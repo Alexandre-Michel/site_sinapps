@@ -195,6 +195,9 @@ HTML
         <div id='page'>
 {$this->body}
         </div>
+        <div id="bandeau_bas">
+        
+        </div>
     </body>
 </html>
 HTML;
