@@ -34,66 +34,7 @@ body
 	height: 50px;
 }
 
-#accueil{
-	border: 1px solid black;
-	display: inline;
-	float : left;
-	min-width: 125px;
-	min-height: 49px;
-	line-height: 49px;
-	text-transform: uppercase;
-	text-align: center;
-	background-color: #d6d6d6;
-}
-
-#agence {
-	border: 1px solid black;
-	display: inline;
-	float: left;
-	min-width: 125px;
-	min-height: 49px;
-	line-height: 49px;
-	text-transform: uppercase;
-	text-align: center;
-	background-color: #d6d6d6;}
-
-#offres{
-	border: 1px solid black;
-	display: inline;
-	float : left;
-	min-width: 125px;
-	min-height: 49px;
-	line-height: 49px;
-	text-transform: uppercase;
-	text-align: center;
-	background-color: #d6d6d6;
-}
-
-#prestations {
-	border: 1px solid black;
-	display: inline;
-	float: left;
-	min-width: 125px;
-	min-height: 49px;
-	line-height: 49px;
-	text-transform: uppercase;
-	text-align: center;
-	background-color: #d6d6d6;
-}
-
-#espace_perso{
-	border: 1px solid black;
-	display: inline;
-	float : left;
-	min-width: 125px;
-	min-height: 49px;
-	line-height: 49px;
-	text-transform: uppercase;
-	text-align: center;
-	background-color: #d6d6d6;
-}
-
-#contact {
+.header_onglets {
 	border: 1px solid black;
 	display: inline;
 	float: left;

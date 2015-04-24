@@ -148,29 +148,31 @@ HTML
         <div id='head_fixe'>
             <img id='logo_sinapps' src ="./site_sinapps/_IMG/Test logo.jpg" alt='logo' width='384' height='216'/><br/>
             <div id='onglets'>
-            	<div id='accueil'>
-            		<a href="./index.php" target="_self">Accueil</a>
-            	</div>
+                <ul class="header_onglets">
+                	<li>
+                		<a href="./index.php" target="_self">Accueil</a>
+                	</li>
 
-            	<div id='agence'>
-            		<a href="./index.php" target="_self">Agence</a>
-            	</div>
+                	<li>
+                		<a href="./index.php" target="_self">Agence</a>
+                	</li>
 
-            	<div id='offres'>
-            		<a href="./index.php" target="_self">Offres</a>
-            	</div>
+                	<li>
+                		<a href="./index.php" target="_self">Offres</a>
+                	</li>
 
-            	<div id='prestations'>
-            		<a href="./index.php" target="_self">Prestations</a>
-            	</div>
+                	<li>
+                		<a href="./index.php" target="_self">Prestations</a>
+                	</li>
 
-            	<div id='espace_perso'>
-            		<a href="./index.php" target="_self">Espace personnel</a>
-            	</div>
+                	<li>
+                		<a href="./index.php" target="_self">Espace personnel</a>
+                	</li>
 
-            	<div id='contact'>
-            		<a href="./index.php" target="_self">Contactez-nous</a>
-            	</div>
+                	<li>
+                		<a href="./index.php" target="_self">Contactez-nous</a>
+                	</li>
+                </ul>
             </div>
         </div>
         <div id="banniere">
