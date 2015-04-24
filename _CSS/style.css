@@ -71,3 +71,50 @@ body
 a {
 	text-decoration: none;
 }
+
+/* Page Accueil */
+/* *Que faisons-nous ?* */
+
+h2
+{
+
+}
+
+h3
+{
+
+}
+
+/************************************/
+
+#content
+{
+	text-align: center;
+}
+
+#intro
+{
+
+}
+
+#titre_intro
+{
+
+}
+
+#intro_box
+{
+	width: 900px;
+	/*onglets = 1000px*/
+}
+
+#presta
+{
+	width: 300px;
+	background-color: lime;
+}
+
+#txt_box
+{
+	
+}
