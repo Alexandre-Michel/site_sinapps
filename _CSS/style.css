@@ -40,10 +40,12 @@ body
 #onglets {
 	width: 100%;
 	height: 50px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .header_onglets {
-	display: inline;
+	display: inline-block;
 	float: left;
 	line-height: 49px;
 	text-transform: uppercase;
@@ -51,19 +53,23 @@ body
 	margin : 0;
 	padding : 0;
 	text-align: center;
-	width: 1000px;
+	width: 1210px;
 }
 
 .header_onglets li {
-	display: inline;
-	color : red;
-	border-right: 1px solid black;
-	min-width: 165px;
+	display: inline-block;
+	border-right: 1px solid #698296;
+	min-width: 197px;
 	min-height: 49px;
+}
+
+#accueil {
+	border-left: 1px solid #698296;
 }
 
 .header_onglets hover {
 	background-color: #1267d8;
+	color : red;
 }
 
 .header_onglets a {
@@ -78,11 +84,10 @@ body
 
 a {
 	text-decoration: none;
+	color : black;
 }
 
-#accueil {
-	border-left: 1px solid black;
-}
+
 /* Page Accueil */
 /* *Que faisons-nous ?* */
 
