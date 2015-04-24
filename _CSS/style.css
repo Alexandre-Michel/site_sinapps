@@ -51,15 +51,22 @@ body
 	display: inline;
 	float: left;
 	min-width: 125px;
+	min-height: 49px;
+	line-height: 49px;
+	text-transform: uppercase;
 	text-align: center;
-}
+	background-color: #d6d6d6;}
 
 #offres{
 	border: 1px solid black;
 	display: inline;
 	float : left;
 	min-width: 125px;
+	min-height: 49px;
+	line-height: 49px;
+	text-transform: uppercase;
 	text-align: center;
+	background-color: #d6d6d6;
 }
 
 #prestations {
@@ -67,7 +74,11 @@ body
 	display: inline;
 	float: left;
 	min-width: 125px;
+	min-height: 49px;
+	line-height: 49px;
+	text-transform: uppercase;
 	text-align: center;
+	background-color: #d6d6d6;
 }
 
 #espace_perso{
@@ -75,7 +86,11 @@ body
 	display: inline;
 	float : left;
 	min-width: 125px;
+	min-height: 49px;
+	line-height: 49px;
+	text-transform: uppercase;
 	text-align: center;
+	background-color: #d6d6d6;
 }
 
 #contact {
@@ -83,7 +98,11 @@ body
 	display: inline;
 	float: left;
 	min-width: 125px;
+	min-height: 49px;
+	line-height: 49px;
+	text-transform: uppercase;
 	text-align: center;
+	background-color: #d6d6d6;
 }
 
 #banniere {
