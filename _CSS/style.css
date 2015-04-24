@@ -47,13 +47,13 @@ body
 .header_onglets {
 	display: inline-block;
 	float: left;
-	line-height: 49px;
+	line-height: 50px;
 	text-transform: uppercase;
 	list-style: none;
 	margin : 0;
 	padding : 0;
 	text-align: center;
-	width: 1210px;
+	width: 1189px;
 }
 
 .header_onglets li {
@@ -61,6 +61,7 @@ body
 	border-right: 1px solid #698296;
 	min-width: 197px;
 	min-height: 49px;
+	float : left;
 }
 
 #accueil {
