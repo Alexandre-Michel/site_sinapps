@@ -91,6 +91,10 @@ a {
 
 /* Page Accueil */
 /* *Que faisons-nous ?* */
+h1
+{
+	
+}
 
 h2
 {
@@ -125,7 +129,7 @@ h3
 	overflow: auto;
 	margin: 0 auto;
 
-	background-color: lime;
+	/*background-color: lime;*/
 }
 
 .box_container
@@ -133,7 +137,7 @@ h3
 	width: 33.33%;
 	float: left;
 
-	background-color: blue;
+	/*background-color: blue;*/
 }
 
 .presta
