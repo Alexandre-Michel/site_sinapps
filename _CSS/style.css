@@ -22,6 +22,11 @@ body
 	color: #121A1B;
 }
 
+#logo_sinapps {
+	width: 281px;
+	height: 74px;
+}
+
 #head_fixe {
 	position: relative;
 	margin-right: auto;

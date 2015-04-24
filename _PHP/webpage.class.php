@@ -146,7 +146,7 @@ HTML
     </head>
     <body>
         <div id='head_fixe'>
-            <img id='logo_sinapps' src ="../_IMG/logo_sinapps.png" alt='logo' width='384' height='216'/><br/>
+            <img id='logo_sinapps' src ="../_IMG/logo_sinapps.png" alt='logo'/><br/>
             <div id='onglets'>
                 <ul class="header_onglets">
                 	<li id="accueil">
