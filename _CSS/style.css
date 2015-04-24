@@ -107,8 +107,8 @@ h3
 
 .intro_box
 {
-	width: 900px;
-	/*onglets = 1000px*/
+	width: 900px;		/*onglets = 1000px*/
+	margin: auto;
 }
 
 .presta
@@ -120,5 +120,5 @@ h3
 
 .txt_box
 {
-
+	
 }
