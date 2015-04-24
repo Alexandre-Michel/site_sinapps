@@ -41,14 +41,26 @@ body
 	min-height: 49px;
 	line-height: 49px;
 	text-transform: uppercase;
-	text-align: center;
 	list-style: none;
+	margin : 0;
+	padding : 0;
+	text-align: center;
+
 }
 
 .header_onglets li {
 	display: inline;
 	color : red;
 	border-right: 1px solid black;
+}
+
+.header_onglets hover {
+	background-color: #1267d8;
+}
+
+.header_onglets a {
+	margin : 0 30px;
+	display: inline-block;
 }
 
 #banniere {
