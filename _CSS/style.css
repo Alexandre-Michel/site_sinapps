@@ -11,17 +11,6 @@ body
 	margin : 0px;
 }
 
-.welcome
-{
-	text-align: center;
-}
-
-.title{
-	font-size: 70px;
-	font-weight: 800;
-	color: #121A1B;
-}
-
 #logo_sinapps {
 	width: 281px;
 	height: 74px;
@@ -108,6 +97,23 @@ h3
 
 /************************************/
 
+.welcome
+{
+	text-align: center;
+}
+
+.title
+{
+	font-size: 35px;
+	font-weight: 800;
+	color: #555555;
+}
+
+.st
+{
+	font-size: 19px;
+	color: #8D8D8D;
+}
 .content
 {
 	text-align: center;

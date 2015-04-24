@@ -8,7 +8,7 @@ $p->appendContent(<<<HTML
 <div class = "content">
 	<div class "msg_welcome">
 		<div class = "title welcome">
-			<h1>Bienvenue chez SINAPP'</h1>
+			<h1>Bienvenue chez SINAPP'S</h1>
 		</div>
 		<div class = "st welcome">
 			<h2>Agence de maintenance informatique dédiée aux professionnels.</h2>
