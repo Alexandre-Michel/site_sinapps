@@ -208,7 +208,10 @@ HTML
 {$this->body}
         </div>
         <div id="bandeau_bas">
-        
+            <div id="logo_bas">
+                <a href="./index.php"><img id="logo_bas" src="../_IMG/logo_bas.png" alt="logo bas"/>
+                <a href="./index.php"><img id="logo_sinapps_bas" src="../_IMG/logo_sinapps.png" alt="logo bas"/>
+            </div>    
         </div>
     </body>
 </html>
