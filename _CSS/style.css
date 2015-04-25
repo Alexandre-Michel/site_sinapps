@@ -31,7 +31,7 @@ html, body {
 	margin-left: auto;
 	max-width: 1210px;
 }
-/*
+
 #onglets {
 	width: 100%;
 	height: 50px;
@@ -51,12 +51,33 @@ html, body {
 	width: 1189px;
 }
 
+
+.header_onglets ul {
+	list-style: none;
+	margin : 0;
+	padding : 0;
+	text-align: center;
+}
+
 .header_onglets li {
 	display: inline-block;
 	border-right: 1px solid #698296;
 	min-width: 197px;
 	min-height: 49px;
 	float : left;
+}
+
+.header_onglets li li {
+	max-height: 0;
+	overflow: hidden;
+	/*transition: all .5s;*/
+	margin: 0;
+	border : none;
+}
+
+.header_onglets a {
+	display: block;
+	padding: 8px 0;
 }
 
 #accueil {
@@ -71,7 +92,7 @@ html, body {
 .header_onglets li:hover,  .header_onglets li:focus{
 	background-color: #1267d8;
 
-}*/
+}
 
 #banniere {
 	background: url("../_IMG/imgHeaderSin.jpg") no-repeat center top;
@@ -91,17 +112,6 @@ a {
 }
 
 
-/*	Menu déroulant 
- *
- *
-*/
-ul ul {
-	display: none;
-}
-
-li:hover, ul.niveau2, li li:hover, ul.niveau3 {
-	display: block;
-}
 
 
 /* Page Accueil */
