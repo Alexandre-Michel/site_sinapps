@@ -171,7 +171,10 @@ HTML
                 		<a href="./agence.php" target="_self">Agence</a>
                         <ul class="niveau2">
                             <li>
-                                <a href="./presentation.php" target="_self">Test</a>
+                                <a href="./presentation.php" target="_self">Présentation</a>
+                                <a href="./statistiques.php" target="_self">Statistiques</a>
+                                <a href="./partenaires.php" target="_self">Partenaires</a>
+                                <a href="./equipe.php" target="_self">L'équipe</a>
                             </li>
                         </ul>
                 	</li>
