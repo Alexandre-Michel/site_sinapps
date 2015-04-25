@@ -183,13 +183,10 @@ h3
 
 .th3
 {
-<<<<<<< HEAD
 	height: 25px;
 	font-size: 1.250em;
 	color: #555555;
 	text-transform: uppercase;
-=======
->>>>>>> origin/master
 	vertical-align: middle;
 }
 
@@ -201,7 +198,7 @@ strong
 .content
 {
 	text-align: center;
-	background-image: url("../_IMG/background.jpg");
+	background: url("../_IMG/background.jpg") no-repeat bottom;
 	border-top : 10px solid #e8e8e8;
 }
 
