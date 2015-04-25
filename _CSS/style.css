@@ -84,7 +84,13 @@ ul.niveau2 {
 .niveau2 li {
 	height : 50px;
 	width : 197px;
+	overflow: hidden;
 }
+
+.header_onglets li li:hover,  .header_onglets li li:focus{
+	background-color: #1267d8; 
+	overflow: visible;
+} 
 
 
 #banniere {
