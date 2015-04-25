@@ -82,7 +82,8 @@ ul.niveau2 {
 }
 
 .niveau2 li {
-	height : 50px;
+	max-height : 0px;
+	min-height: 0px;
 	width : 197px;
 	overflow: hidden;
 }
@@ -101,12 +102,14 @@ ul.niveau3 {
 	width : 197px;
 	overflow: hidden;
 	display: inline-block;
+	margin-left: 198px;
 }
 
 .header_onglets li li:hover,  .header_onglets li li:focus{
 	background-color: #1267d8; 
 	overflow: visible;
 	display: inline-block;
+	height: 50px;
 } 
 
 
