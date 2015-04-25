@@ -209,21 +209,21 @@ HTML
         </div>
         <div class="bandeau_bas">
             <div class="infos_bas">
-                <div id="logo_bas">
+                <div class="bas">
                     <ul>
                         <li><a href="./index.php"><img id="icone_bas" src="../_IMG/logo_bas.png" alt="logo bas"/></a></li>
                         <li><a href="./index.php"><img id="logo_sinapps_bas" src="../_IMG/logo_sinapps.png" alt="logo bas"/></a></li>
                     </ul>
                 </div>   
-                <div id="horaires">
-                    <h4>Horaires d'ouverture</h4>
+                <div class="bas">
+                    <div class="th4">Horaires d'ouverture</div>
                     <ul>
                         <li>Du Lundi au Vendredi : 9h00 - 12h00 / 13h30 - 19h00</li>
                         <li>Samedi : 9h00 - 12h00</li>
                     </ul>
                 </div> 
-                <div id="coordonnees">
-                    <h4>Coordonnées</h4>
+                <div class="bas">
+                    <div class="th4">Coordonnées</div>
                     <ul>
                         <li>30 Rue d'en Bas - 02400 GLAND</li>
                         <li>Tél : 03.04.05.06.07</li>

@@ -135,6 +135,11 @@ a {
 	vertical-align: middle;
 }
 
+.th4 {
+	font-size : 0.75em;
+	text-align: center; 
+}
+
 strong
 {
 	color: blue;
@@ -259,4 +264,10 @@ strong
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1000px;
+	display: flex;
 }
+
+.bas {
+	width: 33.33%;
+}
+
