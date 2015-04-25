@@ -159,46 +159,24 @@ HTML
 {$this->head}
     </head>
     <body>
-        <div id='head_fixe'>
-            <a href="./index.php"><img id='logo_sinapps' src ="../_IMG/logo_sinapps.png" alt='logo'/></a><br/>
-            <div id='onglets'>
-                <ul class="header_onglets">
-                	<li id="accueil">
-                		<a href="./index.php" target="_self">Accueil</a>
-                	</li>
-
-                	<li>
-                		<a href="./agence.php" target="_self">Agence</a>
-                        <ul class="niveau2">
-                            <li>
-                                <a href="./presentation.php" target="_self">Présentation</a>
-                                <ul class="niveau3">
-                                    <li>
-                                        test
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                	</li>
-
-                	<li>
-                		<a href="./offres.php" target="_self">Offres</a>
-                	</li>
-
-                	<li>
-                		<a href="./prestations.php" target="_self">Prestations</a>
-                	</li>
-
-                	<li>
-                		<a href="./perso.php" target="_self">Espace personnel</a>
-                	</li>
-
-                	<li>
-                		<a href="./contact.php" target="_self">Contactez-nous</a>
-                	</li>
-                </ul>
-            </div>
-        </div>
+        <ul class="niveau1">
+           <li>
+             Menu
+             <ul class="niveau2">
+               <li>
+                 Extras
+                 <ul class="niveau3">
+                   <li>Demander la note</li>
+                   <li>Draguer la serveuse</li>
+                 </ul>
+               </li>
+               <li>Entr&eacute;e</li>
+               <li>Plat</li>
+               <li>Dessert</li>
+               <li>Caf&eacute;</li>
+             </ul>
+           </li>
+         </ul> 
         <div id="banniere">
             
         </div>
