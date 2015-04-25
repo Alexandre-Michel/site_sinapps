@@ -241,11 +241,15 @@ strong
 .content .intro_box .box_container .presta .more
 {
 	margin: 20px;
-	font-size: 1.250em;
-	border: 1px solid black;
 }
 
-.content .intro_box .box_container .presta .more:hover
+.content .intro_box .box_container .presta .more a
+{
+	border: 1px solid;
+	padding: 1px 45px;
+}
+
+.content .intro_box .box_container .presta .more a:hover
 {
 	background-color: rgba(0, 46, 61, 0.35);
 	color: rgba(251, 251, 251, 0.35);
