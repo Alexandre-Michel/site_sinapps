@@ -92,13 +92,15 @@ ul.niveau3 {
 	margin: 0;
 	background-color: yellow;
 	text-align: center;
-	display: block;
+	display: inline;
+	position: relative;
 }
 
 .niveau3 li {
 	height : 50px;
 	width : 197px;
 	overflow: hidden;
+	display: inline-block;
 }
 
 .header_onglets li li:hover,  .header_onglets li li:focus{
