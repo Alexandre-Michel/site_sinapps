@@ -95,8 +95,8 @@ ul.niveau3 {
 
 
 #banniere {
-	background: url("../_IMG/imgHeaderSin.jpg") no-repeat center top;
-	height: 600px;
+	background: url("../_IMG/imgHeaderSin.jpg") no-repeat center;
+	height: 450px;
 }
 
 
@@ -134,7 +134,7 @@ a {
 }
 
 .th4 {
-	font-size : 0.75em;
+	font-size : 1.25em;
 	text-align: center; 
 }
 
@@ -252,7 +252,6 @@ strong
 }
 
 .bandeau_bas {
-	height: 250px;
 	width : 100%;
 	background: url("../_IMG/background_bas.jpg") no-repeat center bottom;
 	border-top : 10px solid #002d5b;
@@ -267,5 +266,11 @@ strong
 
 .bas {
 	width: 33.33%;
+	margin : 20px 3% 0 3%;
+}
+
+.bas ul
+{
+	text-align: center;
 }
 
