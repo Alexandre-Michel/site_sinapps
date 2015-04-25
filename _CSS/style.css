@@ -82,8 +82,7 @@ ul.niveau2 {
 }
 
 .niveau2 li {
-	max-height : 0px;
-	min-height: 0px;
+	height :50px;
 	width : 197px;
 	overflow: hidden;
 }
