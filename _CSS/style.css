@@ -271,10 +271,14 @@ strong
 
 .bas ul
 {
+	margin : 2px;
 	padding: 0;
-	text-align: center;
 }
 
 .premier {
 	margin-top: 0px;
+}
+
+.premier ul {
+	text-align: center;
 }
