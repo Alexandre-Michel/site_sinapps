@@ -85,6 +85,19 @@ a {
 }
 
 
+/*	Menu déroulant 
+ *
+ *
+*/
+ul ul {
+	display: none;
+}
+
+li:hover, ul.niveau2, li li:hover, ul.niveau3 {
+	display: block;
+}
+
+
 /* Page Accueil */
 /* *Que faisons-nous ?* */
 h1
