@@ -90,6 +90,7 @@ ul.niveau2 {
 .header_onglets li li:hover,  .header_onglets li li:focus{
 	background-color: #1267d8; 
 	overflow: visible;
+	display: inline-block;
 } 
 
 
