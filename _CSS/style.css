@@ -213,6 +213,11 @@ strong
 
 .txt_box
 {
-	font-size: 12px;
+	font-size: 0.750em;
 	margin: 10px;
+}
+
+.more
+{
+	font-size: 0.875em; 
 }
