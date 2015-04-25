@@ -211,8 +211,8 @@ HTML
             <div class="infos_bas">
                 <div id="logo_bas">
                     <ul>
-                        <li><a href="./index.php"><img id="icone_bas" src="../_IMG/logo_bas.png" alt="logo bas"/></li>
-                        <li><a href="./index.php"><img id="logo_sinapps_bas" src="../_IMG/logo_sinapps.png" alt="logo bas"/></li>
+                        <li><a href="./index.php"><img id="icone_bas" src="../_IMG/logo_bas.png" alt="logo bas"/></a></li>
+                        <li><a href="./index.php"><img id="logo_sinapps_bas" src="../_IMG/logo_sinapps.png" alt="logo bas"/></a></li>
                     </ul>
                 </div>   
                 <div id="horaires">
