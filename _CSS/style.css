@@ -11,6 +11,11 @@ body
 	margin : 0px;
 }
 
+ul
+{
+	list-style: none;
+}
+
 #logo_sinapps {
 	margin-right: auto;
 	margin-left: auto;
@@ -21,92 +26,70 @@ body
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
-	max-width: 1210px;
+	max-width: 1189px;
 }
 
 #onglets {
 	width: 100%;
 	height: 50px;
-	margin-right: auto;
-	margin-left: auto;
 }
 
-.header_onglets { 
-	display: inline-block; 
- 	float: left; 
- 	line-height: 50px; 
+.header_onglets {
+ 	line-height: 50px;
  	text-transform: uppercase; 
- 	list-style: none; 
- 	margin : 0; 
- 	padding : 0; 
+ 	margin : 0;
+ 	padding : 0;
 	text-align: center; 
 	width: 1189px; 
 } 
  
  
 .header_onglets li { 
-	display: inline-block; 
 	border-right: 1px solid #698296; 
- 	min-width: 197px; 
+ 	min-width: 197px;
  	max-width: 197px;
  	min-height: 49px; 
  	max-height: 50px;
-	float : left; 
+	float : left;
 	overflow: hidden;
 	background-color: rgba(255,255,255,0.95);
 } 
 
  
-#accueil { 
+#accueil
+{ 
  	border-left: 1px solid #698296; 
 } 
 
  
-.header_onglets a { 
-	margin : 0 30px; 
-	display: inline-block; 
-} 
- 
-.header_onglets li:hover,  .header_onglets li:focus{
+.header_onglets li:hover,  .header_onglets li:focus
+{
 	background-color: #1267d8; 
 	overflow: visible;
 } 
 
 ul.niveau2 {
 	padding: 0;
-	margin: 0;
-	background-color: yellow;
-	text-align: center;
 }
 
-.niveau2 li {
-	height :50px;
-	width : 197px;
-	overflow: hidden;
+.niveau2 li
+{
+	/*overflow: hidden;*/
 }
 
 ul.niveau3 {
 	padding: 0;
-	margin: 0;
-	background-color: yellow;
-	text-align: center;
-	display: inline;
-	position: relative;
+	margin-top: -50px;
 }
 
-.niveau3 li {
-	height : 50px;
-	width : 197px;
-	overflow: hidden;
-	display: inline-block;
+.niveau3 li
+{
 	margin-left: 198px;
 }
 
 .header_onglets li li:hover,  .header_onglets li li:focus{
 	background-color: #1267d8; 
 	overflow: visible;
-	display: inline-block;
-	height: 50px;
 } 
 
 
