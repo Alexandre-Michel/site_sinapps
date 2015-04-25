@@ -230,10 +230,9 @@ strong
 
 .content .intro_box .box_container .presta .more a:hover
 {
-	background-color: rgba(0, 46, 61, 0.35);
-	color: rgba(251, 251, 251, 0.35);
+	background-color: rgba(85, 85, 85, 1);
+	/*color: rgba(251, 251, 251, 0.35);*/
 }
-
 
 
 /**** Banniere du bas *****/
