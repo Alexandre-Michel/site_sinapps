@@ -1,4 +1,5 @@
 <?php
+
 require_once 'webpage.class.php';
 
 $p = new WebPage("Accueil");
@@ -20,6 +21,10 @@ $p->appendContent(<<<HTML
 		<div class = "box_container">
 			<div class = "presta box1">
 				<div class = "th3">Presta 1</div>
+				<div class = "th3">
+					<h3>Presta 1</h3>
+					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
+				</div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, egestas neque pretium, fringilla turpis. Maecenas eu orci nec purus imperdiet blandit. Quisque elementum dictum mi, maximus imperdiet lacus. Donec imperdiet lacus ac nibh elementum, a condimentum turpis dapibus. Nulla tincidunt pharetra nibh, id elementum elit vestibulum et. Pellentesque ut nisl at lacus hendrerit tincidunt et nec orci. Vivamus ullamcorper tellus tellus, ac ultricies lectus placerat ut. Aliquam ut risus leo. Aliquam erat volutpat.</div>
 			</div>
 		</div>
