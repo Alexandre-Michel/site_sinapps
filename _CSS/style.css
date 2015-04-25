@@ -271,6 +271,10 @@ strong
 
 .bas ul
 {
+	padding: 0;
 	text-align: center;
 }
 
+.bas ul li:first-child {
+	margin-top : 0px;
+}
