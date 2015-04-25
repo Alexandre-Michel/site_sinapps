@@ -207,11 +207,29 @@ HTML
         <div id='page'>
 {$this->body}
         </div>
-        <div id="bandeau_bas">
-            <div id="logo_bas">
-                <a href="./index.php"><img id="logo_bas" src="../_IMG/logo_bas.png" alt="logo bas"/>
-                <a href="./index.php"><img id="logo_sinapps_bas" src="../_IMG/logo_sinapps.png" alt="logo bas"/>
-            </div>    
+        <div class="bandeau_bas">
+            <div class="infos_bas">
+                <div id="logo_bas">
+                    <ul>
+                        <li><a href="./index.php"><img id="icone_bas" src="../_IMG/logo_bas.png" alt="logo bas"/></li>
+                        <li><a href="./index.php"><img id="logo_sinapps_bas" src="../_IMG/logo_sinapps.png" alt="logo bas"/></li>
+                    </ul>
+                </div>   
+                <div id="horaires">
+                    <h4>Horaires d'ouverture</h4>
+                    <ul>
+                        <li>Du Lundi au Vendredi : 9h00 - 12h00 / 13h30 - 19h00</li>
+                        <li>Samedi : 9h00 - 12h00</li>
+                    </ul>
+                </div> 
+                <div id="coordonnees">
+                    <h4>Coordonnées</h4>
+                    <ul>
+                        <li>30 Rue d'en Bas - 02400 GLAND</li>
+                        <li>Tél : 03.04.05.06.07</li>
+                        <li>Mail : contact@sinapps.fr</li>
+                </div>
+            </div>
         </div>
     </body>
 </html>

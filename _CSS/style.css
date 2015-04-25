@@ -12,8 +12,6 @@ body
 }
 
 #logo_sinapps {
-	width: 281px;
-	height: 74px;
 	margin-right: auto;
 	margin-left: auto;
 	display: block;
@@ -118,12 +116,7 @@ ul.niveau3 {
 	height: 600px;
 }
 
-#bandeau_bas {
-	height: 250px;
-	width : 100%;
-	background: url("../_IMG/background_bas.jpg") no-repeat center bottom;
-	border-top : 10px solid #002d5b;
-}
+
 
 a {
 	text-decoration: none;
@@ -253,4 +246,34 @@ strong
 {
 	background-color: rgba(0, 46, 61, 0.35);
 	color: rgba(251, 251, 251, 0.35);
+}
+
+
+
+/**** Banniere du bas *****/
+#icone_bas {
+	width : 90px;
+}
+
+#logo_sinapps_bas {
+	width : 200px;
+}
+
+#logo_bas ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.bandeau_bas {
+	height: 250px;
+	width : 100%;
+	background: url("../_IMG/background_bas.jpg") no-repeat center bottom;
+	border-top : 10px solid #002d5b;
+}
+
+.infos_bas {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1000px;
 }
