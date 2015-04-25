@@ -10,12 +10,10 @@ $p->appendContent(<<<HTML
 		<div class = "th1">Bienvenue chez SINAPP'S</div>
 		<div class = "th2">Agence de maintenance informatique dédiée aux professionnels.</div>
 	</div>
-	<div class = "intro">
-		<h2>
-			<span>Ce que nous faisons</span>
-			<span class = "i1">pour vous</span>
-			<span>...</span>
-		</h2>
+	<div class = "intro th2">
+		<span>Ce que nous faisons</span>
+		<span class = "i1">pour vous</span>
+		<span>...</span>
 	</div>
 	<div class = "intro_box">
 		<div class = "box_container">

@@ -90,35 +90,18 @@ a {
 
 
 
-/* Page Accueil */
-/* *Que faisons-nous ?* */
-h1
-{
-	
-}
-
-h2
-{
-
-}
-
-h3
-{
-	text-transform : uppercase;
-}
-
-/************************************/
+/*********** Page Accueil ***********/
 
 .th1
 {
-	font-size: 70px;
+	font-size: 4.375em;
 	font-weight: 800;
 	color: #555555;
 }
 
 .th2
 {
-	font-size: 28px;
+	font-size: 1.750em;
 	font-weight: 300;
 	color: #8D8D8D;
 }
@@ -146,16 +129,17 @@ strong
 
 .welcome
 {
-
+	height: 120px;
 }
 
 .intro
 {
+	height: 30px;
 	font-weight: 100;
 	color: #7f7f7f;
 }
 
-.i1
+.intro .i1
 {
 	font-weight: 200;
 	color: #00b0b9;
@@ -170,7 +154,7 @@ strong
 	/*background-color: lime;*/
 }
 
-.box_container
+.intro_box .box_container
 {
 	width: 33.33%;
 	float: left;
@@ -178,7 +162,7 @@ strong
 	/*background-color: blue;*/
 }
 
-.presta
+.intro_box .box_container .presta
 {
 	height: 400px;
 	margin: 10%;
@@ -188,18 +172,18 @@ strong
 	background-color: rgba(251, 251, 251, 0.35);
 }
 
-.presta .img_presta
+.intro_box .box_container .presta .img_presta
 {
 	height: 100px;
 }
 
-.presta .txt_box
+.intro_box .box_container .presta .txt_box
 {
 	height: 250px;
 	font-size: 1.125em;
 }
 
-.presta .more
+.intro_box .box_container .presta .more
 {
 	height: 23px;
 	font-size: 1.250em;
