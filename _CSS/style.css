@@ -149,6 +149,7 @@ h3
 
 .th3
 {
+	height: 25px;
 	font-size: 1.250em;
 	color: #555555;
 	text-transform: uppercase;
@@ -211,13 +212,20 @@ strong
 	background-color: rgba(251, 251, 251, 0.35);
 }
 
+.img_presta
+{
+	height: 100px;
+}
+
 .txt_box
 {
-	font-size: 0.750em;
+	height: 300px;
+	font-size: 1.125em;
 	margin: 10px;
 }
 
 .more
 {
-	font-size: 0.875em; 
+	height: 25px;
+	font-size: 1.250em; 
 }
