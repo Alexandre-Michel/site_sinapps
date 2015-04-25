@@ -22,6 +22,7 @@ $p->appendContent(<<<HTML
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
+				<div class = "border_logo"></div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
@@ -34,6 +35,7 @@ $p->appendContent(<<<HTML
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
+				<div class = "border_logo"></div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
@@ -46,6 +48,7 @@ $p->appendContent(<<<HTML
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
+				<div class = "border_logo"></div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
@@ -58,6 +61,7 @@ $p->appendContent(<<<HTML
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
+				<div class = "border_logo"></div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
@@ -70,6 +74,7 @@ $p->appendContent(<<<HTML
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
+				<div class = "border_logo"></div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
@@ -82,6 +87,7 @@ $p->appendContent(<<<HTML
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
+				<div class = "border_logo"></div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>

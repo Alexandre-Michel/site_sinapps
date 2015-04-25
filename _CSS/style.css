@@ -147,6 +147,7 @@ a {
 
 .th3
 {
+	line-height: 40px;
 	height: 25px;
 	font-size: 1.250em;
 	color: #555555;
@@ -215,18 +216,27 @@ strong
 
 .content .intro_box .box_container .presta .img_presta
 {
-	height: 100px;
+	height: 80px;
+	margin: 15px;
+}
+
+.content .intro_box .box_container .presta .border_logo
+{
+	width: 85px;
+	border-bottom: 1px solid black;
 }
 
 .content .intro_box .box_container .presta .txt_box
 {
-	height: 250px;
+	margin: 15px;
+	line-height: 1.125em;
 	font-size: 1.125em;
 }
 
 .content .intro_box .box_container .presta .more
 {
 	height: 23px;
+	margin: 20px;
 	font-size: 1.250em;
 	border: 1px solid black;
 }
