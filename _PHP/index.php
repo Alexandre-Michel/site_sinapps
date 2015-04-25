@@ -33,7 +33,7 @@ $p->appendContent(<<<HTML
 		<div class = "box_container">
 			<div class = "presta box2">
 				<div class = "th3">Presta 2</div>
-				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, egestas neque pretium, fringilla turpis. Maecenas eu orci nec purus imperdiet blandit. Quisque elementum dictum mi, maximus imperdiet lacus. Donec imperdiet lacus ac nibh elementum, a condimentum turpis dapibus. Nulla tincidunt pharetra nibh, id elementum elit vestibulum et. Pellentesque ut nisl at lacus hendrerit tincidunt et nec orci. Vivamus ullamcorper tellus tellus, ac ultricies lectus placerat ut. Aliquam ut risus leo. Aliquam erat volutpat.</div>
+				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
 				</div>
@@ -42,7 +42,7 @@ $p->appendContent(<<<HTML
 		<div class = "box_container">
 			<div class = "presta box3">
 				<div class = "th3">Presta 3</div>
-				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, egestas neque pretium, fringilla turpis. Maecenas eu orci nec purus imperdiet blandit. Quisque elementum dictum mi, maximus imperdiet lacus. Donec imperdiet lacus ac nibh elementum, a condimentum turpis dapibus. Nulla tincidunt pharetra nibh, id elementum elit vestibulum et. Pellentesque ut nisl at lacus hendrerit tincidunt et nec orci. Vivamus ullamcorper tellus tellus, ac ultricies lectus placerat ut. Aliquam ut risus leo. Aliquam erat volutpat.</div>
+				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
 				</div>
@@ -51,7 +51,7 @@ $p->appendContent(<<<HTML
 		<div class = "box_container">
 			<div class = "presta box4">
 				<div class = "th3">Presta 4</div>
-				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, egestas neque pretium, fringilla turpis. Maecenas eu orci nec purus imperdiet blandit. Quisque elementum dictum mi, maximus imperdiet lacus. Donec imperdiet lacus ac nibh elementum, a condimentum turpis dapibus. Nulla tincidunt pharetra nibh, id elementum elit vestibulum et. Pellentesque ut nisl at lacus hendrerit tincidunt et nec orci. Vivamus ullamcorper tellus tellus, ac ultricies lectus placerat ut. Aliquam ut risus leo. Aliquam erat volutpat.</div>
+				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
 				</div>
@@ -60,7 +60,7 @@ $p->appendContent(<<<HTML
 		<div class = "box_container">
 			<div class = "presta box5">
 				<div class = "th3">Presta 5</div>
-				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, egestas neque pretium, fringilla turpis. Maecenas eu orci nec purus imperdiet blandit. Quisque elementum dictum mi, maximus imperdiet lacus. Donec imperdiet lacus ac nibh elementum, a condimentum turpis dapibus. Nulla tincidunt pharetra nibh, id elementum elit vestibulum et. Pellentesque ut nisl at lacus hendrerit tincidunt et nec orci. Vivamus ullamcorper tellus tellus, ac ultricies lectus placerat ut. Aliquam ut risus leo. Aliquam erat volutpat.</div>
+				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
 				</div>
@@ -69,7 +69,7 @@ $p->appendContent(<<<HTML
 		<div class = "box_container">
 			<div class = "presta box6">
 				<div class = "th3">Presta 6</div>
-				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, egestas neque pretium, fringilla turpis. Maecenas eu orci nec purus imperdiet blandit. Quisque elementum dictum mi, maximus imperdiet lacus. Donec imperdiet lacus ac nibh elementum, a condimentum turpis dapibus. Nulla tincidunt pharetra nibh, id elementum elit vestibulum et. Pellentesque ut nisl at lacus hendrerit tincidunt et nec orci. Vivamus ullamcorper tellus tellus, ac ultricies lectus placerat ut. Aliquam ut risus leo. Aliquam erat volutpat.</div>
+				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
 					<a href="">En savoir plus</a>
 				</div>
