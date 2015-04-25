@@ -209,7 +209,7 @@ HTML
         </div>
         <div class="bandeau_bas">
             <div class="infos_bas">
-                <div class="bas">
+                <div class="bas premier">
                     <ul>
                         <li><a href="./index.php"><img id="icone_bas" src="../_IMG/logo_bas.png" alt="logo bas"/></a></li>
                         <li><a href="./index.php"><img id="logo_sinapps_bas" src="../_IMG/logo_sinapps.png" alt="logo bas"/></a></li>
