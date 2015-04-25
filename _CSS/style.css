@@ -224,7 +224,8 @@ strong
 
 .content .intro_box .box_container .presta .border_logo
 {
-	width: 85px;
+	width: 190px;
+	margin: auto;
 	border-bottom: 1px solid black;
 }
 
@@ -237,7 +238,6 @@ strong
 
 .content .intro_box .box_container .presta .more
 {
-	height: 23px;
 	margin: 20px;
 	font-size: 1.250em;
 	border: 1px solid black;
