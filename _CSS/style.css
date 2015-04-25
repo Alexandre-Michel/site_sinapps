@@ -50,8 +50,11 @@ body
 	display: inline-block; 
 	border-right: 1px solid #698296; 
  	min-width: 197px; 
+ 	max-width: 197px;
  	min-height: 49px; 
+ 	max-height: 50px;
 	float : left; 
+	overflow: hidden;
 } 
 
  
@@ -67,7 +70,20 @@ body
  
 .header_onglets li:hover,  .header_onglets li:focus{
 	background-color: #1267d8; 
+	overflow: visible;
 } 
+
+ul.niveau2 {
+	padding: 0;
+	margin: 0;
+	background-color: yellow;
+	text-align: center;
+}
+
+.niveau2 li {
+	height : 50px;
+	width : 197px;
+}
 
 
 #banniere {
