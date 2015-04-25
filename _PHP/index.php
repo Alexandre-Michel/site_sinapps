@@ -32,7 +32,7 @@ $p->appendContent(<<<HTML
 			<div class = "presta box2">
 				<div class = "th3">Presta 2</div>
 				<div class = "img_presta">
-
+					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
@@ -44,7 +44,7 @@ $p->appendContent(<<<HTML
 			<div class = "presta box3">
 				<div class = "th3">Presta 3</div>
 				<div class = "img_presta">
-
+					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
@@ -56,7 +56,7 @@ $p->appendContent(<<<HTML
 			<div class = "presta box4">
 				<div class = "th3">Presta 4</div>
 				<div class = "img_presta">
-				
+					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
@@ -68,7 +68,7 @@ $p->appendContent(<<<HTML
 			<div class = "presta box5">
 				<div class = "th3">Presta 5</div>
 				<div class = "img_presta">
-				
+					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
@@ -80,6 +80,7 @@ $p->appendContent(<<<HTML
 			<div class = "presta box6">
 				<div class = "th3">Presta 6</div>
 				<div class = "img_presta">
+					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
 				<div class = "txt_box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare arcu nunc, sit amet consectetur ipsum tempor ut. Duis facilisis cursus faucibus. Morbi vehicula elit sit amet blandit fringilla. Etiam ut consequat eros. Sed quis tortor elementum, </div>
 				<div class = "more">
