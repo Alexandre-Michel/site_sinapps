@@ -127,25 +127,27 @@ strong
 	border-top : 10px solid #e8e8e8;
 }
 
-.welcome
+.content .welcome
 {
 	height: 120px;
+	margin: 20px;
 }
 
-.intro
+.content .intro
 {
 	height: 30px;
+	margin: 10px;
 	font-weight: 100;
 	color: #7f7f7f;
 }
 
-.intro .i1
+.content .intro .i1
 {
 	font-weight: 200;
 	color: #00b0b9;
 }
 
-.intro_box
+.content .intro_box
 {
 	width: 1000px;
 	overflow: auto;
@@ -154,7 +156,7 @@ strong
 	/*background-color: lime;*/
 }
 
-.intro_box .box_container
+.content .intro_box .box_container
 {
 	width: 33.33%;
 	float: left;
@@ -162,7 +164,7 @@ strong
 	/*background-color: blue;*/
 }
 
-.intro_box .box_container .presta
+.content .intro_box .box_container .presta
 {
 	height: 400px;
 	margin: 10%;
@@ -172,18 +174,18 @@ strong
 	background-color: rgba(251, 251, 251, 0.35);
 }
 
-.intro_box .box_container .presta .img_presta
+.content .intro_box .box_container .presta .img_presta
 {
 	height: 100px;
 }
 
-.intro_box .box_container .presta .txt_box
+.content .intro_box .box_container .presta .txt_box
 {
 	height: 250px;
 	font-size: 1.125em;
 }
 
-.intro_box .box_container .presta .more
+.content .intro_box .box_container .presta .more
 {
 	height: 23px;
 	font-size: 1.250em;
