@@ -240,7 +240,7 @@ strong
 
 .presta
 {
-	height: 450px;
+	height: 400px;
 	margin: 10%;
 	float: left;
 
@@ -248,20 +248,21 @@ strong
 	background-color: rgba(251, 251, 251, 0.35);
 }
 
-.img_presta
+.presta .img_presta
 {
 	height: 100px;
 }
 
-.txt_box
+.presta .txt_box
 {
-	height: 300px;
+	height: 250px;
 	font-size: 1.125em;
 	margin: 10px;
 }
 
-.more
+.presta .more
 {
 	height: 25px;
-	font-size: 1.250em; 
+	font-size: 1.250em;
+	border: 1px solid black;
 }
