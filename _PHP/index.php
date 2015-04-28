@@ -99,13 +99,14 @@ $p->appendContent(<<<HTML
 HTML
 );
 */
+echo "<p> Balise de début de test";
 myPDO::setConfiguration('mysql:host=localhost;dbname=sinapps;charset=utf8', 'root', '');
 
 $pdo = myPDO::getInstance() ;
 
 $stmt = $pdo->prepare(<<<SQL
     SELECT *
-    FROM divers
+    FROM divers;
 SQL
 );
 
@@ -114,4 +115,5 @@ $stmt->execute() ;
 while (($ligne = $stmt->fetch()) !== false) {
     echo "<p>{$ligne['name']}\n" ;
 }
+echo "<p> Balise de fin de test";
 //echo $p->toHTML();
