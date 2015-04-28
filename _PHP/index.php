@@ -99,7 +99,7 @@ $p->appendContent(<<<HTML
 HTML
 );
 */
-myPDO::setConfiguration('mysql:host=mysql;dbname=sinapps;charset=utf8', 'root', '');
+myPDO::setConfiguration('mysql:host=localhost;dbname=sinapps;charset=utf8', 'root', '');
 
 $pdo = myPDO::getInstance() ;
 
