@@ -84,3 +84,4 @@ final class myPDO {
         return self::$_DSN !== null ;
     }
 }
+
