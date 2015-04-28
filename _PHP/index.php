@@ -1,7 +1,7 @@
 <?php
 
 require_once 'webpage.class.php';
-//require_once 'myPDO.class.php';
+require_once 'myPDO.class.php';
 
 $p = new WebPage("Accueil");
 /*
