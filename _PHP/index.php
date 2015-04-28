@@ -3,7 +3,7 @@
 require_once 'webpage.class.php';
 
 $p = new WebPage("Accueil");
-
+/*
 $p->appendContent(<<<HTML
 <div class = "content">
 	<div class = "welcome">
@@ -98,5 +98,20 @@ $p->appendContent(<<<HTML
 </div>
 HTML
 );
+*/
+myPDO::setConfiguration('mysql:host=mysql;dbname=sinapps;charset=utf8', 'root', '');
 
-echo $p->toHTML();
+$pdo = myPDO::getInstance() ;
+
+$stmt = $pdo->prepare(<<<SQL
+    SELECT *
+    FROM divers
+SQL
+);
+
+$stmt->execute() ;
+
+while (($ligne = $stmt->fetch()) !== false) {
+    echo "<p>{$ligne['name']}\n" ;
+}
+//echo $p->toHTML();
