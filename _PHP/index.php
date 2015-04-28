@@ -4,7 +4,7 @@ require_once 'webpage.class.php';
 require_once 'myPDO.php';
 
 $p = new WebPage("Accueil");
-
+/*
 $p->appendContent(<<<HTML
 <div class = "content">
 	<div class = "welcome">
@@ -114,7 +114,7 @@ SQL
 $stmt->execute() ;
 
 while (($ligne = $stmt->fetch()) !== false) {
-    $p.= "<p>$ligne->description\n";
+    $p->appendContent("<p>$ligne->description\n");
 }
 
 echo $p->toHTML();
