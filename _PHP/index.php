@@ -4,7 +4,7 @@ require_once 'webpage.class.php';
 //require_once 'myPDO.class.php';
 
 $p = new WebPage("Accueil");
-
+/*
 $p->appendContent(<<<HTML
 <div class = "content">
 	<div class = "welcome">
@@ -99,7 +99,8 @@ $p->appendContent(<<<HTML
 </div>
 HTML
 );
-/*
+*/
+
 
 myPDO::setConfiguration('mysql:host=localhost;dbname=sinapps', 'root', '');
 
@@ -116,7 +117,7 @@ $stmt->execute() ;
 while (($ligne = $stmt->fetch()) !== false) {
     $p->appendContent("<p>$ligne->description\n");
 }
-*/
+
 
 echo $p->toHTML();
 
