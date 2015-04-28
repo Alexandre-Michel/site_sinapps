@@ -1,9 +1,10 @@
-<?php
+﻿<?php
 
 require_once 'webpage.class.php';
+require_once 'myPDO.php';
 
 $p = new WebPage("Accueil");
-/*
+
 $p->appendContent(<<<HTML
 <div class = "content">
 	<div class = "welcome">
@@ -99,8 +100,8 @@ $p->appendContent(<<<HTML
 HTML
 );
 */
-echo "<p> Balise de début de test"->toHTML();
-myPDO::setConfiguration('mysql:host=localhost;dbname=sinapps;charset=utf8', 'root', '');
+
+myPDO::setConfiguration('mysql:host=localhost;dbname=sinapps', 'root', '');
 
 $pdo = myPDO::getInstance() ;
 
@@ -113,7 +114,9 @@ SQL
 $stmt->execute() ;
 
 while (($ligne = $stmt->fetch()) !== false) {
-    echo "<p>{$ligne['name']}\n"->toHTML() ;
+    $p.= "<p>$ligne->description\n";
 }
-echo "<p> Balise de fin de test"->toHTML();
-//echo $p->toHTML();
+
+echo $p->toHTML();
+
+?>
