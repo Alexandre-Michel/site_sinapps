@@ -20,7 +20,7 @@ function createBox($i)
 			<div class = "presta box1">
 				<div class = "th3">{$tableau['nom_prestation']}</div>
 				<div class = "img_presta">
-					<img id="logo_ordi" src="{$tableau['path_prestation']" alt="logo1"/>
+					<img id="logo_ordi" src="{$tableau['path_prestation']}" alt="logo1"/>
 				</div>
 				<div class = "border_logo"></div>
 				<div class = "txt_box">{$tableau['description_prestation']}</div>
