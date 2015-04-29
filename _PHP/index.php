@@ -100,12 +100,9 @@ $p->appendContent(<<<HTML
 HTML
 );
 */
-<<<<<<< HEAD
+/*
 $dsn = 'mysql:host=192.168.110.4;dbname=sinapps,port=3337';
 myPDO::setConfiguration($dsn, 'root');
-=======
-
-/*
 myPDO::setConfiguration('mysql:host=localhost;dbname=sinapps', 'root', '');
 >>>>>>> origin/master
 
