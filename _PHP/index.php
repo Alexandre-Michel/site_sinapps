@@ -50,17 +50,16 @@ HTML
 );
 
 
-/*
 for ($i=0; $i < 6; $i++) {
 	$p->appendContent(<<< HTML
 	<div class = "box_container">
 			<div class = "presta box1">
-				<div class = "th3">{$tableau['nom_prestation']}</div>
+				<div class = "th3">{$liste_noms[$i]}</div>
 				<div class = "img_presta">
-					<img id="logo_ordi" src="{$tableau['path_prestation']}" alt="logo1"/>
+					<img id="logo_ordi" src="{$liste_img[$i]}" alt="logo1"/>
 				</div>
 				<div class = "border_logo"></div>
-				<div class = "txt_box">{$tableau['description_prestation']}</div>
+				<div class = "txt_box">{$liste_description[$i]}</div>
 				<div class = "more">
 					<a href="">En savoir plus &rsaquo;</a>
 				</div>
@@ -68,7 +67,7 @@ for ($i=0; $i < 6; $i++) {
 		</div>
 HTML
 	);
-}*/
+}
 
 		/*<div class = "box_container">
 			<div class = "presta box1">
