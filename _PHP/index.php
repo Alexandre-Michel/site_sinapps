@@ -99,6 +99,17 @@ $p->appendContent(<<<HTML
 </div>
 HTML
 );
+<<<<<<< HEAD
+=======
+*/
+/*
+$dsn = 'mysql:host=192.168.110.4;dbname=sinapps,port=3337';
+myPDO::setConfiguration($dsn, 'root');
+myPDO::setConfiguration('mysql:host=localhost;dbname=sinapps', 'root', '');
+>>>>>>> origin/master
+
+$pdo = myPDO::getInstance() ;
+>>>>>>> origin/master
 
 $stmt = $pdo->prepare(<<<SQL
     SELECT *
@@ -111,7 +122,20 @@ $stmt->execute() ;
 while (($ligne = $stmt->fetch()) !== false) {
     $p->appendContent("<p>$ligne->description\n");
 }
+*/
 
+$db = new PDO('mysql:host=syn-sgbd; dbname=sinapps; port=3337;charset=utf8', 'web1', 'k4fg5s4F1T');
+
+$stmt = $db->prepare(<<<SQL
+	SELECT *
+	FROM divers
+SQL
+);
+$stmt->execute();
+while(($ligne = $stmt->fetch())!==false)
+{
+	$p->appendContent("<p>$ligne->description\n");
+}
 
 echo $p->toHTML();
 

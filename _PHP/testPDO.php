@@ -13,5 +13,5 @@ SQL
 $stmt->execute() ;
 
 while (($ligne = $stmt->fetch()) !== false) {
-    echo "<p>{$ligne['name']}\n" ;
+    echo "<p>{$ligne['description']}\n" ;
 }
