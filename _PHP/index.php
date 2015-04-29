@@ -2,6 +2,8 @@
 
 require_once 'webpage.class.php';
 require_once 'myPDO.include.php';
+require_once 'box_container.php';
+
 
 $p = new WebPage("Accueil");
 
@@ -17,9 +19,16 @@ $p->appendContent(<<<HTML
 		<span>...</span>
 	</div>
 	<div class = "intro_box">
-		<div class = "box_container">
+HTML
+);
+
+for ($i=0; $i < 6; $i++) {
+	$p->appendContent(createBox($i));
+}
+
+		/*<div class = "box_container">
 			<div class = "presta box1">
-				<div class = "th3">Presta 1</div>
+				<div class = "th3">{$tableauNom[0]}</div>
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
@@ -32,7 +41,7 @@ $p->appendContent(<<<HTML
 		</div>
 		<div class = "box_container">
 			<div class = "presta box2">
-				<div class = "th3">Presta 2</div>
+				<div class = "th3">{$tableauNom[1]}</div>
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
@@ -45,7 +54,7 @@ $p->appendContent(<<<HTML
 		</div>
 		<div class = "box_container">
 			<div class = "presta box3">
-				<div class = "th3">Presta 3</div>
+				<div class = "th3">{$tableauNom[2]}</div>
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
@@ -58,7 +67,7 @@ $p->appendContent(<<<HTML
 		</div>
 		<div class = "box_container">
 			<div class = "presta box4">
-				<div class = "th3">Presta 4</div>
+				<div class = "th3">{$tableauNom[3]}</div>
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
@@ -71,7 +80,7 @@ $p->appendContent(<<<HTML
 		</div>
 		<div class = "box_container">
 			<div class = "presta box5">
-				<div class = "th3">Presta 5</div>
+				<div class = "th3">{$tableauNom[4]}</div>
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
@@ -84,7 +93,7 @@ $p->appendContent(<<<HTML
 		</div>
 		<div class = "box_container">
 			<div class = "presta box6">
-				<div class = "th3">Presta 6</div>
+				<div class = "th3">{$tableauNom[5]}</div>
 				<div class = "img_presta">
 					<img id="logo_ordi" src="../_IMG/ordi.png" alt="logo1"/>
 				</div>
@@ -94,25 +103,11 @@ $p->appendContent(<<<HTML
 					<a href="">En savoir plus &rsaquo;</a>
 				</div>
 			</div>
-		</div>
+		</div>*/
+
+$p->appendContent(<<<HTML
 	</div>
 </div>
 HTML
 );
 
-$pdo = myPDO::getInstance();
-
-$stmt = $pdo->prepare(<<<SQL
-	SELECT *
-	FROM divers
-SQL
-);
-$stmt->execute();
-while(($ligne = $stmt->fetch())!==false)
-{
-	$p->appendContent("<p>{$ligne['description']}\n");
-}
-
-echo $p->toHTML();
-
-?>
