@@ -16,8 +16,22 @@ SQL
 
 $stmt->execute();
 
-$tableau = $stmt->fetch();
-var_dump($tableau['nom_prestation']);
+//$tableau = $stmt->fetchAll();
+//var_dump($tableau['nom_prestation']);
+$liste_noms = array();
+$liste_img = array();
+$liste_description = array();
+
+
+while (($ligne = $stmt->fetch()) !== false) {
+    array_push($liste_noms, $ligne['nom_prestation']);
+    array_push($liste_img, $ligne['path_prestation']);
+    array_push($liste_description, $ligne['description_prestation']);
+
+}
+
+var_dump($liste_noms);
+
 $p = new WebPage("Accueil");
 
 $p->appendContent(<<<HTML
@@ -35,6 +49,8 @@ $p->appendContent(<<<HTML
 HTML
 );
 
+
+/*
 for ($i=0; $i < 6; $i++) {
 	$p->appendContent(<<< HTML
 	<div class = "box_container">
@@ -52,7 +68,7 @@ for ($i=0; $i < 6; $i++) {
 		</div>
 HTML
 	);
-}
+}*/
 
 		/*<div class = "box_container">
 			<div class = "presta box1">
