@@ -1,10 +1,10 @@
 <?php
 
 require_once 'webpage.class.php';
-require_once 'myPDO.class.php';
+require_once 'myPDO.include.php';
 
 $p = new WebPage("Accueil");
-/*
+
 $p->appendContent(<<<HTML
 <div class = "content">
 	<div class = "welcome">
@@ -99,12 +99,6 @@ $p->appendContent(<<<HTML
 </div>
 HTML
 );
-*/
-
-
-myPDO::setConfiguration('mysql:host=localhost;dbname=sinapps', 'root', '');
-
-$pdo = myPDO::getInstance() ;
 
 $stmt = $pdo->prepare(<<<SQL
     SELECT *
