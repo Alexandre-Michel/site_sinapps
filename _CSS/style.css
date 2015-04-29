@@ -74,7 +74,7 @@ ul.niveau2 {
 
 .niveau2 li
 {
-	/*overflow: hidden;*/
+	background-color: rgba(142,186,246,0.95);
 }
 
 ul.niveau3 {
@@ -85,6 +85,8 @@ ul.niveau3 {
 .niveau3 li
 {
 	margin-left: 198px;
+	background-color: rgba(142,186,246,0.95);
+
 }
 
 .header_onglets li li:hover,  .header_onglets li li:focus{
