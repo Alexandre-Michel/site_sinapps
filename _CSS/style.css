@@ -283,3 +283,18 @@ strong
 .premier ul {
 	text-align: center;
 }
+
+
+/***************** FORM CONTACT ************/
+.champs_contact {
+	float: left;
+}
+
+.msg_contact {
+	height: 200px;
+}
+
+.envoi_contact {
+	width: 250px;
+	height: 70px;
+}
