@@ -168,7 +168,7 @@ HTML
                 	</li>
 
                 	<li>
-                		<a href="./agence.php" target="_self">Agence</a>
+                		Agence
                         <ul class="niveau2">
                             <li><a href="./presentation.php" target="_self">Présentation</a>
                                 <ul class="niveau3">
