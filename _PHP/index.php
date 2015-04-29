@@ -16,8 +16,6 @@ SQL
 
 $stmt->execute();
 
-//$tableau = $stmt->fetchAll();
-//var_dump($tableau['nom_prestation']);
 $liste_noms = array();
 $liste_img = array();
 $liste_description = array();
@@ -29,8 +27,6 @@ while (($ligne = $stmt->fetch()) !== false) {
     array_push($liste_description, $ligne['description_prestation']);
 
 }
-
-var_dump($liste_noms);
 
 $p = new WebPage("Accueil");
 
