@@ -11,14 +11,15 @@ SQL
 
 $stmt->execute();
 
-$tableau = $stmt->fetchAll();
-
+$tableau = $stmt->fetch();
+$var = 1;
 function createBox($i)
 {
+var_dump($var);
 	return <<< HTML
 	<div class = "box_container">
 			<div class = "presta box1">
-				<div class = "th3">{$tableau['nom_prestation']}</div>
+				<div class = "th3">{$var}</div>
 				<div class = "img_presta">
 					<img id="logo_ordi" src="{$tableau['path_prestation']}" alt="logo1"/>
 				</div>
