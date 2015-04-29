@@ -1,5 +1,7 @@
 <?php
 
+header('Content-type: text/html; charset=utf-8');
+
 require_once 'webpage.class.php';
 require_once 'myPDO.include.php';
 require_once 'box_container.php';
@@ -16,7 +18,7 @@ SQL
 $stmt->execute();
 
 $tableau = $stmt->fetch();
-
+var_dump($tableau);
 $p = new WebPage("Accueil");
 
 $p->appendContent(<<<HTML
