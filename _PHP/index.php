@@ -11,14 +11,13 @@ $pdo = myPDO::getInstance();
 $stmt = $pdo->prepare(<<<SQL
 	SELECT *
 	FROM TYPE_PRESTATION
-	WHERE id_type_prestation = 1
 SQL
 );
 
 $stmt->execute();
 
 $tableau = $stmt->fetch();
-var_dump($tableau);
+var_dump($tableau['nom_prestation']);
 $p = new WebPage("Accueil");
 
 $p->appendContent(<<<HTML
