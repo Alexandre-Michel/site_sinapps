@@ -110,7 +110,7 @@ SQL
 $stmt->execute();
 while(($ligne = $stmt->fetch())!==false)
 {
-	$p->appendContent("<p>$ligne->description\n");
+	$p->appendContent("<p>{$ligne['description']}\n");
 }
 
 echo $p->toHTML();
