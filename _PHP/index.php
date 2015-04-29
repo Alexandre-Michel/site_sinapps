@@ -121,7 +121,8 @@ while (($ligne = $stmt->fetch()) !== false) {
 }
 */
 
-$db = new PDO('mysql:host=syn-sgbd; port=3337; dbname=sinapps;charset=utf8', 'root', '');
+$db = new PDO('mysql:host=syn-sgbd; dbname=sinapps; port=3337;charset=utf8', 'root', '');
+
 $stmt = $db->prepare(<<<SQL
 	SELECT *
 	FROM divers
