@@ -1,3 +1,7 @@
+<?php
+
+include 'myPDO.class.php';
+
 myPDO::setConfiguration('mysql:host=mysql;dbname=sinapps;charset=utf8', 'root', '');
 
 $pdo = myPDO::getInstance() ;
