@@ -100,7 +100,9 @@ $p->appendContent(<<<HTML
 HTML
 );
 
-$stmt = $db->prepare(<<<SQL
+$pdo = myPDO::getInstance();
+
+$stmt = $pdo->prepare(<<<SQL
 	SELECT *
 	FROM divers
 SQL
