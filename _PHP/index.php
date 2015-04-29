@@ -101,7 +101,7 @@ HTML
 );
 */
 
-
+/*
 myPDO::setConfiguration('mysql:host=localhost;dbname=sinapps', 'root', '');
 
 $pdo = myPDO::getInstance() ;
@@ -117,7 +117,19 @@ $stmt->execute() ;
 while (($ligne = $stmt->fetch()) !== false) {
     $p->appendContent("<p>$ligne->description\n");
 }
+*/
 
+$db = new PDO('mysql:host=19.168.110.4; dbname=sinapps; port=3337;charset=utf8', 'root', '')
+$stmt = $db->prepare(<<<SQL
+	SELECT *
+	FROM divers
+SQL
+);
+$stmt->execute();
+while(($ligne = $stmt->fetch())!==false)
+{
+	$p->appendContent("<p>$ligne->description\n");
+}
 
 echo $p->toHTML();
 
