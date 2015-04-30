@@ -294,7 +294,8 @@ strong
 }
 
 .msg_contact {
-	height: 200px;
+	height: 235px;
+	display: table-cell;
 }
 
 .envoi_contact {
@@ -304,7 +305,7 @@ strong
 
 .input_contact {
 	height: 30px;
-	width: 400px;
+	width: 502px;
 	margin-bottom: 7px;
 }
 
