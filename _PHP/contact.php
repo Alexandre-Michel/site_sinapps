@@ -12,7 +12,6 @@ $stmt = $pdo->prepare(<<<SQL
 SQL
 );
 
-$stmt->setFetchMode("__FETCH_ASSOC__");
 $stmt->execute();
 $sinapps = $stmt->fetch();
 
