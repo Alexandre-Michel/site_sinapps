@@ -37,6 +37,9 @@ $p->appendContent(<<<HTML
 				</div>
 			</div>
 		</div>
+		<div class="titre_contact th1">
+			Ou par mail...
+		</div>
 		<form method="post" action="mailto:alexandre.michel@etudiant.univ-reims.fr">
 			<div class="form_contact">
 				<div class="row">
