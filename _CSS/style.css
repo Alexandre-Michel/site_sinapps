@@ -294,6 +294,11 @@ strong
 	border-top: 1px solid #555555;
 }
 
+.tel_contact.th1 {
+	border-bottom: 1px solid #555555;
+}
+
+
 .form_contact {
 	width: 100%;
 }

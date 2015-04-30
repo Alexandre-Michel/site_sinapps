@@ -27,14 +27,17 @@ $p->appendContent(<<<HTML
 						Contact
 					</div>
 					<div class="barre_contact"></div>
-					<div class="nom_contact">
+					<div class="nom_contact th2">
 						{$sinapps["nom_entreprise"]}
+					</div>
+					<div class="logo_contact">
+						<img src="{$sinapps["path_logo"]}" alt="logo_entp">
 					</div>
 					<div class="adresse_contact">
 						{$sinapps["rue_entreprise"]}<br/>
-						{$sinapps['cp_entreprise']}{$sinapps['ville_entreprise']}
+						{$sinapps['cp_entreprise']} {$sinapps['ville_entreprise']}
 					</div>
-					<div class="tel_contact">
+					<div class="tel_contact th1">
 						{$sinapps["tel_entreprise"]}
 					</div>
 				</div>
