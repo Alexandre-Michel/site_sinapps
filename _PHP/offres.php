@@ -39,7 +39,8 @@ $p->appendContent(<<<HTML
 		<div class = "th2">Ce que nous vous proposons ...</div>
 	</div>
 	<div class="offre_box">
-HTML;)
+HTML
+);
 
 for($i=0; $i<3; $i++)
 {
