@@ -32,7 +32,7 @@ $p->appendContent(<<<HTML
 					</div>
 					<div class="adresse_contact">
 						{$sinapps["rue_entreprise"]}<br/>
-						{$sinapps['cp_entreprise'] . $sinapps['ville_entreprise']}
+						{$sinapps['cp_entreprise']}{$sinapps['ville_entreprise']}
 					</div>
 					<div class="tel_contact">
 						{$sinapps["tel_entreprise"]}
