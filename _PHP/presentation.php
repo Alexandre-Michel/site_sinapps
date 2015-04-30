@@ -29,7 +29,7 @@ $p->appendContent(<<<HTML
 	<div class ="box_presentation">
 		<div class = "presentation box">
 			<div class = "presentation">
-				<div class = "thpres">{$desc}</div>
+				<div class = "thpres">{$desc['description_entreprise']}</div>
 			</div>
 		</div>
 	</div>
