@@ -23,7 +23,7 @@ $liste_description = array();
 
 while (($ligne = $stmt->fetch()) !== false) {
     array_push($liste_noms, $ligne['nom_prestation']);
-    array_push($liste_img, $ligne['path_prestation']);
+    array_push($liste_img, $ligne['path_logo']);
     array_push($liste_description, $ligne['description_prestation']);
 
 }

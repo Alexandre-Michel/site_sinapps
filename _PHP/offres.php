@@ -24,7 +24,7 @@ $liste_descriptions = array();
 while (($ligne = $stmt->fetch()) !== false)
 {
     array_push($liste_noms, $ligne['nom_offre']);
-    array_push($liste_img, $ligne['prix_tarifaire']);
+    array_push($liste_img, $ligne['path_logo']);
     array_push($liste_descriptions, $ligne['description_offre']);
 }
 
