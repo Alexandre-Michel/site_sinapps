@@ -53,6 +53,9 @@ for($i=0; $i<3; $i++)
 				</div>
 				<div class = "border_logo"></div>
 				<div class = "txt_box">{$liste_descriptions[$i]}</div>
+				<div class = "more">
+					<a href="">En savoir plus &rsaquo;</a>
+				</div>
 			</div>
 		</div>
 HTML

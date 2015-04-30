@@ -205,9 +205,9 @@ strong
 	margin: 15px;
 }
 
-.content .intro_box .box_container .presta .border_logo
+.border_logo
 {
-	width: 190px;
+	width: 75%;
 	margin: auto;
 	border-bottom: 1px solid black;
 }
@@ -219,18 +219,18 @@ strong
 	font-size: 1.125em;
 }
 
-.content .intro_box .box_container .presta .more
+.more
 {
 	margin: 20px;
 }
 
-.content .intro_box .box_container .presta .more a
+.more a
 {
 	border: 1px solid;
 	padding: 1px 45px;
 }
 
-.content .intro_box .box_container .presta .more a:hover
+.more a:hover
 {
 	background-color: rgba(85, 85, 85, 1);
 	/*color: rgba(251, 251, 251, 0.35);*/
@@ -360,13 +360,6 @@ strong
 {
 	height: 150px;
 	margin: 15px;
-}
-
-.content .offre_box .box_offre .offre .border_logo
-{
-	width: 75%;
-	margin: auto;
-	border-bottom: 1px solid black;
 }
 
 .content .offre_box .box_offre .offre .txt_box
