@@ -30,7 +30,7 @@ while (($ligne = $stmt->fetch()) !== false)
 
 require_once 'webpage.class.php';
 
-$p = new WebPage("Agence");
+$p = new WebPage("Offres de maintenance");
 
 $p->appendContent(<<<HTML
 <div class="content">
