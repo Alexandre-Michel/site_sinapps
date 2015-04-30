@@ -345,12 +345,13 @@ strong
 
 .content .offre_box .box_offre
 {
-	width: 50%;
+	float: left;
+
 }
 
 .content .offre_box .box_offre .offre
 {
-	margin: 10%;
+	margin: 3.33%;
 	float: left;
 	background-color: rgba(251, 251, 251, 0.35);
 }
