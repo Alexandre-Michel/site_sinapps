@@ -372,6 +372,12 @@ strong
 	margin: 15px;
 }
 
+.logo_offre
+{
+	width: 200px;
+	height: 200px;
+}
+
 .content .offre_box .box_offre .offre .txt_box
 {
 	margin: 15px;
