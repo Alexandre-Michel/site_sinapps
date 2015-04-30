@@ -288,19 +288,28 @@ strong
 /***************** FORM CONTACT ************/
 .champs_contact {
 	float: left;
-	width : 450px;
+	width : 510px;
 	padding-left: 250px;
 	padding-top: 20px;
 }
 
 .msg_contact {
+	width: 510px;
 	height: 235px;
 	display: table-cell;
 }
 
 .envoi_contact {
-	width: 250px;
+	width: 1020px;
 	height: 70px;
+}
+
+#envoi_bouton {
+	width: 500px;
+	height: 50px;
+	background-color: #073a92;
+	font-size: 30px;
+	font-family: inherit;
 }
 
 .input_contact {
@@ -312,6 +321,11 @@ strong
 .text_contact {
 	width: 500px;
 	margin-top: 20px;
+	height: 159px;
+}
+
+#captcha {
+	margin-top: 3px;
 }
 
 /*********** Offres ***********/

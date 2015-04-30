@@ -17,10 +17,10 @@ $p->appendContent(<<<HTML
 			</div>
 			<div class="msg_contact">
 				<textarea rows=8 name="message" placeholder="Votre message" class="text_contact"></textarea>
-				<input type="text" name="captcha" placeholder="Code anti-spam" class="input_contact">
+				<input type="text" name="captcha" placeholder="Code anti-spam" class="input_contact" id="captcha">
 			</div>
 			<div class="envoi_contact">	
-				<input type="submit" value="Envoyer">
+				<input type="submit" value="Envoyer" id="envoi_bouton">
 			</div>
 		</form>
 		</div>
