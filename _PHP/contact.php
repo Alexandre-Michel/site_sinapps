@@ -2,6 +2,19 @@
 
 require_once 'webpage.class.php';
 
+$pdo = myPDO::getInstance();
+
+$stmt = $pdo->prepare(<<<SQL
+	SELECT *
+	FROM ENTREPRISE
+	WHERE id_entreprise = 1
+SQL
+);
+
+$stmt->setFetchMode("__FETCH_ASSOC__");
+$stmt->execute();
+$sinapps = $stmt->fetch();
+
 $p = new WebPage("Contactez-nous | Sinapp's");
 
 $p->appendContent(<<<HTML
@@ -14,8 +27,15 @@ $p->appendContent(<<<HTML
 						Contact
 					</div>
 					<div class="barre_contact"></div>
-					<div class="coord_contact">
-						héhé
+					<div class="nom_contact">
+						{$sinapps["nom_entreprise"]}
+					</div>
+					<div class="adresse_contact">
+						{$sinapps["rue_entreprise"]}<br/>
+						{$sinapps['cp_entreprise'] . $sinapps['ville_entreprise']}
+					</div>
+					<div class="tel_contact">
+						{$sinapps["tel_entreprise"]}
 					</div>
 				</div>
 			</div>
