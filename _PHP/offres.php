@@ -64,8 +64,5 @@ $p->appendContent(<<<HTML
 </div>
 HTML
 );
-	</div>
-HTML
-);
 
 echo $p->toHTML();
