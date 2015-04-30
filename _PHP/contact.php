@@ -19,30 +19,25 @@ $p = new WebPage("Contactez-nous | Sinapp's");
 
 $p->appendContent(<<<HTML
 	<div class="content">	
-		<form method="post" action="mailto:alexandre.michel@etudiant.univ-reims.fr">
-
-			<div class="infos_contact">
-				<div class="row">
-					<div class="titre_contact th1">
-						Contact
-					</div>
-					<div class="barre_contact"></div>
-					<div class="nom_contact th2">
-						{$sinapps["nom_entreprise"]}
-					</div>
-					<div class="logo_contact">
-						<img src="{$sinapps["path_logo"]}" alt="logo_entp">
-					</div>
-					<div class="adresse_contact">
-						{$sinapps["rue_entreprise"]}<br/>
-						{$sinapps['cp_entreprise']} {$sinapps['ville_entreprise']}
-					</div>
-					<div class="tel_contact th1">
-						{$sinapps["tel_entreprise"]}
-					</div>
+		<div class="infos_contact">
+			<div class="row">
+				<div class="titre_contact th1">
+					Contact
+				</div>
+				<div class="barre_contact"></div>
+				<div class="logo_contact">
+					<img src="{$sinapps["path_logo"]}" alt="logo_entp">
+				</div>
+				<div class="adresse_contact th2">
+					{$sinapps["rue_entreprise"]}<br/>
+					{$sinapps['cp_entreprise']} {$sinapps['ville_entreprise']}
+				</div>
+				<div class="tel_contact th1">
+					{$sinapps["tel_entreprise"]}
 				</div>
 			</div>
-
+		</div>
+		<form method="post" action="mailto:alexandre.michel@etudiant.univ-reims.fr">
 			<div class="form_contact">
 				<div class="row">
 					<div class="champs_contact">
