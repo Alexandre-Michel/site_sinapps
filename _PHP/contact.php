@@ -2,11 +2,24 @@
 
 require_once 'webpage.class.php';
 
-$p = new WebPage("Contact");
+$p = new WebPage("Contactez-nous | Sinapp's");
 
 $p->appendContent(<<<HTML
 	<div class="content">	
 		<form method="post" action="mailto:alexandre.michel@etudiant.univ-reims.fr">
+
+			<div class="infos_contact">
+				<div class="row">
+					<div class="titre_contact th1">
+						Contact
+					</div>
+					<div class="barre_contact"></div>
+					<div class="coord_contact">
+						héhé
+					</div>
+				</div>
+			</div>
+
 			<div class="form_contact">
 				<div class="row">
 					<div class="champs_contact">

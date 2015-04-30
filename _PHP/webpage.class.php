@@ -168,7 +168,7 @@ HTML
                 	</li>
 
                 	<li>
-                		Agence
+                		Agence 
                         <ul class="niveau2">
                             <li><a href="./presentation.php" target="_self">Présentation</a>
                                 <ul class="niveau3">
@@ -185,6 +185,11 @@ HTML
 
                 	<li>
                 		<a href="./offres.php" target="_self">Offres</a>
+                        <ul class="niveau2">
+                            <li><a href="./offre_silver.php" target="_self">Offre Silver</a></li>
+                            <li><a href="./offre_gold.php" target="_self">Offre Gold</a></li>
+                            <li><a href="./offre_platinum.php" target="_self">Offre Platinum</a></li>                            
+                        </ul>
                 	</li>
 
                 	<li>
