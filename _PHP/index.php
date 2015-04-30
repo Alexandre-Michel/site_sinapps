@@ -46,9 +46,10 @@ HTML
 );
 
 
-for ($i=0; $i < 6; $i++) {
+for ($i=0; $i < 6; $i++)
+{
 	$p->appendContent(<<< HTML
-	<div class = "box_container">
+		<div class = "box_container">
 			<div class = "presta box1">
 				<div class = "th3">{$liste_noms[$i]}</div>
 				<div class = "img_presta">
