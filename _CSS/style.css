@@ -288,6 +288,9 @@ strong
 /***************** FORM CONTACT ************/
 .champs_contact {
 	float: left;
+	width : 450px;
+	padding-left: 250px;
+	padding-top: 20px;
 }
 
 .msg_contact {
@@ -297,4 +300,15 @@ strong
 .envoi_contact {
 	width: 250px;
 	height: 70px;
+}
+
+.input_contact {
+	height: 30px;
+	width: 400px;
+	margin-bottom: 7px;
+}
+
+.text_contact {
+	width: 500px;
+	margin-top: 20px;
 }
