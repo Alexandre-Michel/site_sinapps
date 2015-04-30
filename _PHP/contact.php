@@ -1,6 +1,7 @@
 <?php 
 
 require_once 'webpage.class.php';
+require_once 'myPDO.include.php';
 
 $pdo = myPDO::getInstance();
 
