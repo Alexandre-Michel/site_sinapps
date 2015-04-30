@@ -35,7 +35,7 @@ $p = new WebPage("Agence");
 $p->appendContent(<<<HTML
 <div class="content">
 	<div class="intro_offre">
-		<div class = "th1">Offres de maintenance ...</div>
+		<div class = "th1">Offres de maintenance</div>
 		<div class = "th2">Ce que nous vous proposons ...</div>
 	</div>
 	<div class="offre_box">

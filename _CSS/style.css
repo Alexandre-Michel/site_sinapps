@@ -312,3 +312,50 @@ strong
 	width: 500px;
 	margin-top: 20px;
 }
+
+/*********** Offres ***********/
+
+.content .intro_offre
+{
+	height: 120px;
+	margin: 20px;
+}
+
+.content .offre_box
+{
+	width: 1000px;
+	overflow: auto;
+	margin: 0 auto;
+}
+
+.content .offre_box .box_offre
+{
+	width: 50%;
+}
+
+.content .offre_box .box_offre .offre
+{
+	margin: 10%;
+	float: left;
+	background-color: rgba(251, 251, 251, 0.35);
+}
+
+.content .offre_box .box_offre .offre .img_offre
+{
+	height: 150px;
+	margin: 15px;
+}
+
+.content .offre_box .box_offre .offre .border_logo
+{
+	width: 75%;
+	margin: auto;
+	border-bottom: 1px solid black;
+}
+
+.content .offre_box .box_offre .offre .txt_box
+{
+	margin: 15px;
+	line-height: 1.125em;
+	font-size: 1.125em;
+}
