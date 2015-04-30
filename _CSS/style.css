@@ -395,3 +395,38 @@ strong
 	line-height: 1.125em;
 	font-size: 1.125em;
 }
+
+/*********** Presentation de l'entreprise ***********/
+
+.content .intro_agence
+{
+	height: 120px;
+	margin: 20px;
+}
+
+.content .box_presentation
+{
+	width: 1000px;
+	overflow: auto;
+	margin: 0 auto;
+}
+
+.content .box_presentation .presentation_box
+{
+	float: left;
+
+}
+
+.content .box_presentation .presentation_box .presentation
+{
+	margin: 3.33%;
+	float: left;
+	background-color: rgba(251, 251, 251, 0.35);
+}
+
+.content .box_presentation .presentation_box .presentation .img_offre
+{
+	margin: 15px;
+	line-height: 1.125em;
+	font-size: 1.125em;
+}
