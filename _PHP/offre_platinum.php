@@ -42,6 +42,7 @@ $p->appendContent(<<<HTML
 <div class="content">
 	<div class="intro_offre">
 		<div class = "th1">{$offre['nom_offre']}</div>
+		<div class = "th2">A partir de {['prix_tarifaire']}</div>
 	</div>
 	<div class="offre_box">
 		<div class="box_offre">
