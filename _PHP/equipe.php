@@ -39,8 +39,8 @@ while (($sinapps = $stmt->fetch()) !== false) {
 							<img src="{$sinapps["img_pers"]}" alt="path_membre" class="path_img_membre">
 						</div>
 						<div class="barre_membre"></div>
-						<div class="infos_membre th3">
-							{$sinapps['nom_pers']} {$sinapps['p_pers']}
+						<div class="infos_membre">
+							{strtoupper($sinapps['nom_pers'])} {ucfirst($sinapps['p_pers'])}
 						</div>
 						<div class="poste_membre">
 							{$sinapps['emp_pers']}
