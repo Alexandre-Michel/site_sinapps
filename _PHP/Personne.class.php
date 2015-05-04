@@ -301,6 +301,14 @@ SQL
 	}
 
 
-	public static function deletePersonne();
+	public static function deletePersonne($id) {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			DELETE FROM PERSONNE 
+			WHERE id_personne = :id_pers
+SQL
+		);		
+		$stmt->bindValue(":id_pers", $id);
+		$stmt->execute();
+	}
 
 }
