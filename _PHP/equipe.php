@@ -13,8 +13,8 @@ SQL
 );
 
 $stmt->execute();
-$sinapps = $stmt->fetchAll();
 
+//var_dump($sinapps['img_pers']);
 
 $p = new WebPage("Contactez-nous | Sinapp's");
 
@@ -31,28 +31,29 @@ $p->appendContent(<<<HTML
 HTML
 );
 
-for($i = 0; $i < 6; $i++) {
+while (($ligne = $stmt->fetch()) !== false) {
 	$p->appendContent(<<<HTML
 				<div class="membre_equipe">
 					<div class="image_membre">
-						<img src="{$sinapps["img_pers"]}" alt="path_membre">
+						<img src="{$ligne["img_pers"]}" alt="path_membre">
 					</div>
 					<div class="infos_membre">
-						{$sinapps['nom_pers']} {$sinapps['p_pers']}
+						{$ligne['nom_pers']} {$ligne['p_pers']}
 					</div>
 					<div class="poste_membre">
-						{$sinapps['emp_pers']}
+						{$ligne['emp_pers']}
 					</div>	
 				</div>
 HTML
 	);
 }
 
+/*
 $p->appendContent(<<<HTML					
 			</div>	
 		</div>	
 	</div>
 HTML
-);
+);*/
 
 echo $p->toHTML();

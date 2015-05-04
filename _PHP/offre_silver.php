@@ -17,12 +17,10 @@ SQL
 );
 $stmt->execute();
 $offre = $stmt->fetch();
-
 /**********Requête Prestations**********/
 $stmt = $pdo->prepare(<<<SQL
 	SELECT *
 	FROM TYPE_PRESTATION
-	--WHERE
 SQL
 );
 $stmt->execute();
