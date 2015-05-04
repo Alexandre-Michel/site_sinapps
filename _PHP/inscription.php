@@ -88,10 +88,16 @@ if($form)
 
     if(isset($_POST['nom']))
     	$nom_value = $_POST['nom'];
+    else
+    	$nom_value = '';
     if(isset($_POST['prenom']))
     	$prenom_value = $_POST['prenom'];
+    else
+    	$prenom_value = '';
     if(isset($_POST['mail']))
     	$mail_value = $_POST['mail'];
+    else
+    	$mail_value = '';
     //On affiche le formulaire
 	$p->appendContent(<<<HTML
 		<div class="content">
