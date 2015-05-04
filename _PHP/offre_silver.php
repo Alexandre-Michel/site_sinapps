@@ -51,6 +51,7 @@ $p->appendContent(<<<HTML
 					<div class = "txt_box">{$offre['desc_page']}</div>
 				</div>
 			</div>
+		</div>
 		</div class = "intro_box">
 HTML
 );
@@ -75,8 +76,8 @@ HTML
 }
 		
 $p->appendContent(<<<HTML
+		</div>
 	</div>
-</div>
 HTML
 );
 
