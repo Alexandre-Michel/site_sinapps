@@ -19,6 +19,7 @@ $stmt->execute();
 $liste_noms = array();
 $liste_img = array();
 $liste_descriptions = array();
+$liste_path = array();
 
 
 while (($ligne = $stmt->fetch()) !== false)
@@ -26,6 +27,7 @@ while (($ligne = $stmt->fetch()) !== false)
     array_push($liste_noms, $ligne['nom_offre']);
     array_push($liste_img, $ligne['path_logo']);
     array_push($liste_descriptions, $ligne['description_offre']);
+    array_push($liste_path, $ligne['path_page']);
 }
 
 require_once 'webpage.class.php';
@@ -54,7 +56,7 @@ for($i=0; $i<3; $i++)
 				<div class = "border_logo"></div>
 				<div class = "txt_box">{$liste_descriptions[$i]}</div>
 				<div class = "more">
-					<a href="">En savoir plus &rsaquo;</a>
+					<a href="{$liste_path[$i]}">En savoir plus &rsaquo;</a>
 				</div>
 			</div>
 		</div>
