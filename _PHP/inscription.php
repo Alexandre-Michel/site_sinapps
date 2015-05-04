@@ -77,6 +77,13 @@ if($form)
     {
             echo '<div class="message">'.$message.'</div>';
     }
+
+    if(isset($_POST['nom']))
+    	$nom_value = $_POST['nom'];
+    if(isset($_POST['prenom']))
+    	$prenom_value = $_POST['prenom'];
+    if(isset($_POST['mail']))
+    	$mail_value = $_POST['mail'];
     //On affiche le formulaire
 	$p->appendContent(<<<HTML
 		<div class="content">
@@ -84,14 +91,14 @@ if($form)
 		        Veuillez remplir ce formulaire pour vous inscrire:<br/>
 		        <div class="center">
 		            <label for="nom">Nom d'utilisateur</label>
-		            	<input type="text" name="nom" value="<?php if(isset($_POST['nom'])){echo htmlentities($_POST['nom'], ENT_QUOTES, 'UTF-8');} ?>" /><br />
+		            	<input type="text" name="nom" value="{$nom_value}"/><br/>
 		            <label for="prenom">Nom d'utilisateur</label>
-		            	<input type="text" name="prenom" value="<?php if(isset($_POST['prenom'])){echo htmlentities($_POST['prenom'], ENT_QUOTES, 'UTF-8');} ?>" /><br />
-		            <label for="password">Mot de passe<span class="small">(6 caract&egrave;res min.)</span></label><input type="password" name="password" /><br />
-		            <label for="confirm">Mot de passe<span class="small">(v&eacute;rification)</span></label><input type="password" name="confirm" /><br />
+		            	<input type="text" name="prenom" value="{$prenom_value}"/><br/>
+		            <label for="password">Mot de passe<span class="small">(6 caract&egrave;res min.)</span></label><input type="password" name="password"/><br/>
+		            <label for="confirm">Mot de passe<span class="small">(v&eacute;rification)</span></label><input type="password" name="confirm"/><br/>
 		            <label for="mail">Email</label>
-		            	<input type="text" name="mail" value="<?php if(isset($_POST['mail'])){echo htmlentities($_POST['mail'], ENT_QUOTES, 'UTF-8');} ?>" /><br />
-		            <input type="submit" value="Envoyer" />
+		            	<input type="text" name="mail" value="{$mail_value}"/><br/>
+		            <input type="submit" value="Envoyer"/>
 		        </div>
 		    </form>
 		</div>
