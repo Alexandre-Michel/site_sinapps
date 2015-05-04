@@ -45,12 +45,11 @@ $p->appendContent(<<<HTML
 HTML
 );
 
-
 for ($i=0; $i < 6; $i++)
 {
 	$p->appendContent(<<< HTML
 		<div class = "box_container">
-			<div class = "presta box1">
+			<div class = "presta">
 				<div class = "th3">{$liste_noms[$i]}</div>
 				<div class = "img_presta">
 					<img id="logo_ordi" src="{$liste_img[$i]}" alt="logo1"/>

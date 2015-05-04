@@ -30,8 +30,6 @@ while (($ligne = $stmt->fetch()) !== false)
     array_push($liste_path, $ligne['path_page']);
 }
 
-require_once 'webpage.class.php';
-
 $p = new WebPage("Offres de maintenance");
 
 $p->appendContent(<<<HTML
