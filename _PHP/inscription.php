@@ -103,5 +103,5 @@ if($form)
 		    </form>
 		</div>
 HTML
-;)
+);
 }
