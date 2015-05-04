@@ -465,6 +465,7 @@ strong
 .membre_equipe {
 	background-color: rgba(251, 251, 251, 0.35);
 	height: 275px;
+	padding-top: 10px;
 }
 
 .path_img_membre {
