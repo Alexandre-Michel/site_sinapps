@@ -61,13 +61,21 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 				$form = true;
 			}
 		}
-		//Les mot de passe et la confirmation ne coïncident pas
+		//Le mot de passe et la confirmation ne coïncident pas
 		else
 		{
 			$message = "Les mots de passes saisis ne sont pas identiques.";
 			$form = true;
 		}
 	}
+	else
+	{
+		$form = true;
+	}
+}
+else
+{
+	$form = true;
 }
 
 if($form)
