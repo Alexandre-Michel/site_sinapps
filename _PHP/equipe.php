@@ -15,35 +15,44 @@ SQL
 $stmt->execute();
 $sinapps = $stmt->fetchAll();
 
-var_dump($sinapps);
 
 $p = new WebPage("Contactez-nous | Sinapp's");
-/*
+
 $p->appendContent(<<<HTML
 	<div class="content">	
 		<div class="infos_equipe">
 			<div class="row">
 				<div class="titre_contact th1">
-					Contact
+					L'équipe
 				</div>
 				<div class="barre_contact"></div>
-				<div class="logo_contact">
-					<img src="{$sinapps["path_logo"]}" alt="logo_entp">
-				</div>
-				<div class="adresse_contact th2">
-					{$sinapps["rue_entreprise"]}<br/>
-					{$sinapps['cp_entreprise']} {$sinapps['ville_entreprise']}
-				</div>
-				<div class="tel_contact th1">
-					{$sinapps["tel_entreprise"]}
-				</div>
 			</div>
-		</div>
-		<div class="titre_contact th1">
-			Ou par mail...
-		</div>		
+			<div class="row">
+HTML
+);
+
+for($i = 0; $i < sizeof($sinapps); $i++) {
+	$p->appendContent(<<<HTML
+				<div class="membre_equipe">
+					<div class="image_membre">
+						<img src="{$sinapps["img_pers"]}" alt="path_membre">
+					</div>
+					<div class="infos_membre">
+						{$sinapps['nom_pers']} {$sinapps['p_pers']}
+					</div>
+					<div class="poste_membre">
+						{$sinapps['emp_pers']}
+					</div>	
+				</div>
+HTML
+	);
+}
+
+$p->appendContent(<<<HTML					
+			</div>	
+		</div>	
 	</div>
 HTML
 );
-*/
+
 echo $p->toHTML();
