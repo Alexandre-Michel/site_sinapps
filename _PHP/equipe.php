@@ -16,7 +16,7 @@ $stmt->execute();
 
 //var_dump($sinapps['img_pers']);
 
-$p = new WebPage("Contactez-nous | Sinapp's");
+$p = new WebPage("Notre équipe | Sinapp's");
 
 $p->appendContent(<<<HTML
 	<div class="content">	
@@ -33,16 +33,18 @@ HTML
 
 while (($sinapps = $stmt->fetch()) !== false) {
 	$p->appendContent(<<<HTML
-				<div class="membre_equipe">
-					<div class="image_membre">
-						<img src="{$sinapps["img_pers"]}" alt="path_membre">
+				<div class="container">
+					<div class="membre_equipe">
+						<div class="image_membre">
+							<img src="{$sinapps["img_pers"]}" alt="path_membre">
+						</div>
+						<div class="infos_membre">
+							{$sinapps['nom_pers']} {$sinapps['p_pers']}
+						</div>
+						<div class="poste_membre">
+							{$sinapps['emp_pers']}
+						</div>	
 					</div>
-					<div class="infos_membre">
-						{$sinapps['nom_pers']} {$sinapps['p_pers']}
-					</div>
-					<div class="poste_membre">
-						{$sinapps['emp_pers']}
-					</div>	
 				</div>
 HTML
 	);
