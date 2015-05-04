@@ -31,7 +31,7 @@ $p->appendContent(<<<HTML
 HTML
 );
 
-for($i = 0; $i < sizeof($sinapps); $i++) {
+for($i = 0; $i < 6; $i++) {
 	$p->appendContent(<<<HTML
 				<div class="membre_equipe">
 					<div class="image_membre">
