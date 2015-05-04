@@ -110,7 +110,7 @@ SQL
 	public static function isConnected() {
 		self::startSession();
 		if(isset($_SESSION[self::$SESSION_KEY."connected"])) {
-			return $_SESSION[self::$SESSION_KEY."connected"]);
+			return $_SESSION[self::$SESSION_KEY."connected"];
 		}
 		else {
 			return false;
