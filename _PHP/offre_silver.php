@@ -36,7 +36,7 @@ while (($ligne = $stmt->fetch()) !== false) {
 }
 
 /**********Création de la page**********/
-$p = new WebPage("Agence");
+$p = new WebPage($offre['nom_offre']);
 
 $p->appendContent(<<<HTML
 <div class="content">
