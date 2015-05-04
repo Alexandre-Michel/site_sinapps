@@ -40,10 +40,12 @@ $p = new WebPage("Agence");
 
 $p->appendContent(<<<HTML
 <div class="content">
+	<div class="intro_offre">
+		<div class = "th1">{$offre['nom_offre']}</div>
+	</div>
 	<div class="offre_box">
 		<div class="box_offre">
 			<div class="offre">
-				<div class = "th3">{$offre['nom_offre']}</div>
 				<div class = "img_offre">
 					<img id="logo_offre" src="{$offre['path_logo']}" alt="logo1"/>
 				</div>
