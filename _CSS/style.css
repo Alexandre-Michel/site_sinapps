@@ -455,8 +455,19 @@ strong
 .infos_equipe .row .container {
 	width: 25%;
 	float: left;
+	margin : 2.5%;
 }
 
 .membre_equipe {
 	background-color: yellow;
+	height: 225px;
+}
+
+.path_img_membre {
+	width: 150px;
+	height: 150px;
+}
+
+.barre_membre {
+	border-bottom: 1px solid #555555;
 }

@@ -36,8 +36,9 @@ while (($sinapps = $stmt->fetch()) !== false) {
 				<div class="container">
 					<div class="membre_equipe">
 						<div class="image_membre">
-							<img src="{$sinapps["img_pers"]}" alt="path_membre">
+							<img src="{$sinapps["img_pers"]}" alt="path_membre" class="path_img_membre">
 						</div>
+						<div class="barre_membre"></div>
 						<div class="infos_membre">
 							{$sinapps['nom_pers']} {$sinapps['p_pers']}
 						</div>
