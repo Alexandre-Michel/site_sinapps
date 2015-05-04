@@ -8,7 +8,7 @@ $pdo = myPDO::getInstance();
 $stmt = $pdo->prepare(<<<SQL
 	SELECT nom_personne AS nom_pers, prenom_personne AS p_pers, image_personne AS img_pers, emploi_personne AS emp_pers
 	FROM PERSONNE
-	WHERE id_entreprise = 1
+	WHERE id_entreprise_pers = 1
 SQL
 );
 
