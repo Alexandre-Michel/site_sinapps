@@ -119,3 +119,5 @@ if($form)
 HTML
 );
 }
+
+echo $p->toHTML();
