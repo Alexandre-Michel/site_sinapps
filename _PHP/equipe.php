@@ -25,7 +25,7 @@ $p->appendContent(<<<HTML
 				<div class="th1">
 					L'équipe
 				</div>
-				<div class="th2">Qui nous sommes...</div>
+				<div class="th2">Qui sommes-nous...</div>
 			</div>
 			<div class="row">
 HTML
@@ -39,7 +39,7 @@ while (($sinapps = $stmt->fetch()) !== false) {
 							<img src="{$sinapps["img_pers"]}" alt="path_membre" class="path_img_membre">
 						</div>
 						<div class="barre_membre"></div>
-						<div class="infos_membre">
+						<div class="infos_membre th3">
 							{$sinapps['nom_pers']} {$sinapps['p_pers']}
 						</div>
 						<div class="poste_membre">
