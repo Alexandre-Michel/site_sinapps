@@ -106,7 +106,7 @@ if($form)
 		        <div class="center">
 		            <label for="nom">Nom d'utilisateur</label>
 		            	<input type="text" name="nom" value="{$nom_value}"/><br/>
-		            <label for="prenom">Préom d'utilisateur</label>
+		            <label for="prenom">Prénom d'utilisateur</label>
 		            	<input type="text" name="prenom" value="{$prenom_value}"/><br/>
 		            <label for="password">Mot de passe<span class="small">(6 caract&egrave;res min.)</span></label><input type="password" name="password"/><br/>
 		            <label for="confirm">Mot de passe<span class="small">(v&eacute;rification)</span></label><input type="password" name="confirm"/><br/>
