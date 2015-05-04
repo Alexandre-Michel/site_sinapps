@@ -22,26 +22,26 @@ $p->appendContent(<<<HTML
 	<div class="content">	
 		<div class="infos_equipe">
 			<div class="row">
-				<div class="titre_contact th1">
+				<div class="th1">
 					L'équipe
 				</div>
-				<div class="barre_contact"></div>
+				<div class="th2">Qui nous sommes...</div>
 			</div>
 			<div class="row">
 HTML
 );
 
-while (($ligne = $stmt->fetch()) !== false) {
+while (($sinapps = $stmt->fetch()) !== false) {
 	$p->appendContent(<<<HTML
 				<div class="membre_equipe">
 					<div class="image_membre">
-						<img src="{$ligne["img_pers"]}" alt="path_membre">
+						<img src="{$sinapps["img_pers"]}" alt="path_membre">
 					</div>
 					<div class="infos_membre">
-						{$ligne['nom_pers']} {$ligne['p_pers']}
+						{$sinapps['nom_pers']} {$sinapps['p_pers']}
 					</div>
 					<div class="poste_membre">
-						{$ligne['emp_pers']}
+						{$sinapps['emp_pers']}
 					</div>	
 				</div>
 HTML
