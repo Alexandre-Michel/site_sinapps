@@ -68,7 +68,7 @@ SQL
 		return $stmt->fetchAll();
 	}
 
-	public static function getPersByIdEntp($id_hab) {
+	public static function getPersByIdHab($id_hab) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT *
 			FROM PERSONNE
