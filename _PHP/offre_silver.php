@@ -52,7 +52,7 @@ $p->appendContent(<<<HTML
 			</div>
 		</div>
 	</div>
-	</div class = "intro_box">
+	<div class = "intro_box">
 HTML
 );
 for($i = 0; $i < 6; $i++)
