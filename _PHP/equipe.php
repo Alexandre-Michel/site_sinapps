@@ -31,7 +31,11 @@ $p->appendContent(<<<HTML
 HTML
 );
 
+
 while (($sinapps = $stmt->fetch()) !== false) {
+
+	$nom = strtoupper($sinapps['nom_pers']);
+	$prenom = ucfirst($sinapps['p_pers']);
 	$p->appendContent(<<<HTML
 				<div class="container">
 					<div class="membre_equipe">
@@ -40,7 +44,7 @@ while (($sinapps = $stmt->fetch()) !== false) {
 						</div>
 						<div class="barre_membre"></div>
 						<div class="infos_membre">
-							{strtoupper($sinapps['nom_pers'])} {ucfirst($sinapps['p_pers'])}
+							{$nom} {$prenom}
 						</div>
 						<div class="poste_membre">
 							{$sinapps['emp_pers']}
