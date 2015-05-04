@@ -31,7 +31,7 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 			if(strlen($_POST['password']) >= 6)
 			{
 				//Adresse mail valide ?
-				if(preg_match([-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}, $_POST['mail']))
+				if(preg_match('[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}', $_POST['mail']))
 				{
 					//Vérification qu'il n'y a pas déjà un utilisateur avec le même mail
 					if($count == 0)
