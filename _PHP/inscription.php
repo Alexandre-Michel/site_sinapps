@@ -13,10 +13,11 @@ $stmt = $pdo->prepare(<<<SQL
 SQL
 );
 
+$email = empty($_POST['mail']) ? '' : $_POST['mail'];
+
 $stmt->bindValue(':mail', $_POST['mail']);
 $stmt->execute();
 $count = $stmt->fetch();
-var_dump($count);
 
 $p = new WebPage("Inscription | Sinapp's");
 
