@@ -5,6 +5,7 @@ require_once 'Personne.class.php';
 
 $p = new WebPage("Espace personnel - Sinapp's");
 
+
 Personne::checkConnected();
 
 $p->appendContent(session_status());
@@ -16,6 +17,7 @@ $p->appendContent(<<<HTML
 	Bonjour {$user->getNomPers()} !
 HTML
 );
+
 
 
 echo $p->toHTML();
