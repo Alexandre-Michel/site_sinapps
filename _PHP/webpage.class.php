@@ -197,7 +197,7 @@ HTML
                 	</li>
 
                 	<li>
-                		<a href="./inscription.php" target="_self">Espace personnel</a>
+                		<a href="./perso.php" target="_self">Espace personnel</a>
                 	</li>
 
                 	<li>
