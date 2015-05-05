@@ -6,10 +6,11 @@ if(isset($_REQUEST['action'])) {
 	$action = $_REQUEST['action'];
 
 	if ($action == "login") {
-		$crypt = $_REQUEST['crypt'];
+		$mail = $_REQUEST['mail'];
+		$mdp = $_REQUEST['pass'];
 
 		try {
-			Personne::createFromAuth($crypt);	
+			Personne::createFromAuth($mail, $mdp);	
 			header('location: ./index.php');
 			exit;
 		}

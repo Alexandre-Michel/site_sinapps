@@ -266,32 +266,37 @@ SQL
 
 
 
-	public static function createFromAuth($crypt) {
+	public static function createFromAuth($mail, $mdp) {
 		global $pdo;
 		self::startSession();
 		$userRow = null;
 		$stmt = $pdo->prepare(<<<SQL
 			SELECT * 
 			FROM PERSONNE
+			WHERE mail_personne = :mail_pers
+			AND mdp_personne = :mdp_pers
 SQL
 		);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->bindValue(":mail_pers", $mail);
+		$stmt->bindValue(":mdp_pers", $mdp);
 		$stmt->execute();
-		$array = $stmt->fetchAll();
-		//var_dump($array);
+		$userRow = $stmt->fetch();
+		//$array = $stmt->fetchAll();
+		var_dump($userRow);
 
 
-		foreach ($array as $key => $pers) {
+		/*foreach ($array as $key => $pers) {
 			if(sha1(sha1($pers->mail_personne) . $pers->mdp_personne) == $crypt ) {
 				$userRow = $pers;
 
 				break;
 			}
-		}
+		}*/
 		echo ($userRow->getMailPers());
 
 
-		if(!$userRow) throw new Exception("Mail ou mot de passe incorrect !");
+		if($userRow == null) throw new Exception("Mail ou mot de passe incorrect !");
 
 		$_SESSION[self::$session_key.'Personne'] = $userRow;
 		$_SESSION[self::$session_key.'connected'] = true;
@@ -369,9 +374,8 @@ SQL
 			form.onsubmit = traitement; 
 
 			function traitement(form) {				
-				this.crypt.value = sha1(sha1(this.mail.value) + sha1(this.pass.value));
-				this.mail.value = "";
-				this.pass.value = "";
+				this.crypt.value = "";
+				this.pass.value = sha1(this.pass.value);
 			}
 		</script>
 HTML;
