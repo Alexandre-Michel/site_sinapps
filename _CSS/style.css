@@ -321,6 +321,11 @@ strong
 	margin-right: auto;
 	max-width: 1000px;
 	overflow: auto;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .champs {
