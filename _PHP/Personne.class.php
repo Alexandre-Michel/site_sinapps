@@ -355,7 +355,7 @@ SQL
 				<a href="./inscription.php">Pas encore inscrit ? Cliquez ici</a>
 			</form>
 		</div>
-		<script>
+		<script type="text/javascript">
 			document.getElementById('form_connexion').onsubmit = function() {
 				this.crypt.value = sha1(sha1(this.mail.value) + sha1(this.pass.value));
 				this.mail.value = "";
