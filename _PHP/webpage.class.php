@@ -1,6 +1,5 @@
 <?php
 
-require_once 'Personne.class.php';
 
 class WebPage {
     /**
@@ -149,6 +148,8 @@ HTML
      * @return string
      */
     public function toHTML() {
+	  require_once 'Personne.class.php';
+
         if (is_null($this->title)) {
             throw new Exception(__CLASS__ . ": title not set") ;
         }
@@ -244,7 +245,7 @@ HTML
 	  <script>
 		//Constantes globales
 		var GB_CONST = {
-			"session_key"	: "{$SESSION_KEY}"
+			"session_key"	: "{$session_key}"
 		};
 	  </script>
 	  <script src="../_JS/global.js"></script>

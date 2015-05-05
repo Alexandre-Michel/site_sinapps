@@ -1,6 +1,6 @@
 <?php
 
-require_once 'myPDO.insert.php';
+require_once 'myPDO.include.php';
 
 class Personne {
 	private $id_pers = null;
