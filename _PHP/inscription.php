@@ -19,8 +19,6 @@ $count = $stmt->fetch();
 
 $p = new WebPage("Inscription | Sinapp's");
 
-$regex = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"; 
-
 //Soumission du formulaire
 if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 {
@@ -34,7 +32,7 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 			if(strlen($_POST['password']) >= 6)
 			{
 				//Adresse mail valide ?
-				if(preg_match($regex, $_POST['mail']))
+				if(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL))
 				{
 					//Vérification qu'il n'y a pas déjà un utilisateur avec le même mail
 					if($count == 0)
