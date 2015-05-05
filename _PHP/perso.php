@@ -6,12 +6,11 @@ require_once 'Personne.class.php';
 Personne::checkConnected(); //Redirige vers connexion si non connecté !
 $user = Personne::getCurrentUser();
 
-echo $user;
 
 $p = new WebPage("Espace personnel - Sinapp's");
 
 $p->appendContent(<<<HTML
-	Bonjour toi !
+	Bonjour {$user->getNomPers()} !
 HTML
 );
 
