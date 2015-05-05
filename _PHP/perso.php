@@ -10,12 +10,12 @@ $p = new WebPage("Espace personnel - Sinapp's");
 Personne::checkConnected();
 
 $p->appendContent(session_status());
-$user = Personne::getCurrentUser();
+//$user = Personne::getCurrentUser();
 
 
 
 $p->appendContent(<<<HTML
-	Bonjour {$user->getNomPers()} !
+	Bonjour toi !
 HTML
 );
 

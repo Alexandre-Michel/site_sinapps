@@ -282,7 +282,7 @@ SQL
 		$stmt->bindValue(":mail_pers", $mail);
 		$stmt->bindValue(":mdp_pers", $mdp);
 		$stmt->execute();
-		$userRow = $stmt->fetch();
+		$userRow = $stmt->fetchAll();
 		//$array = $stmt->fetchAll();
 		var_dump($userRow);
 
@@ -297,7 +297,7 @@ SQL
 		//echo ($userRow->getMailPers());
 
 
-		if($userRow == null) throw new Exception("Mail ou mot de passe incorrect !");
+		if($userRow == false) throw new Exception("Mail ou mot de passe incorrect !");
 
 		$_SESSION[self::$session_key.'Personne'] = $userRow;
 		$_SESSION[self::$session_key.'connected'] = true;

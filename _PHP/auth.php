@@ -11,7 +11,7 @@ if(isset($_REQUEST['action'])) {
 
 		try {
 			Personne::createFromAuth($mail, $mdp);	
-			header('location: ./index.php');
+			header('location: ./perso.php');
 			exit;
 		}
 		catch (Exception $e) {
