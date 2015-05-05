@@ -19,7 +19,7 @@ class Personne {
 
 	private $image_pers = null;
 
-	public static $SESSION_KEY = "__sinapps__";
+	public static $session_key = "__sinapps__";
 
 
 
@@ -99,7 +99,7 @@ SQL
 
 	public static function getCurrentUser() {
 		if(self::isConnected()) {
-			return self::createPersFromId($_SESSION[self::$SESSION_KEY."Personne"]->getIdPers());
+			return self::createPersFromId($_SESSION[self::$session_key."Personne"]->getIdPers());
 		}
 		else {
 			return null;
@@ -109,8 +109,8 @@ SQL
 
 	public static function isConnected() {
 		self::startSession();
-		if(isset($_SESSION[self::$SESSION_KEY."connected"])) {
-			return $_SESSION[self::$SESSION_KEY."connected"];
+		if(isset($_SESSION[self::$session_key.'connected'])) {
+			return $_SESSION[self::$session_key.'connected'];
 		}
 		else {
 			return false;
@@ -287,9 +287,9 @@ SQL
 
 		if(!$userRow) throw new Exception("Mail ou mot de passe incorrect !");
 
-		$_SESSION[self::$SESSION_KEY.'Personne'] = $userRow;
-		$_SESSION[self::$SESSION_KEY.'connected'] = true;
-		return $_SESSION[self::$SESSION_KEY.'Personne'];
+		$_SESSION[self::$session_key.'Personne'] = $userRow;
+		$_SESSION[self::$session_key.'connected'] = true;
+		return $_SESSION[self::$session_key.'Personne'];
 	}
 
 
@@ -339,7 +339,7 @@ SQL
 
 	public static function connexionForm($action) {
 		self::startSession();
-		//$_SESSION[self::$SESSION_KEY];
+		//$_SESSION[self::$session_key];
 
 		$corps = <<<HTML
 		<div class="content">
