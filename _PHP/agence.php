@@ -2,7 +2,7 @@
 
 require_once 'webpage.class.php';
 
-$p = new WebPage("Agence");
+$p = new WebPage("Agence - Sinapp's");
 
 $p->appendContent(<<<HTML
 	<div class="content">

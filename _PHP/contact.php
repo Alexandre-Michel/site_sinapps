@@ -15,7 +15,7 @@ SQL
 $stmt->execute();
 $sinapps = $stmt->fetch();
 
-$p = new WebPage("Contactez-nous | Sinapp's");
+$p = new WebPage("Contactez-nous - Sinapp's");
 
 $p->appendContent(<<<HTML
 	<div class="content">	

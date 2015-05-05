@@ -30,7 +30,7 @@ while (($ligne = $stmt->fetch()) !== false)
     array_push($liste_path, $ligne['path_page']);
 }
 
-$p = new WebPage("Offres de maintenance");
+$p = new WebPage("Offres de maintenance - Sinapp's");
 
 $p->appendContent(<<<HTML
 <div class="content">

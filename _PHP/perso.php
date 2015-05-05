@@ -6,7 +6,7 @@ require_once 'Personne.class.php';
 Personne::checkConnected(); //Redirige vers connexion si non connecté !
 //$user = Personne::getCurrentUser();
 
-$p = new WebPage("Espace personnel | Sinapp's");
+$p = new WebPage("Espace personnel - Sinapp's");
 
 $p->appendContent(<<<HTML
 	Bonjour toi !

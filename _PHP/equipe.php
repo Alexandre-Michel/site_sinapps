@@ -16,7 +16,7 @@ $stmt->execute();
 
 //var_dump($sinapps['img_pers']);
 
-$p = new WebPage("Notre équipe | Sinapp's");
+$p = new WebPage("Notre équipe - Sinapp's");
 
 $p->appendContent(<<<HTML
 	<div class="content">	

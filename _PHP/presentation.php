@@ -18,7 +18,7 @@ SQL
 $stmt->execute();
 $desc = $stmt->fetch();
 
-$p = new WebPage("Agence");
+$p = new WebPage("Présentation - Sinapp's");
 
 $p->appendContent(<<<HTML
 <div class="content">

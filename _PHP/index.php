@@ -28,7 +28,7 @@ while (($ligne = $stmt->fetch()) !== false) {
 
 }
 
-$p = new WebPage("Accueil");
+$p = new WebPage("Accueil - Sinapp's");
 
 $p->appendContent(<<<HTML
 <div class = "content">
