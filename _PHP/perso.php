@@ -5,8 +5,13 @@ require_once 'Personne.class.php';
 
 $p = new WebPage("Espace personnel - Sinapp's");
 
+<<<<<<< HEAD
 Personne::checkConnected();
 
+=======
+$p->appendContent(session_status());
+if(Personne::isConnected()) {
+>>>>>>> origin/master
 $user = Personne::getCurrentUser();
 
 
