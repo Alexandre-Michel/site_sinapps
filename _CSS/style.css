@@ -492,7 +492,7 @@ strong
 
 label
 {
-	width: 250px;
+	width: 220px;
 	float: left;
 	text-align: left;
 }
@@ -500,6 +500,6 @@ label
 input
 {
 	height: 30px;
-	width: 440px;
+	width: 210px;
 	margin-bottom: 7px;
 }
