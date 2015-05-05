@@ -151,6 +151,8 @@ HTML
             throw new Exception(__CLASS__ . ": title not set") ;
         }
 
+        $session_key = Personne::$SESSION_KEY;
+        
         return <<<HTML
 <!doctype html>
 <html lang="fr">
