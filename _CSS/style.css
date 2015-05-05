@@ -330,7 +330,7 @@ strong
 }
 
 .champs {
-	float: left;
+	/*float: left;*/
 	width : 450px;
 	margin: 20px 2.5%;
 	display: inline-block;
