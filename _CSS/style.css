@@ -492,7 +492,7 @@ strong
 
 label
 {
-	width: 220px;
+	width: 50%;
 	float: left;
 	text-align: left;
 }
@@ -519,4 +519,9 @@ input[type="submit"]
 {
 	height: 120px;
 	margin: 20px;
+}
+
+.infos_contact .row
+{
+	display: none;
 }
