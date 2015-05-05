@@ -2,6 +2,7 @@
 
 require_once 'webpage.class.php';
 require_once 'myPDO.include.php';
+require_once 'Personne.class.php';
 
 $pdo = myPDO::getInstance();
 
@@ -69,22 +70,16 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 		}
 	}
 	else
-	{
 		$form = true;
-	}
 }
 else
-{
 	$form = true;
-}
 
 if($form)
 {
     //On affiche un message sil y a lieu
     if(isset($message))
-    {
-            echo '<div class="message">'.$message.'</div>';
-    }
+        echo '<div class="message">'.$message.'</div>';
 
     if(isset($_POST['nom']))
     	$nom_value = $_POST['nom'];
@@ -105,19 +100,21 @@ if($form)
 		        Veuillez remplir ce formulaire pour vous inscrire:<br/>
 		        <div class="center">
 		            <label for="nom">Nom d'utilisateur</label>
-		            	<input type="text" name="nom" value="{$nom_value}"/><br/>
+		            	<input type="text" name="nom" value="{$nom_value}"><br/>
 		            <label for="prenom">Prénom d'utilisateur</label>
 		            	<input type="text" name="prenom" value="{$prenom_value}"/><br/>
-		            <label for="password">Mot de passe<span class="small">(6 caract&egrave;res min.)</span></label><input type="password" name="password"/><br/>
-		            <label for="confirm">Mot de passe<span class="small">(v&eacute;rification)</span></label><input type="password" name="confirm"/><br/>
+		            <label for="password">Mot de passe (6 caractères min.)</label>
+		            	<input type="password" name="password"><br/>
+		            <label for="confirm">Mot de passe (vérification)</label>
+		            	<input type="password" name="confirm"><br/>
 		            <label for="mail">Email</label>
-		            	<input type="text" name="mail" value="{$mail_value}"/><br/>
-		            <input type="submit" value="Envoyer"/>
+		            	<input type="text" name="mail" value="{$mail_value}"><br/>
+		            <input type="submit" value="Envoyer">
 		        </div>
 		    </form>
 		</div>
 HTML
-);
+	);
 }
 
 echo $p->toHTML();
