@@ -41,9 +41,9 @@ $p->appendContent(<<<HTML
 			Ou par mail...
 		</div>
 		<form method="post" action="mailto:alexandre.michel@etudiant.univ-reims.fr">
-			<div class="form_contact">
+			<div class="form">
 				<div class="row">
-					<div class="champs_contact">
+					<div class="champs">
 						<input type="text" name="nom" placeholder="Votre nom" class="input_contact"> 
 						<input type="text" name="prenom" placeholder="Votre prénom" class="input_contact">
 						<input type="email" name="mail" placeholder="Votre adresse mail" class="input_contact">
