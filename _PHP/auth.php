@@ -7,11 +7,7 @@ if(isset($_REQUEST['action'])) {
 
 	if ($action == "login") {
 		$crypt = $_REQUEST['crypt'];
-		$mdp = $_REQUEST['pass'];
-		var_dump($mdp);
-		var_dump($_REQUEST['mail']);
-		var_dump($crypt);
-/*
+
 		try {
 			Personne::createFromAuth($crypt);	
 			header('Location: index.php');
@@ -21,6 +17,6 @@ if(isset($_REQUEST['action'])) {
 			throw new Exception("Error Processing Request", 1);
 			exit;
 		}
-*/
+
 	}
 }
