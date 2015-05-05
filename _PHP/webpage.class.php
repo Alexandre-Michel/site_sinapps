@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 
 class WebPage {
     /**
@@ -18,7 +18,7 @@ class WebPage {
     private $body  = null ;
 
     /**
-    * NumÃ©ro pour l'onglet selectionnÃ©
+    * Numéro pour l'onglet selectionné
     */
     //private $numOnglet = null;
 
@@ -34,10 +34,10 @@ class WebPage {
     }
 
     /**
-     * ProtÃ©ger les caractÃ¨res spÃ©ciaux pouvant dÃ©grader la page Web
-     * @param string $string La chaÃ®ne Ã  protÃ©ger
+     * Protéger les caractères spéciaux pouvant dégrader la page Web
+     * @param string $string La chaîne à protéger
      *
-     * @return string La chaÃ®ne protÃ©gÃ©e
+     * @return string La chaîne protégée
      */
     public function escapeString($string) {
         return htmlentities($string, ENT_QUOTES|ENT_HTML5, "utf-8") ;
@@ -53,7 +53,7 @@ class WebPage {
 
 
     /**
-     * Affecter le numÃ©ro de la page
+     * Affecter le numéro de la page
      * @param int $num le numero
      */
     /*public function setNumOnglet($num) {
@@ -62,7 +62,7 @@ class WebPage {
 
     /**
      * Ajouter un contenu dans head
-     * @param string $content Le contenu Ã  ajouter
+     * @param string $content Le contenu à ajouter
      *
      * @return void
      */
@@ -72,7 +72,7 @@ class WebPage {
 
     /**
      * Ajouter un contenu CSS dans head
-     * @param string $css Le contenu CSS Ã  ajouter
+     * @param string $css Le contenu CSS à ajouter
      *
      * @return void
      */
@@ -102,7 +102,7 @@ HTML
 
     /**
      * Ajouter un contenu JavaScript dans head
-     * @param string $js Le contenu JavaScript Ã  ajouter
+     * @param string $js Le contenu JavaScript à ajouter
      *
      * @return void
      */
@@ -132,7 +132,7 @@ HTML
 
     /**
      * Ajouter un contenu dans body
-     * @param string $content Le contenu Ã  ajouter
+     * @param string $content Le contenu à ajouter
      * 
      * @return void
      */
@@ -141,8 +141,8 @@ HTML
     }
 
     /**
-     * Produire la page Web complÃ¨te
-     * @throws Exception si title n'est pas dÃ©fini
+     * Produire la page Web complète
+     * @throws Exception si title n'est pas défini
      *
      * @return string
      */
@@ -171,7 +171,7 @@ HTML
                 	<li>
                 		Agence 
                         <ul class="niveau2">
-                            <li><a href="./presentation.php" target="_self">PrÃ©sentation</a>
+                            <li><a href="./presentation.php" target="_self">Présentation</a>
                                 <ul class="niveau3">
                                     <li><a href="./presentation.php" target="_self">Hello</a></li>
                                     <li><a href="./presentation.php" target="_self">Hello2</a></li>
@@ -179,7 +179,7 @@ HTML
                             </li>
                             <li><a href="./statistiques.php" target="_self">Statistiques</a></li>
                             <li><a href="./partenaires.php" target="_self">Partenaires</a></li>
-                            <li><a href="./equipe.php" target="_self">L'Ã©quipe</a></li>
+                            <li><a href="./equipe.php" target="_self">L'équipe</a></li>
                             
                         </ul>
                 	</li>
@@ -229,14 +229,21 @@ HTML
                     </ul>
                 </div> 
                 <div class="bas">
-                    <div class="th4">CoordonnÃ©es</div>
+                    <div class="th4">Coordonnées</div>
                     <ul>
                         <li>30 Rue d'en Bas - 02400 GLAND</li>
-                        <li>TÃ©l : 03.04.05.06.07</li>
+                        <li>Tél : 03.04.05.06.07</li>
                         <li>Mail : contact@sinapps.fr</li>
                 </div>
             </div>
         </div>
+	  <script>
+		//Constantes globales
+		var GB_CONST = {
+			"session_key	: "{$SESSION_KEY}"
+		};
+	  </script>
+	  <script src="../_JS/global.js"></script>
     </body>
 </html>
 HTML;
