@@ -330,7 +330,7 @@ strong
 
 .champs {
 	/*float: left;*/
-	width : 450px;
+	width : 45%;
 	margin: 20px 2.5%;
 	display: inline-block;
 }
@@ -497,11 +497,16 @@ label
 	text-align: left;
 }
 
-input
+input, textarea
 {
 	height: 30px;
 	width: 436px;
 	margin-bottom: 7px;
+}
+
+textarea
+{
+	height: 156px;
 }
 
 /***********Taille des boutons submit**********/
@@ -509,3 +514,4 @@ input[type="submit"]
 {
   width: 210px;
 }
+
