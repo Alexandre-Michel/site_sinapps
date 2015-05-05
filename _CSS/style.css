@@ -523,5 +523,5 @@ input[type="submit"]
 
 .infos_contact .row
 {
-	display: none;
+	display: block;
 }
