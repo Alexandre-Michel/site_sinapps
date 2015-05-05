@@ -10,7 +10,7 @@ if(isset($_REQUEST['action'])) {
 
 		try {
 			Personne::createFromAuth($crypt);	
-			header('Location: index.php');
+			header('Location: ./index.php');
 			exit;
 		}
 		catch (Exception $e) {

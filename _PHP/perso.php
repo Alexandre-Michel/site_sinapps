@@ -3,15 +3,21 @@
 require_once 'webpage.class.php';
 require_once 'Personne.class.php';
 
-Personne::checkConnected(); //Redirige vers connexion si non connecté !
+$p = new WebPage("Espace personnel - Sinapp's");
+
+if(Personne::isConnected()) {
 $user = Personne::getCurrentUser();
 
 
-$p = new WebPage("Espace personnel - Sinapp's");
 
 $p->appendContent(<<<HTML
 	Bonjour {$user->getNomPers()} !
 HTML
 );
 
+}
+
+else {
+	Personne::checkConnected();
+}
 echo $p->toHTML();

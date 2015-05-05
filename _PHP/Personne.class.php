@@ -99,8 +99,6 @@ SQL
 
 	public static function getCurrentUser() {
 		if(self::isConnected()) {
-			//var_dump($_SESSION[self::$SESSION_KEY."Personne"]);
-			//return $_SESSION[self::$SESSION_KEY."Personne"];
 			return self::createPersFromId($_SESSION[self::$SESSION_KEY."Personne"]->getIdPers());
 		}
 		else {
