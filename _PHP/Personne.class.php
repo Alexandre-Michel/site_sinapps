@@ -369,9 +369,10 @@ SQL
 			function traitement(form) {
 				var dix = 10;
 				
-				//this.crypt.value = sha1(sha1(this.mail.value) + sha1(this.pass.value));
-				//this.mail.value = "";
-				alert(document.form_connexion.crypt.value);
+				this.crypt.value = this.mail.value + this.pass.value);
+				this.mail.value = "";
+				//var hu = document.getElementById('crypt').value);
+				window.alert(dix);
 				document.write(this.crypt.value);
 				this.pass.value = "";
 			}

@@ -9,7 +9,7 @@ if(isset($_REQUEST['action'])) {
 		$crypt = $_REQUEST['crypt'];
 		$mdp = $_REQUEST['pass'];
 		var_dump($mdp);
-
+		var_dump($_REQUEST['mail']);
 		var_dump($crypt);
 /*
 		try {
