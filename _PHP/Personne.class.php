@@ -350,6 +350,7 @@ SQL
 				<input type="email" placeholder="Votre email" name="mail"/><br/>
 				<label for="pass">Mot de passe</label>
 				<input type="password" placeholder="Votre mot de passe" name="pass"/><br/>
+				<input type="hidden" value='' name="crypt"/>
 				<input type="submit" value="Se Connecter"/>
 				<a href="./inscription.php">Pas encore inscrit ? Cliquez ici</a>
 			</form>
