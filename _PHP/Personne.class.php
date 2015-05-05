@@ -345,7 +345,7 @@ SQL
 
 		$corps = <<<HTML
 		<div class="content">
-			<form method="post" action="{$action}" id="form_connexion">
+			<form method="post" action="{$action}" id="form_connexion" onsubmit="return traitement(this);">
 				<label for="mail">Email</label>
 				<input type="email" placeholder="Votre email" name="mail"/><br/>
 				<label for="pass">Mot de passe</label>
@@ -356,11 +356,11 @@ SQL
 			</form>
 		</div>
 		<script type="text/javascript">
-			var form = document.getElementById('form_connexion')
+			var form = document.getElementById('form_connexion');
 
-			form.onsubmit = traitement() 
+			form.onsubmit = traitement; 
 
-			function traitement {
+			function traitement(form) {
 				this.crypt.value = sha1(sha1(this.mail.value) + sha1(this.pass.value));
 				this.mail.value = "";
 				this.pass.value = "";
