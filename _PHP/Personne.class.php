@@ -356,7 +356,11 @@ SQL
 			</form>
 		</div>
 		<script type="text/javascript">
-			document.getElementById('form_connexion').onsubmit = function() {
+			var form = document.getElementById('form_connexion')
+
+			form.onsubmit = traitement() 
+
+			function traitement {
 				this.crypt.value = sha1(sha1(this.mail.value) + sha1(this.pass.value));
 				this.mail.value = "";
 				this.pass.value = "";
