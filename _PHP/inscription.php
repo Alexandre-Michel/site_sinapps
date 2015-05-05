@@ -83,7 +83,7 @@ if($form)
 {
     //On affiche un message sil y a lieu
     if(isset($message))
-        echo '<div class="message">'.$message.'</div>';
+        $msg = "<div class=\"message\">".$message."</div>";
 
     if(isset($_POST['nom']))
     	$nom_value = $_POST['nom'];
@@ -100,6 +100,7 @@ if($form)
     //On affiche le formulaire
 	$p->appendContent(<<<HTML
 		<div class="content">
+			<div class = "msg">{$msg}</div>
 		    <form action="inscription.php" method="post">
 		        Veuillez remplir ce formulaire pour vous inscrire:<br/>
 		        <div class="center">
