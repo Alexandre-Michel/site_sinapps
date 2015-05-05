@@ -109,7 +109,7 @@ if($form)
 		            	<input type="password" name="confirm"><br/>
 		            <label for="mail">Email</label>
 		            	<input type="text" name="mail" value="{$mail_value}"><br/>
-		            <input type="submit" value="Envoyer">
+		            <input type="submit" name="inscription" value="Inscription">
 		        </div>
 		    </form>
 		</div>
