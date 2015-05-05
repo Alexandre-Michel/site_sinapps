@@ -272,7 +272,7 @@ SQL
 			FROM PERSONNE
 SQL
 		);
-		$stmt->setFecthMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 		$stmt->execute();
 		$array = $stmt->fetchAll();
 
