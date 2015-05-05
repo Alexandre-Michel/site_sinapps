@@ -36,10 +36,10 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 				if(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL))
 				{
 					//Vérification qu'il n'y a pas déjà un utilisateur avec le même mail
-					if($count.equals("0"))
+					if($count["nbre"] == 0)
 					{
 						//Création de l'utilisateur via son nom, prenom, mail et mot de passe
-						createPersonne($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['password']);
+						Personne::createPersonne($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['password']);
 						$form = false;
 					}
 					//Adresse mail déjà utilisée
