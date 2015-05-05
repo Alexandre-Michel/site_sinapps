@@ -315,14 +315,13 @@ SQL
 			INSERT INTO PERSONNE (nom_personne, prenom_personne, mail_personne, mdp_personne, id_habilitation)
 			VALUES (:nom_pers, :pnom_pers, :mail_pers, :mdp_pers, :hab_pers)
 SQL
-		);	
-		$stmt->execute(array(
-			"nom_pers" => $nom,
-			"pnom_pers" => $prenom,
-			"mail_pers" => $mail,
-			"mdp_personne" => $pass,
-			"hab_pers" => $habilitation
-		));		
+		);
+		$stmt->bindValue(":nom_pers", $nom);	
+		$stmt->bindValue(":pnom_pers", $prenom);
+		$stmt->bindValue(":mail_pers", $mail);
+		$stmt->bindValue(":mdp_pers", $pass);
+		$stmt->bindValue(":hab_pers", $habilitation);
+		$stmt->execute();		
 
 	}
 
