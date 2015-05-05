@@ -13,7 +13,7 @@ $stmt = $pdo->prepare(<<<SQL
 SQL
 );
 
-$stmt->bindValue(':mail', 'bfhjz@bdk.com');
+$stmt->bindValue(':mail', $_POST['mail']);
 $stmt->execute();
 $count = $stmt->fetch();
 
