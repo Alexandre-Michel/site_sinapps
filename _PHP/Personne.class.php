@@ -293,7 +293,7 @@ SQL
 				break;
 			}
 		}*/
-		echo ($userRow->getMailPers());
+		//echo ($userRow->getMailPers());
 
 
 		if($userRow == null) throw new Exception("Mail ou mot de passe incorrect !");
