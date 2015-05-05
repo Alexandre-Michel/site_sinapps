@@ -344,7 +344,7 @@ SQL
 
 		$corps = <<<HTML
 		<div class="content">
-			<form method="post" action={$action} id="form_connexion">
+			<form method="post" action="{$action}" id="form_connexion">
 				<label for="mail">Email</label>
 				<input type="email" placeholder="Votre email" name="mail"/><br/>
 				<label for="pass">Mot de passe</label>
