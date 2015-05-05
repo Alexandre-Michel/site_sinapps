@@ -7,14 +7,11 @@ if(isset($_REQUEST['action'])) {
 
 	if ($action == "login") {
 		$crypt = $_REQUEST['crypt'];
-<<<<<<< HEAD
 		$mdp = $_REQUEST['pass'];
 		var_dump($mdp);
 
-=======
 		var_dump($crypt);
 /*
->>>>>>> origin/master
 		try {
 			Personne::createFromAuth($crypt);	
 			header('Location: index.php');
