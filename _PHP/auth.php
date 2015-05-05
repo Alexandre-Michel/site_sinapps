@@ -9,7 +9,7 @@ if(isset($_REQUEST['action'])) {
 		$crypt = $_REQUEST['crypt'];
 
 		try {
-			Membre::createFromAuth($crypt);	
+			Personne::createFromAuth($crypt);	
 			header('Location: index.php');
 			exit;
 		}
