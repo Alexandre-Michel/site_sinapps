@@ -96,16 +96,18 @@ SQL
 
 
 
-/*
+
 	public static function getCurrentUser() {
 		if(self::isConnected()) {
-			return self::createPersFromId($_SESSION[self::$SESSION_KEY."Personne"]->getIdPers());
+			echo $_SESSION[self::$SESSION_KEY."Personne"];
+			return $_SESSION[self::$SESSION_KEY."Personne"];
+			//return self::createPersFromId($_SESSION[self::$SESSION_KEY."Personne"]->getIdPers());
 		}
 		else {
 			return null;
 		}
 	}
-*/
+
 
 	public static function isConnected() {
 		self::startSession();
