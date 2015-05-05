@@ -34,6 +34,7 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 				//Adresse mail valide ?
 				if(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL))
 				{
+					/*
 					//Vérification qu'il n'y a pas déjà un utilisateur avec le même mail
 					if($count == 0)
 					{
@@ -47,6 +48,9 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 						$message = "L'adresse mail que vous avez rentrée est déjà utilisée.";
 						$form = true;
 					}
+					*/
+					createPersonne($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['password']);
+					$form = false;
 				}
 				//Adresse mail non valide
 				else
