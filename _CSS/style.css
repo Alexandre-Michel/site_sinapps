@@ -500,6 +500,12 @@ label
 input
 {
 	height: 30px;
-	width: 210px;
+	width: 436px;
 	margin-bottom: 7px;
+}
+
+/***********Taille des boutons submit**********/
+input[type="submit"]
+{
+  width: 210px;
 }
