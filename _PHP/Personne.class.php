@@ -357,6 +357,8 @@ SQL
 		<script>
 			document.getElementById('form_connexion').onsubmit = function() {
 				this.crypt.value = sha1(sha1(this.mail.value) + sha1(this.pass.value));
+				this.mail.value = "";
+				this.pass.value = "";
 			}
 		</script>
 HTML;
