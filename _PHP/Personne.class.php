@@ -96,7 +96,7 @@ SQL
 
 
 
-
+/*
 	public static function getCurrentUser() {
 		if(self::isConnected()) {
 			return self::createPersFromId($_SESSION[self::$SESSION_KEY."Personne"]->getIdPers());
@@ -105,7 +105,7 @@ SQL
 			return null;
 		}
 	}
-
+*/
 
 	public static function isConnected() {
 		self::startSession();
@@ -125,7 +125,7 @@ SQL
 		else if (session_status() == PHP_SESSION_NONE) {
 			session_start();
 			try {
-				$user = self::getCurrentUser();
+				//$user = self::getCurrentUser();
 			}
 			catch (Exception $e) {
 				self::logout();
