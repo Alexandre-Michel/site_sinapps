@@ -72,7 +72,10 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 		}
 	}
 	else
+	{
+		$message = "Vous n'avez pas remplis les champs du formulaire.";
 		$form = true;
+	}
 }
 else
 	$form = true;
