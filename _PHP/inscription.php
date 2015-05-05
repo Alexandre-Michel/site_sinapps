@@ -49,7 +49,7 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 						$form = true;
 					}
 					*/
-					createPersonne($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['password']);
+					Personne::createPersonne($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['password']);
 					$form = false;
 				}
 				//Adresse mail non valide
