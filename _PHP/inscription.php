@@ -103,9 +103,11 @@ if($form)
     //On affiche le formulaire
 	$p->appendContent(<<<HTML
 		<div class="content">
-			<div class = "msg">{$msg}</div>
+			<div class="title">
+				<div class = "th1">Formulaire d'inscription</div>
+			</div>
 		    <form action="inscription.php" method="post">
-		        Veuillez remplir ce formulaire pour vous inscrire:<br/>
+		        <div class = "msg">{$msg}</div>
 		        <div class="form">
 		        	<div class = "row">
 			        	<div class = "champs">
