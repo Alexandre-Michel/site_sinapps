@@ -150,4 +150,7 @@ $p->appendContent(<<<HTML
 HTML
 );
 
+$p->appendContent(session_status());
+
+
 echo $p->toHTML();
