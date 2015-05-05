@@ -240,7 +240,7 @@ HTML
 	  <script>
 		//Constantes globales
 		var GB_CONST = {
-			"session_key	: "{$SESSION_KEY}"
+			"session_key"	: "{$SESSION_KEY}"
 		};
 	  </script>
 	  <script src="../_JS/global.js"></script>
