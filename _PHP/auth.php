@@ -7,7 +7,8 @@ if(isset($_REQUEST['action'])) {
 
 	if ($action == "login") {
 		$crypt = $_REQUEST['crypt'];
-		var_dump($crypt);
+		$mdp = $_REQUEST['pass'];
+		var_dump($mdp);
 
 		try {
 			Personne::createFromAuth($crypt);	
