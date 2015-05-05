@@ -319,7 +319,7 @@ SQL
 		$stmt->bindValue(":nom_pers", $nom);	
 		$stmt->bindValue(":pnom_pers", $prenom);
 		$stmt->bindValue(":mail_pers", $mail);
-		$stmt->bindValue(":mdp_pers", $pass);
+		$stmt->bindValue(":mdp_pers", sha1($pass));
 		$stmt->bindValue(":hab_pers", $habilitation);
 		$stmt->execute();		
 
