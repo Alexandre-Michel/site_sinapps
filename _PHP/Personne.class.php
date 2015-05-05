@@ -264,7 +264,33 @@ SQL
 
 
 
+	public static function createFromAuth($crypt) {
+		global $pdo;
+		self::startSession();
+		$stmt->prepare(<<<SQL
+			SELECT * 
+			FROM PERSONNE
+SQL
+		);
+		$stmt->setFecthMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->execute();
+		$array = $stmt->fetchAll();
 
+		$userRow = null;
+
+		foreach ($array as $key => $pers) {
+			if($mail == $pers->mail_personne && $pass == $pers->mdp_personne) {
+				$userRow = $pers;
+				break;
+			}
+		}
+
+		if(!userRow) throw new Exception("Mail ou mot de passe incorrect !");
+
+		$_SESSION[self::$SESSION_KEY.'Personne'] = $userRow;
+		$_SESSION[self::$SESSION_KEY.'connected'] = true;
+		return $_SESSION[self::$SESSION_KEY.'Personne'];
+	}
 
 
 	public static function createPersFromId($id) {
@@ -310,5 +336,38 @@ SQL
 		$stmt->bindValue(":id_pers", $id);
 		$stmt->execute();
 	}
+
+
+	public static function connexionForm($action) {
+		self::startSession();
+		//$_SESSION[self::$SESSION_KEY];
+
+		$corps = <<<HTML
+		<div class="content">
+			<form method="post" id="form_connexion">
+				<label for="mail">Email</label>
+				<input type="email" placeholder="Votre email" name="mail"/><br/>
+				<label for="pass">Mot de passe</label>
+				<input type="password" placeholder="Votre mot de passe" name="pass"/><br/>
+				<input type="submit" value="Se Connecter"/>
+				<a href="./inscription.php">Pas encore inscrit ? Cliquez ici</a>
+			</form>
+		</div>
+		<script>
+			document.getElementById('form_connexion').onsubmit = function() {
+				this.crypt.value = sha1(this.mail.value) + sha1(this.pass.value);
+			}
+		</script>
+HTML;
+		return $corps;		
+	}
+
+
+
+
+
+
+
+
 
 }
