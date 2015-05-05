@@ -281,7 +281,7 @@ SQL
 		$userRow = null;
 
 		foreach ($array as $key => $pers) {
-			if($mail == $pers->mail_personne && $pass == $pers->mdp_personne) {
+			if(sha1(sha1($pers->mail_personne) . $pers->mdp_personne) == $crypt ) {
 				$userRow = $pers;
 				break;
 			}
@@ -356,7 +356,7 @@ SQL
 		</div>
 		<script>
 			document.getElementById('form_connexion').onsubmit = function() {
-				this.crypt.value = sha1(this.mail.value) + sha1(this.pass.value);
+				this.crypt.value = sha1(sha1(this.mail.value) + sha1(this.pass.value));
 			}
 		</script>
 HTML;
