@@ -487,7 +487,14 @@ strong
 
 label
 {
-	display: block;
-	width: 150px;
+	width: 250px;
 	float: left;
+	text-align: left;
+}
+
+input
+{
+	height: 30px;
+	width: 440px;
+	margin-bottom: 7px;
 }
