@@ -79,9 +79,11 @@ else
 
 if($form)
 {
-    //On affiche un message sil y a lieu
+    //On affiche un message s'il y a lieu
     if(isset($message))
         $msg = "<div class=\"message\">".$message."</div>";
+    else
+    	$msg = '';
 
     if(isset($_POST['nom']))
     	$nom_value = $_POST['nom'];
