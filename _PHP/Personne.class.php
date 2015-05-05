@@ -287,7 +287,7 @@ SQL
 			}
 		}
 
-		if(!userRow) throw new Exception("Mail ou mot de passe incorrect !");
+		if(!$userRow) throw new Exception("Mail ou mot de passe incorrect !");
 
 		$_SESSION[self::$SESSION_KEY.'Personne'] = $userRow;
 		$_SESSION[self::$SESSION_KEY.'connected'] = true;
