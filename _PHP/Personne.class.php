@@ -146,6 +146,7 @@ SQL
 
 	public static function checkConnected() {
 		if(!self::isConnected()) {
+			echo "<script>window.alert('Hello')</script>";
 			header("location: ./connexion.php");
 			exit;
 		}
