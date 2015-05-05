@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Personne.class.php';
+
 class WebPage {
     /**
      * Texte compris entre <head> et </head>
@@ -152,7 +154,7 @@ HTML
         }
 
         $session_key = Personne::$SESSION_KEY;
-        
+
         return <<<HTML
 <!doctype html>
 <html lang="fr">
