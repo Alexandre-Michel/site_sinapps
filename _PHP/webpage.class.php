@@ -154,21 +154,6 @@ HTML
             throw new Exception(__CLASS__ . ": title not set") ;
         }
 
-        $profil = "";
-        if (Personne::isConnected()) {
-           $pers = Personne::getCurrentUser(); 
-           $nom = $pers->getNomPers();
-           $prenom = $pers->getPrenomPers();
-           $profil = <<<HTML
-                {$nom} {$prenom} 
-HTML;
-        }
-        else {
-            $profil = <<<HTML
-                SALE BATARD
-HTML;
-        }
-
         $session_key = Personne::$session_key;
 
         return <<<HTML
@@ -182,7 +167,6 @@ HTML;
     <body>
         <div id='head_fixe'>
             <a href="./index.php"><img id='logo_sinapps' src ="../_IMG/logo_sinapps.png" alt='logo'/></a><br/>
-            <div>{$profil}</div>
             <div id='onglets'>
                 <ul class="header_onglets">
                 	<li id="accueil">
