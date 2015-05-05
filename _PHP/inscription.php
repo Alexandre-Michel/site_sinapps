@@ -15,7 +15,7 @@ SQL
 
 $email = empty($_POST['mail']) ? '' : $_POST['mail'];
 
-$stmt->bindValue(':mail', $_POST['mail']);
+$stmt->bindValue(':mail', $email);
 $stmt->execute();
 $count = $stmt->fetch();
 
