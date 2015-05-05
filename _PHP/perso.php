@@ -9,7 +9,7 @@ Personne::checkConnected(); //Redirige vers connexion si non connecté !
 $p = new WebPage("Espace personnel | Sinapp's");
 
 $p->appendContent(<<<HTML
-	Bonjour {$user->getNomPers()} !
+	Bonjour toi !
 HTML
 );
 
