@@ -276,7 +276,6 @@ SQL
 		$stmt->execute();
 		$array = $stmt->fetchAll();
 
-		var_dump($array);
 		$userRow = null;
 
 		foreach ($array as $key => $pers) {
