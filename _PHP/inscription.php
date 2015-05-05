@@ -1,7 +1,7 @@
 <?php
 
 require_once 'webpage.class.php';
-require_once 'myPDO.insert.php';
+require_once 'myPDO.include.php';
 require_once 'Personne.class.php';
 
 $pdo = myPDO::getInstance();
