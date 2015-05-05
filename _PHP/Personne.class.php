@@ -265,7 +265,7 @@ SQL
 
 
 	public static function createFromAuth($crypt) {
-		$pdo = myPDO::getInstance();
+		global $pdo;
 		self::startSession();
 		$stmt = $pdo->prepare(<<<SQL
 			SELECT * 
