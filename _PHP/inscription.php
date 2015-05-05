@@ -107,17 +107,19 @@ if($form)
 		    <form action="inscription.php" method="post">
 		        Veuillez remplir ce formulaire pour vous inscrire:<br/>
 		        <div class="center">
-		            <label for="nom">Nom d'utilisateur</label>
-		            	<input type="text" name="nom" value="{$nom_value}"><br/>
-		            <label for="prenom">Prénom d'utilisateur</label>
-		            	<input type="text" name="prenom" value="{$prenom_value}"/><br/>
-		            <label for="password">Mot de passe (6 caractères min.)</label>
-		            	<input type="password" name="password"><br/>
-		            <label for="confirm">Mot de passe (vérification)</label>
-		            	<input type="password" name="confirm"><br/>
-		            <label for="mail">Email</label>
-		            	<input type="text" name="mail" value="{$mail_value}"><br/>
-		            <input type="submit" name="inscription" value="Inscription">
+		        	<div class = "row">
+			            <label for="nom">Nom d'utilisateur</label>
+			            	<input type="text" name="nom" value="{$nom_value}"><br/>
+			            <label for="prenom">Prénom d'utilisateur</label>
+			            	<input type="text" name="prenom" value="{$prenom_value}"/><br/>
+			            <label for="password">Mot de passe (6 caractères min.)</label>
+			            	<input type="password" name="password"><br/>
+			            <label for="confirm">Mot de passe (vérification)</label>
+			            	<input type="password" name="confirm"><br/>
+			            <label for="mail">Email</label>
+			            	<input type="text" name="mail" value="{$mail_value}"><br/>
+			            <input type="submit" name="inscription" value="Inscription">
+			        </div>
 		        </div>
 		    </form>
 		</div>
