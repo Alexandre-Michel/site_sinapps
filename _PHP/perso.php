@@ -5,7 +5,8 @@ require_once 'Personne.class.php';
 
 $p = new WebPage("Espace personnel - Sinapp's");
 
-if(Personne::isConnected()) {
+Personne::checkConnected();
+
 $user = Personne::getCurrentUser();
 
 
@@ -15,9 +16,5 @@ $p->appendContent(<<<HTML
 HTML
 );
 
-}
 
-else {
-	Personne::checkConnected();
-}
 echo $p->toHTML();
