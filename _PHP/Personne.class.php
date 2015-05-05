@@ -119,6 +119,7 @@ SQL
 
 
 	private static function startSession() {
+		session_status();
 		if (headers_sent()) {
 			throw new Exception ("Impossible de démarrer la session : Headers déjà envoyés");
 		}
@@ -128,7 +129,8 @@ SQL
 				$user = self::getCurrentUser();
 			}
 			catch (Exception $e) {
-				self::logout();
+				$e->getMessage();
+				//self::logout();
 			}
 		}
 	}
