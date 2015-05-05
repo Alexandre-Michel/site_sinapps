@@ -24,35 +24,35 @@ class Personne {
 
 
 	public function getIdPers() {
-		return $id_pers;
+		return $this->id_pers;
 	}
 
 	public function getIdHabilitation() {
-		return $id_habilitation;
+		return $this->id_habilitation;
 	}
 
 	public function getIdEntpPers() {
-		return $id_entp_pers;
+		return $this->id_entp_pers;
 	}
 
 	public function getNomPers() {
-		return $nom_pers;
+		return $this->nom_pers;
 	}
 
 	public function getPrenomPers() {
-		return $prenom_pers;
+		return $this->prenom_pers;
 	}
 
 	public function getMailPers() {
-		return $mail_pers;
+		return $this->mail_pers;
 	}
 
 	public function getEmploiPers() {
-		return $emploi_pers;
+		return $this->emploi_pers;
 	}
 
 	public function getImagePers() {
-		return $image_pers;
+		return $this->image_pers;
 	}
 
 	public static function getPersByIdEntp($id_entp) {
@@ -108,7 +108,7 @@ SQL
 
 
 	public static function isConnected() {
-		self::startSession();
+		//self::startSession();
 		if(isset($_SESSION[self::$session_key.'connected'])) {
 			return $_SESSION[self::$session_key.'connected'];
 		}
@@ -267,6 +267,7 @@ SQL
 	public static function createFromAuth($crypt) {
 		global $pdo;
 		self::startSession();
+		$userRow = null;
 		$stmt = $pdo->prepare(<<<SQL
 			SELECT * 
 			FROM PERSONNE
@@ -275,15 +276,18 @@ SQL
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 		$stmt->execute();
 		$array = $stmt->fetchAll();
+		//var_dump($array);
 
-		$userRow = null;
 
 		foreach ($array as $key => $pers) {
 			if(sha1(sha1($pers->mail_personne) . $pers->mdp_personne) == $crypt ) {
 				$userRow = $pers;
+
 				break;
 			}
 		}
+		echo ($userRow->getMailPers());
+
 
 		if(!$userRow) throw new Exception("Mail ou mot de passe incorrect !");
 

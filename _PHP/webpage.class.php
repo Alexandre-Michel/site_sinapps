@@ -155,7 +155,6 @@ HTML
         }
 
         $session_key = Personne::$session_key;
-
         return <<<HTML
 <!doctype html>
 <html lang="fr">
