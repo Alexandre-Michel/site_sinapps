@@ -484,3 +484,10 @@ strong
 	color: #555555;
 	margin-bottom: 10px;
 }
+
+label
+{
+	display: block;
+	width: 150px;
+	float: left;
+}
