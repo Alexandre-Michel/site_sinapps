@@ -346,13 +346,19 @@ SQL
 		$corps = <<<HTML
 		<div class="content">
 			<form method="post" action="{$action}" id="form_connexion" onsubmit="return traitement(this);">
-				<label for="mail">Email</label>
-				<input type="email" placeholder="Votre email" name="mail"/><br/>
-				<label for="pass">Mot de passe</label>
-				<input type="password" placeholder="Votre mot de passe" name="pass"/><br/>
-				<input type="hidden" value='32' name="crypt"/>
-				<input type="submit" value="Se Connecter"/>
-				<a href="./inscription.php">Pas encore inscrit ? Cliquez ici</a>
+				<div class="form">
+		        	<div class = "row">
+			        	<div class = "champs">
+							<label for="mail">Email</label>
+							<input type="email" placeholder="Votre email" name="mail"/><br/>
+							<label for="pass">Mot de passe</label>
+							<input type="password" placeholder="Votre mot de passe" name="pass"/><br/>
+							<input type="hidden" value='' name="crypt"/>
+							<input type="submit" value="Se Connecter"/>
+							<a href="./inscription.php">Pas encore inscrit ? Cliquez ici</a>
+						</div>
+					</div>
+				</div>
 			</form>
 		</div>
 		<script type="text/javascript">
