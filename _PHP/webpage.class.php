@@ -30,6 +30,7 @@ class WebPage {
         $this->setTitle($title) ;
         $this->appendToHead("<link href='http://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css'>");
         $this->appendCssUrl("../_CSS/style.css");
+        $this->appendJsUrl("../_JS/sha1.js");
     }
 
     /**
