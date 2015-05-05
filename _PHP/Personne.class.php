@@ -62,7 +62,7 @@ class Personne {
 			WHERE id_entreprise_pers = :id_entp
 SQL
 		);	
-		$stmt->setFecthMode(PDO::FETCH_CLASS, __CLASS__);	
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);	
 		$stmt->bindValue(":id_entp", $id_entp);
 		$stmt->execute();
 		return $stmt->fetchAll();
@@ -75,7 +75,7 @@ SQL
 			WHERE id_habilitation = :id_hab
 SQL
 		);	
-		$stmt->setFecthMode(PDO::FETCH_CLASS, __CLASS__);	
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);	
 		$stmt->bindValue(":id_hab", $id_hab);
 		$stmt->execute();
 		return $stmt->fetchAll();
@@ -301,7 +301,7 @@ SQL
 			WHERE id_personne = :id
 SQL
 		);	
-		$stmt->setFecthMode(PDO::FETCH_CLASS, __CLASS__);	
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);	
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
 		if (($pers = $stmt->fetch()) !== false ) {
