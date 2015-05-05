@@ -366,14 +366,9 @@ SQL
 
 			form.onsubmit = traitement; 
 
-			function traitement(form) {
-				var dix = 10;
-				
-				this.crypt.value = this.mail.value + this.pass.value);
+			function traitement(form) {				
+				this.crypt.value = this.mail.value + this.pass.value;
 				this.mail.value = "";
-				//var hu = document.getElementById('crypt').value);
-				window.alert(dix);
-				document.write(this.crypt.value);
 				this.pass.value = "";
 			}
 		</script>
