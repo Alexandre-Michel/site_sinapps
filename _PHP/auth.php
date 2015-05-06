@@ -16,7 +16,8 @@ if(isset($_REQUEST['action'])) {
 			throw new AuthenticationException ("Echec d'authentification : {$e->getMessage()}");
 		}
 		catch (Exception $e) {
-			throw new Exception ("Un problème est survenu : {$e->getMessage()}");
+			header('location: ./connexion.php?msg=' . (is_numeric($e->getMessage()) ? $e->getMessage() : "-1"));
+			exit;
 		}
 	}
 	
