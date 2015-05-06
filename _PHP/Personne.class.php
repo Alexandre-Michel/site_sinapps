@@ -19,9 +19,11 @@ class Personne {
 
 	private $image_pers = null;
 
-	public static $session_key = "__sinapps__";
+	const session_key = "__user__";
 
+	private function __construct() {
 
+	}
 
 	public function getIdPers() {
 		return $this->id_pers;
@@ -107,15 +109,7 @@ SQL
 	}
 
 
-	public static function isConnected() {
-		//self::startSession();
-		if(isset($_SESSION['connected'])) {
-			return $_SESSION['connected'];
-		}
-		else {
-			return false;
-		}
-	}
+
 
 
 	private static function startSession() {
@@ -136,12 +130,109 @@ SQL
 	}
 
 
-	public static function logout() {
-		self::startSession();
-		session_unset();
-		session_destroy();
-		header('location: ./');
-	}
+    /**
+     * Forumlaire de déconnexion de l'utilisateur
+     * @param string $text texte du bouton de déconnexion
+     * @param string $action URL cible du formulaire
+     *
+     * @return void
+     */
+    public static function logoutForm($text, $action) {
+        $text = htmlspecialchars($text, ENT_COMPAT, 'utf-8') ;
+        return <<<HTML
+    <form action='$action' method='POST'>
+    <input type='submit' value="$text" name='logout'>
+    </form>
+HTML;
+    }
+
+    /**
+     * Déconnecter l'utilisateur
+     *
+     * @return void
+     */
+    public static function logoutIfRequested() {
+        if (isset($_REQUEST['logout'])) {
+            self::startSession() ;
+            unset($_SESSION[self::session_key]) ;
+        }
+    }
+	
+	   /**
+     * Un utilisateur est-il connecté ?
+     *
+     * @return bool connecté ou non
+     */
+    static public function isConnected() {
+        self::startSession() ;
+        return (isset($_SESSION[self::session_key]['connected']) && $_SESSION[self::session_key]['connected']) || (isset($_SESSION[self::session_key]['user']) && $_SESSION[self::session_key]['user'] instanceof User) ;
+    }
+
+    /**
+     * Sauvegarde de l'objet Utilisateur dans la session
+     *
+     * @return void
+     */
+    public function saveIntoSession() {
+        // Mise en place de la session
+        self::startSession() ;
+        // Mémorisation de l'Utilisateur
+        $_SESSION[self::session_key]['user'] = $this ;
+    }
+
+	/**
+     * Lecture de l'objet User dans la session
+     * @throws NotInSessionException si l'objet n'est pas dans la session
+     *
+     * @return User
+     */
+    static public function createFromSession() {
+        // Mise en place de la session
+        self::startSession() ;
+        // La variable de session existe ?
+        if (isset($_SESSION[self::session_key]['user'])) {
+            // Lecture de la variable de session
+            $u = $_SESSION[self::session_key]['user'] ;
+            // Est-ce un objet et un objet du bon type ?
+            if (is_object($u) && get_class($u) == get_class()) {
+                // OUI ! on le retourne
+                return $u ;
+            }
+        }
+        // NON ! exception NotInSessionException
+        throw new NotInSessionException() ;
+   }
+
+   /**
+    * Démarrer une session
+    * @throws SessionException si la session ne peut être démarrée
+    *
+    * @return void
+    */
+    static protected function startSession($minutes = 0) {
+        // Vision la plus contraignante et donc la plus fiable
+        // Si les en-têtes ont deja été envoyés, c'est trop tard...
+        if (headers_sent())
+            throw new SessionException("Impossible de démarrer une session si les en-têtes HTTP ont été envoyés") ;
+        // Si la session n'est pas demarrée, le faire
+        if (!session_id()) session_start() ;
+
+        // Vision la moins contraignante qui peut amener des comportements changeants
+        // Si la session n'est pas demarrée, le faire
+        /*
+        if (!session_id()) {
+            // Si les en-têtes ont deja été envoyés, c'est trop tard...
+            if (headers_sent())
+                throw new Exception("Impossible de démarrer une session si les en-têtes HTTP ont été envoyés") ;
+            // Démarrer la session
+            session_start() ;
+        }
+        */
+   }
+
+
+
+
 
 
 	public static function checkConnected() {
@@ -267,13 +358,12 @@ SQL
 
 
 
-	public static function createFromAuth($mail, $mdp) {
-		global $pdo;
-		self::startSession();
-		$userRow = null;
-		
-		try {
-		print_r("batard");
+	public static function createFromAuth(array $data) {
+		if (!isset($data['mail']) || !isset($data['pass'])) {
+			throw new Exception("Pas de login/mdp");
+		}
+
+		$pdo = myPDO::getInstance();
 		$stmt = $pdo->prepare(<<<SQL
 			SELECT * 
 			FROM PERSONNE
@@ -281,35 +371,16 @@ SQL
 			AND mdp_personne = :mdp_pers
 SQL
 		);
-		$stmt->setFetchMode(PDO::FETCH_CLASS, 'Personne');
-		$stmt->bindValue(":mail_pers", $mail);
-		$stmt->bindValue(":mdp_pers", $mdp);
-		$stmt->execute();
-		$userRow = $stmt->fetch();
-		fopen("./test.txt", "a");
+		$stmt->execute(array(':mail_pers' => $data['mail'], ':mdp_pers' => $data['pass']));
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		if(($user = $stmt->fetch()) !== false) {
+			self::startSession();
+			$_SESSION[self::session_key]['connected'] = true;
+			return $user;
 		}
-		catch (Exception $e) {
-			exit("Line : " . $e->getLine() . " : " . $e->getMessage());
+		else {
+			throw new Exception("Pas de login/mdp 22");
 		}
-		//$array = $stmt->fetchAll();
-		var_dump($userRow);
-
-
-		/*foreach ($array as $key => $pers) {
-			if(sha1(sha1($pers->mail_personne) . $pers->mdp_personne) == $crypt ) {
-				$userRow = $pers;
-
-				break;
-			}
-		}*/
-		echo ($userRow->getMailPers());
-
-
-		if($userRow == false) throw new Exception("Mail ou mot de passe incorrect !");
-
-		$_SESSION['Personne'] = $userRow;
-		$_SESSION['connected'] = true;
-		return $_SESSION['Personne'];
 	}
 
 
@@ -357,20 +428,19 @@ SQL
 	}
 
 
-	public static function connexionForm($action) {
+	public static function connexionForm($action, $submitText = 'OK') {
 		self::startSession();
-		//$_SESSION[;
 
 		$corps = <<<HTML
 		<div class="content">
-			<form method="post" action="{$action}" id="form_connexion" onsubmit="return traitement(this);">
+			<form method="get" action="{$action}" id="form_connexion" onsubmit="return traitement(this);">
 				<div class="form">
 		        	<div class = "row">
 			        	<div class = "champs">
 							<input type="email" placeholder="Votre email" name="mail"/><br/>
 							<input type="password" placeholder="Votre mot de passe" name="pass"/><br/>
 							<input type="hidden" value='' name="crypt"/>
-							<input type="submit" value="Se Connecter"/>
+							<input type="submit" value={$submitText}/>
 							<a href="./inscription.php">Pas encore inscrit ? Cliquez ici</a>
 						</div>
 					</div>

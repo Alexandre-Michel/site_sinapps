@@ -154,7 +154,7 @@ HTML
             throw new Exception(__CLASS__ . ": title not set") ;
         }
 
-        $session_key = Personne::$session_key;
+        //$session_key = Personne::$session_key;
         return <<<HTML
 <!doctype html>
 <html lang="fr">
@@ -241,13 +241,7 @@ HTML
                 </div>
             </div>
         </div>
-	  <script>
-		//Constantes globales
-		var GB_CONST = {
-			"session_key"	: "{$session_key}"
-		};
-	  </script>
-	  <script src="../_JS/global.js"></script>
+	  
     </body>
 </html>
 HTML;

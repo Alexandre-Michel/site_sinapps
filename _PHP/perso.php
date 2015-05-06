@@ -7,9 +7,9 @@ $p = new WebPage("Espace personnel - Sinapp's");
 //$p->appendJs(console.log(Personne::isConnected()));
 
 
-Personne::checkConnected();
+//Personne::checkConnected();
 
-$p->appendContent(session_status());
+//$p->appendContent(session_status());
 //$user = Personne::getCurrentUser();
 
 
