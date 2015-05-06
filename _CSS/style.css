@@ -536,12 +536,12 @@ input[type="submit"]
 	margin: 0 auto;
 }
 
-.box2
+.box1 .box2
 {
 	float: left;
 }
 
-.row
+.box1 .box2 .row
 {
 	margin: 3.33%;
 	float: left;
