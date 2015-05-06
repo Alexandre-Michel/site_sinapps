@@ -535,3 +535,35 @@ input[type="submit"]
     align-items: center;
 	background-color: rgba(251, 251, 251, 0.35);
 }
+
+.th1
+{
+	width: 100%;
+	font-size: 4.375em;
+	font-weight: 800;
+	color: #555555;
+}
+
+.th2
+{
+	width: 100%;
+	font-size: 1.750em;
+	font-weight: 300;
+	color: #8D8D8D;
+}
+
+.th3
+{
+	width: 100%;
+	line-height: 40px;
+	font-size: 1.250em;
+	color: #555555;
+	text-transform: uppercase;
+}
+
+.th4
+{
+	width: 100%;
+	font-size: 1.25em;
+	text-align: center; 
+}
