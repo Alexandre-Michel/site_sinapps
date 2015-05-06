@@ -525,3 +525,8 @@ input[type="submit"]
 {
 	display: block;
 }
+
+.txt_box .more
+{
+	display: inline;
+}
