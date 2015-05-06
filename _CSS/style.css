@@ -114,33 +114,6 @@ a {
 
 /*********** Page Accueil ***********/
 
-.th1
-{
-	font-size: 4.375em;
-	font-weight: 800;
-	color: #555555;
-}
-
-.th2
-{
-	font-size: 1.750em;
-	font-weight: 300;
-	color: #8D8D8D;
-}
-
-.th3
-{
-	line-height: 40px;
-	font-size: 1.250em;
-	color: #555555;
-	text-transform: uppercase;
-}
-
-.th4 {
-	font-size : 1.25em;
-	text-align: center; 
-}
-
 strong
 {
 	color: blue;
