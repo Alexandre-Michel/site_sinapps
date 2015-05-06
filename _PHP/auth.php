@@ -19,4 +19,8 @@ if(isset($_REQUEST['action'])) {
 			throw new Exception ("Un problème est survenu : {$e->getMessage()}");
 		}
 	}
+	
+	else if ($action == "logout") {
+		Personne::logoutIfRequested();
+	}
 }

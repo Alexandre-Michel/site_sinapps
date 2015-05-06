@@ -146,21 +146,6 @@ SQL
 	}*/
 
 
-    /**
-     * Forumlaire de déconnexion de l'utilisateur
-     * @param string $text texte du bouton de déconnexion
-     * @param string $action URL cible du formulaire
-     *
-     * @return void
-     */
-    public static function logoutForm($text, $action) {
-        $text = htmlspecialchars($text, ENT_COMPAT, 'utf-8') ;
-        return <<<HTML
-    <form action='$action' method='POST'>
-    <input type='submit' value="$text" name='logout'>
-    </form>
-HTML;
-    }
 
     /**
      * Déconnecter l'utilisateur
@@ -168,10 +153,10 @@ HTML;
      * @return void
      */
     public static function logoutIfRequested() {
-        if (isset($_REQUEST['logout'])) {
-            self::startSession() ;
-            unset($_SESSION[self::session_key]) ;
-        }
+		self::startSession() ;
+        unset($_SESSION[self::session_key]) ;
+		session_destroy();
+		header('location: ./connexion.php');
     }
 	
 	   /**
