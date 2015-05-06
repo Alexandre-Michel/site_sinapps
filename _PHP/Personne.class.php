@@ -271,6 +271,9 @@ SQL
 		global $pdo;
 		self::startSession();
 		$userRow = null;
+		
+		try {
+		print_r("batard");
 		$stmt = $pdo->prepare(<<<SQL
 			SELECT * 
 			FROM PERSONNE
@@ -278,11 +281,16 @@ SQL
 			AND mdp_personne = :mdp_pers
 SQL
 		);
-		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, 'Personne');
 		$stmt->bindValue(":mail_pers", $mail);
 		$stmt->bindValue(":mdp_pers", $mdp);
 		$stmt->execute();
-		$userRow = $stmt->fetchAll();
+		$userRow = $stmt->fetch();
+		fopen("./test.txt", "a");
+		}
+		catch (Exception $e) {
+			exit("Line : " . $e->getLine() . " : " . $e->getMessage());
+		}
 		//$array = $stmt->fetchAll();
 		var_dump($userRow);
 
@@ -294,14 +302,14 @@ SQL
 				break;
 			}
 		}*/
-		//echo ($userRow->getMailPers());
+		echo ($userRow->getMailPers());
 
 
 		if($userRow == false) throw new Exception("Mail ou mot de passe incorrect !");
 
-		$_SESSION[self::$session_key.'Personne'] = $userRow;
-		$_SESSION[self::$session_key.'connected'] = true;
-		return $_SESSION[self::$session_key.'Personne'];
+		$_SESSION['Personne'] = $userRow;
+		$_SESSION['connected'] = true;
+		return $_SESSION['Personne'];
 	}
 
 
