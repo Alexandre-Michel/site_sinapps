@@ -2,6 +2,7 @@
 
 require_once 'webpage.class.php';
 require_once 'myPDO.include.php';
+require_once 'Personne.class.php';
 
 $pdo = myPDO::getInstance();
 
@@ -16,6 +17,20 @@ $stmt->execute();
 $sinapps = $stmt->fetch();
 
 $p = new WebPage("Contactez-nous - Sinapp's");
+
+	$nom = "";
+	$prenom = "";
+	$mail = "";
+
+try {
+	$user = Personne::createFromSession();
+	$nom = $user->getNomPers();
+	$prenom = $user->getPrenomPers();
+	$mail = $user->getMailPers();
+}
+catch (NotInSessionException $e) {
+
+}
 
 $p->appendContent(<<<HTML
 	<div class="content">	
@@ -44,9 +59,9 @@ $p->appendContent(<<<HTML
 			<div class="form">
 				<div class="row">
 					<div class="champs">
-						<input type="text" name="nom" placeholder="Votre nom" class="input_contact"> 
-						<input type="text" name="prenom" placeholder="Votre prénom" class="input_contact">
-						<input type="email" name="mail" placeholder="Votre adresse mail" class="input_contact">
+						<input type="text" name="nom" placeholder="Votre nom" class="input_contact" value={$nom}> 
+						<input type="text" name="prenom" placeholder="Votre prénom" class="input_contact" value={$prenom}>
+						<input type="email" name="mail" placeholder="Votre adresse mail" class="input_contact" value={$mail}>
 						<input type="tel" name="telephone" placeholder="Votre téléphone" pattern="[0][0-9]{9}" class="input_contact">
 						<input type="text" name="societe" placeholder="Votre société" class="input_contact">
 					</div>

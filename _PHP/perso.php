@@ -41,7 +41,7 @@ HTML
 				</div>
 			</div>
 		</div>
-		<a href="./auth.php?action=logout">Déconnexion</a>
+		<button onclick="location.href='./auth.php?action=logout'">Déconnexion</button>
 	</div>
 HTML
     );
