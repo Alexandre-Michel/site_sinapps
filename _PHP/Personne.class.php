@@ -175,10 +175,15 @@ SQL
      * @return void
      */
     public function saveIntoSession() {
-        // Mise en place de la session
-        self::startSession() ;
-        // Mémorisation de l'Utilisateur
-        $_SESSION[self::session_key]['user'] = $this ;
+		try {
+			// Mise en place de la session
+			self::startSession() ;
+			// Mémorisation de l'Utilisateur
+			$_SESSION[self::session_key]['user'] = $this ;
+		}
+		catch (Exception $e) {
+			throw new Exception("{$e->getMessage()}");
+		}
     }
 
 	/**
@@ -380,7 +385,7 @@ SQL
 			return $user;
 		}
 		else {
-			throw new Exception("Pas de login/mdp 22");
+			throw new Exception('1');
 		}
 	}
 
@@ -431,15 +436,29 @@ SQL
 
 	public static function connexionForm($action, $submitText = 'OK') {
 		self::startSession();
+		
+		$error = "";
+		if(isset($_GET['msg'])) {
+			if($_REQUEST['msg'] == 1) {
+				$error = "<p>Nom d'utilisateur ou mot de passe incorrect.</p>";
+			}
+			else {
+				$error = "<p>Erreur lors de la connexion</p>";
+			}
+		}
 
 		$corps = <<<HTML
 		<div class="content">
+			<div class="title">
+				<div class="th1">Connectez-vous</div>
+			</div>	
+			<div>{$error}</div>
 			<form method="post" action="{$action}" id="form_connexion" onsubmit="return traitement(this);">
 				<div class="form">
 		        	<div class = "row">
 			        	<div class = "champs">
-							<input type="email" placeholder="Votre email" name="mail"/><br/>
-							<input type="password" placeholder="Votre mot de passe" name="pass"/><br/>
+							<input type="email" required placeholder="Votre email" name="mail"/><br/>
+							<input type="password" required placeholder="Votre mot de passe" name="pass"/><br/>
 							<input type="hidden" value='' name="crypt"/>
 							<input type="submit" value={$submitText}>
 							<a href="./inscription.php">Pas encore inscrit ? Cliquez ici</a>
