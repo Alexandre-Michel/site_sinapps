@@ -2,7 +2,6 @@
 
 require_once 'webpage.class.php';
 require_once 'Personne.class.php';
-require_once 'perso.php';
 
 $p = new WebPage("Espace personnel - Sinapp's");
 
