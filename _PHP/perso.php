@@ -31,6 +31,16 @@ HTML
 	}	
 
 	$p->appendContent(<<<HTML
+		<div class="box1">
+			<div class="box2">
+				<div class="row">
+					Modifier vos infos
+				</div>
+				<div class="row">
+					
+				</div>
+			</div>
+		</div>
 		<a href="./auth.php?action=logout">Déconnexion</a>
 	</div>
 HTML
