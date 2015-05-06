@@ -49,4 +49,6 @@ catch (notInSessionException $e) {
     die() ;
 }
 
+
+
 echo $p->toHTML();
