@@ -37,7 +37,7 @@ HTML
 					Modifier vos infos
 				</div>
 				<div class="row">
-					
+					<button onclick="location.href='./profil.php'">Modifier vos infos</button>
 				</div>
 			</div>
 		</div>
