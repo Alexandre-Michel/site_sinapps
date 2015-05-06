@@ -54,11 +54,11 @@ class Personne {
 	}
 
 	public function getNomPers() {
-		return $this->nom_personne;
+		return strtoupper($this->nom_personne);
 	}
 
 	public function getPrenomPers() {
-		return $this->prenom_personne;
+		return ucfirst($this->prenom_personne);
 	}
 
 	public function getMailPers() {
@@ -90,7 +90,7 @@ SQL
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT *
 			FROM PERSONNE
-			WHERE id_habilitation = :id_hab
+			WHERE id_habilitation_pers = :id_hab
 SQL
 		);	
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);	
@@ -117,7 +117,7 @@ SQL
 
 	public static function getCurrentUser() {
 		if(self::isConnected()) {
-			return self::createPersFromId($_SESSION["Personne"]->getIdPers());
+			return self::createPersFromId($_SESSION['Personne']->getIdPers());
 		}
 		else {
 			return null;
@@ -262,7 +262,7 @@ SQL
 	public function setIdHabilitation($id_habilitation) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE PERSONNE
-			SET id_habilitation = :id_hab
+			SET id_habilitation_pers = :id_hab
 			WHERE id_personne = :id_pers
 SQL
 		);	
@@ -409,7 +409,7 @@ SQL
 
 	public static function createPersonne($nom, $prenom, $mail, $pass, $habilitation = 1) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
-			INSERT INTO PERSONNE (nom_personne, prenom_personne, mail_personne, mdp_personne, id_habilitation)
+			INSERT INTO PERSONNE (nom_personne, prenom_personne, mail_personne, mdp_personne, id_habilitation_pers)
 			VALUES (:nom_pers, :pnom_pers, :mail_pers, :mdp_pers, :hab_pers)
 SQL
 		);
@@ -451,6 +451,7 @@ SQL
 		<div class="content">
 			<div class="title">
 				<div class="th1">Connectez-vous</div>
+				<div class="intro th2">Pour accéder à votre espace personnel</div>
 			</div>	
 			<div>{$error}</div>
 			<form method="post" action="{$action}" id="form_connexion" onsubmit="return traitement(this);">
