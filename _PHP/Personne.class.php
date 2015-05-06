@@ -99,7 +99,7 @@ SQL
 
 	public static function getCurrentUser() {
 		if(self::isConnected()) {
-			return self::createPersFromId($_SESSION[self::$session_key."Personne"]->getIdPers());
+			return self::createPersFromId($_SESSION["Personne"]->getIdPers());
 		}
 		else {
 			return null;
@@ -109,8 +109,8 @@ SQL
 
 	public static function isConnected() {
 		//self::startSession();
-		if(isset($_SESSION[self::$session_key.'connected'])) {
-			return $_SESSION[self::$session_key.'connected'];
+		if(isset($_SESSION['connected'])) {
+			return $_SESSION['connected'];
 		}
 		else {
 			return false;
@@ -359,7 +359,7 @@ SQL
 
 	public static function connexionForm($action) {
 		self::startSession();
-		//$_SESSION[self::$session_key];
+		//$_SESSION[;
 
 		$corps = <<<HTML
 		<div class="content">
