@@ -527,7 +527,23 @@ input[type="submit"]
 	display: block;
 }
 
-.txt_box .more
+/**********MISE EN PAGE DE OUF GUEDIN**********/
+
+.box1
 {
-	display: inline;
+	width: 1000px;
+	overflow: auto;
+	margin: 0 auto;
+}
+
+.box2
+{
+	float: left;
+}
+
+.row
+{
+	margin: 3.33%;
+	float: left;
+	background-color: rgba(251, 251, 251, 0.35);
 }
