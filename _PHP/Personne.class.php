@@ -348,6 +348,25 @@ SQL
 		$stmt->execute();		
 	}
 
+	/** 
+	 * setPassword
+	 *
+	 * Modifie le mot de passe du membre
+	 *
+	 * @param string $pass le mot de passe. Il doit être codé en sha1
+	 */
+	public function setPassword($pass) {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+				UPDATE PERSONNE
+				SET mdp_personne = :pass
+				WHERE id_personne = :user
+SQL
+);
+		$stmt->bindValue(':pass', sha1($pass));
+		$stmt->bindValue(':user', $this->id_personne);
+		$stmt->execute();
+	}	
+	
 
 
 
