@@ -10,7 +10,95 @@ try {
     // Lecture depuis les données de session
     $user = Personne::createFromSession() ;
 
-    $msg = "";
+    if (isset($_REQUEST['passAct'])) {
+		$passAct = $_REQUEST['passAct'];
+	}
+
+if (isset($passAct) && $passAct != '') {
+	$stmt = myPDO::getInstance()->prepare(<<<SQL
+				SELECT mdp_personne
+				FROM PERSONNE
+				WHERE mdp_personne = :passAct
+				AND id_personne = :num
+SQL
+);
+	$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__) ;
+	$stmt->bindValue(':passAct', $passAct);
+	$stmt->bindValue(':num', $user->getIdPers());
+	$stmt->execute() ;
+	$member = $stmt->fetch();
+	if ($member == false) {
+		$res->appendJs(<<<HTML
+			alert("Le mot de passe actuel est incorrect");
+HTML
+);
+	}
+	else {
+
+		$msg = 1;
+		
+		// EMAIL
+		if (isset($_REQUEST['email']) && $_REQUEST['email'] != '') {
+			try {
+				$user->setMailPers($_REQUEST['email']);
+			} catch (Exception $e) {
+				$msg = 2;
+			}
+		}
+
+
+		// PASS
+		if (isset($_REQUEST['pass']) && $_REQUEST['pass'] != '') {
+			$usr->setPassword($_REQUEST['pass']);
+		}
+
+
+		// VILLE
+		if (isset($_REQUET["ville"]) || $_REQUEST["ville"] == "") {
+			$ville = "";
+		}
+		else $ville = $_REQUEST["ville"];
+		$usr->setVille($ville);
+
+
+		// ADRESSE
+		if (isset($_REQUET["adr"]) || $_REQUEST["adr"] == "") {
+			$adr = "";
+		}
+		else $adr = $_REQUEST["adr"];
+		$usr->setAdresse($adr);
+
+
+		// CODE POSTAL
+		if (isset($_REQUET["CP"]) || $_REQUEST["CP"] == "") {
+			$cp = "";
+		}
+		else $cp = $_REQUEST["CP"];
+		$usr->setCp($cp);
+
+
+		// DESCRIPTION
+		if (isset($_REQUET["description"]) || $_REQUEST["description"] == "") {
+			$desc = "";
+		}
+		else $desc = $_REQUEST["description"];
+		$usr->setDescription($desc);
+
+		header("location: ./profil.php?msg={$msg}");
+		exit;
+		
+	}	
+}
+
+
+
+
+
+$msg = "";
+if (isset($_GET["msg"])) {
+	if ($_GET["msg"] == 1) $msg = "<div class='succes'>Profil modifié avec succès.</div>";
+	else if ($_GET["msg"] == 2) $msg = "<div class='rate'>L'email spécifié est déjà utilisé par un autre membre.</div>";
+}
 
     $p->appendContent(<<<HTML
     	<div class="content">
