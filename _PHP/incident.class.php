@@ -82,20 +82,16 @@ SQL
 		$array = $stmt->fetchAll();
 		$html = <<<HTML
 			<div class = "box1">
-				<div class = "box2">
-					<div class = "row">
 HTML;
 		foreach ($array as $ligne)
 		{
 			$html.=<<<HTML
-				<div class = "th3">
+				<div class = "row">
 					{$ligne->getNomIncident()}
 				</div>
 HTML;
 		}
 		$html.=<<<HTML
-					</div>
-				</div>
 			</div>
 HTML;
 		return $html;
