@@ -2,25 +2,21 @@
 
 require_once 'webpage.class.php';
 require_once 'Personne.class.php';
-/*
+
 if(isset($_REQUEST['action'])) {
 	$action = $_REQUEST['action'];
 
-	if ($action == "login") {*/
-		//$mail = $_REQUEST['mail'];
-		//$mdp = $_REQUEST['pass'];
-		//var_dump($mail);
-		//var_dump($mdp);
-
-		$p = new WebPage("Authentification");
+	if ($action == "login") {
 		try {
-			Personne::createFromAuth($_REQUEST);	
-			$p->appendContent("BONJOUR CONNARD !");
+			$user = Personne::createFromAuth($_REQUEST);
+			$user->saveIntoSession();		
+			header("Location: ./perso.php");
+		}
+		catch (AuthenticationException $e) {
+			throw new AuthenticationException ("Echec d'authentification : {$e->getMessage()}");
 		}
 		catch (Exception $e) {
-			$p->appendContent("Echec : {$e->getMessage()}");
+			throw new Exception ("Un problème est survenu : {$e->getMessage()}");
 		}
-
-		echo $p->toHTML();
-	//}
-//}
+	}
+}

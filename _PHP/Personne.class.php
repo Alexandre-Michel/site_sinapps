@@ -2,22 +2,38 @@
 
 require_once 'myPDO.include.php';
 
+/**
+ * Classe d'Exception concernant les connexions de la Classe Utilisateur
+ */
+class AuthenticationException extends Exception { }
+
+/**
+ * Classe d'Exception concernant les récupération de la Classe Utilisateur dans les données de session
+ */
+class NotInSessionException extends Exception { }
+
+/**
+ * Classe d'Exception concernant le démarrage d'une session
+ */
+class SessionException extends Exception { }
+
+
 class Personne {
-	private $id_pers = null;
+	private $id_personne = null;
 
-	private $id_habilitation = null;
+	private $id_habilitation_pers = null;
 
-	private $id_entp_pers = null;
+	private $id_entreprise_pers = null;
 
-	private $nom_pers = null;
+	private $nom_personne = null;
 
-	private $prenom_pers = null;
+	private $prenom_personne = null;
 
-	private $mail_pers = null;
+	private $mail_personne = null;
 
-	private $emploi_pers = null;
+	private $emploi_personne = null;
 
-	private $image_pers = null;
+	private $image_personne = null;
 
 	const session_key = "__user__";
 
@@ -26,35 +42,35 @@ class Personne {
 	}
 
 	public function getIdPers() {
-		return $this->id_pers;
+		return $this->id_personne;
 	}
 
 	public function getIdHabilitation() {
-		return $this->id_habilitation;
+		return $this->id_habilitation_pers;
 	}
 
 	public function getIdEntpPers() {
-		return $this->id_entp_pers;
+		return $this->id_entreprise_pers;
 	}
 
 	public function getNomPers() {
-		return $this->nom_pers;
+		return $this->nom_personne;
 	}
 
 	public function getPrenomPers() {
-		return $this->prenom_pers;
+		return $this->prenom_personne;
 	}
 
 	public function getMailPers() {
-		return $this->mail_pers;
+		return $this->mail_personne;
 	}
 
 	public function getEmploiPers() {
-		return $this->emploi_pers;
+		return $this->emploi_personne;
 	}
 
 	public function getImagePers() {
-		return $this->image_pers;
+		return $this->image_personne;
 	}
 
 	public static function getPersByIdEntp($id_entp) {
@@ -112,7 +128,7 @@ SQL
 
 
 
-	private static function startSession() {
+	/*private static function startSession() {
 		session_status();
 		if (headers_sent()) {
 			throw new Exception ("Impossible de démarrer la session : Headers déjà envoyés");
@@ -127,7 +143,7 @@ SQL
 				//self::logout();
 			}
 		}
-	}
+	}*/
 
 
     /**
@@ -433,14 +449,14 @@ SQL
 
 		$corps = <<<HTML
 		<div class="content">
-			<form method="get" action="{$action}" id="form_connexion" onsubmit="return traitement(this);">
+			<form method="post" action="{$action}" id="form_connexion" onsubmit="return traitement(this);">
 				<div class="form">
 		        	<div class = "row">
 			        	<div class = "champs">
 							<input type="email" placeholder="Votre email" name="mail"/><br/>
 							<input type="password" placeholder="Votre mot de passe" name="pass"/><br/>
 							<input type="hidden" value='' name="crypt"/>
-							<input type="submit" value={$submitText}/>
+							<input type="submit" value={$submitText}>
 							<a href="./inscription.php">Pas encore inscrit ? Cliquez ici</a>
 						</div>
 					</div>
