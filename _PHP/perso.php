@@ -2,6 +2,7 @@
 
 require_once 'webpage.class.php';
 require_once 'Personne.class.php';
+require_once 'Incident.class.php';
 
 $p = new WebPage("Espace personnel - Sinapp's");
 
@@ -18,10 +19,7 @@ HTML
 	switch ($user->getIdHabilitation()) {
 		// Si l'utilisateur est un administrateur
 		case 1:
-		$p->appendContent(<<<HTML
-			<div>Bravo, t'es habilité échelon 1 sale batard !</div>
-HTML
-		);
+		$p->appendContent(Incident::getAllIncident());
 		break;
 		//Si l'utilisateur n'est qu'un membre lambda sans droits
 		case 2:
