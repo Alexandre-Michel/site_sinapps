@@ -419,6 +419,11 @@ strong
 	font-size: 1.125em;
 }
 
+.content .offre_box .box_offre .offre .txt_box .more
+{
+	display: inline;
+}
+
 /*********** Presentation de l'entreprise ***********/
 
 .content .intro_agence

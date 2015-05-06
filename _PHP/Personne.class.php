@@ -221,7 +221,8 @@ SQL
         if (headers_sent())
             throw new SessionException("Impossible de démarrer une session si les en-têtes HTTP ont été envoyés") ;
         // Si la session n'est pas demarrée, le faire
-        if (!session_id()) session_start() ;
+        if (!session_id())
+        	session_start() ;
 
         // Vision la moins contraignante qui peut amener des comportements changeants
         // Si la session n'est pas demarrée, le faire
