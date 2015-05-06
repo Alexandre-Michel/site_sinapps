@@ -521,7 +521,7 @@ input[type="submit"]
 	margin: 20px;
 }
 
-.infos_contact .row
+.infos_contact .row, .infos_equipe .row
 {
 	display: block;
 }
