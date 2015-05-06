@@ -87,7 +87,8 @@ HTML;
 		{
 			$html.=<<<HTML
 				<div class = "row">
-					{$ligne->getNomIncident()}
+					<div class = "th1">{$ligne->getNomIncident()}</div>
+					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
 				</div>
 HTML;
 		}

@@ -519,13 +519,13 @@ input[type="submit"]
 .box1
 {
 	overflow: auto;
+	padding: 20px 0;
 }
 
 .row
 {
 	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	max-width: 1000px;
 	overflow: auto;
 	display: flex;
