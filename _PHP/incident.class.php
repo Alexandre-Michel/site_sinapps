@@ -5,6 +5,7 @@ require_once 'myPDO.include.php';
 class Incident
 {
 	private $id_incident = null;
+	private $nom_incident = null;
 	private $description_incident = null;
 	private $id_personne = null;
 	private $id_type_incident = null;
@@ -17,6 +18,11 @@ class Incident
 	public function getIdIncident()
 	{
 		return $this->id_incident;
+	}
+
+	public function getNomIncident()
+	{
+		return $this->nom_incident;
 	}
 
 	public function getDescriptionIncident()
@@ -73,16 +79,22 @@ SQL
 		);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 		$stmt->execute();
+		$array = $stmt->fetchAll();
 		$html = <<<HTML
-		<div class = "content">
 			<div class = "box1">
 				<div class = "box2">
-					<div class = "row">
-						
-					</div>
+HTML;
+		foreach ($array as $ligne)
+		{
+			$html.=<<<HTML
+				<div class = "row">
+					{$ligne->getNomIncident()}
+				</div>
+HTML;
+		}
+		$html.=<<<HTML
 				</div>
 			</div>
-		</div>
 HTML;
 		return $html;
 	}
