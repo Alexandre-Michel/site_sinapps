@@ -500,11 +500,6 @@ input[type="submit"]
 	background-color: rgba(251, 251, 251, 0.35);
 }
 
-.box2
-{
-
-}
-
 .row
 {
 	width: 100%;
@@ -516,6 +511,13 @@ input[type="submit"]
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+button
+{
+  height: 30px;
+  width: 175px;
+  margin: 0 auto;
 }
 
 .th1

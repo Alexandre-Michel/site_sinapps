@@ -525,13 +525,4 @@ SQL
 HTML;
 		return $corps;		
 	}
-
-
-
-
-
-
-
-
-
 }
