@@ -45,6 +45,7 @@ $p->appendContent(<<<HTML
 		<span>...</span>
 	</div>
 	<div class = "intro_box">
+		<div class = "box1">
 HTML
 );
 
@@ -57,6 +58,7 @@ for ($i=1; $i < 7; $i++)
 
 
 $p->appendContent(<<<HTML
+		</div>
 	</div>
 </div>
 HTML
