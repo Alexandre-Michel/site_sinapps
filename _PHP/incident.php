@@ -10,7 +10,7 @@ try {
 	$user = Personne::createFromSession();
 	if (isset($_GET['i']) && empty($_GET['i'])) {
 		$incident = Incident::createIncidentFromId($_GET['i']);
-		if ($incident->getIdPersonne() == $user->getIdPers()) {
+		if ($incident->getIdPersonne() == $user->getIdPers() || $user->getIdHabilitation() == 1) {
 			$p->appendContent(<<<HTML
 				<div class="content">
 					{$incident->getNomIncident()}
