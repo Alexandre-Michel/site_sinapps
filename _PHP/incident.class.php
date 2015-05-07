@@ -64,6 +64,7 @@ SQL
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
+		$array = $stmt->fetchAll();
 		$html = <<<HTML
 			<div class = "box1">
 HTML;
