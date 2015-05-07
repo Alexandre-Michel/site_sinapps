@@ -7,6 +7,7 @@ header('Content-type: text/html; charset=utf-8');
 require_once 'webpage.class.php';
 require_once 'myPDO.include.php';
 require_once 'box_container.php';
+require_once 'Prestation.class.php';
 
 $pdo = myPDO::getInstance();
 /*
@@ -47,9 +48,11 @@ $p->appendContent(<<<HTML
 HTML
 );
 
-for ($i=0; $i < 6; $i++)
+for ($i=1; $i < 7; $i++)
 {
-	$p->appendContent(Prestation::printPrestation());
+	$type = Prestation::createTypePrestationFromId($i);
+	$id = $type->getIdTypePrestation();
+	$p->appendContent(Prestation::printPrestation($id));
 }
 
 
