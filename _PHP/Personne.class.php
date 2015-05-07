@@ -268,7 +268,7 @@ SQL
 SQL
 		);	
 		$stmt->bindValue(":id_hab", $id_habilitation);
-		$stmt->bindValue(":id_pers", $this->id_pers);
+		$stmt->bindValue(":id_pers", $this->id_personne);
 		$stmt->execute();		
 	}
 
@@ -281,7 +281,7 @@ SQL
 SQL
 		);	
 		$stmt->bindValue(":id_entp", $id_entreprise);
-		$stmt->bindValue(":id_pers", $this->id_pers);
+		$stmt->bindValue(":id_pers", $this->id_personne);
 		$stmt->execute();		
 	}
 
@@ -294,7 +294,7 @@ SQL
 SQL
 		);	
 		$stmt->bindValue(":nom_pers", $nom);
-		$stmt->bindValue(":id_pers", $this->id_pers);
+		$stmt->bindValue(":id_pers", $this->id_personne);
 		$stmt->execute();		
 	}
 
@@ -307,21 +307,40 @@ SQL
 SQL
 		);	
 		$stmt->bindValue(":pnom_pers", $nom);
-		$stmt->bindValue(":id_pers", $this->id_pers);
+		$stmt->bindValue(":id_pers", $this->id_personne);
 		$stmt->execute();		
 	}
 
 
 	public function setMailPers($mail) {
-		$stmt = myPDO::getInstance()->prepare(<<<SQL
-			UPDATE PERSONNE
-			SET mail_personne = :mail_pers
-			WHERE id_personne = :id_pers
+		
+		$testMembre = myPDO::getInstance()->prepare(<<<SQL
+			SELECT mail_personne
+			FROM PERSONNE
+			WHERE mail_personne = :mail
+			AND id_personne != :id
+SQL
+);
+		$testMembre->execute(array(
+		 "mail" => $mail,
+		 "id" => $this->id_personne
+		));
+		$array = $testMembre->fetchAll();
+		
+		if (count($array) == 0) {
+			$stmt = myPDO::getInstance()->prepare(<<<SQL
+				UPDATE PERSONNE
+				SET mail_personne = :mail_pers
+				WHERE id_personne = :id_pers
 SQL
 		);	
-		$stmt->bindValue(":mail_pers", $mail);
-		$stmt->bindValue(":id_pers", $this->id_pers);
-		$stmt->execute();		
+			$stmt->bindValue(":mail_pers", $mail);
+			$stmt->bindValue(":id_pers", $this->id_personne);
+			$stmt->execute();		
+		}
+		else {
+			throw new Exception("Cet email est déjà utilisé par un autre Membre");
+		}
 	}
 
 	public function setEmploiPers($emploi) {
@@ -332,7 +351,7 @@ SQL
 SQL
 		);	
 		$stmt->bindValue(":emploi_pers", $emploi);
-		$stmt->bindValue(":id_pers", $this->id_pers);
+		$stmt->bindValue(":id_pers", $this->id_personne);
 		$stmt->execute();		
 	}
 
@@ -344,7 +363,7 @@ SQL
 SQL
 		);	
 		$stmt->bindValue(":image_pers", $image);
-		$stmt->bindValue(":id_pers", $this->id_pers);
+		$stmt->bindValue(":id_pers", $this->id_personne);
 		$stmt->execute();		
 	}
 
@@ -362,7 +381,7 @@ SQL
 				WHERE id_personne = :user
 SQL
 );
-		$stmt->bindValue(':pass', sha1($pass));
+		$stmt->bindValue(':pass', $pass);
 		$stmt->bindValue(':user', $this->id_personne);
 		$stmt->execute();
 	}	
