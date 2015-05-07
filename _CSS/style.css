@@ -497,10 +497,15 @@ input[type="submit"]
 	padding: 20px 0;
 }
 
+.box2
+{
+
+}
+
 .row
 {
 	width: 100%;
-	margin: 0 auto;
+	margin: 20px auto;
 	max-width: 1000px;
 	overflow: auto;
 	display: flex;
