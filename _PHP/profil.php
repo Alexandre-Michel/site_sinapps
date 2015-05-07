@@ -132,11 +132,16 @@ SQL
 
 					else {
 						if (passAct.value != '' && passAct.value != null) {
-							
-							passed=true;
-							if ( form.password.value != "")  form.password.value = sha1( form.password.value);
-							form.confirm.value = "";
-							passAct.value = sha1(passAct.value);
+							if (password.length >= 6) {
+								passed=true;
+								if ( form.password.value != "")  form.password.value = sha1( form.password.value);
+								form.confirm.value = "";
+								passAct.value = sha1(passAct.value);
+							}
+							else {
+								alert("Mot de passe trop court !");
+								password.select();
+							}
 						}
 						else {
 							alert("Remplissez votre mot de passe !");
