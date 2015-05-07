@@ -10,7 +10,10 @@ try {
     // Lecture depuis les données de session
     $user = Personne::createFromSession() ;
 
-	if (isset($passAct) && $passAct != '') {
+	$msg = "";
+	
+	if (isset($_REQUEST['passAct']) && $_REQUEST['passAct'] != '') {
+		$passAct = sha1($_REQUEST['passAct']);
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 					SELECT mdp_personne
 					FROM PERSONNE
@@ -24,19 +27,18 @@ SQL
 		$stmt->execute() ;
 		$member = $stmt->fetch();
 		if ($member == false) {
-			$res->appendJs(<<<HTML
-				alert("Le mot de passe actuel est incorrect");
-HTML
-	);
+			$msg = 3;
+			header("location: ./profil.php?msg={$msg}");
+			exit;
 		}
 		else {
 
 			$msg = 1;
 			
 			// EMAIL
-			if (isset($_REQUEST['email']) && $_REQUEST['email'] != '') {
+			if (isset($_REQUEST['mail']) && $_REQUEST['mail'] != '') {
 				try {
-					$user->setMailPers($_REQUEST['email']);
+					$user->setMailPers($_REQUEST['mail']);
 				} catch (Exception $e) {
 					$msg = 2;
 				}
@@ -44,17 +46,16 @@ HTML
 
 
 			// PASS
-			if (isset($_REQUEST['pass']) && $_REQUEST['pass'] != '') {
-				$user->setPassword($_REQUEST['pass']);
+			if (isset($_REQUEST['password']) && $_REQUEST['password'] != '') {
+				$user->setPassword($_REQUEST['password']);
 			}
 
 
 			// NOM
-			if (isset($_REQUET["nom"]) || $_REQUEST["nom"] == "") {
-				$nom = "";
+			if (isset($_REQUEST["nom"]) && $_REQUEST["nom"] != "") {
+				$nom = $_REQUEST["nom"];
+				$user->setNomPers($nom);
 			}
-			else $nom = $_REQUEST["nom"];
-			$user->setNomPers($nom);
 			
 			// PRENOM
 			if (isset($_REQUEST['prenom']) && $_REQUEST['prenom'] != '') {
@@ -67,15 +68,11 @@ HTML
 		}	
 	}
 
-
-
-
-
-$msg = "";
-if (isset($_GET["msg"])) {
-	if ($_GET["msg"] == 1) $msg = "<div class='succes'>Profil modifié avec succès.</div>";
-	else if ($_GET["msg"] == 2) $msg = "<div class='rate'>L'email spécifié est déjà utilisé par un autre membre.</div>";
-}
+	if (isset($_GET["msg"])) {
+		if ($_GET["msg"] == 1) $msg = "<div class='succes'>Profil modifié avec succès.</div>";
+		else if ($_GET["msg"] == 2) $msg = "<div class='rate'>L'email spécifié est déjà utilisé par un autre membre.</div>";
+		else if ($_GET["msg"] == 3) $msg = "<div class='rate'>Mot de passe incorrect.</div>";
+	}
 
     $p->appendContent(<<<HTML
     	<div class="content">
@@ -98,8 +95,8 @@ if (isset($_GET["msg"])) {
 				            <label for="confirm">Nouveau mot de passe (vérification)</label>
 				            	<input type="password" name="confirm" placeholder="Veuillez confirmer votre mot de passe"><br/>
 							<label for="passAct">Mot de passe actuel</label>
-				            	<input type="password" name="passAct" placeholder="Veuillez entrer votre mot de passe actuel"><br/>
-				            <input type="submit" name="inscription" value="Inscription">
+				            	<input type="password" required name="passAct" placeholder="Veuillez entrer votre mot de passe actuel"><br/>
+				            <input type="submit" name="save" value="Sauvegarder">
 				        </div>
 			        </div>
 		        </div>
