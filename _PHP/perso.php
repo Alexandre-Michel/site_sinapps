@@ -20,6 +20,14 @@ try {
 		$droit = 2;
 		break;
 	}
+	$signaler = "";
+
+	if($droit != 1) {
+		$signaler = "<button onclick="location.href='./newIncident.php'">Déclarer un nouvel incident</button>";
+	}
+	else {
+		$signaler = "<button onclick="location.href='./traiterIncident.php'">Traiter un incident</button>";
+	}
 
 	$p->appendContent(<<<HTML
 		<div class="content">
@@ -28,7 +36,7 @@ try {
 				<div class = "row th2">Incidents</div>
 				<div class = "row">
 					<button onclick="location.href='./incidents.php'">Visualiser les incidents</button>
-					<button onclick="location.href='./newIncident.php'">Déclarer un nouvel incident</button>
+					{$signaler}
 				</div>
 			</div>
 			<div class = "box1">
