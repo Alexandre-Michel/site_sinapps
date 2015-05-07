@@ -64,7 +64,22 @@ SQL
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
-		return $stmt->fetchAll();
+		$html = <<<HTML
+			<div class = "box1">
+HTML;
+		foreach ($array as $ligne)
+		{
+			$html.=<<<HTML
+				<div class = "row">
+					<div class = "th1">{$ligne->getNomIncident()}</div>
+					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
+				</div>
+HTML;
+		}
+		$html.=<<<HTML
+			</div>
+HTML;
+		return $html;
 	}
 
 	/*
