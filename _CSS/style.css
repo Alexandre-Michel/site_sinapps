@@ -119,13 +119,6 @@ strong
 	color: blue;
 }
 
-.content
-{
-	text-align: center;
-	background: url("../_IMG/background.jpg") no-repeat bottom;
-	border-top : 10px solid #e8e8e8;
-}
-
 .content .welcome
 {
 	height: 120px;
@@ -491,11 +484,19 @@ input[type="submit"]
 
 /**********MISE EN PAGE DE OUF GUEDIN**********/
 
+.content
+{
+	overflow: auto;
+	text-align: center;
+	background: url("../_IMG/background.jpg") no-repeat bottom;
+	border-top : 10px solid #e8e8e8;
+}
+
 .box1
 {
 	overflow: auto;
 	width: 1000px;
-	margin: 20px auto 0;
+	margin: 20px auto;
 	background-color: rgba(251, 251, 251, 0.35);
 }
 
