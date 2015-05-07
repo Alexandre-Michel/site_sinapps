@@ -24,8 +24,15 @@ try {
 	$p->appendContent(<<<HTML
 		<div class="content">
 			<div class = "th1">Bienvenue dans votre espace personnel</div>
-			<div class="box1">
-				<div class="row">Modifier vos infos</div>
+			<div class = "box1">
+				<div class = "row th2">Incidents</div>
+				<div class = "row">
+					<button>Visualiser les incidents</button>
+					<button>Déclarer un nouvel incident</button>
+				</div>
+			</div>
+			<div class = "box1">
+				<div class="row th2">Informations personnelles</div>
 				<div class="row">
 					<button onclick="location.href='./profil.php'">Modifier vos infos</button>
 				</div>
