@@ -10,6 +10,7 @@ class Incident
 	private $id_personne = null;
 	private $id_type_incident = null;
 	private $date_incident = null;
+	private $statut_incident = null;
 
 	private function __construct()
 	{
@@ -43,6 +44,23 @@ class Incident
 
 	public function getDateIncident() {
 		return $this->date_incident;
+	}
+
+	public function getStatutIncident() {
+		return $this->statut_incident;
+	}
+
+	public function setStatutIncident($valeur) {
+		$this->statut_incident = $valeur;
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			UPDATE INCIDENT
+			SET statut_incident = :val
+			WHERE id_incident = :id_inc
+SQL
+		);	
+		$stmt->bindValue(":val", $valeur);
+		$stmt->bindValue(":id_inc", $this->id_incident);
+		$stmt->execute();		
 	}
 
 	public function setDateIncident($date) {
