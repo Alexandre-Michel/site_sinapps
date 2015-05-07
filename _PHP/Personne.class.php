@@ -299,14 +299,14 @@ SQL
 	}
 
 
-	public function setPrenomPers($nom) {
+	public function setPrenomPers($pnom) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE PERSONNE
-			SET nom_personne = :pnom_pers
+			SET prenom_personne = :pnom_pers
 			WHERE id_personne = :id_pers
 SQL
 		);	
-		$stmt->bindValue(":pnom_pers", $nom);
+		$stmt->bindValue(":pnom_pers", $pnom);
 		$stmt->bindValue(":id_pers", $this->id_personne);
 		$stmt->execute();		
 	}

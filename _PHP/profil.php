@@ -35,6 +35,40 @@ SQL
 
 			$msg = 1;
 			
+			// NOM
+			if (isset($_REQUEST["nom"]) && $_REQUEST["nom"] != "") {
+				$user->setNomPers($_REQUEST["nom"]);
+			}
+
+			// PASS
+			if (isset($_REQUEST['password']) && $_REQUEST['password'] != '') {
+				if (isset($_REQUEST['confirm']) && $_REQUEST['confirm'] != '') {
+					$pass = sha1($_REQUEST['password']);
+					$confirm = sha1($_REQUEST['confirm']);
+					if ($pass == $confirm) {
+						if (strlen($pass) >= 6) {
+							$user->setPassword($pass);
+						}
+						else {
+							$msg = 5;
+							header("location: ./profil.php?msg={$msg}");
+							exit;
+						}
+					}
+					else {
+						$msg = 4;
+						header("location: ./profil.php?msg={$msg}");
+						exit;
+					}
+				}
+				
+			}
+			
+			// PRENOM
+			if (isset($_REQUEST['prenom']) && $_REQUEST['prenom'] != '') {
+				$user->setPrenomPers($_REQUEST['prenom']);
+			}	
+			
 			// EMAIL
 			if (isset($_REQUEST['mail']) && $_REQUEST['mail'] != '') {
 				try {
@@ -42,24 +76,6 @@ SQL
 				} catch (Exception $e) {
 					$msg = 2;
 				}
-			}
-
-
-			// PASS
-			if (isset($_REQUEST['password']) && $_REQUEST['password'] != '') {
-				$user->setPassword($_REQUEST['password']);
-			}
-
-
-			// NOM
-			if (isset($_REQUEST["nom"]) && $_REQUEST["nom"] != "") {
-				$nom = $_REQUEST["nom"];
-				$user->setNomPers($nom);
-			}
-			
-			// PRENOM
-			if (isset($_REQUEST['prenom']) && $_REQUEST['prenom'] != '') {
-				$user->setPrenomPers($_REQUEST['prenom']);
 			}
 			
 			header("location: ./profil.php?msg={$msg}");
@@ -72,6 +88,8 @@ SQL
 		if ($_GET["msg"] == 1) $msg = "<div class='succes'>Profil modifié avec succès.</div>";
 		else if ($_GET["msg"] == 2) $msg = "<div class='rate'>L'email spécifié est déjà utilisé par un autre membre.</div>";
 		else if ($_GET["msg"] == 3) $msg = "<div class='rate'>Mot de passe incorrect.</div>";
+		else if ($_GET["msg"] == 4) $msg = "<div class='rate'>Nouveau mot de passe trop court.</div>";
+		else if ($_GET["msg"] == 5) $msg = "<div class='rate'>Vos mots de passe ne concordent pas.</div>";
 	}
 
     $p->appendContent(<<<HTML
@@ -79,7 +97,7 @@ SQL
 			<div class="title">
 				<div class = "th1">Modifier votre profil</div>
 			</div>
-		    <form action="profil.php" method="post">
+		    <form action="profil.php" method="post" onSubmit="return verify(this)">
 		        <div class = "msg">{$msg}</div>
 		        <div class="form">
 		        	<div class = "row">
@@ -94,13 +112,41 @@ SQL
 				            	<input type="password" name="password" placeholder="Veuillez entrer votre mot de passe"><br/>
 				            <label for="confirm">Nouveau mot de passe (vérification)</label>
 				            	<input type="password" name="confirm" placeholder="Veuillez confirmer votre mot de passe"><br/>
-							<label for="passAct">Mot de passe actuel</label>
+							<label for="passAct">Mot de passe actuel (*)</label>
 				            	<input type="password" required name="passAct" placeholder="Veuillez entrer votre mot de passe actuel"><br/>
 				            <input type="submit" name="save" value="Sauvegarder">
 				        </div>
 			        </div>
 		        </div>
 		    </form>
+			<script type="text/javascript">
+				function verify(form) {
+					var passed=false;
+						
+					var passAct = form.passAct;
+
+					if ( form.password.value !=  form.confirm.value) {
+						alert("Les deux mot de passe ne concordent pas");
+						 form.password.select();
+					}
+
+					else {
+						if (passAct.value != '' && passAct.value != null) {
+							
+							passed=true;
+							if ( form.password.value != "")  form.password.value = sha1( form.password.value);
+							form.confirm.value = "";
+							passAct.value = sha1(passAct.value);
+						}
+						else {
+							alert("Remplissez votre mot de passe !");
+							passAct.select();
+						}
+					}
+
+					return passed;
+				}
+	</script>
 		</div>
 HTML
     );
