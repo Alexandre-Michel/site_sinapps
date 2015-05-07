@@ -494,6 +494,7 @@ input[type="submit"]
 .box1
 {
 	overflow: auto;
+	width: 1000px;
 	margin: 20px auto;
 	background-color: rgba(251, 251, 251, 0.35);
 }
