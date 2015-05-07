@@ -182,7 +182,6 @@ SQL
 		else throw new Exception ("Incident not found");
 	}
 
-
 	/*
 	Permet la suppression d'un incident
 	*/

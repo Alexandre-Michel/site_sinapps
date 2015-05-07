@@ -60,20 +60,57 @@ SQL
 		$stmt->execute();
 	}
 
-	/*
-	Premet l'affichage d'une prestation
-	*/
-	public static function getPrestationById($id)
+	public static function createPrestationFromId($id)
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
-			SELECT *
+			SELECT * 
 			FROM PRESTATION
 			WHERE id_prestation = :id
 SQL
 		);
-		$stmt->bindValue(':id', $id);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->bindValue(":id", $id);
 		$stmt->execute();
-		
+		if (($object = $stmt->fetch()) !== false)
+		{
+			return $object;
+		}
+		else throw new Exception ("Prestation not found");
+	}
+
+	/*
+	Permet l'affichage d'une prestation
+	*/
+	public static function printPrestation()
+	{
+
+		$stmt = $pdo->prepare(<<<SQL
+			SELECT *
+			FROM TYPE_PRESTATION
+			WHERE id_type_prestation = :id
+SQL
+		);
+		$stmt->bindValue(':id', $this->getIdTypePrestation());
+		$stmt->execute();
+
+		$presta = $stmt->fetch();
+
+		$prestation = <<<HTML
+			<div class = "box1">
+				<div class = "row">
+					<div class = "th3">{$presta['nom_prestation']}</div>
+					<div class = "img_presta">
+						<img id="logo_ordi" src="{$presta['path_logo']}" alt="logo1"/>
+					</div>
+					<div class = "border_logo"></div>
+					<div class = "txt_box">{$presta['description_description']}</div>
+					<div class = "more">
+						<a href="">En savoir plus &rsaquo;</a>
+					</div>
+				</div>
+			</div>
+HTML;
+		return $prestation;
 	}
 
 	/*
