@@ -9,18 +9,24 @@ $p = new WebPage("Détail de l'incident - Sinapp's");
 try {
 	$user = Personne::createFromSession();
 	if (isset($_GET['i']) && !empty($_GET['i'])) {
-		$incident = Incident::createIncidentFromId($_GET['i']);
-		if ($incident->getIdPersonne() == $user->getIdPers() || $user->getIdHabilitation() == 1) {
-			$p->appendContent(<<<HTML
-				<div class="content">
-					{$incident->getNomIncident()}
-					{$incident->getDescriptionIncident()}
-					{$incident->getDateIncident()}	
-				</div>
+		try {
+			$incident = Incident::createIncidentFromId($_GET['i']);
+			if ($incident->getIdPersonne() == $user->getIdPers() || $user->getIdHabilitation() == 1) {
+				$p->appendContent(<<<HTML
+					<div class="content">
+						{$incident->getNomIncident()}
+						{$incident->getDescriptionIncident()}
+						{$incident->getDateIncident()}	
+					</div>
 HTML
-			);				
+				);				
+			}
+			else {
+				header('location: ./index.php');
+				exit;
+			}
 		}
-		else {
+		catch (Exception $e) {
 			header('location: ./index.php');
 			exit;
 		}
