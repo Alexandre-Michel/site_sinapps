@@ -75,7 +75,7 @@ SQL
 
 		$prestation = <<<HTML
 			<div class = "row">
-				<div class = "th3">{$$this->nom_prestation]}</div>
+				<div class = "th3">{$this->nom_prestation}</div>
 				<div class = "img">
 					<img id="logo_ordi" src="{$this->path_logo}" alt="logo1"/>
 				</div>
