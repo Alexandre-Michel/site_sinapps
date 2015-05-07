@@ -116,11 +116,11 @@ SQL
 		$prestation = <<<HTML
 			<div class = "row">
 				<div class = "th3">{$presta['nom_prestation']}</div>
-				<div class = "img_presta">
+				<div class = "img">
 					<img id="logo_ordi" src="{$presta['path_logo']}" alt="logo1"/>
 				</div>
 				<div class = "border_logo"></div>
-				<div class = "txt_box">{$presta['description_prestation']}</div>
+				<div class = "txt">{$presta['description_prestation']}</div>
 				<div class = "more">
 					<a href="">En savoir plus &rsaquo;</a>
 				</div>
