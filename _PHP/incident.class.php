@@ -176,7 +176,7 @@ SQL
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 		$stmt->bindValue(":id_inc", $id);
 		$stmt->execute();
-		if (($object == $stmt->fetch()) !== false) {
+		if (($object = $stmt->fetch()) !== false) {
 			return $object;
 		}
 		else throw new Exception ("Incident not found");
