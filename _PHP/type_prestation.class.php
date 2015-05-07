@@ -78,7 +78,7 @@ SQL
 			WHERE id_type_prestation = :id
 SQL
 		);
-		$stmt->bindValue(':id', $this->getIdTypePrestation());
+		$stmt->bindValue(':id', $this->id_type_prestation);
 		$stmt->execute();
 
 		$presta = $stmt->fetch();
