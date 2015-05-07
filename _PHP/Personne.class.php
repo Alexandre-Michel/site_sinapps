@@ -54,7 +54,7 @@ class Personne {
 	}
 
 	public function getNomPers() {
-		return strtoupper($this->nom_personne);
+		return ucfirst($this->nom_personne);
 	}
 
 	public function getPrenomPers() {
