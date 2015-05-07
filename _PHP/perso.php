@@ -24,13 +24,13 @@ try {
 	$p->appendContent(<<<HTML
 		<div class="content">
 			<div class = "th1">Bienvenue dans votre espace personnel</div>
-			<div class="box2">
+			<div class="box1">
 				<div class="row">Modifier vos infos</div>
 				<div class="row">
 					<button onclick="location.href='./profil.php'">Modifier vos infos</button>
 				</div>
 			</div>
-			<div class="box2">
+			<div class="box1">
 				<button onclick="location.href='./auth.php?action=logout'">Déconnexion</button>
 			</div>
 		</div>

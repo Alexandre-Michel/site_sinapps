@@ -494,7 +494,8 @@ input[type="submit"]
 .box1
 {
 	overflow: auto;
-	padding: 20px 0;
+	margin: 20px auto;
+	background-color: rgba(251, 251, 251, 0.35);
 }
 
 .box2
@@ -513,7 +514,6 @@ input[type="submit"]
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-	background-color: rgba(251, 251, 251, 0.35);
 }
 
 .th1
