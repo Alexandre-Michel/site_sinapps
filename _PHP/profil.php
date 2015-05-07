@@ -150,7 +150,7 @@ SQL
 
 					return passed;
 				}
-	</script>
+			</script>
 		</div>
 HTML
     );

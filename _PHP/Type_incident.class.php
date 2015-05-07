@@ -4,15 +4,15 @@ require_once 'myPDO.include.php';
 
 class Type_incident {
 
-	private id_type_incident = null;
+	private $id_type_incident = null;
 	
-	private description_incident = null;
+	private $description_type_incident = null;
 
-	public function getIdType{} {
+	public function getIdType() {
 		return $this->id_type_incident;
 	}
 
 	public function getDescType() {
-		return $this->description_incident;
+		return $this->description_type_incident;
 	}
 }
