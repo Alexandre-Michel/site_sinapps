@@ -9,40 +9,35 @@ $p = new WebPage("Espace personnel - Sinapp's");
 
 try {
     // Lecture depuis les données de session
-    $user = Personne::createFromSession() ;
-	$p->appendContent(<<<HTML
-		<div class="content">
-			<h1>Zone membre de {$user->getNomPers()} {$user->getPrenomPers()}</h1>
-HTML
-	);
-	
-	switch ($user->getIdHabilitation()) {
+    $user = Personne::createFromSession();
+    switch ($user->getIdHabilitation()) {
 		// Si l'utilisateur est un administrateur
 		case 1:
-		$p->appendContent(Incident::getAllIncident());
+		$droit = 1;
 		break;
 		//Si l'utilisateur n'est qu'un membre lambda sans droits
 		case 2:
-		$p->appendContent(<<<HTML
-			<div>Oh le mauvais, échelon 2 !!</div>
-HTML
-		);
+		$droit = 2;
 		break;
-	}	
+	}
 
 	$p->appendContent(<<<HTML
-		<div class="box1">
-			<div class="box2">
-				<div class="row">
-					Modifier vos infos
+		<div class="content">
+			<div class = "th1">Bienvenue dans votre espace personnel</div>
+			<div class="box1">
+				<div class="box2">
+					<div class="row">Modifier vos infos</div>
+					<div class="row">
+						<button onclick="location.href='./profil.php'">Modifier vos infos</button>
+					</div>
 				</div>
-				<div class="row">
-					<button onclick="location.href='./profil.php'">Modifier vos infos</button>
+			</div>
+			<div class="box1">
+				<div class="box2">
+					<button onclick="location.href='./auth.php?action=logout'">Déconnexion</button>
 				</div>
 			</div>
 		</div>
-		<button onclick="location.href='./auth.php?action=logout'">Déconnexion</button>
-	</div>
 HTML
     );
 }
