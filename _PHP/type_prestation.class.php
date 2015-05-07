@@ -18,7 +18,7 @@ class Type_Prestation
 
 	public static function getIdTypePrestation()
 	{
-		return$this->id_type_prestation;
+		return $this->id_type_prestation;
 	}
 
 	public static function getDescriptionTypePrestation()
