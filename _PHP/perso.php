@@ -27,8 +27,8 @@ try {
 			<div class = "box1">
 				<div class = "row th2">Incidents</div>
 				<div class = "row">
-					<button>Visualiser les incidents</button>
-					<button>Déclarer un nouvel incident</button>
+					<button onclick="location.href='./incidents.php'">Visualiser les incidents</button>
+					<button onclick="location.href='./newIncident.php'">Déclarer un nouvel incident</button>
 				</div>
 			</div>
 			<div class = "box1">
