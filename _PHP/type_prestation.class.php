@@ -69,7 +69,7 @@ SQL
 		else throw new Exception ("Type Prestation not found");
 	}
 
-	public static function printTypePrestation()
+	public function printTypePrestation()
 	{
 
 

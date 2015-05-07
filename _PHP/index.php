@@ -53,6 +53,7 @@ HTML
 for ($i=1; $i < 7; $i++)
 {
 	$type = Type_Prestation::createTypePrestationFromId($i);
+	//var_dump($type);
 	//$id = $type->getIdTypePrestation();
 	$p->appendContent($type->printTypePrestation());
 }
