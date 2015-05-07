@@ -95,12 +95,10 @@ SQL
 
     $p->appendContent(<<<HTML
     	<div class="content">
-			<div class="title">
-				<div class = "th1">Modifier votre profil</div>
-			</div>
+			<div class = "th1">Modifier votre profil</div>
 		    <form action="profil.php" method="post" onSubmit="return verify(this)">
 		        <div class = "msg">{$msg}</div>
-		        <div class="form">
+		        <div class="box1">
 		        	<div class = "row">
 			        	<div class = "champs">
 				            <label for="nom">Nom d'utilisateur</label>
