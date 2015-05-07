@@ -38,7 +38,9 @@ try {
 				</div>
 			</div>
 			<div class="box1">
-				<button onclick="location.href='./auth.php?action=logout'">Déconnexion</button>
+				<div class="row">
+					<button onclick="location.href='./auth.php?action=logout'">Déconnexion</button>
+				</div>
 			</div>
 		</div>
 HTML
