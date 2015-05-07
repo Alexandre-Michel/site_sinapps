@@ -9,7 +9,7 @@ $p = new WebPage("Détail de l'incident - Sinapp's");
 try {
 	$user = Personne::createFromSession();
 	if (isset($_GET['i']) && $_GET['i'] != "") {
-		$incident = Incident::createFromId($_GET['i']);
+		$incident = Incident::createIncidentFromId($_GET['i']);
 		if ($incident->getIdPersonne() == $user->getIdPers()) {
 			$p->appendContent(<<<HTML
 				<div class="content">
