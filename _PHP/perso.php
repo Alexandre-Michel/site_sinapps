@@ -23,10 +23,10 @@ try {
 	$signaler = "";
 
 	if($droit != 1) {
-		$signaler = "<button onclick="location.href='./newIncident.php'">Déclarer un nouvel incident</button>";
+		$signaler = "<button onclick=\"location.href='./newIncident.php'\">Déclarer un nouvel incident</button>";
 	}
 	else {
-		$signaler = "<button onclick="location.href='./traiterIncident.php'">Traiter un incident</button>";
+		$signaler = "<button onclick=\"location.href='./traiterIncident.php'\">Traiter un incident</button>";
 	}
 
 	$p->appendContent(<<<HTML
