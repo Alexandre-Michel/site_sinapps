@@ -84,7 +84,7 @@ HTML;
 				<div class = "row">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
-					<button onclick="location.href='./incident.php?i={$id}'">Déconnexion</button>
+					<button onclick="location.href='./incident.php?i={$i}'">Voir en détail</button>
 				</div>
 HTML;
 		}
@@ -117,7 +117,7 @@ HTML;
 				<div class = "row">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
-					<button onclick="location.href='./incident.php?i={$id}'">Déconnexion</button>
+					<button onclick="location.href='./incident.php?i={$i}'">Voir en détail</button>
 				</div>
 HTML;
 		}
@@ -160,7 +160,7 @@ SQL
 		);
 		$stmt->bindValue(":nom", $nom_incident);
 		$stmt->bindValue(":description", $description);
-		$stmt->bindValue(":id_pers", Personne::createFromSession());
+		$stmt->bindValue(":id_pers", Personne::createFromSession()->getIdPers());
 		$stmt->bindValue(":id_type", $id_type_incident);
 		$stmt->bindValue(":date_incident", date("Le d-m-Y à H:i") );
 		$stmt->execute();
