@@ -165,11 +165,10 @@ strong
 
 .content .intro_box .box_container .presta
 {
-	/*height: 400px;*/
+	width: 80%;
+	min-height: 270px;
 	margin: 10%;
 	float: left;
-
-	/*background-color: yellow;*/
 	background-color: rgba(251, 251, 251, 0.35);
 }
 
@@ -351,12 +350,13 @@ strong
 
 .content .offre_box .box_offre
 {
+	width: 100%;
 	float: left;
-
 }
 
 .content .offre_box .box_offre .offre
 {
+	width: 93.33%;
 	margin: 3.33%;
 	float: left;
 	background-color: rgba(251, 251, 251, 0.35);
@@ -397,13 +397,15 @@ strong
 
 .content .box_presentation .presentation_box
 {
+	min-width: 93.33%;
+	margin: 0 3.33%;
 	float: left;
-
 }
 
 .content .box_presentation .presentation_box .presentation
 {
-	margin: 3.33%;
+	min-width: 100%;
+	margin: 3.33% auto;
 	float: left;
 	background-color: rgba(251, 251, 251, 0.35);
 }
