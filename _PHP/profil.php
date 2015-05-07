@@ -43,20 +43,21 @@ SQL
 			// PASS
 			if (isset($_REQUEST['password']) && $_REQUEST['password'] != '') {
 				if (isset($_REQUEST['confirm']) && $_REQUEST['confirm'] != '') {
-					$pass = sha1($_REQUEST['password']);
-					$confirm = sha1($_REQUEST['confirm']);
+					$pass = $_REQUEST['password'];
+					$confirm = $_REQUEST['confirm'];
 					if ($pass == $confirm) {
 						if (strlen($pass) >= 6) {
-							$user->setPassword($pass);
+							$pwd = sha1($pass);
+							$user->setPassword($pwd);
 						}
 						else {
-							$msg = 5;
+							$msg = 4;
 							header("location: ./profil.php?msg={$msg}");
 							exit;
 						}
 					}
 					else {
-						$msg = 4;
+						$msg = 5;
 						header("location: ./profil.php?msg={$msg}");
 						exit;
 					}

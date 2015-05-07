@@ -261,6 +261,7 @@ SQL
 
 
 	public function setIdHabilitation($id_habilitation) {
+		$this->id_habilitation_pers = $id_habilitation;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE PERSONNE
 			SET id_habilitation_pers = :id_hab
@@ -274,6 +275,7 @@ SQL
 
 
 	public function setIdEntreprise($id_entreprise) {
+		$this->id_entreprise_pers = $id_entreprise;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE PERSONNE
 			SET id_entreprise_pers = :id_entp
@@ -287,6 +289,7 @@ SQL
 
 
 	public function setNomPers($nom) {
+		$this->nom_personne = $nom;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE PERSONNE
 			SET nom_personne = :nom_pers
@@ -300,6 +303,7 @@ SQL
 
 
 	public function setPrenomPers($pnom) {
+		$this->prenom_personne = $pnom;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE PERSONNE
 			SET prenom_personne = :pnom_pers
@@ -328,6 +332,7 @@ SQL
 		$array = $testMembre->fetchAll();
 		
 		if (count($array) == 0) {
+			$this->mail_personne = $mail;
 			$stmt = myPDO::getInstance()->prepare(<<<SQL
 				UPDATE PERSONNE
 				SET mail_personne = :mail_pers
@@ -344,6 +349,7 @@ SQL
 	}
 
 	public function setEmploiPers($emploi) {
+		$this->emploi_personne = $emploi;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE PERSONNE
 			SET emploi_personne = :emploi_pers
@@ -356,6 +362,7 @@ SQL
 	}
 
 	public function setImagePers($image) {
+		$this->image_personne = $image;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE PERSONNE
 			SET image_personne = :image_pers
