@@ -561,3 +561,9 @@ button
 	line-height: 1.125em;
 	font-size: 1.125em;
 }
+
+.intro_box .box1 .row
+{
+	width: 33.33%;
+	float: left;
+}
