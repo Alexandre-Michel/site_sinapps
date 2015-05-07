@@ -495,13 +495,11 @@ SQL
 
 		$corps = <<<HTML
 		<div class="content">
-			<div class="title">
-				<div class="th1">Connectez-vous</div>
-				<div class="intro th2">Pour accéder à votre espace personnel</div>
-			</div>	
+			<div class="th1">Connectez-vous</div>
+			<div class="intro th2">Pour accéder à votre espace personnel</div>	
 			<div>{$error}</div>
 			<form method="post" action="{$action}" id="form_connexion" onsubmit="return traitement(this);">
-				<div class="form">
+				<div class="box1">
 		        	<div class = "row">
 			        	<div class = "champs">
 							<input type="email" required placeholder="Votre email" name="mail"/><br/>
