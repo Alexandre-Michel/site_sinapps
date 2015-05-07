@@ -12,16 +12,18 @@ try {
     $user = Personne::createFromSession();
 
 	$msg = ""; 
-	if(isset($_REQUEST['nom']) && !empty($_REQUEST['nom']) && isset($_REQUEST['desc']) && !empty($_REQUEST['desc'])) {
-		Incident::createIncident($_REQUEST['nom'], $_REQUEST['desc'], $_REQUEST['type']);
-		$msg = 1;
-		header("location: ./newIncident.php?msg={$msg}");
-		exit;
-	}
-	else {
-		$msg = 2;
-		header("location: ./newIncident.php?msg={$msg}");
-		exit;
+	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
+		if(isset($_REQUEST['nom']) && $_REQUEST['nom'] != "" && isset($_REQUEST['desc']) && $_REQUEST['desc'] != "") {
+			Incident::createIncident($_REQUEST['nom'], $_REQUEST['desc']);
+			$msg = 1;
+			header("location: ./newIncident.php?msg={$msg}");
+			exit;
+		}
+		else {
+			$msg = 2;
+			header("location: ./newIncident.php?msg={$msg}");
+			exit;
+		}
 	}
 	
 	if (isset($_GET["msg"]) && $_GET["msg"] != "") {
@@ -33,7 +35,7 @@ try {
     	<div class="content">
 			<div class="th1">Nouvel Incident</div>
 			{$msg}
-			<form action="./incidents.php" method="post" onSubmit="return verify(this)">
+			<form method="post"> 
 				<input type="text" required placeholder="Nom de l'incident" name="nom"/><br/>
 				<textarea required row=8 placeholder="Description de votre incident" name="desc"></textarea><br/>
 				<select name="type">
@@ -51,12 +53,12 @@ SQL
 
 	foreach ($arrayType as $unType) {
 		$desc = ucfirst($unType['description_type_incident']);
-		$p->appendContent("<option selected name=\"{$unType['id_type_incident']}\">{$desc}</option>");
+		$p->appendContent("<option selected name=\"type_inc\">{$desc}</option>");
 	}
 
 	$p->appendContent(<<<HTML
 				</select><br/>
-				<input type="submit" value="Soumettre">
+				<input type="submit" name="submit" value="Soumettre">
 			</form>
 			<script type="text/javascript">
 				function verify(form) {

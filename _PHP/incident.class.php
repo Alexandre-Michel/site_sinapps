@@ -169,7 +169,7 @@ SQL
 	/*
 	Permet la déclaration d'un incident
 	*/
-	public static function createIncident($nom_incident, $description = "", $id_type_incident)
+	public static function createIncident($nom_incident, $description, $id_type_incident = 3)
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			INSERT INTO INCIDENT (nom_incident, description_incident, id_personne, id_type_incident, date_incident)
@@ -180,7 +180,7 @@ SQL
 		$stmt->bindValue(":description", $description);
 		$stmt->bindValue(":id_pers", Personne::createFromSession()->getIdPers());
 		$stmt->bindValue(":id_type", $id_type_incident);
-		$stmt->bindValue(":date_incident", date("Le d-m-Y à H:i") );
+		$stmt->bindValue(":date_incident", date("d-m-Y à H:i") );
 		$stmt->execute();
 	}
 
