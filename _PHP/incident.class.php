@@ -213,4 +213,12 @@ SQL
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

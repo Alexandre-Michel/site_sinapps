@@ -2,6 +2,8 @@
 
 require_once 'webpage.class.php';
 require_once 'Incident.class.php';
+require_once 'Personne.class.php';
+require_once 'Type_incident.class.php';
 
 $p = new WebPage("Nouvel Incident - Sinapp's");
 
