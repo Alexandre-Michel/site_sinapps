@@ -8,6 +8,7 @@ require_once 'webpage.class.php';
 require_once 'myPDO.include.php';
 require_once 'box_container.php';
 require_once 'Prestation.class.php';
+require_once 'Type_Prestation.class.php';
 
 $pdo = myPDO::getInstance();
 /*
@@ -51,9 +52,9 @@ HTML
 
 for ($i=1; $i < 7; $i++)
 {
-	$type = Prestation::createTypePrestationFromId($i);
+	$type = Type_Prestation::createTypePrestationFromId($i);
 	$id = $type->getIdTypePrestation();
-	$p->appendContent(Prestation::printPrestation($id));
+	$p->appendContent($type->printPrestation());
 }
 
 

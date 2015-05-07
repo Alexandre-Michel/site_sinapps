@@ -562,6 +562,11 @@ button
 	font-size: 1.125em;
 }
 
+.intro_box .box1
+{
+	background: none;
+}
+
 .intro_box .box1 .row
 {
 	width: 33.33%;
