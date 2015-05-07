@@ -166,6 +166,23 @@ SQL
 		$stmt->execute();
 	}
 
+	public static function createIncidentFromId($id) {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT * 
+			FROM INCIDENT
+			WHERE id_incident = :id_inc
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->bindValue(":id_inc", $id);
+		$stmt->execute();
+		if (($object == $stmt->fetch()) !== false) {
+			return $object;
+		}
+		else throw new Exception ("Incident not found");
+	}
+
+
 	/*
 	Permet la suppression d'un incident
 	*/

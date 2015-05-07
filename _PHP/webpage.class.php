@@ -175,7 +175,7 @@ HTML
                 	<li>
                 		Agence 
                         <ul class="niveau2">
-                            <li><a href="./presentation.php" target="_self">Présentation</a>
+                            <li><a href="./presentation.php" target="_self">Presentation</a>
                                 <ul class="niveau3">
                                     <li><a href="./presentation.php" target="_self">Hello</a></li>
                                     <li><a href="./presentation.php" target="_self">Hello2</a></li>
@@ -183,7 +183,7 @@ HTML
                             </li>
                             <li><a href="./statistiques.php" target="_self">Statistiques</a></li>
                             <li><a href="./partenaires.php" target="_self">Partenaires</a></li>
-                            <li><a href="./equipe.php" target="_self">L'équipe</a></li>
+                            <li><a href="./equipe.php" target="_self">L'equipe</a></li>
                             
                         </ul>
                 	</li>
@@ -233,10 +233,10 @@ HTML
                     </ul>
                 </div> 
                 <div class="bas">
-                    <div class="th4">Coordonnées</div>
+                    <div class="th4">Coordonnees</div>
                     <ul>
                         <li>30 Rue d'en Bas - 02400 GLAND</li>
-                        <li>Tél : 03.04.05.06.07</li>
+                        <li>Tel : 03.04.05.06.07</li>
                         <li>Mail : contact@sinapps.fr</li>
                 </div>
             </div>
