@@ -104,5 +104,6 @@ HTML;
 				<div class = 'prix'>{$this->prix_preferentiel}</div>
 			</div>
 HTML;
+		return $prestation;
 	}
 }
