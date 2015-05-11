@@ -596,20 +596,18 @@ button
 	margin: 1.66%;
 }
 
-.box1 .row .th1
-{
-	width: 100%;
-	text-align: left;
-	margin-left: 5%;
-}
-
-.box1 .row .th1, .status, .coupable
+.box1 .row .th1, .box1 .row .th2, .status, .coupable
 {
 	width: 100%;
   	text-align: left;
 }
 
-.box1 .row .button
+.box1 .row .th1
+{
+	margin-left: 5%;
+}
+
+.box1 .row button
 {
 	position: static;
 	margin: -159px 100px 0 500px;
