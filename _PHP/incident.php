@@ -23,7 +23,7 @@ try {
 					break;
 					case 1 :
 					$status = "En cours de traitement";
-					$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Poster un commentaire</button>";
+					$traitement = "<textarea rows=8 placeholder=\"Votre commentaire ici...\" name=\"commentaire\"></textarea><button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Poster un commentaire</button>";
 					break;
 					case 2 :
 					$status = "Résolu !";
@@ -32,18 +32,16 @@ try {
 
 				$p->appendContent(<<<HTML
 					<div class="content">
-HTML
-				);	
-
-				$p->appendContent(<<<HTML
-					<div class="row th1">Détail de l'incident n°{$incident->getIdIncident()}</div>
-					<div class="row">
-						{$incident->getNomIncident()}<br/><br/>
-						{$incident->getDescriptionIncident()}<br/>
-						{$incident->getDateIncident()}<br/>	
-						{$status}<br/>
-						{$traitement}
-					</div>
+						<div class="row th1">Détail de l'incident n°{$incident->getIdIncident()}</div>
+						<div class="row">
+							{$incident->getNomIncident()}<br/><br/>
+							{$incident->getDescriptionIncident()}<br/>
+							{$incident->getDateIncident()}<br/>	
+							{$status}<br/>
+						</div>
+						<div class="row">	
+							{$traitement}
+						</div>
 HTML
 				);		
 
@@ -55,19 +53,23 @@ HTML
 
 				$option = "";
 				if ($user->estHabilite()) {
-					$option = "<option name=\"statut\" value=1>En cours de traitement</option>";
+					$option = "<select name=\"statut\">
+						<option name=\"statut\" value=0>Non traité</option>
+						<option name=\"statut\" value=1>En cours de traitement</option>
+						<option name=\"statut\" value=2>Résolu</option>
+						</select>";
+				}
+				else {
+					$option = "<input type=\"radio\" value=2 name=\"statut\">Résolu";
 				}
 
 				$p->appendContent(<<<HTML
-					<div class="row">
-						<form method="post">
-							<select name="statut">							
-								<option name="statut" value=0>Non traité</option>
-								{$option}
-								<option name="statut" value=2>Résolu</option>
-							</select>
-							<input type="submit" name="modifier" value="Modifier"> 
-						</form>	
+						<div class="row">
+							<form method="post">
+								{$option}								
+								<input type="submit" name="modifier" value="Modifier"> 
+							</form>	
+						</div>
 					</div>
 HTML
 				);	
