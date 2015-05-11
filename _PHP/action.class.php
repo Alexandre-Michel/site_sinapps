@@ -106,10 +106,24 @@ HTML;
 		{
 			$html.=<<<HTML
 				<div class = "row">
-					<div class = "th1">{$action->getNomIncident()}</div>
-					<div class = "th2">{$action->getDescriptionIncident()}</div>
-				</div>
 HTML;
+			if($action->getIdTypeAction() == 4) {
+				$html.=<<<HTML
+						<div class = "left">
+							<div class = "th1">{$action->getNomAction()}</div>
+							<div class = "th2">{$action->getIdTypeAction()}</div>
+						</div>
+HTML;
+			}
+			else {
+				$html.=<<<HTML
+						<div class = "right">
+							<div class = "th1">{$action->getNomAction()}</div>
+							<div class = "th2">{$action->getIdTypeAction()}</div>
+						</div>
+HTML;
+			}
+			$html.="</div>";
 		}
 		$html.=<<<HTML
 			</div>
