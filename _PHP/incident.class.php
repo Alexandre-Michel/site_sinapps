@@ -99,7 +99,7 @@ HTML;
 		{
 			$i = $ligne->getIdIncident();
 			$status = "";
-			switch($i->getStatutIncident()) {
+			switch($ligne->getStatutIncident()) {
 				case 0 : 
 					$status = "Non traité";
 					break;
@@ -146,7 +146,7 @@ HTML;
 		{
 			$i = $ligne->getIdIncident();
 			$status = "";
-			switch($i->getStatutIncident()) {
+			switch($ligne->getStatutIncident()) {
 				case 0 : 
 					$status = "Non traité";
 					break;
