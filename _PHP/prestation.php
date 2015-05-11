@@ -14,7 +14,7 @@ if (isset($_GET['i']) && !empty($_GET['i']))
 			<div class='content'>
 				<div class = "intro_box">
 					<div class = "box1">
-						{$type->printTypePrestation()}
+						{$prestation->printTypePrestation()}
 					</div>
 				</div>
 			</div>
