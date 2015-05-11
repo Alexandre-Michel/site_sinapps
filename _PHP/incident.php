@@ -36,6 +36,7 @@ HTML
 				);	
 
 				$p->appendContent(<<<HTML
+					<div class="row th1">Détail de l'incident n°{$incident->getIdIncident()}</div>
 					<div class="row">
 						{$incident->getNomIncident()}<br/><br/>
 						{$incident->getDescriptionIncident()}<br/>
@@ -52,12 +53,17 @@ HTML
 						exit;
 				}
 
+				$option = "";
+				if ($user->estHabilite()) {
+					$option = "<option name=\"statut\" value=1>En cours de traitement</option>";
+				}
+
 				$p->appendContent(<<<HTML
 					<div class="row">
 						<form method="post">
-							<select name="statut">
+							<select name="statut">							
 								<option name="statut" value=0>Non traité</option>
-								<option name="statut" value=1>En cours de traitement</option>
+								{$option}
 								<option name="statut" value=2>Résolu</option>
 							</select>
 							<input type="submit" name="modifier" value="Modifier"> 
