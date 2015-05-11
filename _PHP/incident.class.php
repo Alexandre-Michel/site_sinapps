@@ -158,7 +158,7 @@ HTML;
 					break;		
 			}
 
-			$pers = Personne::createPersFromId($ligne->getIdPers());
+			$pers = Personne::createPersFromId($ligne->getIdPersonne());
 
 			$html.=<<<HTML
 				<div class = "row">
