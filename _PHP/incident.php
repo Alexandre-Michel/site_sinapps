@@ -60,7 +60,7 @@ HTML
 						</select>";
 				}
 				else {
-					$option = "<input type=\"radio\" value=2 name=\"statut\">Résolu";
+					$option = "<label for name=\"statut\">Résolu</label><input type=\"checkbox\" value=2 name=\"statut\">Résolu";
 				}
 
 				$p->appendContent(<<<HTML
