@@ -33,7 +33,7 @@ $p->appendContent(<<<HTML
 HTML
 );
 
-for($i = 0; i < $count["nbre"]; i++)
+for($i = 0; $i < $count["nbre"]; $i++)
 {
 	$type = Type_Prestation::createTypePrestationFromId($i);
 	$p->appendContent($type->printTypePrestation());
