@@ -32,8 +32,8 @@ $p->appendContent(<<<HTML
 		<div class = "box1">
 HTML
 );
-var_dump($count["nbre"]);
-for($i = 0; $i < $count["nbre"]; $i++)
+
+for($i = 1; $i <= $count["nbre"]; $i++)
 {
 	$type = Type_Prestation::createTypePrestationFromId($i);
 	$p->appendContent($type->printTypePrestation());
