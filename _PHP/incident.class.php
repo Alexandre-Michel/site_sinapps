@@ -158,11 +158,14 @@ HTML;
 					break;		
 			}
 
+			$pers = Personne::createPersFromId($ligne->getIdPers());
+
 			$html.=<<<HTML
 				<div class = "row">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
 					<div class = "status">{$status}</div>
+					<div class = "coupable">Déclaré par {$pers->getPrenomPers()} {$pers->getNomPers()} le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'">Voir en détail</button>
 				</div>
 HTML;
