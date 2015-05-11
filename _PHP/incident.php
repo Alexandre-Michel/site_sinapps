@@ -3,6 +3,7 @@
 require_once 'webpage.class.php';
 require_once 'Personne.class.php';
 require_once 'incident.class.php';
+require_once 'action.class.php';
 
 $p = new WebPage("Détail de l'incident - Sinapp's");
 
@@ -36,6 +37,20 @@ try {
 							{$incident->getDateIncident()}<br/>	
 							{$status}<br/>
 						</div>
+HTML
+				);		
+
+				$actions = Incident::getActionsIncident($incident->getIdIncident());
+				foreach($actions as $uneAction) {
+					$p->appendContent(<<<HTML
+						<div class="row">	
+							{$uneAction->getNomAction()}
+						</div>
+HTML
+					);	
+				}
+
+				$p->appendContent(<<<HTML
 						<div class="row">	
 							{$traitement}
 						</div>

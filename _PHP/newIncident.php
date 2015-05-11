@@ -60,39 +60,6 @@ SQL
 				</select><br/>
 				<input type="submit" name="submit" value="Soumettre">
 			</form>
-			<script type="text/javascript">
-				function verify(form) {
-					var passed=false;
-						
-					var passAct = form.passAct;
-
-					if ( form.password.value !=  form.confirm.value) {
-						alert("Les deux mot de passe ne concordent pas");
-						 form.password.select();
-					}
-
-					else {
-						if (passAct.value != '' && passAct.value != null) {
-							if (password.length >= 6) {
-								passed=true;
-								if ( form.password.value != "")  form.password.value = sha1( form.password.value);
-								form.confirm.value = "";
-								passAct.value = sha1(passAct.value);
-							}
-							else {
-								alert("Mot de passe trop court !");
-								password.select();
-							}
-						}
-						else {
-							alert("Remplissez votre mot de passe !");
-							passAct.select();
-						}
-					}
-
-					return passed;
-				}
-			</script>			
     	</div>	
 HTML
     );
