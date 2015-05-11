@@ -146,12 +146,15 @@ HTML;
 		{
 			$i = $ligne->getIdIncident();
 			$status = "";
+			$traitement = "";
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
 					$status = "Non traité";
+					$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Traiter</button>";
 					break;
 				case 1 :
 					$status = "En cours de traitement";
+					$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Effectuer une action</button>";					
 					break;
 				case 2 :
 					$status = "Résolu";
@@ -168,6 +171,7 @@ HTML;
 					<div class = "coupable">Déclaré par {$pers->getPrenomPers()} {$pers->getNomPers()} le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'">Voir en détail</button>
 				</div>
+				<div>{$traitement}</div>
 HTML;
 		}
 		$html.=<<<HTML

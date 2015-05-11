@@ -526,3 +526,7 @@ HTML;
 		return $corps;		
 	}
 }
+
+public function estHabilite() {
+	return ($id_habilitation == 1) ? true : false;
+}

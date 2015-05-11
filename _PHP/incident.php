@@ -13,23 +13,30 @@ try {
 			$incident = Incident::createIncidentFromId($_GET['i']);
 			if ($incident->getIdPersonne() == $user->getIdPers() || $user->getIdHabilitation() == 1) {
 				$status = "";
+				$traitement = "";
 				switch($incident->getStatutIncident()) {
 					case 0 : 
 					$status = "Non traité";
+					if ($user->estHabilite()) {
+						$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Traiter</button>";
+					}
 					break;
 					case 1 :
 					$status = "En cours de traitement";
+					$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Poster un commentaire</button>";
 					break;
 					case 2 :
 					$status = "Résolu !";
 					break;		
 				}
+
 				$p->appendContent(<<<HTML
 					<div class="content">
 						{$incident->getNomIncident()}<br/><br/>
 						{$incident->getDescriptionIncident()}<br/>
 						{$incident->getDateIncident()}<br/>	
-						{$status}
+						{$status}<br/>
+						{$traitement}
 					</div>
 HTML
 				);				
