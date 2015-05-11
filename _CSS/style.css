@@ -612,3 +612,16 @@ button
 	position: static;
 	margin: -159px 100px 0 500px;
 }
+
+
+/******************* Incident ******************/
+.left, .right 
+{
+	-webkit-appearance: textarea;
+	border : 1px solid gray;
+	height : 100px;
+	width : 400px;
+	overflow : auto;
+	resize : both;
+	padding : 2px;
+}
