@@ -529,7 +529,7 @@ HTML;
 
 
 	public function estHabilite() {
-		return ($id_habilitation_pers == 1) ? true : false;
+		return ($this->id_habilitation_pers == 1) ? true : false;
 	}
 
 

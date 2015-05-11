@@ -32,6 +32,11 @@ try {
 
 				$p->appendContent(<<<HTML
 					<div class="content">
+HTML
+				);	
+
+				$p->appendContent(<<<HTML
+					<div class="row">
 						{$incident->getNomIncident()}<br/><br/>
 						{$incident->getDescriptionIncident()}<br/>
 						{$incident->getDateIncident()}<br/>	
@@ -39,7 +44,29 @@ try {
 						{$traitement}
 					</div>
 HTML
-				);				
+				);		
+
+				if(isset($_POST['modifier']) && $_POST['modifier'] == 'Modifier') {
+					if(isset($_REQUEST['statut'])) {
+						var_dump($_REQUEST['statut']);
+						//Incident::setStatutIncident();
+					}
+				}
+
+				$p->appendContent(<<<HTML
+					<div class="row">
+						<form method="post">
+							<select>
+								<option name="statut" value=0>Non traité</option>
+								<option name="statut" value=1>En cours de traitement</option>
+								<option name="statut" value=2>Résolu</option>
+							</select>
+							<input type="submit" name="modifier" value="Modifier"> 
+						</form>	
+					</div>
+HTML
+				);	
+
 			}
 			else {
 				header('location: ./index.php');
