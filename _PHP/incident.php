@@ -47,7 +47,7 @@ HTML
 				);		
 
 				if(isset($_POST['modifier']) && $_POST['modifier'] == 'Modifier') {
-						Incident::setStatutIncident($_REQUEST['statut']);
+						$incident->setStatutIncident($_REQUEST['statut']);
 				}
 
 				$p->appendContent(<<<HTML
