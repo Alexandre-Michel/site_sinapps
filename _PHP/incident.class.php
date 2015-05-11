@@ -116,7 +116,7 @@ HTML;
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
 					<div class = "status">{$status}</div>
-					<button onclick="location.href='./incident.php?i={$i}'" class="incident">Voir en détail</button>
+					<button onclick="location.href='./incident.php?i={$i}'" class='incident'>Voir en détail</button>
 				</div>
 HTML;
 		}
