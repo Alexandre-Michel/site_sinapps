@@ -607,7 +607,7 @@ button
 	margin-left: 5%;
 }
 
-.box1 .row button
+.box1 .row .incident
 {
 	position: static;
 	margin: -159px 100px 0 500px;
