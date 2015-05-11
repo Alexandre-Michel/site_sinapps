@@ -48,6 +48,8 @@ HTML
 
 				if(isset($_POST['modifier']) && $_POST['modifier'] == 'Modifier') {
 						$incident->setStatutIncident($_REQUEST['statut']);
+						header("location: ./incident.php?i={$incident->getIdIncident()}");
+						exit;
 				}
 
 				$p->appendContent(<<<HTML
