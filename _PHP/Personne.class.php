@@ -525,8 +525,14 @@ SQL
 HTML;
 		return $corps;		
 	}
+
+
+
+	public function estHabilite() {
+		return ($id_habilitation == 1) ? true : false;
+	}
+
+
+
 }
 
-public function estHabilite() {
-	return ($id_habilitation == 1) ? true : false;
-}
