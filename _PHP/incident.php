@@ -48,8 +48,7 @@ HTML
 
 				if(isset($_POST['modifier']) && $_POST['modifier'] == 'Modifier') {
 					if(isset($_REQUEST['statut'])) {
-						var_dump($_REQUEST['statut']);
-						//Incident::setStatutIncident();
+						Incident::setStatutIncident($_REQUEST['statut']);
 					}
 				}
 
