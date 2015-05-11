@@ -60,7 +60,7 @@ HTML
 						</select>";
 				}
 				else {
-					if ($incident->getStatutIncident()) {
+					if ($incident->getStatutIncident() == 2) {
 						$option = "<label for name=\"statut\">Résolu</label><input type=\"checkbox\" value=2 checked='checked' name=\"statut\">";
 					}
 					else {
