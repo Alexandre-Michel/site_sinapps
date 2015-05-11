@@ -150,11 +150,11 @@ HTML;
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
 					$status = "Non traité";
-					$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Traiter</button>";
+					$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Traiter</button>";
 					break;
 				case 1 :
 					$status = "En cours de traitement";
-					$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Effectuer une action</button>";					
+					$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Effectuer une action</button>";					
 					break;
 				case 2 :
 					$status = "Résolu";
