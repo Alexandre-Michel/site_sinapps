@@ -17,9 +17,6 @@ try {
 				switch($incident->getStatutIncident()) {
 					case 0 : 
 					$status = "Non traité";
-					if ($user->estHabilite()) {
-						$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Traiter</button>";
-					}
 					break;
 					case 1 :
 					$status = "En cours de traitement";
