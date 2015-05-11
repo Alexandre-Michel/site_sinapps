@@ -557,9 +557,16 @@ button
 .txt
 {
 	height: 50px;
+	width: 100%;
 	margin: 15px;
 	line-height: 1.125em;
 	font-size: 1.125em;
+}
+
+.prix
+{
+	height: 100%;
+	width: 100%;
 }
 
 .intro_box .box1, .intro .box
@@ -574,7 +581,7 @@ button
 	min-height: 335px;
 }
 
-.intro .box .row
+.box .row
 {
 	width: 100%;
 	float: left;
