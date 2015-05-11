@@ -120,16 +120,20 @@ HTML;
 
 	public static function createAction($lastAction, $user, $id_incident, $id_type_action)
 	{
+		require_once 'type_action.class.php';
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			INSERT INTO ACTION (nom_action, date_action, derniere_action, id_personne_intervenant, id_incident, id_type_action)
 			VALUES (:nom, :date_action, :lastAction, :id_pers, :id_inc, :id_type_act)
 SQL
 		);
-		$stmt->bindValue(":nom", $nom_incident);
-		$stmt->bindValue(":description", $description);
+		$type_action = Type_action::createFromId($id_type_action);
+		$nom_action = $type_action->getNomTypeAction();
+		$stmt->bindValue(":nom", $nom_action);
+		$stmt->bindValue(":date_action", date("Le d-m-Y à H:i") );
+		$stmt->bindValue(":lastAction", $lastAction);
 		$stmt->bindValue(":id_pers", Personne::createFromSession()->getIdPers());
-		$stmt->bindValue(":id_type", $id_type_incident);
-		$stmt->bindValue(":date_incident", date("Le d-m-Y à H:i") );
+		$stmt->bindValue(":id_inc", $id_incident);
+		$stmt->bindValue(":id_type_act", $id_type_action);		
 		$stmt->execute();
 	}
 
