@@ -88,4 +88,21 @@ SQL
 HTML;
 		return $prestation;
 	}
+
+	public function printTypePrestaComplete()
+	{
+		$prestation = <<<HTML
+			<div class = 'row'>
+				<div class = "th1">{$this->nom_prestation}</div>
+				<div class = "img">
+					<img id="logo_ordi" src="{$this->path_logo}" alt="logo1"/>
+				</div>
+			</div>
+			<div class = 'row'>
+				<div class = 'txt'>{$this->description_prestation}</div>
+				<div class = 'prix'>{$this->prix_forfaitaire}</div>
+				<div class = 'prix'>{$this->prix_preferentiel}</div>
+			</div>
+HTML;
+	}
 }

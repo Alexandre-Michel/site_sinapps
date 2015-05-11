@@ -14,7 +14,7 @@ if (isset($_GET['i']) && !empty($_GET['i']))
 			<div class='content'>
 				<div class = "intro_box">
 					<div class = "box1">
-						{$prestation->printTypePrestation()}
+						{$prestation->printTypePrestaComplete()}
 					</div>
 				</div>
 			</div>
@@ -23,7 +23,7 @@ HTML
 	}
 	catch (Exception $e)
 	{
-		header('location: ./index.php');
+		header('location: ./prestations.php');
 		exit;
 	}
 }
