@@ -579,4 +579,6 @@ button
 	width: 33.33%;
 	float: left;
 	min-height: 335px;
+	background: rgba(251, 251, 251, .35);
+	margin: 1.66%;
 }
