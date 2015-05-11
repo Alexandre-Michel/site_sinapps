@@ -82,7 +82,7 @@ SQL
 				<div class = "border_logo"></div>
 				<div class = "txt">{$this->description_prestation}</div>
 				<div class = "more">
-					<a href="">En savoir plus &rsaquo;</a>
+					<a href="location.href='./prestation.php?i={$this->id_type_prestation}'">En savoir plus &rsaquo;</a>
 				</div>
 			</div>
 HTML;
