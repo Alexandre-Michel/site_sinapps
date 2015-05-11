@@ -580,9 +580,3 @@ button
 	float: left;
 	min-height: 335px;
 }
-
-.box .row
-{
-	width: 100%;
-	float: left;
-}
