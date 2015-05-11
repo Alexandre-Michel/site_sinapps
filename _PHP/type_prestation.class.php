@@ -97,6 +97,7 @@ HTML;
 				<div class = "img">
 					<img id="logo_ordi" src="{$this->path_logo}" alt="logo1"/>
 				</div>
+				<div class = 'border'></div>
 			</div>
 			<div class = 'row'>
 				<div class = 'txt'>{$this->description_prestation}</div>

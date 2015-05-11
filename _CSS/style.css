@@ -548,10 +548,23 @@ button
 	text-align: center; 
 }
 
+.box
+{
+	width: 1000px;
+	margin: auto;
+	background: rgba(251, 251, 251, .35);
+}
+
 .img
 {
 	width: 100%;
 	margin: 15px;
+}
+
+.border
+{
+	width: 70%;
+	border-bottom: 1px solid black;
 }
 
 .txt
