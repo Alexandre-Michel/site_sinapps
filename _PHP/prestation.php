@@ -12,8 +12,8 @@ if (isset($_GET['i']) && !empty($_GET['i']))
 		$prestation = Type_Prestation::createTypePrestationFromId($_GET['i']);
 		$p->appendContent(<<<HTML
 			<div class='content'>
-				<div class = "intro_box">
-					<div class = "box1">
+				<div class = "intro">
+					<div class = "box">
 						{$prestation->printTypePrestaComplete()}
 					</div>
 				</div>

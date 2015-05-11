@@ -562,7 +562,7 @@ button
 	font-size: 1.125em;
 }
 
-.intro_box .box1
+.intro_box .box1, .intro .box
 {
 	background: none;
 }
@@ -572,4 +572,10 @@ button
 	width: 33.33%;
 	float: left;
 	min-height: 335px;
+}
+
+.intro .box .row
+{
+	width: 100%;
+	float: left;
 }
