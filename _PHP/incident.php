@@ -47,15 +47,13 @@ HTML
 				);		
 
 				if(isset($_POST['modifier']) && $_POST['modifier'] == 'Modifier') {
-					if(isset($_REQUEST['statut'])) {
 						Incident::setStatutIncident($_REQUEST['statut']);
-					}
 				}
 
 				$p->appendContent(<<<HTML
 					<div class="row">
 						<form method="post">
-							<select>
+							<select name="statut">
 								<option name="statut" value=0>Non traité</option>
 								<option name="statut" value=1>En cours de traitement</option>
 								<option name="statut" value=2>Résolu</option>
