@@ -98,10 +98,24 @@ HTML;
 		foreach ($array as $ligne)
 		{
 			$i = $ligne->getIdIncident();
+			$status = "";
+			switch($i->getStatutIncident()) {
+				case 0 : 
+					$status = "Non traité";
+					break;
+				case 1 :
+					$status = "En cours de traitement";
+					break;
+				case 2 :
+					$status = "Résolu";
+					break;		
+			}
+
 			$html.=<<<HTML
 				<div class = "row">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
+					<div class = "status">{$status}</div>
 					<button onclick="location.href='./incident.php?i={$i}'">Voir en détail</button>
 				</div>
 HTML;
@@ -131,10 +145,24 @@ HTML;
 		foreach ($array as $ligne)
 		{
 			$i = $ligne->getIdIncident();
+			$status = "";
+			switch($i->getStatutIncident()) {
+				case 0 : 
+					$status = "Non traité";
+					break;
+				case 1 :
+					$status = "En cours de traitement";
+					break;
+				case 2 :
+					$status = "Résolu";
+					break;		
+			}
+
 			$html.=<<<HTML
 				<div class = "row">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
+					<div class = "status">{$status}</div>
 					<button onclick="location.href='./incident.php?i={$i}'">Voir en détail</button>
 				</div>
 HTML;
@@ -169,7 +197,7 @@ SQL
 	/*
 	Permet la déclaration d'un incident
 	*/
-	public static function createIncident($nom_incident, $description, $id_type_incident = 3)
+	public static function createIncident($nom_incident, $description = "", $id_type_incident)
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			INSERT INTO INCIDENT (nom_incident, description_incident, id_personne, id_type_incident, date_incident)
@@ -180,7 +208,7 @@ SQL
 		$stmt->bindValue(":description", $description);
 		$stmt->bindValue(":id_pers", Personne::createFromSession()->getIdPers());
 		$stmt->bindValue(":id_type", $id_type_incident);
-		$stmt->bindValue(":date_incident", date("d-m-Y à H:i") );
+		$stmt->bindValue(":date_incident", date("Le d-m-Y à H:i") );
 		$stmt->execute();
 	}
 

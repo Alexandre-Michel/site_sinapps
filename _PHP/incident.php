@@ -12,11 +12,24 @@ try {
 		try {
 			$incident = Incident::createIncidentFromId($_GET['i']);
 			if ($incident->getIdPersonne() == $user->getIdPers() || $user->getIdHabilitation() == 1) {
+				$status = "";
+				switch($incident->getStatutIncident()) {
+					case 0 : 
+					$status = "Non traité";
+					break;
+					case 1 :
+					$status = "En cours de traitement";
+					break;
+					case 2 :
+					$status = "Résolu !";
+					break;		
+				}
 				$p->appendContent(<<<HTML
 					<div class="content">
-						{$incident->getNomIncident()}
-						{$incident->getDescriptionIncident()}
-						{$incident->getDateIncident()}	
+						{$incident->getNomIncident()}<br/><br/>
+						{$incident->getDescriptionIncident()}<br/>
+						{$incident->getDateIncident()}<br/>	
+						{$status}
 					</div>
 HTML
 				);				
