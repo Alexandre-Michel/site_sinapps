@@ -40,11 +40,11 @@ try {
 HTML
 				);		
 
-				$actions = Incident::getActionsIncident($incident->getIdIncident());
+				$actions = Action::getActionsByIdIncident($incident->getIdIncident());
 				foreach($actions as $uneAction) {
 					$p->appendContent(<<<HTML
 						<div class="row">	
-							{$uneAction->getNomAction()}
+							{$uneAction->getIdPersonneInt()}
 						</div>
 HTML
 					);	
