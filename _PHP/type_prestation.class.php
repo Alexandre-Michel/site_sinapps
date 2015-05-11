@@ -100,8 +100,8 @@ HTML;
 			</div>
 			<div class = 'row'>
 				<div class = 'txt'>{$this->description_prestation}</div>
-				<div class = 'prix'>{$this->prix_forfaitaire}</div>
-				<div class = 'prix'>{$this->prix_preferentiel}</div>
+				<div class = 'prix'>A partir de {$this->prix_forfaitaire}€</div>
+				<div class = 'prix'>Pour les gens gentils comme il faut : {$this->prix_preferentiel}€</div>
 			</div>
 HTML;
 		return $prestation;
