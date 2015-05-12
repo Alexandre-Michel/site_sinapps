@@ -538,7 +538,7 @@ HTML;
 		$from = str_replace("\n", "", $from);
 		$from = str_replace("\r", "", $from);
 		$from = mb_encode_mimeheader(utf8_decode($from));
-		mail('alexandre.michel08@gmail.com',
+		mail('alexandre.michel@sinapps.fr',
 			mb_encode_mimeheader(utf8_decode($subject)),
 			$text/*,
 			<<<HEADERS
