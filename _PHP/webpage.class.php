@@ -1,6 +1,5 @@
 <?php
 
-
 class WebPage {
     /**
      * Texte compris entre <head> et </head>
@@ -154,7 +153,16 @@ HTML
             throw new Exception(__CLASS__ . ": title not set") ;
         }
 
-        //$session_key = Personne::$session_key;
+		$panneau_connecte = "";
+		
+		try {
+			$user = Personne::createFromSession();
+			$panneau_connecte = "<div class='row'>Wesh wesh {$user->getNomPers()}</div>";
+		}
+		catch (Exception $e) {
+			
+		}
+		
         return <<<HTML
 <!doctype html>
 <html lang="fr">
@@ -166,6 +174,7 @@ HTML
     <body>
         <div id='head_fixe'>
             <a href="./index.php"><img id='logo_sinapps' src ="../_IMG/logo_sinapps.png" alt='logo'/></a><br/>
+			{$panneau_connecte}
             <div class="row">
 				<div id='onglets'>
 					<ul class="header_onglets">

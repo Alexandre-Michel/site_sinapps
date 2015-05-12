@@ -11,27 +11,7 @@ require_once 'Prestation.class.php';
 require_once 'Type_Prestation.class.php';
 
 $pdo = myPDO::getInstance();
-/*
-$stmt = $pdo->prepare(<<<SQL
-	SELECT *
-	FROM TYPE_PRESTATION
-SQL
-);
 
-$stmt->execute();
-
-$liste_noms = array();
-$liste_img = array();
-$liste_description = array();
-
-
-while (($ligne = $stmt->fetch()) !== false) {
-    array_push($liste_noms, $ligne['nom_prestation']);
-    array_push($liste_img, $ligne['path_logo']);
-    array_push($liste_description, $ligne['description_prestation']);
-
-}
-*/
 $p = new WebPage("Accueil - Sinapp's");
 
 $p->appendContent(<<<HTML
