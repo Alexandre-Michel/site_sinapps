@@ -15,6 +15,7 @@ try {
 			if ($incident->getIdPersonne() == $user->getIdPers() || $user->getIdHabilitation() == 1) {
 				$status = "";
 				$traitement = "";
+				$champsAdmin = "";
 				switch($incident->getStatutIncident()) {
 					case 0 : 
 					$status = "Non traité";
@@ -22,7 +23,10 @@ try {
 					case 1 :
 					$status = "En cours de traitement";
 					$traitement = "<form method='post'><div class = 'row'><textarea rows=8 placeholder=\"Votre commentaire ici...\" name=\"commentaire\"></textarea></div>
-						<div class = 'row'><input type='submit' value='Poster un commentaire' name='commentaire'></div></form>";
+						<div class = 'row'><input type='submit' value='Poster' name='commentaire'></div></form>";
+					if ($user->estHabilite()) {
+						$champsAdmin = "";
+					}
 					break;
 					case 2 :
 					$status = "Résolu !";
@@ -83,7 +87,19 @@ HTML
 						</div>
 					</div>
 HTML
-				);	
+				);
+
+
+				if (isset($_REQUEST['commentaire']) && $_REQUEST['commentaire'] == "Poster") {	
+					if ($user->estHabilite()) {
+						Action::createAction($user->getIdPers(), $incident->getIdIncident(), 1);
+					}
+					else {
+						Action::createAction($user->getIdPers(), $incident->getIdIncident(), 4);
+					}
+					header("location: ./incident.php?i={$incident->getIdIncident()}");
+					exit;					
+				}	
 
 			}
 			else {

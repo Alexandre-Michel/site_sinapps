@@ -132,7 +132,7 @@ HTML;
 	}
 
 
-	public static function createAction($lastAction, $user, $id_incident, $id_type_action)
+	public static function createAction($lastAction = 0, $user, $id_incident, $id_type_action)
 	{
 		require_once 'type_action.class.php';
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
