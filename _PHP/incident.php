@@ -101,6 +101,7 @@ HTML
 							<form method="post">
 								{$option}								
 								<input type="submit" name="modifier" value="Modifier"> 
+								<input type="button" name="retour" value="Retour" onclick="history.back()">
 							</form>	
 						</div>
 					</div>

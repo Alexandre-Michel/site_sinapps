@@ -166,50 +166,52 @@ HTML
     <body>
         <div id='head_fixe'>
             <a href="./index.php"><img id='logo_sinapps' src ="../_IMG/logo_sinapps.png" alt='logo'/></a><br/>
-            <div id='onglets'>
-                <ul class="header_onglets">
-                	<li id="accueil">
-                		<a href="./index.php" target="_self">Accueil</a>
-                	</li>
+            <div class="row">
+				<div id='onglets'>
+					<ul class="header_onglets">
+						<li id="accueil">
+							<a href="./index.php" target="_self">Accueil</a>
+						</li>
 
-                	<li>
-                		Agence 
-                        <ul class="niveau2">
-                            <li><a href="./presentation.php" target="_self">Presentation</a>
-                                <ul class="niveau3">
-                                    <li><a href="./presentation.php" target="_self">Hello</a></li>
-                                    <li><a href="./presentation.php" target="_self">Hello2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./statistiques.php" target="_self">Statistiques</a></li>
-                            <li><a href="./partenaires.php" target="_self">Partenaires</a></li>
-                            <li><a href="./equipe.php" target="_self">L'equipe</a></li>
-                            
-                        </ul>
-                	</li>
+						<li>
+							Agence 
+							<ul class="niveau2">
+								<li><a href="./presentation.php" target="_self">Presentation</a>
+									<ul class="niveau3">
+										<li><a href="./presentation.php" target="_self">Hello</a></li>
+										<li><a href="./presentation.php" target="_self">Hello2</a></li>
+									</ul>
+								</li>
+								<li><a href="./statistiques.php" target="_self">Statistiques</a></li>
+								<li><a href="./partenaires.php" target="_self">Partenaires</a></li>
+								<li><a href="./equipe.php" target="_self">L'equipe</a></li>
+								
+							</ul>
+						</li>
 
-                	<li>
-                		<a href="./offres.php" target="_self">Offres</a>
-                        <ul class="niveau2">
-                            <li><a href="./offre_silver.php" target="_self">Offre Silver</a></li>
-                            <li><a href="./offre_gold.php" target="_self">Offre Gold</a></li>
-                            <li><a href="./offre_platinum.php" target="_self">Offre Platinum</a></li>                            
-                        </ul>
-                	</li>
+						<li>
+							<a href="./offres.php" target="_self">Offres</a>
+							<ul class="niveau2">
+								<li><a href="./offre_silver.php" target="_self">Offre Silver</a></li>
+								<li><a href="./offre_gold.php" target="_self">Offre Gold</a></li>
+								<li><a href="./offre_platinum.php" target="_self">Offre Platinum</a></li>                            
+							</ul>
+						</li>
 
-                	<li>
-                		<a href="./prestations.php" target="_self">Prestations</a>
-                	</li>
+						<li>
+							<a href="./prestations.php" target="_self">Prestations</a>
+						</li>
 
-                	<li>
-                		<a href="./perso.php" target="_self">Espace personnel</a>
-                	</li>
+						<li>
+							<a href="./perso.php" target="_self">Espace personnel</a>
+						</li>
 
-                	<li>
-                		<a href="./contact.php" target="_self">Contactez-nous</a>
-                	</li>
-                </ul>
-            </div>
+						<li>
+							<a href="./contact.php" target="_self">Contactez-nous</a>
+						</li>
+					</ul>
+				</div>
+			</div>	
         </div>
         <div id="banniere">
             

@@ -29,6 +29,13 @@ ul
 	max-width: 1189px;
 }
 
+#head_fixe .row 
+{
+	margin : 0;
+	max-width : none;
+	overflow : visible;
+}
+
 #onglets {
 	width: 100%;
 	height: 50px;
