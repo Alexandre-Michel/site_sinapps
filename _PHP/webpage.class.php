@@ -163,7 +163,7 @@ HTML
 					<div class='row'>
 						<a href='./perso.php' title='Espace personnel'><img src='../_IMG/logos/home.png' alt='Espace Personnel' width='30px' /></a> 
 						<a href='./newIncident.php' title='Signaler un incident'><img src='../_IMG/logos/warning.png' alt='Signaler un incident' width='30px' /></a>
-						<a href='./offres.php' title='Se déconnecter'><img src='../_IMG/logos/leave.png' alt='Se deconnecter' width='30px' /></a>
+						<input id='logout' type='button' alt='Se déconnecter' width='30px'/>
 					</div>	
 				</div>	
 			";

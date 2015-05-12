@@ -16,6 +16,11 @@ ul
 	list-style: none;
 }
 
+#logout 
+{
+	background-image: url('../_IMG/logos/leave.png');
+}
+
 #logo_sinapps {
 	margin-right: auto;
 	margin-left: auto;
