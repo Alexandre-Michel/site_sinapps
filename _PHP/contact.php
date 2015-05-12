@@ -67,6 +67,8 @@ else
 
 if($form)
 {
+	if(!isset($message))
+		$message = "";
 	$p->appendContent(<<<HTML
 	<div class="content">	
 		<div class="infos_contact">
