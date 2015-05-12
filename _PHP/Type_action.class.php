@@ -19,11 +19,11 @@ class Type_action {
 		return $this->description_type_action;
 	}
 
-	public function getTypeAct() {
+	public function getNomTypeAction() {
 		return $this->type_action;
 	}
 
-	public static function createActionFromId($id) {
+	public static function createTypeActionFromId($id) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT * 
 			FROM ACTION

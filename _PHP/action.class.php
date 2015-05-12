@@ -1,6 +1,7 @@
 <?php
 
 require_once 'myPDO.include.php';
+require_once 'type_action.class.php';
 
 class Action
 {
@@ -107,19 +108,22 @@ HTML;
 			$html.=<<<HTML
 				<div class = "row">
 HTML;
+			$type_action = Type_action::createTypeActionFromId($action->getIdTypeAction());
+			$nom_type_action = $type_action->getNomTypeAction();
+			var_dump($type_action);
 			if($action->getIdTypeAction() == 4) {
 				$html.=<<<HTML
 						<div class = "left">
-							<div class = "th1">{$action->getNomAction()}</div>
-							<div class = "th2">{$action->getIdTypeAction()}</div>
+							<div class = "th2">{$nom_type_action}</div>
+							<div class = "th4">{$action->getNomAction()}</div>
 						</div>
 HTML;
 			}
 			else {
 				$html.=<<<HTML
 						<div class = "right">
-							<div class = "th1">{$action->getNomAction()}</div>
-							<div class = "th2">{$action->getIdTypeAction()}</div>
+							<div class = "th2">{$nom_type_action}</div>
+							<div class = "th4">{$action->getNomAction()}</div>
 						</div>
 HTML;
 			}
@@ -132,18 +136,15 @@ HTML;
 	}
 
 
-	public static function createAction($lastAction = 0, $user, $id_incident, $id_type_action)
+	public static function createAction($desc_action, $lastAction = 0, $user, $id_incident, $id_type_action)
 	{
-		require_once 'type_action.class.php';
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			INSERT INTO ACTION (nom_action, date_action, derniere_action, id_personne_intervenant, id_incident, id_type_action)
 			VALUES (:nom, :date_action, :lastAction, :id_pers, :id_inc, :id_type_act)
 SQL
 		);
-		$type_action = Type_action::createActionFromId($id_type_action);
-		$nom_action = $type_action->getNomTypeAction();
-		$stmt->bindValue(":nom", $nom_action);
-		$stmt->bindValue(":date_action", date("Le d-m-Y à H:i") );
+		$stmt->bindValue(":nom", $desc_action);
+		$stmt->bindValue(":date_action", date("d-m-Y à H:i") );
 		$stmt->bindValue(":lastAction", $lastAction);
 		$stmt->bindValue(":id_pers", Personne::createFromSession()->getIdPers());
 		$stmt->bindValue(":id_inc", $id_incident);
