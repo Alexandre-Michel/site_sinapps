@@ -532,7 +532,21 @@ HTML;
 		return ($this->id_habilitation_pers == 1) ? true : false;
 	}
 
-
+	public function mail($subject, $text, $from)
+	{
+		$texte = nl2br($text);
+		$from = str_replace("\n", "", $from);
+		$from = str_replace("\r", "", $from);
+		$from = mb_encode_mimeheader(utf8_decode($from));
+		mail('alexandre.michel08@gmail.com',
+			mb_encode_mimeheader(utf8_decode($subject)),
+			$text,
+			<<<HEADERS
+MIME-Version: 1.0
+Content-type: text/html;charset=utf-8
+From: {$from} <mail@{$_SERVER['HTTP_HOST']}>
+HEADERS
+		);
+	}
 
 }
-
