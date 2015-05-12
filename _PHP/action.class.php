@@ -110,7 +110,6 @@ HTML;
 HTML;
 			$type_action = Type_action::createTypeActionFromId($action->getIdTypeAction());
 			$nom_type_action = $type_action->getNomTypeAction();
-			var_dump($type_action);
 			if($action->getIdTypeAction() == 4) {
 				$html.=<<<HTML
 						<div class = "left">

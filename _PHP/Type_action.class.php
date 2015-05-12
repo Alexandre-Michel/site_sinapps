@@ -26,8 +26,8 @@ class Type_action {
 	public static function createTypeActionFromId($id) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT * 
-			FROM ACTION
-			WHERE id_action = :id_act
+			FROM TYPE_ACTION
+			WHERE id_type_action = :id_act
 SQL
 		);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
