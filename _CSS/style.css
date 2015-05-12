@@ -26,14 +26,14 @@ ul
 	position: fixed;
 	margin-top: -136px;
 	width: 100%;
-	background: white;
+	background: pink;
+	border-bottom: 3px solid lime;
 }
 
 #head_fixe .row
 {
   margin: 0;
   max-width: none;
-  background-color: rgba(255,255,255,0.95);
 }
 
 #head_fixe .row 
@@ -44,7 +44,6 @@ ul
 }
 
 #onglets {
-	width: 100%;
 	height: 50px;
 }
 
@@ -66,7 +65,6 @@ ul
  	max-height: 50px;
 	float : left;
 	overflow: hidden;
-	background-color: rgba(255,255,255,0.95);
 } 
 
  
@@ -310,10 +308,6 @@ strong
 	margin: 20px 2.5%;
 }
 
-.envoi_contact {
-	margin : 10px;
-	margin-bottom: 300px;
-}
 
 #envoi_bouton {
 	width: 300px;
@@ -505,6 +499,7 @@ input[type="submit"]
 	text-align: center;
 	background: url("../_IMG/background.jpg") no-repeat bottom;
 	border-top : 10px solid #e8e8e8;
+	padding-bottom : 100px;
 }
 
 .box1
