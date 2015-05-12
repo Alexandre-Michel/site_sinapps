@@ -23,10 +23,17 @@ ul
 }
 
 #head_fixe {
-	position: relative;
-	margin-right: auto;
-	margin-left: auto;
-	max-width: 1189px;
+	position: fixed;
+	margin-top: -136px;
+	width: 100%;
+	background: white;
+}
+
+#head_fixe .row
+{
+  margin: 0;
+  max-width: none;
+  background-color: rgba(255,255,255,0.95);
 }
 
 #head_fixe .row 
@@ -106,6 +113,7 @@ ul.niveau3 {
 #banniere {
 	background: url("../_IMG/imgHeaderSin.jpg") no-repeat center;
 	height: 450px;
+	margin-top: 136px;
 }
 
 
