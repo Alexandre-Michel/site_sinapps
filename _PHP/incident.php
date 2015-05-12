@@ -38,7 +38,7 @@ try {
 					break;
 					case 1 :
 					$status = "En cours de traitement";
-					$traitement = "<form method='post'><div class = 'row'><textarea rows=8 placeholder=\"Votre commentaire ici...\" name=\"commentaire\"></textarea></div>
+					$traitement = "<form method='post'><div class = 'row'><textarea id='textIncident' rows=8 placeholder=\"Votre commentaire ici...\" name=\"commentaire\"></textarea></div>
 						<div class = 'row'><input type='submit' value='Poster' name='poster'></div></form>";
 					if ($user->estHabilite()) {
 						$champsAdmin = "";
@@ -52,11 +52,13 @@ try {
 				$p->appendContent(<<<HTML
 					<div class="content">
 						<div class="row th1">Détail de l'incident n°{$incident->getIdIncident()}</div>
+						<div class="row">{$status}<br/></div>
 						<div class="row">
-							{$incident->getNomIncident()}<br/><br/>
-							{$incident->getDescriptionIncident()}<br/>
-							{$incident->getDateIncident()}<br/>	
-							{$status}<br/>
+							<div class="left">
+								{$incident->getNomIncident()}<br/><br/>
+								{$incident->getDescriptionIncident()}<br/>
+								{$incident->getDateIncident()}<br/>	
+							</div>		
 						</div>
 HTML
 				);		

@@ -114,7 +114,8 @@ HTML;
 				$html.=<<<HTML
 						<div class = "left">
 							<div class = "th2">{$nom_type_action}</div>
-							<div class = "th4">{$action->getNomAction()}</div>
+							<div class ="message">{$action->getNomAction()}</div>
+							<div class = "date_action">{$action->getDateAction()}</div>
 						</div>
 HTML;
 			}
@@ -122,7 +123,8 @@ HTML;
 				$html.=<<<HTML
 						<div class = "right">
 							<div class = "th2">{$nom_type_action}</div>
-							<div class = "th4">{$action->getNomAction()}</div>
+							<div class ="message">{$action->getNomAction()}</div>
+							<div class = "date_action">{$action->getDateAction()}</div>
 						</div>
 HTML;
 			}
@@ -143,7 +145,7 @@ HTML;
 SQL
 		);
 		$stmt->bindValue(":nom", $desc_action);
-		$stmt->bindValue(":date_action", date("d-m-Y à H:i") );
+		$stmt->bindValue(":date_action", "Posté le " . date("d-m-Y") . " à " . date("H:i") );
 		$stmt->bindValue(":lastAction", $lastAction);
 		$stmt->bindValue(":id_pers", Personne::createFromSession()->getIdPers());
 		$stmt->bindValue(":id_inc", $id_incident);

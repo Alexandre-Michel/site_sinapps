@@ -619,7 +619,7 @@ button
 {
 	-webkit-appearance: textarea;
 	border : 1px solid gray;
-	height : 100px;
+	min-height : 100px;
 	width : 550px;
 	overflow : auto;
 	resize : both;
@@ -636,4 +636,15 @@ button
 {
 	margin-right: 404px;
 	background: rgba(255, 255, 0, .35);
+}
+
+.message 
+{
+	text-align: justify;
+	padding: 3px;
+}
+
+#textIncident 
+{
+	width : 750px;
 }
