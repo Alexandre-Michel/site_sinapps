@@ -169,7 +169,7 @@ HTML;
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
 					<div class = "status">{$status}</div>
 					<div class = "coupable">Déclaré par {$pers->getPrenomPers()} {$pers->getNomPers()} le {$ligne->getDateIncident()}</div>
-					<button onclick="location.href='./incident.php?i={$i}'">Voir en détail</button>
+					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
 		}
