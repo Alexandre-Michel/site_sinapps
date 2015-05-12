@@ -21,7 +21,8 @@ try {
 					break;
 					case 1 :
 					$status = "En cours de traitement";
-					$traitement = "<textarea rows=8 placeholder=\"Votre commentaire ici...\" name=\"commentaire\"></textarea><button onclick=\"location.href='./traiterIncident.php?id={$incident->getIdIncident()}'\">Poster un commentaire</button>";
+					$traitement = "<form method='post'><div class = 'row'><textarea rows=8 placeholder=\"Votre commentaire ici...\" name=\"commentaire\"></textarea></div>
+						<div class = 'row'><input type='submit' value='Poster un commentaire' name='commentaire'></div></form>";
 					break;
 					case 2 :
 					$status = "Résolu !";
