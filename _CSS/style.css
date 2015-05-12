@@ -625,3 +625,15 @@ button
 	resize : both;
 	padding : 2px;
 }
+
+.right
+{
+	margin-left: 550px;
+	background: rgba(0, 128, 255, .35);
+}
+
+.left
+{
+	margin-left: 50px;
+	background: rgba(255, 255, 0, .35);
+}
