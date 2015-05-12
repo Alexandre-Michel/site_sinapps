@@ -614,6 +614,13 @@ button
 	color: red;
 }
 
+.box1 .row input.button
+{
+	position: static;
+	margin: -159px 100px 0 500px;
+	color: red;
+}
+
 
 /******************* Incident ******************/
 .left, .right 
