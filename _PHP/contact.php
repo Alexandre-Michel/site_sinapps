@@ -32,7 +32,42 @@ catch (NotInSessionException $e) {
 
 }
 
-$p->appendContent(<<<HTML
+//Soumission du formulaire
+if(isset($_REQUEST['submit']) && $_REQUEST['submit'] == 'Envoyer')
+{
+	//Existence des variables
+	if(isset($_REQUEST['nom']) && !empty($_REQUEST['nom'])
+		&& isset($_REQUEST['prenom']) && !empty($_REQUEST['prenom'])
+		&& isset($_REQUEST['mail']) && !empty($_REQUEST['mail'])
+		&& isset($_REQUEST['message']) && !empty($_REQUEST['message']))
+	{
+		//Adresse mail valide ?
+		if(filter_var($_REQUEST['mail'], FILTER_VALIDATE_EMAIL))
+		{
+			$form = false;
+			$subject = $_REQUEST['nom']." ".$_REQUEST['prenom']." - Contact Sinapps";
+			$text = $_REQUEST['message'];
+			$from = $_REQUEST['mail'];
+			Personne::mail($subject, $text, $from);
+		}
+		else
+		{
+			$form = true;
+			$message = "Votre mail n'est pas valide.";
+		}
+	}
+	else
+	{
+		$form = true;
+		$message = "Il manque des informations.";
+	}
+}
+else
+	$form = true;
+
+if($form)
+{
+	$p->appendContent(<<<HTML
 	<div class="content">	
 		<div class="infos_contact">
 			<div class="row">
@@ -55,7 +90,8 @@ $p->appendContent(<<<HTML
 		<div class="titre_contact th1">
 			Ou par mail...
 		</div>
-		<form method="post" action="Personne::mail('Demande de Sinapps', {$_REQUEST['message']}, 'moi')">
+		<div>{$message}</div>
+		<form method="post">
 			<div class="form">
 				<div class="row">
 					<div class="champs">
@@ -72,8 +108,8 @@ $p->appendContent(<<<HTML
 				</div>	
 
 				<div class="row">
-					<div class="envoi_contact">	
-						<input type="submit" value="Envoyer" id="envoi_bouton">
+					<div class="envoi_contact">
+						<input type="submit" name="submit" value="Envoyer" id="envoi_bouton">
 					</div>
 				</div>
 			</div>
@@ -81,6 +117,7 @@ $p->appendContent(<<<HTML
 		
 	</div>
 HTML
-);
+	);
+}
 
 echo $p->toHTML();
