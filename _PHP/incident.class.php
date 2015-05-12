@@ -161,7 +161,7 @@ HTML;
 			}
 
 			$pers = Personne::createPersFromId($ligne->getIdPersonne());
-			$txt = $ligne->getDescriptionIncident()
+			$txt = $ligne->getDescriptionIncident();
 			if(strlen($txt) > 128)
 				$txt = substr($txt, 0, 128);
 			$html.=<<<HTML
