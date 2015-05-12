@@ -22,11 +22,11 @@ $p = new WebPage("Prestations - Sinapp's");
 $p->appendContent(<<<HTML
 <div class = "content">
 	<div class = "welcome">
-		<div class = "th1">Un titre de ouf</div>
-		<div class = "th2">Et un sous-titre qui déchire de ouf</div>
+		<div class = "th1">Nos prestations</div>
+		<div class = "th2">Chaque besoin a sa solution ...</div>
 	</div>
 	<div class = "intro th2">
-		<span>Là t'as vu c'est le sprésentations</span>
+		<span></span>
 	</div>
 	<div class = "intro_box">
 		<div class = "box1">
