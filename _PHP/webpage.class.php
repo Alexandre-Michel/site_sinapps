@@ -169,7 +169,15 @@ HTML
 			";
 		}
 		catch (Exception $e) {
-			
+			$panneau_connecte = 
+				"<div class='panel'>
+						<div class='row'>Bienvenue chez Sinapp's</div>
+						<div class='row'>
+							<a href='./connexion.php'><input type='button' value='Identifiez-vous'/></a>
+							<a href='./inscription.php'><input type='button' value='Pas encore inscrit ?'/></a>
+						</div>	
+					</div>	
+				";
 		}
 		
         return <<<HTML

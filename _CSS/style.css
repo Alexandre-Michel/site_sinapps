@@ -33,6 +33,7 @@ ul
 	width: 100%;
 	background: pink;
 	border-bottom: 3px solid lime;
+	z-index: 1;
 }
 
 #head_fixe .row
