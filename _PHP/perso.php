@@ -26,7 +26,7 @@ try {
 		$signaler = "<button onclick=\"location.href='./newIncident.php'\">Déclarer un nouvel incident</button>";
 	}
 	else {
-		$signaler = "<button onclick=\"location.href='./traiterIncident.php'\">Traiter un incident</button>";
+		$signaler = "";
 	}
 
 	$p->appendContent(<<<HTML
