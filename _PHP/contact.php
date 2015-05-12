@@ -55,7 +55,7 @@ $p->appendContent(<<<HTML
 		<div class="titre_contact th1">
 			Ou par mail...
 		</div>
-		<form method="post" action="mail('Demande de Sinapps', {$_REQUEST['message']}, 'moi')">
+		<form method="post" action="Personne::mail('Demande de Sinapps', {$_REQUEST['message']}, 'moi')">
 			<div class="form">
 				<div class="row">
 					<div class="champs">
