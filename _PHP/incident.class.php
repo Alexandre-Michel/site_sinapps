@@ -116,7 +116,6 @@ HTML;
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
 					<div class = "status">{$status}</div>
-					<input type="submit" class="button"  onclick="location.href='./incident.php?i={$i}'" value="Voir en détail">
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
@@ -162,11 +161,13 @@ HTML;
 			}
 
 			$pers = Personne::createPersFromId($ligne->getIdPersonne());
-
+			$txt = $ligne->getDescriptionIncident()
+			if(strlen($txt) > 128)
+				$txt = substr($txt, 0, 128);
 			$html.=<<<HTML
 				<div class = "row">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
-					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
+					<div class = "th2">{$txt}</div>
 					<div class = "status">{$status}</div>
 					<div class = "coupable">Déclaré par {$pers->getPrenomPers()} {$pers->getNomPers()} le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
