@@ -22,4 +22,21 @@ class Type_action {
 	public function getTypeAct() {
 		return $this->type_action;
 	}
+
+	public static function createActionFromId($id) {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT * 
+			FROM ACTION
+			WHERE id_action = :id_act
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->bindValue(":id_act", $id);
+		$stmt->execute();
+		if (($object = $stmt->fetch()) !== false) {
+			return $object;
+		}
+		else throw new Exception ("Action not found");
+	}
+
 }

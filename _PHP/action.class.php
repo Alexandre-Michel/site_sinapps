@@ -140,7 +140,7 @@ HTML;
 			VALUES (:nom, :date_action, :lastAction, :id_pers, :id_inc, :id_type_act)
 SQL
 		);
-		$type_action = Type_action::createFromId($id_type_action);
+		$type_action = Type_action::createActionFromId($id_type_action);
 		$nom_action = $type_action->getNomTypeAction();
 		$stmt->bindValue(":nom", $nom_action);
 		$stmt->bindValue(":date_action", date("Le d-m-Y à H:i") );
