@@ -624,6 +624,7 @@ button
 	overflow : auto;
 	resize : both;
 	padding : 2px;
+	position: relative;
 }
 
 .right
@@ -638,6 +639,12 @@ button
 	background: rgba(255, 255, 0, .35);
 }
 
+.date_action {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.75em;
+}
 .message 
 {
 	text-align: justify;
