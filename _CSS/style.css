@@ -625,10 +625,10 @@ button
 
 .box1 .row button.button
 {
-	position: static;
-	margin: -159px 100px 0 500px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
-
 
 /******************* Incident ******************/
 .left, .right 
@@ -694,9 +694,3 @@ button
 	border-bottom: 1px solid black;
 }
 
-.box1 .row button.button
-{
-	position: absolute;
-	right: 0;
-	bottom: 0;
-}
