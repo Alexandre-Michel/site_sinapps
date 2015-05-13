@@ -32,7 +32,8 @@ HTML
 		$p->appendContent(Contrat::getAllContrats());
 	}
 	else {
-		$p->appendContent(Contrat::getContratByIdEntp());
+		$entp = Entreprise::createEntrepriseFromId($user->getIdEntpPers());
+		$p->appendContent(Contrat::getContratByIdEntp($entp->getIdEntreprise()));
 	}
 
 	$p->appendContent(<<<HTML
