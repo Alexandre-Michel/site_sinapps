@@ -121,7 +121,7 @@ if($form)
 				            	<input type="password" name="confirm" placeholder="Veuillez confirmer votre mot de passe"><br/>
 				            <label for="mail">Email(*)</label>
 				            	<input type="text" name="mail" value="{$mail_value}" placeholder="Votre adresse e-mail"><br/>
-				            <div class = "row">Les champs précédés d'un astérisque (*) sont obligatoires</div>
+				            <div class = "obligatoire">Les champs précédés d'un astérisque (*) sont obligatoires</div>
 				            <input type="submit" name="inscription" value="Inscription">
 				        </div>
 			        </div>
