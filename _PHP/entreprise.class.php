@@ -158,7 +158,7 @@ SQL
 		$stmt->execute();
 	}
 
-	public static function createIncidentFromId($id) {
+	public static function createEntrepriseFromId($id) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT * 
 			FROM ENTREPRISE
