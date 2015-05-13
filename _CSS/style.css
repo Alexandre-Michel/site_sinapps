@@ -517,6 +517,7 @@ input[type="submit"]
 
 .row
 {
+	position: relative;
 	width: 100%;
 	margin: 20px auto;
 	max-width: 1000px;
@@ -686,4 +687,16 @@ button
 .box .row .txt
 {
 	height: initial;
+}
+
+.bordure
+{
+	border-bottom: 1px solid black;
+}
+
+.box1 .row button.button
+{
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
