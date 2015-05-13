@@ -694,3 +694,9 @@ button
 	border-bottom: 1px solid black;
 }
 
+.panel
+{
+	position: absolute;
+	right: 10px;
+	top: 0;
+}
