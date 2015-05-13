@@ -147,3 +147,5 @@ HTML
 
 $p->appendContent("</div>");
 echo $p->toHTML();
+
+header( "Refresh:5; ./connexion.php", TRUE, 303);
