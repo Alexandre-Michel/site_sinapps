@@ -538,9 +538,16 @@ HTML;
 		$from = str_replace("\n", "", $from);
 		$from = str_replace("\r", "", $from);
 		$from = mb_encode_mimeheader(utf8_decode($from));
+		$headers  = 'MIME-Version: 1.0' . "\n"; // Version MIME
+		$headers .= 'Reply-To: '.$from."\n"; // Mail de reponse
+		$headers .= 'From: "Nom_de_expediteur"<'.$from.'>'."\n"; // Expediteur
+		$headers .= 'Cc: '.$copie."\n"; // Copie Cc
+		$headers .= 'Bcc: '.$copie_cachee."\n\n"; // Copie cachée Bcc
+		//Envoi du mail
 		mail('alexandre.michel@sinapps.fr',
 			mb_encode_mimeheader(utf8_decode($subject)),
-			$text/*,
+			$text,
+			$headers/*,
 			<<<HEADERS
 MIME-Version: 1.0
 Content-type: text/html;charset=utf-8
