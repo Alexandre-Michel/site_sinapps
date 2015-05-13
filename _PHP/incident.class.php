@@ -117,6 +117,19 @@ SQL
 		$count = $stmt->fetch();
 		return $count['nb'];
 	}
+
+	public static function getNbIncidentsActifsByPers() 
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM INCIDENT
+			WHERE statut_incident = 1
+SQL
+		);
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
 	
 	/*
 	Récupération de tous les incidents en fonction de l'ID d'une personne
@@ -158,6 +171,7 @@ HTML;
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
 					<div class = "status">{$status}</div>
+					<div class = "coupable">Déclaré le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;

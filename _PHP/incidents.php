@@ -11,24 +11,26 @@ try {
     // Lecture depuis les données de session
     $user = Personne::createFromSession();
     $nombre = 0;
+    $nbActifs = 0;
     switch ($user->getIdHabilitation()) {
 		// Si l'utilisateur est un administrateur
 		case 1:
 		$droit = 1;
 		$nombre = Incident::getNbIncidents();
+		$nbActifs = Incident::getNbIncidentsActifs();
 		break;
 		//Si l'utilisateur n'est qu'un membre lambda sans droits
 		case 2:
 		$droit = 2;
 		$nombre = Incident::getNbIncidentsByPers($user->getIdPers());
+		$nbActifs = Incident::getNbIncidentsActifsByPers($user->getIdPers());
 		break;
 	}
 
-	$nbActifs = Incident::getNbIncidentsActifsByPers($user->getIdPers());
 	$p->appendContent(<<<HTML
 		<div class="content">
 			<div class = "th1">Liste des incidents</div>
-				<div class = "th2">Il y a actuellement {$nombre} incident(s) {$nbActifs} dont actif(s)</div>
+				<div class = "th2">Il y a actuellement {$nombre} incident(s) dont {$nbActifs} actif(s)</div>
 HTML
 	);
 

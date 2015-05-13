@@ -106,7 +106,8 @@ HTML;
 				<div class = "row bordure">
 					<div class = "th1">Contrat n°{$ctr->getIdContrat()}</div>
 					<div class = "status">{$status}</div>
-					<button onclick="location.href='./contrat.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					<div class = "row">Signé le : {$ctr->getDateSignContrat()}</div>
+					<div class = "row">Expire le : {$ctr->getFinValidite()}</div>				
 				</div>
 HTML;
 		}
@@ -151,7 +152,9 @@ HTML;
 					<div class = "th1">Contrat n°{$ctr->getIdContrat()}</div>
 					<div class = "th2">Appartenant à l'entreprise {$entp->getNomEntreprise()}</div>
 					<div class = "status">{$status}</div>
-					<button onclick="location.href='./contrat.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					<div class = "row">Signé le : {$ctr->getDateSignContrat()}</div>
+					<div class = "row">Expire le : {$ctr->getFinValidite()}</div>
+
 				</div>
 HTML;
 		}
