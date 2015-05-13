@@ -33,10 +33,16 @@ try {
 		<div class="content">
 			<div class = "th1">Bienvenue dans votre espace personnel</div>
 			<div class = "box1">
-				<div class = "row th2">Incidents</div>
+				<div class = "row th2">Incident(s)</div>
 				<div class = "row">
 					<button onclick="location.href='./incidents.php'">Visualiser les incidents</button>
 					{$signaler}
+				</div>
+			</div>
+			<div class = "box1">
+				<div class="row th2">Contrat(s)</div>
+				<div class="row">
+					<button onclick="location.href='./contrats.php'">Visualiser les contrats</button>
 				</div>
 			</div>
 			<div class = "box1">
