@@ -685,5 +685,5 @@ button
 
 .box .row .txt
 {
-	height: auto;
+	height: initial;
 }
