@@ -156,10 +156,10 @@ HTML
             FROM OFFRE
 SQL
         );
-        $stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
         $stmt->execute();
         $array = $stmt->fetchAll();
 
+		
         if (is_null($this->title)) {
             throw new Exception(__CLASS__ . ": title not set") ;
         }
@@ -230,8 +230,9 @@ SQL
 							<a href="./offres.php" target="_self">Offres</a>
 							<ul class="niveau2">
 HTML;
+
         foreach ($array as $ligne)
-								$html .= "<li><a href=\"./offre.php?i={$ligne->getIdOffre()}\" target=\"_self\">Offre Silver</a></li>";
+			$html .= "<li><a href=\"./offre.php?i={$ligne['id_offre']}\" target=\"_self\">{$ligne['nom_offre']}</a></li>";
         $html .= <<<HTML
                             </ul>
 						</li>
