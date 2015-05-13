@@ -145,10 +145,11 @@ HTML;
 				$stauts = "Contrat expiré";
 			}
 
+			$entp = Entreprise::createEntrepriseFromId($ctr->getIdEntp());
 			$html.=<<<HTML
 				<div class = "row">
 					<div class = "th1">Contrat n°{$ctr->getIdContrat()}</div>
-					<div class = "th2">Appartenant à l'entreprise {Entreprise::createEntpFromId($ctr->getIdEntp())}</div>
+					<div class = "th2">Appartenant à l'entreprise {$entp->getNomEntreprise()}</div>
 					<div class = "status">{$status}</div>
 					<button onclick="location.href='./contrat.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
