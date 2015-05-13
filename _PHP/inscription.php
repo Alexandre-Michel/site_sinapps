@@ -139,8 +139,9 @@ HTML
 else
 {
 	$p->appendContent(<<<HTML
-		<div class="msg">{$message}</div>
-		<div class="msg">Vous pouvez dès à présent vous connecter.</div>
+		<div class="th2">{$message}</div>
+		<div class="th2">Vous pouvez dès à présent vous connecter.</div>
+		<div class="th3">Vous allez être redirigé vers la page de connexion dans un instant.</div>
 HTML
 	);
 }
