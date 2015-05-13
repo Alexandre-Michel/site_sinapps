@@ -77,6 +77,21 @@ SQL
 		$this->id_type_incident = $type;
 	}
 
+	public static function getNbIncidentsByPers($id) 
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM INCIDENT
+			WHERE id_personne = :id
+SQL
+		);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
+	
+	
 	/*
 	Récupération de tous les incidents en fonction de l'ID d'une personne
 	*/
@@ -126,6 +141,7 @@ HTML;
 HTML;
 		return $html;
 	}
+	
 
 	/*
 	Récupération de tous les incidents de toutes les personnes

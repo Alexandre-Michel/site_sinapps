@@ -21,9 +21,11 @@ try {
 		break;
 	}
 
+	$nombre = Incident::getNbIncidentsByPers($user->getIdPers());
 	$p->appendContent(<<<HTML
 		<div class="content">
 			<div class = "th1">Liste des incidents</div>
+				<div class = "th2">Vous avez déclaré {$nombre} incident(s)</div>
 HTML
 	);
 
@@ -32,7 +34,9 @@ HTML
 	}
 	else {
 		$p->appendContent(Incident::getIncidentByPers($user->getIdPers()));
+
 	}
+
 
 	$p->appendContent(<<<HTML
 		</div>

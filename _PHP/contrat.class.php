@@ -80,7 +80,7 @@ SQL
 			SELECT *
 			FROM CONTRAT
 			WHERE id_entreprise = :id
-			ORDER BY fin_validite
+			ORDER BY fin_validite DESC
 SQL
 		);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
@@ -94,12 +94,12 @@ HTML;
 		{
 			$i = $ctr->getIdContrat();
 			$status = "";
-			if ($ctr->getFinValidite() > date("d-m-Y")) 
+			if ($ctr->getFinValidite() > date("Y-m-d")) 
 			{
 				$status = "Contrat en cours de validité";
 			}
 			else {
-				$stauts = "Contrat expiré";
+				$status = "Contrat expiré";
 			}
 
 			$html.=<<<HTML
@@ -124,7 +124,7 @@ HTML;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT *
 			FROM CONTRAT
-			ORDER BY fin_validite
+			ORDER BY fin_validite DESC
 SQL
 		);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
@@ -137,14 +137,12 @@ HTML;
 		{
 			$i = $ctr->getIdContrat();
 			$status = "";
-			if ($ctr->getFinValidite() > date("d-m-Y")) 
+			if ($ctr->getFinValidite() > date("Y-m-d")) 
 			{
-				var_dump($ctr->getFinValidite());
-				var_dump(date("d-m-Y"));
 				$status = "Contrat en cours de validité";
 			}
 			else {
-				$stauts = "Contrat expiré";
+				$status = "Contrat expiré";
 			}
 
 			$entp = Entreprise::createEntrepriseFromId($ctr->getIdEntp());

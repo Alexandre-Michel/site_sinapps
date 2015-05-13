@@ -7,15 +7,21 @@ require_once 'Personne.class.php';
 
 $p = new WebPage("Connexion - Sinapp's");
 
+$user = "";
 try {
     // Lecture depuis les données de session
-    $u = Personne::createFromSession() ;
+    $user = Personne::createFromSession();
 }
 catch (NotInSessionException $e) {
 }
 
 
-
-$p->appendContent(Personne::connexionForm("./auth.php?action=login", "Connecter"));
+if($user == NULL) {
+	$p->appendContent(Personne::connexionForm("./auth.php?action=login", "Connecter"));
+}
+else {
+	header("Location: ./index.php");
+	exit;
+}
 
 echo $p->toHTML();

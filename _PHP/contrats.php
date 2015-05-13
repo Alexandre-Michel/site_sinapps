@@ -32,6 +32,10 @@ HTML
 		$p->appendContent(Contrat::getAllContrats());
 	}
 	else {
+		if ($user->getIdEntpPers() == NULL) {
+			header("Location: ./perso.php") ;
+			exit;
+		}
 		$entp = Entreprise::createEntrepriseFromId($user->getIdEntpPers());
 		$p->appendContent(Contrat::getContratByIdEntp($entp->getIdEntreprise()));
 	}
@@ -45,7 +49,7 @@ HTML
 catch (notInSessionException $e) {
     // Pas d'utilisateur connecté
     header("Location: ./connexion.php") ;
-    die() ;
+    exit;
 }
 
 echo $p->toHTML();

@@ -29,6 +29,18 @@ try {
 		$signaler = "";
 	}
 
+	$contrats = "";
+	if ($user->getIdEntpPers() != NULL)
+	{
+		
+		$contrats = "<div class = 'box1'>
+				<div class='row th2'>Contrat(s)</div>
+				<div class='row'>
+					<button onclick=\"location.href='./contrats.php'\">Visualiser les contrats</button>
+				</div>
+			</div>";
+	}
+	
 	$p->appendContent(<<<HTML
 		<div class="content">
 			<div class = "th1">Bienvenue dans votre espace personnel</div>
@@ -39,12 +51,7 @@ try {
 					{$signaler}
 				</div>
 			</div>
-			<div class = "box1">
-				<div class="row th2">Contrat(s)</div>
-				<div class="row">
-					<button onclick="location.href='./contrats.php'">Visualiser les contrats</button>
-				</div>
-			</div>
+			{$contrats}
 			<div class = "box1">
 				<div class="row th2">Informations personnelles</div>
 				<div class="row">
