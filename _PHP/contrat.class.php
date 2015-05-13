@@ -2,7 +2,7 @@
 
 require_once 'myPDO.include.php';
 
-class Incident
+class Contrat
 {
 	private $id_contrat = null;
 
