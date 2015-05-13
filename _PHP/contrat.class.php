@@ -80,7 +80,7 @@ SQL
 			SELECT *
 			FROM CONTRAT
 			WHERE id_entreprise = :id
-			ORDER BY DESC fin_validite
+			ORDER BY fin_validite
 SQL
 		);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
@@ -124,7 +124,7 @@ HTML;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT *
 			FROM CONTRAT
-			ORDER BY DESC fin_validite
+			ORDER BY fin_validite
 SQL
 		);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
