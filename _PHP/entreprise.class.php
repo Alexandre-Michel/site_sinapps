@@ -174,7 +174,7 @@ SQL
 			throw new Exception ("Entreprise not found");
 	}
 
-	public static function deleteIncident($id)
+	public static function deleteEntreprise($id)
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			DELETE FROM ENTREPRISE
