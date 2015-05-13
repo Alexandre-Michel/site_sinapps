@@ -35,11 +35,6 @@ HTML
 	}
 
 	$p->appendContent(<<<HTML
-			<div class="box1">
-				<div class="row">
-					<button onclick="location.href='./auth.php?action=logout'">Déconnexion</button>
-				</div>
-			</div>
 		</div>
 HTML
 	);

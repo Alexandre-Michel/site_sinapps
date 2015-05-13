@@ -52,12 +52,12 @@ try {
 				$p->appendContent(<<<HTML
 					<div class="content">
 						<div class="row th1">Détail de l'incident n°{$incident->getIdIncident()}</div>
-						<div class="row">{$status}<br/></div>
+						<div class="row th2">{$status}<br/></div>
 						<div class="row">
 							<div class="left">
-								{$incident->getNomIncident()}<br/><br/>
-								{$incident->getDescriptionIncident()}<br/>
-								{$incident->getDateIncident()}<br/>	
+								<div class = "th2">{$incident->getNomIncident()}</div>
+								<div class ="message">{$incident->getDescriptionIncident()}</div>
+								<div class = "date_action">{$incident->getDateIncident()}</div>	
 							</div>		
 						</div>
 HTML

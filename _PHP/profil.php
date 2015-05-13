@@ -114,6 +114,7 @@ SQL
 							<label for="passAct">Mot de passe actuel (*)</label>
 				            	<input type="password" required name="passAct" placeholder="Veuillez entrer votre mot de passe actuel"><br/>
 				            <input type="submit" name="save" value="Sauvegarder">
+				            <input type="button" name="retour" value="Retour" onclick="history.back()">
 				        </div>
 			        </div>
 		        </div>
