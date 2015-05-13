@@ -139,6 +139,8 @@ HTML;
 			$status = "";
 			if ($ctr->getFinValidite() > date("d-m-Y")) 
 			{
+				var_dump(($ctr->getFinValidite());
+				var_dump(date("d-m-Y"));
 				$status = "Contrat en cours de validité";
 			}
 			else {
