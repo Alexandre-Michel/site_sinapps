@@ -682,3 +682,8 @@ button
 {
 	text-align: center;
 }
+
+.box .row .txt
+{
+	height: auto;
+}
