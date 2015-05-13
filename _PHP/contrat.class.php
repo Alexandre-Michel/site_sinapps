@@ -88,7 +88,7 @@ SQL
 		$stmt->execute();
 		$array = $stmt->fetchAll();
 		$html = <<<HTML
-			<div class = "box1">
+			<div class = "box1 bordure">
 HTML;
 		foreach ($array as $ctr)
 		{
@@ -131,7 +131,7 @@ SQL
 		$stmt->execute();
 		$array = $stmt->fetchAll();
 		$html = <<<HTML
-			<div class = "box1">
+			<div class = "box1 bordure">
 HTML;
 		foreach ($array as $ctr)
 		{
