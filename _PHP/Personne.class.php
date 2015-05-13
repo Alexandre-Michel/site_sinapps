@@ -453,7 +453,7 @@ SQL
 	}
 
 
-	public static function createPersonne($nom, $prenom, $mail, $pass, $habilitation = 1) {
+	public static function createPersonne($nom, $prenom, $mail, $pass, $habilitation = 2) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			INSERT INTO PERSONNE (nom_personne, prenom_personne, mail_personne, mdp_personne, id_habilitation_pers)
 			VALUES (:nom_pers, :pnom_pers, :mail_pers, :mdp_pers, :hab_pers)
