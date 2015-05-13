@@ -86,6 +86,7 @@ SQL
 			SELECT *
 			FROM INCIDENT
 			WHERE id_personne = :id
+			ORDER BY statut_incident, date_incident
 SQL
 		);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
@@ -134,6 +135,7 @@ HTML;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT *
 			FROM INCIDENT
+			ORDER BY statut_incident, date_incident
 SQL
 		);
 		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);

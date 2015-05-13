@@ -45,11 +45,6 @@ try {
 					<button onclick="location.href='./profil.php'">Modifier vos infos</button>
 				</div>
 			</div>
-			<div class="box1">
-				<div class="row">
-					<button onclick="location.href='./auth.php?action=logout'">Déconnexion</button>
-				</div>
-			</div>
 		</div>
 HTML
     );
