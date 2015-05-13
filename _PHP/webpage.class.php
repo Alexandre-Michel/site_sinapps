@@ -147,7 +147,17 @@ HTML
      * @return string
      */
     public function toHTML() {
-	  require_once 'Personne.class.php';
+        require_once 'Personne.class.php';
+        require_once 'myPDO.include.php';
+
+        $stmt = myPDO::getInstance()->prepare(<<<SQL
+            SELECT *
+            FROM OFFRE
+SQL
+        );
+        $stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+        $stmt->execute();
+        $array = $stmt->fetchAll();
 
         if (is_null($this->title)) {
             throw new Exception(__CLASS__ . ": title not set") ;
@@ -180,7 +190,7 @@ HTML
 				";
 		}
 		
-        return <<<HTML
+        $html = <<<HTML
 <!doctype html>
 <html lang="fr">
     <head>
@@ -218,10 +228,11 @@ HTML
 						<li>
 							<a href="./offres.php" target="_self">Offres</a>
 							<ul class="niveau2">
-								<li><a href="./offre_silver.php" target="_self">Offre Silver</a></li>
-								<li><a href="./offre_gold.php" target="_self">Offre Gold</a></li>
-								<li><a href="./offre_platinum.php" target="_self">Offre Platinum</a></li>                            
-							</ul>
+HTML;
+        foreach ($array as $ligne)
+								$html .= "<li><a href=\"./offre.php?i={$ligne->getIdOffre()}\" target=\"_self\">Offre Silver</a></li>";
+        $html .= <<<HTML
+                            </ul>
 						</li>
 
 						<li>
@@ -273,6 +284,8 @@ HTML
     </body>
 </html>
 HTML;
+    
+    return $html;
     }
 }
 
