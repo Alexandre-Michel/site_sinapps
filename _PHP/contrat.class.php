@@ -119,7 +119,7 @@ HTML;
 	/*
 	Récupération de tous les incidents de toutes les personnes
 	*/
-	public static function getAllIncident()
+	public static function getAllContrats()
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT *
@@ -201,7 +201,7 @@ SQL
 	/*
 	Permet la suppression d'un incident
 	*/
-	public static function deleteIncident($id)
+	public static function deleteContrat($id)
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			DELETE FROM CONTRAT
