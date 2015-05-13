@@ -67,7 +67,7 @@ SQL
 						<div class = "border_logo"></div>
 						<div class = "txt_box">{$ligne->getDescriptionOffre()}</div>
 						<div class = "more">
-							<a href="./prestation.php?i={$ligne->getIdOffre()}">En savoir plus &rsaquo;</a>
+							<a href="./offre.php?i={$ligne->getIdOffre()}">En savoir plus &rsaquo;</a>
 						</div>
 					</div>
 				</div>
