@@ -42,6 +42,7 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 						//Création de l'utilisateur via son nom, prenom, mail et mot de passe
 						Personne::createPersonne($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['password']);
 						$form = false;
+						$message = "Votre inscription s'est bien déroulée.";
 					}
 					//Adresse mail déjà utilisée
 					else
@@ -80,13 +81,21 @@ if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 else
 	$form = true;
 
+$p->appendContent(<<<HTML
+	<div class="content">
+		<div class="title">
+			<div class = "th1">Inscription</div>
+		</div>
+HTML
+);
+
 if($form)
 {
     //On affiche un message s'il y a lieu
     if(isset($message))
-        $msg = "<div class=\"message\">".$message."</div>";
+        $message = "<div class=\"message\">".$message."</div>";
     else
-    	$msg = '';
+    	$message = '';
 
     if(isset($_POST['nom']))
     	$nom_value = $_POST['nom'];
@@ -102,24 +111,20 @@ if($form)
     	$mail_value = '';
     //On affiche le formulaire
 	$p->appendContent(<<<HTML
-		<div class="content">
-			<div class="title">
-				<div class = "th1">Formulaire d'inscription</div>
-			</div>
 		    <form action="inscription.php" method="post">
-		        <div class = "msg">{$msg}</div>
+		        <div class = "msg">{$message}</div>
 		        <div class="form">
 		        	<div class = "row">
 			        	<div class = "champs">
-				            <label for="nom">Nom d'utilisateur(*)</label>
+				            <label for="nom">Nom d'utilisateur (*)</label>
 				            	<input type="text" name="nom" value="{$nom_value}" placeholder="Votre NOM"><br/>
-				            <label for="prenom">Prénom d'utilisateur(*)</label>
+				            <label for="prenom">Prénom d'utilisateur (*)</label>
 				            	<input type="text" name="prenom" value="{$prenom_value}" placeholder="Votre Prenom"><br/>
-				            <label for="password">Mot de passe (6 caractères min.)(*)</label>
+				            <label for="password">Mot de passe (6 caractères min.) (*)</label>
 				            	<input type="password" name="password" placeholder="Veuillez entrer votre mot de passe"><br/>
-				            <label for="confirm">Mot de passe (vérification)(*)</label>
+				            <label for="confirm">Mot de passe (vérification) (*)</label>
 				            	<input type="password" name="confirm" placeholder="Veuillez confirmer votre mot de passe"><br/>
-				            <label for="mail">Email(*)</label>
+				            <label for="mail">Email (*)</label>
 				            	<input type="text" name="mail" value="{$mail_value}" placeholder="Votre adresse e-mail"><br/>
 				            <div class = "obligatoire">Les champs précédés d'un astérisque (*) sont obligatoires</div>
 				            <input type="submit" name="inscription" value="Inscription">
@@ -127,9 +132,17 @@ if($form)
 			        </div>
 		        </div>
 		    </form>
-		</div>
+HTML
+	);
+}
+else
+{
+	$p->appendContent(<<<HTML
+		<div class="msg">{$message}</div>
+		<div class="msg">Vous pouvez dès à présent vous connecter.</div>
 HTML
 	);
 }
 
+$p .= "</div>";
 echo $p->toHTML();

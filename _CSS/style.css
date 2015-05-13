@@ -678,3 +678,8 @@ button
 	text-align: right;
 	font-size: .75em;
 }
+
+.msg .message
+{
+	text-align: center;
+}
