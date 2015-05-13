@@ -111,16 +111,17 @@ if($form)
 		        <div class="form">
 		        	<div class = "row">
 			        	<div class = "champs">
-				            <label for="nom">Nom d'utilisateur</label>
+				            <label for="nom">Nom d'utilisateur(*)</label>
 				            	<input type="text" name="nom" value="{$nom_value}" placeholder="Votre NOM"><br/>
-				            <label for="prenom">Prénom d'utilisateur</label>
+				            <label for="prenom">Prénom d'utilisateur(*)</label>
 				            	<input type="text" name="prenom" value="{$prenom_value}" placeholder="Votre Prenom"><br/>
-				            <label for="password">Mot de passe (6 caractères min.)</label>
+				            <label for="password">Mot de passe (6 caractères min.)(*)</label>
 				            	<input type="password" name="password" placeholder="Veuillez entrer votre mot de passe"><br/>
-				            <label for="confirm">Mot de passe (vérification)</label>
+				            <label for="confirm">Mot de passe (vérification)(*)</label>
 				            	<input type="password" name="confirm" placeholder="Veuillez confirmer votre mot de passe"><br/>
-				            <label for="mail">Email</label>
+				            <label for="mail">Email(*)</label>
 				            	<input type="text" name="mail" value="{$mail_value}" placeholder="Votre adresse e-mail"><br/>
+				            <div class = "row">Les champs précédés d'un astérisque (*) sont obligatoires</div>
 				            <input type="submit" name="inscription" value="Inscription">
 				        </div>
 			        </div>
