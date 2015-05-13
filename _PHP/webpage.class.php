@@ -149,6 +149,7 @@ HTML
     public function toHTML() {
         require_once 'Personne.class.php';
         require_once 'myPDO.include.php';
+        require_once 'offre.class.php';
 
         $stmt = myPDO::getInstance()->prepare(<<<SQL
             SELECT *
