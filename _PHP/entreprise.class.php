@@ -173,4 +173,15 @@ SQL
 		else
 			throw new Exception ("Entreprise not found");
 	}
+
+	public static function deleteIncident($id)
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			DELETE FROM ENTREPRISE
+			WHERE id_entreprise = :id
+SQL
+		);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+	}
 }
