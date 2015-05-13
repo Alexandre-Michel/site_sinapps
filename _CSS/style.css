@@ -326,10 +326,10 @@ strong
 	background-color: #073a92;
 }
 
-.input_contact {
-	height: 30px;
+.input_contact
+{
 	width: 440px;
-	margin-bottom: 7px;
+	margin-top: 0;
 }
 
 .text_contact {
@@ -472,7 +472,7 @@ input, textarea
 {
 	height: 30px;
 	width: 436px;
-	margin-bottom: 7px;
+	margin: 7px auto;
 }
 
 textarea
@@ -670,4 +670,11 @@ button
 #textIncident 
 {
 	width : 750px;
+}
+
+.obligatoire
+{
+	margin: 5px 0;
+	text-align: right;
+	font-size: .75em;
 }
