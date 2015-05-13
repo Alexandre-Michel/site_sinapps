@@ -135,6 +135,7 @@ if($form)
 HTML
 	);
 }
+
 else
 {
 	$p->appendContent(<<<HTML
@@ -144,5 +145,5 @@ HTML
 	);
 }
 
-$p .= "</div>";
+$p->appendContent("</div>");
 echo $p->toHTML();
