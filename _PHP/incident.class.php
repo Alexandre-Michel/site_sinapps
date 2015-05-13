@@ -135,7 +135,7 @@ SQL
 		$stmt->execute();
 		$array = $stmt->fetchAll();
 		$html = <<<HTML
-			<div class = "box1 bordure">
+			<div class = "box1">
 HTML;
 		foreach ($array as $ligne)
 		{
@@ -154,7 +154,7 @@ HTML;
 			}
 
 			$html.=<<<HTML
-				<div class = "row">
+				<div class = "row bordure">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
 					<div class = "status">{$status}</div>
@@ -184,7 +184,7 @@ SQL
 		$stmt->execute();
 		$array = $stmt->fetchAll();
 		$html = <<<HTML
-			<div class = "box1 bordure">
+			<div class = "box1">
 HTML;
 		foreach ($array as $ligne)
 		{
@@ -209,7 +209,7 @@ HTML;
 			if(strlen($txt) > 128)
 				$txt = substr($txt, 0, 128);
 			$html.=<<<HTML
-				<div class = "row">
+				<div class = "row bordure">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$txt}</div>
 					<div class = "status">{$status}</div>
