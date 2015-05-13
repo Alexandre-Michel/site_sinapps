@@ -84,7 +84,7 @@ class Entreprise
 SQL
 		);
 		$stmt->bindValue(":nom", $nom);
-		$stmt->bindValue("id", $this->id_entreprise);
+		$stmt->bindValue(":id", $this->id_entreprise);
 		$stmt->execute();
 	}
 
@@ -98,7 +98,7 @@ SQL
 SQL
 		);
 		$stmt->bindValue(":rue", $rue);
-		$stmt->bindValue("id", $this->id_entreprise);
+		$stmt->bindValue(":id", $this->id_entreprise);
 		$stmt->execute();
 	}
 
@@ -112,7 +112,7 @@ SQL
 SQL
 		);
 		$stmt->bindValue(":cp", $cp);
-		$stmt->bindValue("id", $this->id_entreprise);
+		$stmt->bindValue(":id", $this->id_entreprise);
 		$stmt->execute();
 	}
 
@@ -126,7 +126,7 @@ SQL
 SQL
 		);
 		$stmt->bindValue(":ville", $ville);
-		$stmt->bindValue("id", $this->id_entreprise);
+		$stmt->bindValue(":id", $this->id_entreprise);
 		$stmt->execute();
 	}
 
@@ -140,7 +140,7 @@ SQL
 SQL
 		);
 		$stmt->bindValue(":pays", $pays);
-		$stmt->bindValue("id", $this->id_entreprise);
+		$stmt->bindValue(":id", $this->id_entreprise);
 		$stmt->execute();
 	}
 
@@ -154,7 +154,7 @@ SQL
 SQL
 		);
 		$stmt->bindValue(":description", $description);
-		$stmt->bindValue("id", $this->id_entreprise);
+		$stmt->bindValue(":id", $this->id_entreprise);
 		$stmt->execute();
 	}
 

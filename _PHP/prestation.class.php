@@ -78,24 +78,6 @@ SQL
 		else throw new Exception ("Prestation not found");
 	}
 
-	
-	public static function createTypePrestationFromId($id)
-	{
-		$stmt = myPDO::getInstance()->prepare(<<<SQL
-			SELECT * 
-			FROM TYPE_PRESTATION
-			WHERE id_type_prestation = :id
-SQL
-		);
-		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
-		$stmt->bindValue(":id", $id);
-		$stmt->execute();
-		if (($object = $stmt->fetch()) !== false)
-		{
-			return $object;
-		}
-		else throw new Exception ("Type Prestation not found");
-	}
 	/*
 	Permet l'affichage d'une prestation
 	*/
