@@ -541,8 +541,6 @@ HTML;
 		$headers  = 'MIME-Version: 1.0' . "\n"; // Version MIME
 		$headers .= 'Reply-To: '.$from."\n"; // Mail de reponse
 		$headers .= 'From: "Nom_de_expediteur"<'.$from.'>'."\n"; // Expediteur
-		$headers .= 'Cc: '.$copie."\n"; // Copie Cc
-		$headers .= 'Bcc: '.$copie_cachee."\n\n"; // Copie cachée Bcc
 		//Envoi du mail
 		mail('alexandre.michel@sinapps.fr',
 			mb_encode_mimeheader(utf8_decode($subject)),
