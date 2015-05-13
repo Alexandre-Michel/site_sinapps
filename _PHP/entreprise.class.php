@@ -144,4 +144,33 @@ SQL
 		$stmt->execute();
 	}
 
+	public function setDescriptionEntreprise($description)
+	{
+		$this->rue_entreprise = $pays;
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			UPDATE ENTREPRISE
+			SET description_entreprise = :description
+			WHERE id_entreprise = :id
+SQL
+		);
+		$stmt->bindValue(":description", $description);
+		$stmt->bindValue("id", $this->id_entreprise);
+		$stmt->execute();
+	}
+
+	public static function createIncidentFromId($id) {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT * 
+			FROM ENTREPRISE
+			WHERE id_entreprise = :id
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		if (($object = $stmt->fetch()) !== false)
+			return $object;
+		else
+			throw new Exception ("Entreprise not found");
+	}
 }
