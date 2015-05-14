@@ -618,6 +618,21 @@ button
   	text-align: left;
 }
 
+.nt
+{
+	color: red;
+}
+
+.ec
+{
+	color; orange;
+}
+
+.t
+{
+	color: green;
+}
+
 .box1 .row .th1
 {
 	margin-left: 5%;

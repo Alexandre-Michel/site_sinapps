@@ -156,13 +156,13 @@ HTML;
 			$status = "";
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
-					$status = "Non traité";
+					$status = "<div class='status nt'>Non traité</div>";
 					break;
 				case 1 :
-					$status = "En cours de traitement";
+					$status = "<div class='status ec'>En cours de traitement</div>";
 					break;
 				case 2 :
-					$status = "Résolu";
+					$status = "<div class='status t'>Résolu</div>";
 					break;		
 			}
 
@@ -170,7 +170,7 @@ HTML;
 				<div class = "row bordure">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
-					<div class = "status">{$status}</div>
+					{$status}
 					<div class = "coupable">Déclaré le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
