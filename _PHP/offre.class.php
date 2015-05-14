@@ -111,17 +111,17 @@ SQL
 					break;
 				//La prestation est contenue dans l'offre SILVER, et donc dans les offres GOLD et PLAT
 				case 1:
-					$html .= Type_Prestation::printTypePrestation();
+					$html .= "div class='box'".Type_Prestation::printTypePrestation()."</div>";
 					break;
 				//La prestation est contenue dans l'offre GOLD, et donc dans l'offre PLAT
 				case 2:
 					if($this->id_offre == 2 || $this->id_offre ==3)
-						$html .= Type_Prestation::printTypePrestation();
+						$html .= "div class='box'".Type_Prestation::printTypePrestation()."</div>";
 					break;
 				//La prestation n'est contenue que dans l'offre PLAT
 				case 3:
 					if($this->id_offre == 3)
-						$html .= Type_Prestation::printTypePrestation();
+						$html .= "div class='box'".Type_Prestation::printTypePrestation()."</div>";
 					break;
 			}
 		}
