@@ -46,7 +46,7 @@ try {
 						$options = "";
 
 						foreach ($type_actions as $unType) {
-							$options .= "<option value='{$unType['id_type_incident']}'>{$unType['descritpion_type_incident']}</option>";
+							$options .= "<option value='{$unType->getIdTypeAct()}'>{$unType->getNomTypeAction()}</option>";
 						}
 
 						$traitement = "
