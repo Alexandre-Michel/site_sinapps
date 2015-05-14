@@ -54,7 +54,7 @@ SQL
 
 	foreach ($arrayEntp as $uneEntp) {
 		$nom = ucfirst($uneEntp['nom_entreprise']);
-		$p->appendContent("<option selected value=\"{$uneEntp['id_entreprise']}\">{$nom}</option>");
+		$p->appendContent("<option selected value=\"{$uneEntp->getIdEntreprise()}\">{$nom}</option>");
 	}
 
 	$p->appendContent("</select><br/><select name='offre'>");
@@ -70,7 +70,7 @@ SQL
 
 	foreach ($arrayOffre as $uneOffre) {
 		$nomOff = ucfirst($uneOffre['nom_offre']);
-		$p->appendContent("<option selected value=\"{$uneOffre['id_offre']}\">{$nomOff}</option>");
+		$p->appendContent("<option selected value=\"{$uneOffre->getIdOffre()}\">{$nomOff}</option>");
 	}
 
 	$p->appendContent(<<<HTML
