@@ -28,7 +28,7 @@ try {
 	}
 	else {
 		$signaler = "";
-		$newContrat = "<button onclick=\"location.href='./newIncident.php'\">Déclarer un nouvel incident</button>";
+		$newContrat = "<button onclick=\"location.href='./newContrat.php'\">Déclarer un nouveau contrat</button>";
 	}
 
 	$contrats = "";
@@ -40,7 +40,8 @@ try {
 				<div>
 					<button onclick=\"location.href='./contrats.php'\">Visualiser les contrats</button>
 					{$newContrat}
-				</div>";
+				</div>
+			</div>	";
 	}
 	
 	$p->appendContent(<<<HTML
@@ -51,7 +52,7 @@ try {
 					<div class="th2">Incident(s)</div>
 					<div><button onclick="location.href='./incidents.php'">Visualiser les incidents</button>{$signaler}</div>
 				</div>
-			{$contrats}
+				{$contrats}
 				<div class="row">
 					<div class="th2">Informations personnelles</div>
 					<div><button onclick="location.href='./profil.php'">Modifier vos infos</button></div>

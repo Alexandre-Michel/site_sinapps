@@ -1,11 +1,12 @@
 <?php
 
 require_once 'webpage.class.php';
-require_once 'Incident.class.php';
+require_once 'Entreprise.class.php';
 require_once 'Personne.class.php';
-require_once 'Type_incident.class.php';
+require_once 'Contrat.class.php';
+require_once 'Offre.class.php';
 
-$p = new WebPage("Nouvel Incident - Sinapp's");
+$p = new WebPage("Nouveau Contrat - Sinapp's");
 
 try {
     // Lecture depuis les données de session
@@ -16,28 +17,27 @@ try {
 		if(isset($_REQUEST['nom']) && $_REQUEST['nom'] != "" && isset($_REQUEST['desc']) && $_REQUEST['desc'] != "") {
 			Incident::createIncident($_REQUEST['nom'], $_REQUEST['desc']);
 			$msg = 1;
-			header("location: ./newIncident.php?msg={$msg}");
+			header("location: ./newContrat.php?msg={$msg}");
 			exit;
 		}
 		else {
 			$msg = 2;
-			header("location: ./newIncident.php?msg={$msg}");
+			header("location: ./newContrat.php?msg={$msg}");
 			exit;
 		}
 	}
 	
 	if (isset($_GET["msg"]) && $_GET["msg"] != "") {
-		if ($_GET["msg"] == 1) $msg = "<div class='succes'>L'incident a été reporté et sera traité sous peu.</div>";
+		if ($_GET["msg"] == 1) $msg = "<div class='succes'>Le contrat a été crée.</div>";
 		else if ($_GET["msg"] == 2) $msg = "<div class='rate'>Echec, veuillez réessayer.</div>";
 	}
 	
     $p->appendContent(<<<HTML
     	<div class="content">
-			<div class="th1">Nouvel Incident</div>
+			<div class="th1">Nouveau Contrat</div>
 			{$msg}
 			<form method="post"> 
-				<input type="text" required placeholder="Nom de l'incident" name="nom"/><br/>
-				<textarea required row=8 placeholder="Description de votre incident" name="desc"></textarea><br/>
+				<input type="date" required name="dateDeb"/><br/>
 				<select name="type">
 HTML
 	);
