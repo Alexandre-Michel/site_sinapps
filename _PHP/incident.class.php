@@ -234,8 +234,6 @@ HTML;
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{cleanCut($ligne->getDescriptionIncident(), 200)}</div>
 					{$status} (Type $type_inc->getDescType())
-					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
-					{$status}
 					<div class = "coupable">{$ligne->getDateIncident()} par {$pers->getPrenomPers()} {$pers->getNomPers()} ({$entp->getNomEntreprise()})</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
