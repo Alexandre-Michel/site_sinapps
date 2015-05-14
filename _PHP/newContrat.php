@@ -14,8 +14,8 @@ try {
 
 	$msg = ""; 
 	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
-		if(isset($_REQUEST['nom']) && $_REQUEST['nom'] != "" && isset($_REQUEST['desc']) && $_REQUEST['desc'] != "") {
-			Incident::createIncident($_REQUEST['nom'], $_REQUEST['desc']);
+		if(isset($_REQUEST['dateDeb']) && $_REQUEST['dateDeb'] != "" && isset($_REQUEST['dateFin']) && $_REQUEST['dateFin'] != "" && isset($_REQUEST['entp']) && isset($_REQUEST['offre'])) {
+			Contrat::createContrat($_REQUEST['entp'], 1, $_REQUEST['offre'], $_REQUEST['dateDeb'], $_REQUEST['dateFin'], "12h");
 			$msg = 1;
 			header("location: ./newContrat.php?msg={$msg}");
 			exit;
@@ -38,22 +38,39 @@ try {
 			{$msg}
 			<form method="post"> 
 				<input type="date" required name="dateDeb"/><br/>
-				<select name="type">
+				<input type="date" required name="dateFin"/><br/>
+				<select name="entp">
 HTML
 	);
 
 	$stmt = myPDO::getInstance()->prepare(<<<SQL
 		SELECT *
-		FROM TYPE_INCIDENT
+		FROM ENTREPRISE
 SQL
 	);	
 	$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);	
 	$stmt->execute();
-	$arrayType = $stmt->fetchAll();
+	$arrayEntp = $stmt->fetchAll();
 
-	foreach ($arrayType as $unType) {
-		$desc = ucfirst($unType['description_type_incident']);
-		$p->appendContent("<option selected name=\"type_inc\">{$desc}</option>");
+	foreach ($arrayEntp as $uneEntp) {
+		$nom = ucfirst($uneEntp['nom_entreprise']);
+		$p->appendContent("<option selected value=\"{$uneEntp->getIdEntreprise()}\">{$nom}</option>");
+	}
+
+	$p->appendContent("</select><br/><select name='offre'>");
+
+	$stmt = myPDO::getInstance()->prepare(<<<SQL
+		SELECT *
+		FROM OFFRE
+SQL
+	);	
+	$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);	
+	$stmt->execute();
+	$arrayOffre = $stmt->fetchAll();
+
+	foreach ($arrayOffre as $uneOffre) {
+		$nomOff = ucfirst($uneOffre['nom_offre']);
+		$p->appendContent("<option selected value=\"{$uneOffre->getIdOffre()}\">{$nomOff}</option>");
 	}
 
 	$p->appendContent(<<<HTML

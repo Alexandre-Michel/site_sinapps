@@ -28,7 +28,7 @@ try {
 	}
 	else {
 		$signaler = "";
-		$newContrat = "<button onclick=\"location.href='./newContrat.php'\">Déclarer un nouveau contrat</button>";
+		$newContrat = "<button onclick=\"location.href='./newContrat.php'\">Nouveau contrat</button>";
 	}
 
 	$contrats = "";
