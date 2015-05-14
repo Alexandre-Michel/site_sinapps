@@ -159,13 +159,13 @@ HTML;
 			
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
-					$status = "<div class=\"status center nt\">Non traité (Type {$type_inc->getDescType()})</div>";
+					$status = "<div class=\"status nt\">Non traité (Type {$type_inc->getDescType()})</div>";
 					break;
 				case 1 :
-					$status = "<div class=\"status center ec\">En cours de traitement (Type {$type_inc->getDescType()})</div>";
+					$status = "<div class=\"status ec\">En cours de traitement (Type {$type_inc->getDescType()})</div>";
 					break;
 				case 2 :
-					$status = "<div class=\"status center t\">Résolu (Type {$type_inc->getDescType()})</div>";
+					$status = "<div class=\"status t\">Résolu (Type {$type_inc->getDescType()})</div>";
 					break;		
 			}
 
