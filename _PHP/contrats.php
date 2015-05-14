@@ -4,6 +4,7 @@ require_once 'webpage.class.php';
 require_once 'Personne.class.php';
 require_once 'Contrat.class.php';
 require_once 'Entreprise.class.php';
+require_once 'Offre.class.php';
 
 $p = new WebPage("Contrats - Sinapp's");
 
