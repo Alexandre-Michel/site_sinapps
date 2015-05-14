@@ -727,6 +727,12 @@ button
 	position: absolute;
 	right: 10px;
 	top: 0;
+	text-align: center;
+}
+
+.panel input[type="button"]
+{
+	width: 150px;
 }
 
 
