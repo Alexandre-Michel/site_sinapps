@@ -62,7 +62,7 @@ SQL
 					<div class="offre">
 						<div class = "th3">{$ligne->getNomOffre()}</div>
 						<div class = "img_offre">
-							<img id="logo_offre" src="{$ligne->getPathLogo()}" alt="logo1"/>
+							<img id="logo_offre" src="{$ligne->getPathLogo()}" alt="Logo Offre"/>
 						</div>
 						<div class = "border_logo"></div>
 						<div class = "txt_box">{$ligne->getDescriptionOffre()}</div>

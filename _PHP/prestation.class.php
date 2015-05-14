@@ -99,7 +99,7 @@ SQL
 			<div class = "row">
 				<div class = "th3">{$presta['nom_prestation']}</div>
 				<div class = "img">
-					<img id="logo_ordi" src="{$presta['path_logo']}" alt="logo1"/>
+					<img id="logo_ordi" src="{$presta['path_logo']}" alt="Logo Prestation"/>
 				</div>
 				<div class = "border_logo"></div>
 				<div class = "txt">{$presta['description_prestation']}</div>
