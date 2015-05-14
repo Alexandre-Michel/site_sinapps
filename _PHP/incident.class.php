@@ -219,15 +219,18 @@ HTML;
 			}
 
 			$pers = Personne::createPersFromId($ligne->getIdPersonne());
+			$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
+			$type_inc = Type_incident::createTypeIncidentFromId($ligne->getIdType());
 			$txt = $ligne->getDescriptionIncident();
 			if(strlen($txt) > 128)
 				$txt = substr($txt, 0, 128);
+
 			$html.=<<<HTML
 				<div class = "row bordure fond">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
-					{$status}
-					<div class = "coupable">Déclaré le {$ligne->getDateIncident()}</div>
+					{$status} (Type $type_inc->getDescType())
+					<div class = "coupable">{$ligne->getDateIncident()} par {$pers->getPrenomPers()} {$pers->getNomPers()} ({$entp->getNomEntreprise()})</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
