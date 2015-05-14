@@ -118,7 +118,7 @@ SQL
 		return $count['nb'];
 	}
 
-	public static function getNbIncidentsActifsByPers() 
+	public static function getNbIncidentsActifs() 
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT COUNT(*) AS nb
