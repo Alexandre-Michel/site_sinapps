@@ -512,7 +512,7 @@ input[type="submit"]
 	overflow: auto;
 	width: 1000px;
 	margin: 20px auto;
-	background-color: rgba(251, 251, 251, 0.35);
+	/*background-color: rgba(251, 251, 251, 0.35);*/
 }
 
 .row
@@ -527,6 +527,7 @@ input[type="submit"]
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background-color: rgba(251, 251, 251, 0.35);
 }
 
 button
