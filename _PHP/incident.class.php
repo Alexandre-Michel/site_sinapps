@@ -204,23 +204,24 @@ HTML;
 		{
 			$i = $ligne->getIdIncident();
 			$status = "";
+			$type_inc = Type_incident::createTypeIncidentFromId($ligne->getIdType());
+
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
-					$status = "<div class=\"status nt\">Non traité</div>";
+					$status = "<div class=\"status nt\">Non traité (Type {$type_inc->getDescType()})</div>";
 					//$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Traiter</button>";
 					break;
 				case 1 :
-					$status = "<div class=\"status ec\">En cours de traitement</div>";
+					$status = "<div class=\"status ec\">En cours de traitement (Type {$type_inc->getDescType()})</div>";
 					//$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Effectuer une action</button>";					
 					break;
 				case 2 :
-					$status = "<div class=\"status t\">Résolu</div>";
+					$status = "<div class=\"status t\">Résolu (Type {$type_inc->getDescType()})</div>";
 					break;		
 			}
 
 			$pers = Personne::createPersFromId($ligne->getIdPersonne());
 			$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
-			$type_inc = Type_incident::createTypeIncidentFromId($ligne->getIdType());
 			$txt = $ligne->getDescriptionIncident();
 			if(strlen($txt) > 128)
 				$txt = substr($txt, 0, 128);
@@ -229,7 +230,7 @@ HTML;
 				<div class = "row bordure fond">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
-					{$status} (Type $type_inc->getDescType())
+					{$status} 
 					<div class = "coupable">{$ligne->getDateIncident()} par {$pers->getPrenomPers()} {$pers->getNomPers()} ({$entp->getNomEntreprise()})</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
