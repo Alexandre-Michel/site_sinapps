@@ -201,7 +201,7 @@ SQL
 		$stmt->execute();
 
 	}
-
+/*
 	public static function getAllEntreprises() {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT * 
@@ -224,8 +224,8 @@ SQL
 					<div class = "row">Téléphone : {$uneEntp->getTelEntreprise()}</div>
 					<div class = "row">Description : {$uneEntp->getDescriptionEntreprise()}</div>
 					<div>
-						<button onclick=\"location.href='./modifEntreprise.php'\">Modifier</button>	
-						<button onclick=\"{deleteEntreprise($uneEntp->getIdEntreprise)}\">Supprimer</button>		
+						<button onclick="location.href='./modifEntreprise.php'">Modifier</button>	
+						<button onclick="{deleteEntreprise($uneEntp->getIdEntreprise)}">Supprimer</button>		
 					</div>		
 				</div>
 HTML;				
@@ -233,4 +233,5 @@ HTML;
 		$html .= "</div>";
 		return $html;
 	}
+*/
 }

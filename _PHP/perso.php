@@ -32,7 +32,7 @@ try {
 		$newContrat = "<button onclick=\"location.href='./newContrat.php'\">Nouveau contrat</button>";
 		$admin = "<div class='row fond'>
 					<div class='th2 center'>Entreprise(s)</div>
-					<div><button onclick='location.href='./entreprises.php''>Visualiser les entreprises</button>
+					<div><button onclick=\"location.href='./entreprises.php'\">Visualiser les entreprises</button>
 					<button onclick=\"location.href='./newEntreprise.php'\">Ajouter une entreprise</button></div>
 				</div>
 				<div class=\"row found\">
