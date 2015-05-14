@@ -30,8 +30,8 @@ ul
 	position: fixed;
 	margin-top: -136px;
 	width: 100%;
-	background: pink;
-	border-bottom: 3px solid lime;
+	background: white;
+	border-bottom: 3px solid black;
 	z-index: 1;
 }
 
