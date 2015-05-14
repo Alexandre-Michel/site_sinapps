@@ -321,7 +321,7 @@ SQL
 	
 	
 	
-	function cleanCut($string, $length, $cutString = '...')
+	public static function cleanCut($string, $length, $cutString = '...')
 	{
 		if(strlen($string) <= $length)
 			return $string;
