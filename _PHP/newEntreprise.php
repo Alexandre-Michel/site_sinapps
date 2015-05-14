@@ -44,15 +44,15 @@ try {
 						<option value="France" selected="selected">France </option>
 
 						<option value="Afghanistan">Afghanistan </option>
-						<option value="Afrique_Centrale">Afrique_Centrale </option>
-						<option value="Afrique_du_sud">Afrique_du_Sud </option> 
+						<option value="Afrique_Centrale">Afrique Centrale </option>
+						<option value="Afrique_du_sud">Afrique du Sud </option> 
 						<option value="Albanie">Albanie </option>
 						<option value="Algerie">Algerie </option>
 						<option value="Allemagne">Allemagne </option>
 						<option value="Andorre">Andorre </option>
 						<option value="Angola">Angola </option>
 						<option value="Anguilla">Anguilla </option>
-						<option value="Arabie_Saoudite">Arabie_Saoudite </option>
+						<option value="Arabie_Saoudite">Arabie Saoudite </option>
 						<option value="Argentine">Argentine </option>
 						<option value="Armenie">Armenie </option> 
 						<option value="Australie">Australie </option>
@@ -71,7 +71,7 @@ try {
 						<option value="Bolivie">Bolivie </option>
 						<option value="Botswana">Botswana </option>
 						<option value="Bhoutan">Bhoutan </option>
-						<option value="Boznie_Herzegovine">Boznie_Herzegovine </option>
+						<option value="Boznie_Herzegovine">Boznie Herzegovine </option>
 						<option value="Bresil">Bresil </option>
 						<option value="Brunei">Brunei </option>
 						<option value="Bulgarie">Bulgarie </option>
@@ -90,12 +90,12 @@ try {
 						<option value="Colombie">Colombie </option>
 						<option value="Comores">Colombie </option>
 						<option value="Congo">Congo </option>
-						<option value="Congo_democratique">Congo_democratique </option>
+						<option value="Congo_democratique">Congo democratique </option>
 						<option value="Cook">Cook </option>
-						<option value="Coree_du_Nord">Coree_du_Nord </option>
-						<option value="Coree_du_Sud">Coree_du_Sud </option>
-						<option value="Costa_Rica">Costa_Rica </option>
-						<option value="Cote_d_Ivoire">Côte_d_Ivoire </option>
+						<option value="Coree_du_Nord">Coree du Nord </option>
+						<option value="Coree_du_Sud">Coree du Sud </option>
+						<option value="Costa_Rica">Costa Rica </option>
+						<option value="Cote_d_Ivoire">Côte d'Ivoire </option>
 						<option value="Croatie">Croatie </option>
 						<option value="Cuba">Cuba </option>
 
@@ -104,12 +104,12 @@ try {
 						<option value="Dominique">Dominique </option>
 
 						<option value="Egypte">Egypte </option> 
-						<option value="Emirats_Arabes_Unis">Emirats_Arabes_Unis </option>
+						<option value="Emirats_Arabes_Unis">Emirats Arabes Unis </option>
 						<option value="Equateur">Equateur </option>
 						<option value="Erythree">Erythree </option>
 						<option value="Espagne">Espagne </option>
 						<option value="Estonie">Estonie </option>
-						<option value="Etats_Unis">Etats_Unis </option>
+						<option value="Etats_Unis">Etats-Unis </option>
 						<option value="Ethiopie">Ethiopie </option>
 
 						<option value="Falkland">Falkland </option>
@@ -131,15 +131,15 @@ try {
 						<option value="Guatemala">Guatemala</option>
 						<option value="Guernesey">Guernesey </option>
 						<option value="Guinee">Guinee </option>
-						<option value="Guinee_Bissau">Guinee_Bissau </option>
-						<option value="Guinee equatoriale">Guinee_Equatoriale </option>
+						<option value="Guinee_Bissau">Guinee Bissau </option>
+						<option value="Guinee equatoriale">Guinee Equatoriale </option>
 						<option value="Guyana">Guyana </option>
-						<option value="Guyane_Francaise ">Guyane_Francaise </option>
+						<option value="Guyane_Francaise ">Guyane Francaise </option>
 
 						<option value="Haiti">Haiti </option>
 						<option value="Hawaii">Hawaii </option> 
 						<option value="Honduras">Honduras </option>
-						<option value="Hong_Kong">Hong_Kong </option>
+						<option value="Hong_Kong">Hong-Kong </option>
 						<option value="Hongrie">Hongrie </option>
 
 						<option value="Inde">Inde </option>
@@ -208,8 +208,8 @@ try {
 						<option value="Niue">Niue </option>
 						<option value="Norfolk">Norfolk </option>
 						<option value="Norvege">Norvege </option>
-						<option value="Nouvelle_Caledonie">Nouvelle_Caledonie </option>
-						<option value="Nouvelle_Zelande">Nouvelle_Zelande </option>
+						<option value="Nouvelle_Caledonie">Nouvelle Caledonie </option>
+						<option value="Nouvelle_Zelande">Nouvelle Zelande </option>
 
 						<option value="Oman">Oman </option>
 						<option value="Ouganda">Ouganda </option>
@@ -219,7 +219,7 @@ try {
 						<option value="Palau">Palau </option>
 						<option value="Palestine">Palestine </option>
 						<option value="Panama">Panama </option>
-						<option value="Papouasie_Nouvelle_Guinee">Papouasie_Nouvelle_Guinee </option>
+						<option value="Papouasie_Nouvelle_Guinee">Papouasie Nouvelle-Guinee </option>
 						<option value="Paraguay">Paraguay </option>
 						<option value="Pays_Bas">Pays_Bas </option>
 						<option value="Perou">Perou </option>
@@ -231,22 +231,22 @@ try {
 
 						<option value="Qatar">Qatar </option>
 
-						<option value="Republique_Dominicaine">Republique_Dominicaine </option>
+						<option value="Republique_Dominicaine">Republique Dominicaine </option>
 						<option value="Republique_Tcheque">Republique_Tcheque </option>
 						<option value="Reunion">Reunion </option>
 						<option value="Roumanie">Roumanie </option>
-						<option value="Royaume_Uni">Royaume_Uni </option>
+						<option value="Royaume_Uni">Royaume-Uni </option>
 						<option value="Russie">Russie </option>
 						<option value="Rwanda">Rwanda </option>
 
 						<option value="Sahara Occidental">Sahara Occidental </option>
-						<option value="Sainte_Lucie">Sainte_Lucie </option>
-						<option value="Saint_Marin">Saint_Marin </option>
+						<option value="Sainte_Lucie">Sainte Lucie </option>
+						<option value="Saint_Marin">Saint Marin </option>
 						<option value="Salomon">Salomon </option>
 						<option value="Salvador">Salvador </option>
-						<option value="Samoa_Occidentales">Samoa_Occidentales</option>
-						<option value="Samoa_Americaine">Samoa_Americaine </option>
-						<option value="Sao_Tome_et_Principe">Sao_Tome_et_Principe </option> 
+						<option value="Samoa_Occidentales">Samoa Occidentales</option>
+						<option value="Samoa_Americaine">Samoa Americaine </option>
+						<option value="Sao_Tome_et_Principe">Sao Tome et Principe </option> 
 						<option value="Senegal">Senegal </option> 
 						<option value="Seychelles">Seychelles </option>
 						<option value="Sierra Leone">Sierra Leone </option>
@@ -255,7 +255,7 @@ try {
 						<option value="Slovenie">Slovenie</option>
 						<option value="Somalie">Somalie </option>
 						<option value="Soudan">Soudan </option> 
-						<option value="Sri_Lanka">Sri_Lanka </option> 
+						<option value="Sri_Lanka">Sri Lanka </option> 
 						<option value="Suede">Suede </option>
 						<option value="Suisse">Suisse </option>
 						<option value="Surinam">Surinam </option>
@@ -269,9 +269,9 @@ try {
 						<option value="Tchad">Tchad </option>
 						<option value="Thailande">Thailande </option>
 						<option value="Tibet">Tibet </option>
-						<option value="Timor_Oriental">Timor_Oriental </option>
+						<option value="Timor_Oriental">Timor Oriental </option>
 						<option value="Togo">Togo </option> 
-						<option value="Trinite_et_Tobago">Trinite_et_Tobago </option>
+						<option value="Trinite_et_Tobago">Trinite etTobago </option>
 						<option value="Tristan da cunha">Tristan de cuncha </option>
 						<option value="Tunisie">Tunisie </option>
 						<option value="Turkmenistan">Turmenistan </option> 
@@ -283,8 +283,8 @@ try {
 						<option value="Vanuatu">Vanuatu </option>
 						<option value="Vatican">Vatican </option>
 						<option value="Venezuela">Venezuela </option>
-						<option value="Vierges_Americaines">Vierges_Americaines </option>
-						<option value="Vierges_Britanniques">Vierges_Britanniques </option>
+						<option value="Vierges_Americaines">Vierges Americaines </option>
+						<option value="Vierges_Britanniques">Vierges Britanniques </option>
 						<option value="Vietnam">Vietnam </option>
 
 						<option value="Wake">Wake </option>

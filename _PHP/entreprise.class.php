@@ -201,7 +201,7 @@ SQL
 		$stmt->execute();
 
 	}
-/*
+
 	public static function getAllEntreprises() {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT * 
@@ -233,5 +233,5 @@ HTML;
 		$html .= "</div>";
 		return $html;
 	}
-*/
+
 }
