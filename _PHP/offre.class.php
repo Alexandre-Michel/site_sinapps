@@ -1,6 +1,7 @@
 <?php
 
 require_once 'myPDO.include.php';
+require_once 'type_prestation.class.php';
 
 class Offre
 {
@@ -55,7 +56,7 @@ SQL
 		$stmt->execute();
 		$array = $stmt->fetchAll();
 		$html = "";
-		foreach ($array as $ligne)
+		foreach($array as $ligne)
 		{
 			$html .= (<<<HTML
 				<div class="box_offre">
@@ -79,7 +80,7 @@ HTML
 
 	public function getOffreComplete()
 	{
-		$prestation = <<<HTML
+		$html = <<<HTML
 			<div class = 'row'>
 				<div class = "th1">{$this->nom_offre}</div>
 				<div class = "img">
@@ -92,7 +93,38 @@ HTML
 				<div class = 'prix'>A partir de {$this->prix_tarifaire}€</div>
 			</div>
 HTML;
-		return $prestation;
+		
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT id_offre
+			FROM TYPE_PRESTATION
+SQL
+		);
+		$stmt->execute();
+		$aray = $stmt->fetchAll();
+		foreach($array as $ligne)
+		{
+			switch($ligne)
+			{
+				//La prestation n'est contenue dans aucune offre, on ne fait rien
+				case 0:
+					$html .= "";
+					break;
+				//La prestation est contenue dans l'offre SILVER, et donc dans les offres GOLD et PLAT
+				case 1:
+					$html .= Type_Prestation::printTypePrestation();
+					break;
+				//La prestation est contenue dans l'offre GOLD, et donc dans l'offre PLAT
+				case 2:
+					if($this->id_offre == 2 || $this->id_offre ==3)
+						$html .= Type_Prestation::printTypePrestation();
+					break;
+				//La prestation n'est contenue que dans l'offre PLAT
+				case 3:
+					if($this->id_offre == 3)
+						$html .= Type_Prestation::printTypePrestation();
+					break;
+			}
+		return $html;
 	}
 
 	public function setNomOffre($nom)
