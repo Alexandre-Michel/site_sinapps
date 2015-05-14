@@ -167,7 +167,7 @@ HTML;
 			}
 
 			$html.=<<<HTML
-				<div class = "row bordure">
+				<div class = "row bordure fond">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
 					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
 					{$status}
