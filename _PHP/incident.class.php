@@ -156,13 +156,13 @@ HTML;
 			$status = "";
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
-					$status = "<div class='status nt'>Non traité</div>";
+					$status = "<div class=\"status nt\">Non traité</div>";
 					break;
 				case 1 :
-					$status = "<div class='status ec'>En cours de traitement</div>";
+					$status = "<div class=\"status ec\">En cours de traitement</div>";
 					break;
 				case 2 :
-					$status = "<div class='status t'>Résolu</div>";
+					$status = "<div class=\"status t\">Résolu</div>";
 					break;		
 			}
 
