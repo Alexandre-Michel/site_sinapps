@@ -228,7 +228,7 @@ HTML;
 			$txt = $ligne->getDescriptionIncident();
 			if(strlen($txt) > 128)
 				$txt = substr($txt, 0, 128);
-			$description = cleanCut($ligne->getDescriptionIncident(), 150);
+			$description = self::cleanCut($ligne->getDescriptionIncident(), 150);
 
 			$html.=<<<HTML
 				<div class = "row bordure fond">
