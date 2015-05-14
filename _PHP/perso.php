@@ -33,16 +33,15 @@ try {
 	if ($user->getIdEntpPers() != NULL)
 	{
 		
-		$contrats = "<div class = 'box1'>
-				<div class='row th2'>Contrat(s)</div>
-				<div class='row'>
+		$contrats = "<div class = 'row'>
+				<div class='th2'>Contrat(s)</div>
+				<div>
 					<button onclick=\"location.href='./contrats.php'\">Visualiser les contrats</button>
-				</div>
-			</div>";
+				</div>";
 	}
 	
 	$p->appendContent(<<<HTML
-		<div class="content">
+		<div class="content" style="text-align:center;">
 			<div class = "th1">Bienvenue dans votre espace personnel</div>
 			<div class = "box1">
 				<div class = "row">
@@ -50,7 +49,6 @@ try {
 					<div><button onclick="location.href='./incidents.php'">Visualiser les incidents</button>{$signaler}</div>
 				</div>
 			{$contrats}
-			<div class = "box1">
 				<div class="row">
 					<div class="th2">Informations personnelles</div>
 					<div><button onclick="location.href='./profil.php'">Modifier vos infos</button></div>
