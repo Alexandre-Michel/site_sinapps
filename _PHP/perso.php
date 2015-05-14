@@ -35,7 +35,7 @@ try {
 	if ($user->getIdEntpPers() != NULL)
 	{
 		
-		$contrats = "<div class = 'row'>
+		$contrats = "<div class = 'row fond'>
 				<div class='th2'>Contrat(s)</div>
 				<div>
 					<button onclick=\"location.href='./contrats.php'\">Visualiser les contrats</button>
@@ -48,12 +48,12 @@ try {
 		<div class="content">
 			<div class = "th1">Bienvenue dans votre espace personnel</div>
 			<div class = "box1">
-				<div class = "row">
+				<div class = "row fond">
 					<div class="th2">Incident(s)</div>
 					<div><button onclick="location.href='./incidents.php'">Visualiser les incidents</button>{$signaler}</div>
 				</div>
 				{$contrats}
-				<div class="row">
+				<div class="row fond">
 					<div class="th2">Informations personnelles</div>
 					<div><button onclick="location.href='./profil.php'">Modifier vos infos</button></div>
 				</div>

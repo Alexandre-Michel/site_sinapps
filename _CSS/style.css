@@ -647,6 +647,11 @@ button
 	bottom: 10px;
 }
 
+.fond
+{
+	background: rgba(251, 251, 251, .35);
+}
+
 /******************* Incident ******************/
 .left, .right 
 {
