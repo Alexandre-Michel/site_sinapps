@@ -715,7 +715,7 @@ button
 
 .box .row .txt
 {
-	height: initial;
+	height: 100%;
 }
 
 .bordure
