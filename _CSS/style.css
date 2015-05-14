@@ -622,12 +622,14 @@ button
 
 .nt
 {
+	width: 100%;
+	text-align: left;
 	color: red;
 }
 
 .ec
 {
-	color; orange;
+	color: orange;
 }
 
 .t
