@@ -45,17 +45,15 @@ try {
 		<div class="content">
 			<div class = "th1">Bienvenue dans votre espace personnel</div>
 			<div class = "box1">
-				<div class = "row th2">Incident(s)</div>
 				<div class = "row">
-					<button onclick="location.href='./incidents.php'">Visualiser les incidents</button>
-					{$signaler}
+					<div class="th2">Incident(s)</div>
+					<div><button onclick="location.href='./incidents.php'">Visualiser les incidents</button>{$signaler}</div>
 				</div>
-			</div>
 			{$contrats}
 			<div class = "box1">
-				<div class="row th2">Informations personnelles</div>
 				<div class="row">
-					<button onclick="location.href='./profil.php'">Modifier vos infos</button>
+					<div class="th2">Informations personnelles</div>
+					<div><button onclick="location.href='./profil.php'">Modifier vos infos</button></div>
 				</div>
 			</div>
 		</div>
