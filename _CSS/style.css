@@ -652,6 +652,11 @@ button
 	background: rgba(251, 251, 251, .35);
 }
 
+.center
+{
+	text-align: center;
+}
+
 /******************* Incident ******************/
 .left, .right 
 {

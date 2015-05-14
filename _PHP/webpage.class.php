@@ -169,7 +169,7 @@ SQL
 		try {
 			$user = Personne::createFromSession();
 			$panneau_connecte = 
-				"<div class='panel'>
+				"<div class='panel center'>
 					<div>Bienvenue {$user->getPrenomPers()} {$user->getNomPers()}</div>
 					<div>
 						<a href='./perso.php' title='Espace personnel'><img src='../_IMG/logos/home.png' alt='Espace Personnel' width='30px' /></a> 
