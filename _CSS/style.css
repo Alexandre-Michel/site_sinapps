@@ -431,6 +431,7 @@ strong
 	width: 22.5%;
 	float: left;
 	margin : 1.25%;
+	background: rgba(251, 251, 251, .35);
 }
 
 .infos_equipe .row {
@@ -527,7 +528,7 @@ input[type="submit"]
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: red/*rgba(251, 251, 251, 0.35)*/;
+    /*background*/
 }
 
 button
