@@ -124,6 +124,7 @@ SQL
 						$html .= Type_Prestation::printTypePrestation();
 					break;
 			}
+		}
 		return $html;
 	}
 
