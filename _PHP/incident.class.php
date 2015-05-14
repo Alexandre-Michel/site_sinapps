@@ -228,7 +228,7 @@ HTML;
 			$html.=<<<HTML
 				<div class = "row bordure fond">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
-					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
+					<div class = "th2">{cleanCut($ligne->getDescriptionIncident(), 200)}</div>
 					{$status} (Type $type_inc->getDescType())
 					<div class = "coupable">{$ligne->getDateIncident()} par {$pers->getPrenomPers()} {$pers->getNomPers()} ({$entp->getNomEntreprise()})</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
@@ -316,5 +316,11 @@ SQL
 	
 	
 	
-	
+	function cleanCut($string, $length, $cutString = '...')
+	{
+		if(strlen($string) <= $length)
+			return $string;
+		$str = substr($string,0,$length-strlen($cutString)+1);
+		return substr($str,0,strrpos($str,' ')).$cutString;
+	}
 }
