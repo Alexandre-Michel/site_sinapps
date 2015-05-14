@@ -648,6 +648,11 @@ button
 	bottom: 10px;
 }
 
+.content .row
+{
+	padding-bottom: 20px;
+}
+
 .fond
 {
 	background: rgba(251, 251, 251, .35);
