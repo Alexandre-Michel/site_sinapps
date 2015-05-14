@@ -44,6 +44,7 @@ HTML
 
 
 	$p->appendContent(<<<HTML
+			<input type="button" name="retour" value="Retour" onclick="history.back()">
 		</div>
 HTML
 	);

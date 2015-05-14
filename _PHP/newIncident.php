@@ -60,6 +60,7 @@ SQL
 				</select><br/>
 				<input type="submit" name="submit" value="Soumettre">
 			</form>
+			<input type="button" name="retour" value="Retour" onclick="history.back()">
     	</div>	
 HTML
     );
