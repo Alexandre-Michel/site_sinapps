@@ -21,12 +21,14 @@ try {
 		break;
 	}
 	$signaler = "";
+	$newContrat = "";
 
 	if($droit != 1) {
 		$signaler = "<button onclick=\"location.href='./newIncident.php'\">Déclarer un nouvel incident</button>";
 	}
 	else {
 		$signaler = "";
+		$newContrat = "<button onclick=\"location.href='./newIncident.php'\">Déclarer un nouvel incident</button>";
 	}
 
 	$contrats = "";
@@ -37,11 +39,12 @@ try {
 				<div class='th2'>Contrat(s)</div>
 				<div>
 					<button onclick=\"location.href='./contrats.php'\">Visualiser les contrats</button>
+					{$newContrat}
 				</div>";
 	}
 	
 	$p->appendContent(<<<HTML
-		<div class="content" style="text-align:center;">
+		<div class="content">
 			<div class = "th1">Bienvenue dans votre espace personnel</div>
 			<div class = "box1">
 				<div class = "row">
