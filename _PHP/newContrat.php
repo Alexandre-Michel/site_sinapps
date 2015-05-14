@@ -37,8 +37,11 @@ try {
 			<div class="th1">Nouveau Contrat</div>
 			{$msg}
 			<form method="post"> 
+				<label for="dateDeb">Date de signature :</label>
 				<input type="date" required name="dateDeb"/><br/>
+				<label for="dateFin">Date d'expiration :</label>
 				<input type="date" required name="dateFin"/><br/>
+				<label for="entp">Entreprise concernée :</label>
 				<select name="entp">
 HTML
 	);
@@ -57,7 +60,7 @@ SQL
 		$p->appendContent("<option selected value=\"{$uneEntp['id_entreprise']}\">{$nom}</option>");
 	}
 
-	$p->appendContent("</select><br/><select name='offre'>");
+	$p->appendContent("</select><br/><label for=\"offre\">Le contrat concerne :</label><select name='offre'>");
 
 	$stmt = myPDO::getInstance()->prepare(<<<SQL
 		SELECT *

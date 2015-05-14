@@ -39,4 +39,15 @@ SQL
 		else throw new Exception ("Action not found");
 	}
 
+	public static function getAllTypeAction() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT * 
+			FROM TYPE_ACTION
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
 }

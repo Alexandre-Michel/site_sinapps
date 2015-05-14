@@ -14,7 +14,7 @@ try {
 	$msg = ""; 
 	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
 		if(isset($_REQUEST['nom']) && $_REQUEST['nom'] != "" && isset($_REQUEST['desc']) && $_REQUEST['desc'] != "") {
-			Incident::createIncident($_REQUEST['nom'], $_REQUEST['desc']);
+			Incident::createIncident($_REQUEST['nom'], $_REQUEST['desc'], $_REQUEST['type']);
 			$msg = 1;
 			header("location: ./newIncident.php?msg={$msg}");
 			exit;
@@ -53,7 +53,7 @@ SQL
 
 	foreach ($arrayType as $unType) {
 		$desc = ucfirst($unType['description_type_incident']);
-		$p->appendContent("<option selected name=\"type_inc\">{$desc}</option>");
+		$p->appendContent("<option selected value='{$unType['id_type_incident']}'>{$desc}</option>");
 	}
 
 	$p->appendContent(<<<HTML

@@ -21,7 +21,7 @@ try {
 					if (isset($_REQUEST['commentaire']) && !empty($_REQUEST['commentaire'])) {
 						$com = $_REQUEST['commentaire'];			
 						if ($user->estHabilite()) {
-							Action::createAction($com , 0, $user->getIdPers(), $incident->getIdIncident(), 1);
+							Action::createAction($com , 0, $user->getIdPers(), $incident->getIdIncident(), $_REQUEST['type']);
 						}
 						else {
 							Action::createAction($com, 0, $user->getIdPers(), $incident->getIdIncident(), 4);
@@ -38,10 +38,42 @@ try {
 					break;
 					case 1 :
 					$status = "En cours de traitement";
-					$traitement = "<form method='post'><div class = 'row'><textarea id='textIncident' rows=8 placeholder=\"Votre commentaire ici...\" name=\"commentaire\"></textarea></div>
-						<div class = 'row'><input type='submit' value='Poster' name='poster'></div></form>";
+
 					if ($user->estHabilite()) {
-						$champsAdmin = "";
+
+						$type_actions = Type_action::getAllTypeAction();
+
+						$options = "";
+
+						foreach ($type_actions as $unType) {
+							$options .= "<option value='{$unType['id_type_incident']}'>{$unType['descritpion_type_incident']}</option>";
+						}
+
+						$traitement = "
+							<form method='post'>
+								<div class = 'row'>
+									<textarea id='textIncident' rows=8 placeholder=\"Votre commentaire ici...\" name=\"commentaire\"></textarea>
+								</div>
+								<div class = 'row'>
+									<select name='type'>
+										{$options}
+									</select>
+								</div>	
+								<div class = 'row'>
+									<input type='submit' value='Poster' name='poster'>
+								</div>
+							</form>";					
+					}
+					else {
+						$traitement = "
+							<form method='post'>
+								<div class = 'row'>
+									<textarea id='textIncident' rows=8 placeholder=\"Votre commentaire ici...\" name=\"commentaire\"></textarea>
+								</div>
+								<div class = 'row'>
+									<input type='submit' value='Poster' name='poster'>
+								</div>
+							</form>";			
 					}
 					break;
 					case 2 :
@@ -100,7 +132,7 @@ HTML
 						<div class="row">
 							<form method="post">
 								{$option}								
-								<input type="submit" name="modifier" value="Modifier"> 
+								<input type="submit" name="modifier" value="Modifier"><br/> 
 								<input type="button" name="retour" value="Retour" onclick="history.back()">
 							</form>	
 						</div>
