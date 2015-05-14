@@ -77,7 +77,7 @@ try {
 					}
 					break;
 					case 2 :
-					$status = "<div class=\"status t\">Résolu !</div>";
+					$status = "<div class=\"status center t\">Résolu !</div>";
 					break;		
 				}
 
