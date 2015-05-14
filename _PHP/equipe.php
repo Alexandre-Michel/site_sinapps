@@ -21,13 +21,8 @@ $p = new WebPage("Notre équipe - Sinapp's");
 $p->appendContent(<<<HTML
 	<div class="content">	
 		<div class="infos_equipe">
-			<div class="row">
-				<div class="th1">
-					L'équipe
-				</div>
-				<div class="th2">Qui sommes-nous...</div>
-			</div>
-			<div class="row">
+			<div class="th1">L'équipe</div>
+			<div class="th2">Qui sommes-nous...</div>
 HTML
 );
 
@@ -37,7 +32,7 @@ while (($sinapps = $stmt->fetch()) !== false) {
 	$nom = strtoupper($sinapps['nom_pers']);
 	$prenom = ucfirst($sinapps['p_pers']);
 	$p->appendContent(<<<HTML
-				<div class="container">
+				<div class="row">
 					<div class="membre_equipe">
 						<div class="image_membre">
 							<img src="{$sinapps["img_pers"]}" alt="path_membre" class="path_img_membre">
@@ -55,12 +50,10 @@ HTML
 	);
 }
 
-/*
-$p->appendContent(<<<HTML					
-			</div>	
+$p->appendContent(<<<HTML
 		</div>	
 	</div>
 HTML
-);*/
+);
 
 echo $p->toHTML();
