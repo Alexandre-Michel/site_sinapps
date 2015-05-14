@@ -206,15 +206,15 @@ HTML;
 			$status = "";
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
-					$status = "Non traité";
+					$status = "<div class=\"nt\">Non traité</div>";
 					//$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Traiter</button>";
 					break;
 				case 1 :
-					$status = "En cours de traitement";
+					$status = "<div class=\"ec\">En cours de traitement</div>";
 					//$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Effectuer une action</button>";					
 					break;
 				case 2 :
-					$status = "Résolu";
+					$status = "<div class=\"t\">Résolu</div>";
 					break;		
 			}
 
@@ -223,11 +223,11 @@ HTML;
 			if(strlen($txt) > 128)
 				$txt = substr($txt, 0, 128);
 			$html.=<<<HTML
-				<div class = "row bordure">
+				<div class = "row bordure fond">
 					<div class = "th1">{$ligne->getNomIncident()}</div>
-					<div class = "th2">{$txt}</div>
-					<div class = "status">{$status}</div>
-					<div class = "coupable">Déclaré par {$pers->getPrenomPers()} {$pers->getNomPers()} le {$ligne->getDateIncident()}</div>
+					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
+					{$status}
+					<div class = "coupable">Déclaré le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
