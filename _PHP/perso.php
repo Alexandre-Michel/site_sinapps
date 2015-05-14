@@ -22,6 +22,7 @@ try {
 	}
 	$signaler = "";
 	$newContrat = "";
+	$admin = "";
 
 	if($droit != 1) {
 		$signaler = "<button onclick=\"location.href='./newIncident.php'\">Déclarer un nouvel incident</button>";
@@ -29,6 +30,15 @@ try {
 	else {
 		$signaler = "";
 		$newContrat = "<button onclick=\"location.href='./newContrat.php'\">Nouveau contrat</button>";
+		$admin = "<div class='row fond'>
+					<div class='th2 center'>Entreprise(s)</div>
+					<div><button onclick='location.href='./entreprises.php''>Visualiser les entreprises</button>
+					<button onclick=\"location.href='./newEntreprise.php'\">Ajouter une entreprise</button></div>
+				</div>
+				<div class=\"row found\">
+					<div class=\"th2 center\">Membre(s)</div>
+					<div><button onclick=\"location.href='./membres.php'\">Visualiser les membres</button>
+				</div>";
 	}
 
 	$contrats = "";
@@ -57,6 +67,7 @@ try {
 					<div class="th2 center">Informations personnelles</div>
 					<div><button onclick="location.href='./profil.php'">Modifier vos infos</button></div>
 				</div>
+				{$admin}
 			</div>
 		</div>
 HTML

@@ -184,4 +184,53 @@ SQL
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
 	}
+
+	public static function createEntreprise($nom, $rue, $cp, $ville, $tel, $pays, $desc) {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			INSERT INTO ENTREPRISE (nom_entreprise, rue_entreprise, cp_entreprise, ville_entreprise, pays_entreprise, tel_entreprise, description_entreprise)
+			VALUES (:nom, :rue, :cp, :ville, :tel, :pays, :description)
+SQL
+		);
+		$stmt->bindValue(":nom", $nom);
+		$stmt->bindValue(":rue", $rue);
+		$stmt->bindValue(":cp", $cp);
+		$stmt->bindValue(":ville", $ville);
+		$stmt->bindValue(":tel", $tel);
+		$stmt->bindValue(":pays", $pays);
+		$stmt->bindValue(":description", $desc);
+		$stmt->execute();
+
+	}
+
+	public static function getAllEntreprises() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT * 
+			FROM ENTREPRISE
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->execute();	
+		$array = $stmt->fetchAll();
+
+		$html = "<div class='box1'>";
+		foreach($array as $uneEntp) {
+
+			$html .= <<<HTML
+				<div class = "row bordure">
+					<div class = "th1">Entreprise n°{$uneEntp->getIdEntreprise()} 
+						<span class="nomEntreprise">({$uneEntp->getNomEntreprise()})</span>
+					</div>
+					<div class = "row">Localisation : {$uneEntp->getRueEntreprise()} {$uneEntp->getCpEntreprise()} {$uneEntp->getVilleEntreprise()} - {$uneEntp->getPaysEntreprise()}</div>
+					<div class = "row">Téléphone : {$uneEntp->getTelEntreprise()}</div>
+					<div class = "row">Description : {$uneEntp->getDescriptionEntreprise()}</div>
+					<div>
+						<button onclick=\"location.href='./modifEntreprise.php'\">Modifier</button>	
+						<button onclick=\"{deleteEntreprise($uneEntp->getIdEntreprise)}\">Supprimer</button>		
+					</div>		
+				</div>
+HTML;				
+		}	
+		$html .= "</div>";
+		return $html;
+	}
 }
