@@ -170,8 +170,8 @@ SQL
 			$user = Personne::createFromSession();
 			$panneau_connecte = 
 				"<div class='panel'>
-					<div class='row'>Bienvenue {$user->getPrenomPers()} {$user->getNomPers()}</div>
-					<div class='row'>
+					<div>Bienvenue {$user->getPrenomPers()} {$user->getNomPers()}</div>
+					<div>
 						<a href='./perso.php' title='Espace personnel'><img src='../_IMG/logos/home.png' alt='Espace Personnel' width='30px' /></a> 
 						<a href='./newIncident.php' title='Signaler un incident'><img src='../_IMG/logos/warning.png' alt='Signaler un incident' width='30px' /></a>
 						<a href='./auth.php?action=logout' title='Se deconnecter'><img src='../_IMG/logos/leave.png' alt='Se deconnecter' width='30px' /></a>
@@ -182,8 +182,8 @@ SQL
 		catch (Exception $e) {
 			$panneau_connecte = 
 				"<div class='panel'>
-						<div class='row'>Bienvenue chez Sinapp's</div>
-						<div class='row'>
+						<div>Bienvenue chez Sinapp's</div>
+						<div>
 							<a href='./connexion.php'><input type='button' value='Identifiez-vous'/></a>
 							<a href='./inscription.php'><input type='button' value='Pas encore inscrit ?'/></a>
 						</div>	
