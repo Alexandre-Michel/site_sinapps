@@ -34,10 +34,10 @@ try {
 				
 				switch($incident->getStatutIncident()) {
 					case 0 : 
-					$status = "<div class=\"status nt\">Non traité</div>";
+					$status = "Non traité";
 					break;
 					case 1 :
-					$status = "<div class=\"status ec\">En cours de traitement</div>";
+					$status = "En cours de traitement";
 
 					if ($user->estHabilite()) {
 
@@ -77,7 +77,7 @@ try {
 					}
 					break;
 					case 2 :
-					$status = "<div class=\"status t\">Résolu !</div>";
+					$status = "Résolu !";
 					break;		
 				}
 
