@@ -143,7 +143,10 @@ HTML;
 			$status = "";
 			$dateFV = date('d-m-Y', strtotime($ctr->getFinValidite()));
 			$dateSign = date('d-m-Y', strtotime($ctr->getDateSignContrat()));
-			if ($dateFV > date("d-m-Y"))
+
+			$dtFV = new DateTime($dateFV);
+			$today = new DateTime(date("d-m-Y"));
+			if ($dtFv > $today)
 			{
 				$status = "<div class = \"status t\">Contrat en cours de validité</div>";
 			}
