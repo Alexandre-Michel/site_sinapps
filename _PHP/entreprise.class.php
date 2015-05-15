@@ -118,7 +118,7 @@ SQL
 
 	public function setVilleEntreprise($ville)
 	{
-		$this->rue_entreprise = $ville;
+		$this->ville_entreprise = $ville;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE ENTREPRISE
 			SET ville_entreprise = :ville
@@ -132,7 +132,7 @@ SQL
 
 	public function setPaysEntreprise($pays)
 	{
-		$this->rue_entreprise = $pays;
+		$this->pays_entreprise = $pays;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE ENTREPRISE
 			SET pays_entreprise = :pays
@@ -144,9 +144,23 @@ SQL
 		$stmt->execute();
 	}
 
+	public function setTelEntreprise($tel)
+	{
+		$this->tel_entreprise = $tel;
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			UPDATE ENTREPRISE
+			SET tel_entreprise = :tel
+			WHERE id_entreprise = :id
+SQL
+		);
+		$stmt->bindValue(":tel", $tel);
+		$stmt->bindValue(":id", $this->id_entreprise);
+		$stmt->execute();
+	}
+
 	public function setDescriptionEntreprise($description)
 	{
-		$this->rue_entreprise = $pays;
+		$this->description_entreprise = $description;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE ENTREPRISE
 			SET description_entreprise = :description
@@ -157,6 +171,21 @@ SQL
 		$stmt->bindValue(":id", $this->id_entreprise);
 		$stmt->execute();
 	}
+
+	public function setSiretEntreprise($siret)
+	{
+		$this->siret_entreprise = $siret;
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			UPDATE ENTREPRISEsiret
+			SET siret_entreprise = :siret
+			WHERE id_entreprise = :id
+SQL
+		);
+		$stmt->bindValue(":siret", $siret);
+		$stmt->bindValue(":id", $this->id_entreprise);
+		$stmt->execute();
+	}
+
 
 	public static function createEntrepriseFromId($id)
 	{
@@ -209,7 +238,7 @@ SQL
 					<div class = "row">Téléphone : {$uneEntp->getTelEntreprise()}</div>
 					<div class = "row">Description : {$uneEntp->getDescriptionEntreprise()}</div>
 					<div>
-						<button onclick="location.href='./modifEntreprise.php'">Modifier</button>	
+						<input type="button" value="Modifier" onclick="modifier({$uneEntp->getIdEntreprise()})">
 						<input type="button" value="Supprimer" onclick="effacer({$uneEntp->getIdEntreprise()})">
 					</div>		
 				</div>
@@ -223,6 +252,10 @@ HTML;
 				if (confirm) {
 					document.location.href=\"./entreprises.php?i=\" + num + \"&delete=yes\";
 				}
+			};
+
+			function modifier(num) {
+				document.location.href=\"./modifEntreprise.php?i=\" + num;
 			};
 		</script>";
 

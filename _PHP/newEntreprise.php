@@ -44,10 +44,10 @@ try {
 				{$msg}
 				<form method="post"> 
 					<div class="champs">
-						<input type="text" name="nom_entp" placeholder="Nom de l'entreprise">
-						<input type="text" name="rue" placeholder="Rue de l'entreprise">
-						<input type="text" name="cp" placeholder="Code Postal de l'entreprise">
-						<input type="text" name="ville" placeholder="Siège de l'entreprise"><br/>
+						<input type="text" required name="nom_entp" placeholder="Nom de l'entreprise">
+						<input type="text" required name="rue" placeholder="Rue de l'entreprise">
+						<input type="text" required name="cp" placeholder="Code Postal de l'entreprise">
+						<input type="text" required name="ville" placeholder="Siège de l'entreprise"><br/>
 						<select id="select_pays" name="pays"> 
 							<option value="France" selected="selected">France </option>
 
@@ -306,7 +306,7 @@ try {
 
 						</select><br/>
 
-						<input type="tel" name="tel" placeholder="Téléphone de l'entreprise">
+						<input type="tel" required name="tel" placeholder="Téléphone de l'entreprise">
 						<input type="text" name="desc" placeholder="Description de l'entreprise"><br/>
 HTML
 		);			

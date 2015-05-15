@@ -96,10 +96,10 @@ HTML;
 			$status = "";
 			if ($ctr->getFinValidite() > date("Y-m-d")) 
 			{
-				$status = "Contrat en cours de validité";
+				$status = "<div class = \"status t\">Contrat en cours de validité</div>";
 			}
 			else {
-				$status = "Contrat expiré";
+				$status = "<div class = \"status nt\">Contrat expiré</div>";
 			}
 
 			$offre = Offre::createOffreFromId($ctr->getIdOffre());
@@ -109,7 +109,7 @@ HTML;
 					<div class = "th2">Contrat n°{$ctr->getIdContrat()} 
 						<span class="offre">({$offre->getNomOffre()})</span>
 					</div>
-					<div class = "status">{$status}</div>
+					{$status}
 					<div class = "row">Signé le : {$ctr->getDateSignContrat()}</div>
 					<div class = "row">Expire le : {$ctr->getFinValidite()}</div>				
 				</div>
@@ -144,10 +144,10 @@ HTML;
 			$status = "";
 			if ($ctr->getFinValidite() > date("Y-m-d")) 
 			{
-				$status = "Contrat en cours de validité";
+				$status = "<div class = \"status t\">Contrat en cours de validité</div>";
 			}
 			else {
-				$status = "Contrat expiré";
+				$status = "<div class = \"status nt\">Contrat expiré</div>";
 			}
 
 			$entp = Entreprise::createEntrepriseFromId($ctr->getIdEntp());
@@ -158,7 +158,7 @@ HTML;
 						<span class="offre">({$offre->getNomOffre()})</span>
 					</div>
 					<div class = "th3">Appartenant à l'entreprise {$entp->getNomEntreprise()}</div>
-					<div class = "status">{$status}</div>
+					{$status}
 					<div class = "row">Signé le : {$ctr->getDateSignContrat()}</div>
 					<div class = "row">Expire le : {$ctr->getFinValidite()}</div>
 

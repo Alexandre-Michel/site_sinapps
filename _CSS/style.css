@@ -746,6 +746,7 @@ input[type="button"]
 .row.bordure.fond .th3 
 {
 	text-transform: none;
+	text-align: left;
 }
 
 /************************* Contrat ********************/
