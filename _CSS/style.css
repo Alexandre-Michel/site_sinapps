@@ -659,9 +659,11 @@ button
 	text-align: center;
 }
 
-.cnt
+input[type="button"]
 {
-	
+	height: 30px;
+	width: 175px;
+	margin: 0 auto;
 }
 
 /******************* Incident ******************/
@@ -755,7 +757,7 @@ span.offre
 
 /************************* Entreprise ****************/
 
-#select_pays 
+#select_pays
 {	
 	width: 440px;
 	height: 36px;
