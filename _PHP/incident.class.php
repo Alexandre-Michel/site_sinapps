@@ -235,7 +235,7 @@ HTML;
 SQL
 				);
 				$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
-				$stmt->bindValue(":val", $ligne->getIdType());
+				$stmt->bindValue(":val", $ligne->getIdPersonne());
 				$stmt->execute();
 				$ligne->id_personne = null;
 			}
