@@ -242,16 +242,34 @@ SQL
 			}
 			
 			$txt = $ligne->getDescriptionIncident();
+			/*
 			if(strlen($txt) > 128)
 				$txt = substr($txt, 0, 128);
+			*/
 			$description = self::cleanCut($ligne->getDescriptionIncident(), 150);
+
+			if($pers->getPrenomPers() == null)
+				$prenom = 'Inconnu';
+			else
+				$prenom = $pers->getPrenomPers();
+
+			if($pers->getNomPers() == null)
+				$nom = '';
+			else
+				$nom = $pers->getNomPers();
+
+			if($entp->getNomEntreprise() == null)
+				$entp = '';
+			else
+				$entp = $entp->getNomEntreprise();
+
 
 			$html.=<<<HTML
 				<div class = "row bordure fond">
 					<div class = "th2">{$ligne->getNomIncident()}</div>
 					<div class = "th3">{$description}</div>
 					{$status}
-					<div class = "coupable">{$ligne->getDateIncident()} par {$pers->getPrenomPers()} {$pers->getNomPers()} ({$entp->getNomEntreprise()})</div>
+					<div class = "coupable">{$ligne->getDateIncident()} par {$prenom} {$nom} ({entp})</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
