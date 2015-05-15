@@ -242,8 +242,8 @@ SQL
 				$pers = null;
 				$entp = null;
 			}
-
-			$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
+			if(!is_null($pers))
+				$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
 			
 			$txt = $ligne->getDescriptionIncident();
 			/*
