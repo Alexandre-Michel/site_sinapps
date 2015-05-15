@@ -18,7 +18,7 @@ try {
 	    	$msg = "";
 	    	if(isset($_REQUEST['msg'])) {
 	    		if($_REQUEST['msg'] == 1) {
-	    			$msg = "<div class='succes'>Entreprise modifiée avec succès.</div>";
+	    			$msg = "<div class='succes'>Entreprise supprimée avec succès.</div>";
 	    		}
 	    		else if($_REQUEST['msg'] == 2) {
 	    			$msg = "<div class='rate'>Echec, veuillez réessayer.</div>";
@@ -26,43 +26,41 @@ try {
 	    	}
 
 	    	$entp = Entreprise::createEntrepriseFromId($_REQUEST['i']);
-	    	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
 
-		    	if(isset($_REQUEST['nom_entp']) && $_REQUEST['nom_entp'] != "" && isset($_REQUEST['rue']) && $_REQUEST['rue'] != "" && isset($_REQUEST['cp']) && $_REQUEST['cp'] != "" && isset($_REQUEST['ville'])  && $_REQUEST['ville'] != "") {
+	    	if(isset($_REQUEST['nom_entp']) && $_REQUEST['nom_entp'] != "" && isset($_REQUEST['rue']) && $_REQUEST['rue'] != "" && isset($_REQUEST['cp']) && $_REQUEST['cp'] != "" && isset($_REQUEST['ville'])  && $_REQUEST['ville'] != "") {
 
-					$nom = $_REQUEST['nom_entp'];
-					$entp->setNomEntreprise($nom);
+				$nom = $_REQUEST['nom_entp'];
+				$entp->setNomEntreprise($nom);
 
-					$rue = $_REQUEST['rue'];
-					$entp->setRueEntreprise($rue);
+				$rue = $_REQUEST['rue'];
+				$entp->setRueEntreprise($rue);
 
-					$cp = $_REQUEST['cp'];
-					$entp->setCpEntreprise($cp);
+				$cp = $_REQUEST['cp'];
+				$entp->setCpEntreprise($cp);
 
-					$ville = $_REQUEST['ville'];
-					$entp->setVilleEntreprise($ville);
+				$ville = $_REQUEST['ville'];
+				$entp->setVilleEntreprise($ville);
 
-					$tel = $_REQUEST['tel'];
-					$entp->setTelEntreprise($tel);
+				$tel = $_REQUEST['tel'];
+				$entp->setTelEntreprise($tel);
 
-					$pays = $_REQUEST['pays'];
-					$entp->setPaysEntreprise($pays);
+				$pays = $_REQUEST['pays'];
+				$entp->setPaysEntreprise($pays);
 
-					$desc = $_REQUEST['desc'];
-					$entp->setDescriptionEntreprise($desc);
+				$desc = $_REQUEST['desc'];
+				$entp->setDescriptionEntreprise($desc);
 
-					$siret = $_REQUEST['siret'];
-					$entp->setSiretEntreprise($siret);
+				$siret = $_REQUEST['siret'];
+				$entp->setSiretEntreprise($siret);
 
-					$msg = 1;
-					header("location: ./modifEntreprise.php?msg={$msg}");
-					exit;
-				}
-				else {
-					$msg = 2;
-					header("location: ./modifEntreprise.php?msg={$msg}");
-					exit;
-				}
+				$msg = 1;
+				header("location: ./newEntreprise.php?msg={$msg}");
+				exit;
+			}
+			else {
+				$msg = 2;
+				header("location: ./newEntreprise.php?msg={$msg}");
+				exit;
 			}
 
 			$p->appendContent(<<<HTML
