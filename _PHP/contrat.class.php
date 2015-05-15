@@ -141,7 +141,7 @@ HTML;
 		{
 			$i = $ctr->getIdContrat();
 			$status = "";
-			$dateFV = date('d-m-Y', $ctr->getFinValidite();
+			$dateFV = date('d-m-Y', $ctr->getFinValidite());
 			$dateSign = date('d-m-Y', $ctr->getDateSignContrat());
 			if ($date > date("d-m-Y"))
 			{
