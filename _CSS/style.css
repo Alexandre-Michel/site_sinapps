@@ -748,3 +748,11 @@ span.offre
 {
 	font-size: 0.5em;
 }
+
+/************************* Entreprise ****************/
+
+#select_pays 
+{	
+	width: 440px;
+	height: 36px;
+}

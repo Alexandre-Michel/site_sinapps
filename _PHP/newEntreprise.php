@@ -47,8 +47,8 @@ try {
 						<input type="text" name="nom_entp" placeholder="Nom de l'entreprise">
 						<input type="text" name="rue" placeholder="Rue de l'entreprise">
 						<input type="text" name="cp" placeholder="Code Postal de l'entreprise">
-						<input type="text" name="ville" placeholder="Siège de l'entreprise">
-						<select name="pays"> 
+						<input type="text" name="ville" placeholder="Siège de l'entreprise"><br/>
+						<select id"select_pays" name="pays"> 
 							<option value="France" selected="selected">France </option>
 
 							<option value="Afghanistan">Afghanistan </option>
@@ -307,7 +307,7 @@ try {
 						</select>
 
 						<input type="tel" name="tel" placeholder="Téléphone de l'entreprise">
-						<input type="text" name="desc" placeholder="Description de l'entreprise">
+						<input type="text" name="desc" placeholder="Description de l'entreprise"><br/>
 HTML
 		);			
 
