@@ -210,6 +210,7 @@ SQL
 					<div class = "row">Description : {$uneEntp->getDescriptionEntreprise()}</div>
 					<div>
 						<button onclick="location.href='./modifEntreprise.php'">Modifier</button>	
+						<button onclick="{deleteEntreprise($uneEntp->getIdEntreprise())}">Supprimer</button>
 					</div>		
 				</div>
 HTML;
