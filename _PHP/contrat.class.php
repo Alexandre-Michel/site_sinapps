@@ -109,8 +109,8 @@ HTML;
 						<span class="offre">({$offre->getNomOffre()})</span>
 					</div>
 					{$status}
-					<div class = "row">Signé le : {$ctr->getDateSignContrat()->format('d m Y')}</div>
-					<div class = "row">Expire le : {$ctr->getFinValidite()->format('d m Y')}</div>				
+					<div class = "row">Signé le : {$ctr->getDateSignContrat()}</div>
+					<div class = "row">Expire le : {$ctr->getFinValidite()}</div>				
 				</div>
 HTML;
 		}
@@ -141,7 +141,9 @@ HTML;
 		{
 			$i = $ctr->getIdContrat();
 			$status = "";
-			if ($ctr->getFinValidite() > date("Y-m-d")) 
+			$dateFV = date('d-m-Y', $ctr->getFinValidite();
+			$dateSign = date('d-m-Y', $ctr->getDateSignContrat());
+			if ($date > date("d-m-Y"))
 			{
 				$status = "<div class = \"status t\">Contrat en cours de validité</div>";
 			}
@@ -158,8 +160,8 @@ HTML;
 					</div>
 					<div class = "th3">Appartenant à l'entreprise {$entp->getNomEntreprise()}</div>
 					{$status}
-					<div class = "row">Signé le : {$ctr->getDateSignContrat()}</div>
-					<div class = "row">Expire le : {$ctr->getFinValidite()}</div>
+					<div class = "row">Signé le : {$dateSign}</div>
+					<div class = "row">Expire le : {$dateFV}</div>
 
 				</div>
 HTML;
