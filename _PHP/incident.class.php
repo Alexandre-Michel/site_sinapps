@@ -237,8 +237,8 @@ SQL
 				$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
 				$stmt->bindValue(":val", $ligne->getIdType());
 				$stmt->execute();
+				$this->id_personne = null;
 			}
-			
 			$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
 			$txt = $ligne->getDescriptionIncident();
 			if(strlen($txt) > 128)
