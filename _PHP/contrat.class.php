@@ -103,7 +103,8 @@ HTML;
 			}
 
 			$offre = Offre::createOffreFromId($ctr->getIdOffre());
-
+			var_dump($ctr->getDateSignContrat());
+			var_dump($ctr->getFinValidite());
 			$html.=<<<HTML
 				<div class = "row bordure fond">
 					<div class = "th2">Contrat n°{$ctr->getIdContrat()} 
