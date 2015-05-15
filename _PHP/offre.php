@@ -12,9 +12,7 @@ if (isset($_GET['i']) && !empty($_GET['i']))
 		$offre = Offre::createOffreFromId($_GET['i']);
 		$p->appendContent(<<<HTML
 			<div class='content'>
-				<div class = "box">
-					{$offre->getOffreComplete()}
-				</div>
+				{$offre->getOffreComplete()}
 			</div>
 HTML
 		);

@@ -81,17 +81,21 @@ HTML
 	public function getOffreComplete()
 	{
 		$html = <<<HTML
-			<div class = 'row'>
-				<div class = "th1">{$this->nom_offre}</div>
-				<div class = "img">
-					<img id="logo_ordi" src="{$this->path_logo}" alt="logo1"/>
+			<div class="box">
+				<div class = 'row'>
+					<div class = "th1">{$this->nom_offre}</div>
+					<div class = "img">
+						<img id="logo_ordi" src="{$this->path_logo}" alt="logo1"/>
+					</div>
+					<div class = 'border'></div>
 				</div>
-				<div class = 'border'></div>
+				<div class = 'row'>
+					<div class = 'txt'>{$this->desc_page}</div>
+					<div class = 'prix'>A partir de {$this->prix_tarifaire}€</div>
+				</div>
 			</div>
-			<div class = 'row'>
-				<div class = 'txt'>{$this->desc_page}</div>
-				<div class = 'prix'>A partir de {$this->prix_tarifaire}€</div>
-			</div>
+			<div class="intro_box">
+				<div class="box1">
 HTML;
 		
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
@@ -112,20 +116,20 @@ SQL
 					break;
 				//La prestation est contenue dans l'offre SILVER, et donc dans les offres GOLD et PLAT
 				case 1:
-					$html .= "<div class='box'>".$prestation->printTypePrestation()."</div>";
+					$html .= $prestation->printTypePrestation();
 					break;
 				//La prestation est contenue dans l'offre GOLD, et donc dans l'offre PLAT
 				case 2:
 					if($this->id_offre == 2 || $this->id_offre == 3)
-						$html .= "<div class='box'>".$prestation->printTypePrestation()."</div>";
-					break;
+						$html .= $prestation->printTypePrestation();
 				//La prestation n'est contenue que dans l'offre PLAT
 				case 3:
 					if($this->id_offre == 3)
-						$html .= "<div class='box'>".$prestation->printTypePrestation()."</div>";
+						$html .= $prestation->printTypePrestation();
 					break;
 			}
 		}
+		$html .= "</div></div>";
 		return $html;
 	}
 
