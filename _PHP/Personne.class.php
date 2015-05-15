@@ -134,7 +134,7 @@ HTML;
 			{
 				var confirm = window.confirm(\"Voulez-vous supprimer ce membre ?\");
 				if (confirm)
-					document.location.href=\"./personne.php?i=\" + num + \"&delete=yes\";
+					document.location.href=\"./membres.php?i=\" + num + \"&delete=yes\";
 			};
 		</script>";
 
