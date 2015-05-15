@@ -176,7 +176,7 @@ SQL
 	{
 		$this->siret_entreprise = $siret;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
-			UPDATE ENTREPRISEsiret
+			UPDATE ENTREPRISE
 			SET siret_entreprise = :siret
 			WHERE id_entreprise = :id
 SQL

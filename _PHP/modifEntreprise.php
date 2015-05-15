@@ -71,10 +71,10 @@ try {
 					{$msg}
 					<form method="post"> 
 						<div class="champs">
-							<input type="text" required name="nom_entp" placeholder="Nom de l'entreprise" value={$entp->getNomEntreprise()}>
-							<input type="text" required name="rue" placeholder="Rue de l'entreprise" value={$entp->getRueEntreprise()}>
-							<input type="text" required name="cp" placeholder="Code Postal de l'entreprise" value={$entp->getCpEntreprise()}>
-							<input type="text" required name="ville" placeholder="Siège de l'entreprise" value={$entp->getVilleEntreprise()}><br/>
+							<input type="text" required name="nom_entp" placeholder="Nom de l'entreprise" value="{$entp->getNomEntreprise()}">
+							<input type="text" required name="rue" placeholder="Rue de l'entreprise" value="{$entp->getRueEntreprise()}">
+							<input type="text" required name="cp" placeholder="Code Postal de l'entreprise" value="{$entp->getCpEntreprise()}">
+							<input type="text" required name="ville" placeholder="Siège de l'entreprise" value="{$entp->getVilleEntreprise()}"><br/>
 							<select id="select_pays" name="pays"> 
 								<option value="France" selected="selected">France </option>
 
@@ -333,8 +333,8 @@ try {
 
 							</select><br/>
 
-							<input type="tel" required name="tel" placeholder="Téléphone de l'entreprise" value={$entp->getTelEntreprise()}>
-							<input type="text" name="desc" placeholder="Description de l'entreprise" value={$entp->getDescriptionEntreprise()}>
+							<input type="tel" required name="tel" placeholder="Téléphone de l'entreprise" value="{$entp->getTelEntreprise()}">
+							<input type="text" name="desc" placeholder="Description de l'entreprise" value="{$entp->getDescriptionEntreprise()}">
 							<input type="text" name="siret" placeholder="SIRET de l'entreprise"><br/>
 							<input type="submit" name="submit" value="Soumettre">
 						</div>	
