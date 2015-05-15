@@ -121,7 +121,7 @@ SQL
 					</div>
 					<div class = "row">Mail : {$ligne->getMailPers()}</div>
 					<div>
-						<button onclick="location.href='./modifMembre.php'">Modifier</button>
+						<input type="button" value="Modifier" onclick="modifier({$ligne->getIdPers()})">
 						<input type="button" value="Supprimer" onclick="effacer({$ligne->getIdPers()})">
 					</div>		
 				</div>
@@ -136,6 +136,10 @@ HTML;
 				if (confirm)
 					document.location.href=\"./membres.php?i=\" + num + \"&delete=yes\";
 			};
+
+			function modifier(num) {
+				document.location.href=\"./modifMembre.php?i=\" + num;
+			}
 		</script>";
 
 		return $html;
