@@ -103,16 +103,14 @@ HTML;
 			}
 
 			$offre = Offre::createOffreFromId($ctr->getIdOffre());
-			var_dump($ctr->getDateSignContrat());
-			var_dump($ctr->getFinValidite());
 			$html.=<<<HTML
 				<div class = "row bordure fond">
 					<div class = "th2">Contrat n°{$ctr->getIdContrat()} 
 						<span class="offre">({$offre->getNomOffre()})</span>
 					</div>
 					{$status}
-					<div class = "row">Signé le : {$ctr->getDateSignContrat()}</div>
-					<div class = "row">Expire le : {$ctr->getFinValidite()}</div>				
+					<div class = "row">Signé le : {$ctr->getDateSignContrat()->format('d m Y')}</div>
+					<div class = "row">Expire le : {$ctr->getFinValidite()->format('d m Y')}</div>				
 				</div>
 HTML;
 		}
