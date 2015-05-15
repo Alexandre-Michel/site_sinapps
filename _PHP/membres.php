@@ -21,7 +21,7 @@ try {
     	if(isset($_REQUEST['i'])) {
     		if(isset($_REQUEST['delete'])) {
     			try {
-	    			Entreprise::deleteEntreprise($_REQUEST['i']);
+	    			Personne::deletePersonne($_REQUEST['i']);
 	    			header("location: ./membres.php?msg=1");
 	    			exit;
 	    		}
