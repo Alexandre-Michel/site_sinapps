@@ -100,7 +100,8 @@ HTML;
 SQL
 		);
 		$stmt->execute();
-		$aray = $stmt->fetchAll();
+		$array = $stmt->fetchAll();
+		var_dump($array)
 		foreach($array as $ligne)
 		{
 			switch($ligne)
