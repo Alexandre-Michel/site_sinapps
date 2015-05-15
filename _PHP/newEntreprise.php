@@ -304,7 +304,7 @@ try {
 							<option value="Zambie">Zambie </option>
 							<option value="Zimbabwe">Zimbabwe </option>
 
-						</select>
+						</select><br/>
 
 						<input type="tel" name="tel" placeholder="Téléphone de l'entreprise">
 						<input type="text" name="desc" placeholder="Description de l'entreprise"><br/>
