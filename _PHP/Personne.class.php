@@ -99,6 +99,48 @@ SQL
 		return $stmt->fetchAll();
 	}
 
+	public function getAllPersonne()
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT *
+			FROM PERSONNE
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->execute();
+		$array = $stmt->fetchAll();
+
+
+		$html = "<div class='box1'>";
+		foreach($array as $ligne) {
+
+			$html .= <<<HTML
+				<div class = "row bordure">
+					<div class = "th2">Membre n° {$ligne->getIdPers()} 
+						<span class="nomEntreprise">({$ligne->getNomPers()})</span>
+					</div>
+					<div class = "row">Mail : {$ligne->getMailPers()}</div>
+					<div>
+						<button onclick="location.href='./'">Modifier</button>	
+						<input type="button" value="Supprimer" onclick="effacer({$ligne->deletePersonne()})">
+					</div>		
+				</div>
+HTML;
+		}	
+		$html .= "</div>";
+
+		$html .=<<<JAVASCRIPT
+			function effacer(num)
+			{
+				var confirm = window.confirm("Voulez-vous supprimer cette entreprise ?");
+				if (confirm)
+					document.location.href="./entreprises.php?i=" + num + "&delete=yes";
+			};
+JAVASCRIPT;
+
+		return $html;
+	}
+
 
 
 
