@@ -10,6 +10,7 @@ class Type_Prestation
 	private $prix_forfaitaire = null;
 	private $prix_preferentiel = null;
 	private $path_logo = null;
+	private $id_offre = null;
 
 	private function __construct()
 	{
@@ -45,6 +46,11 @@ class Type_Prestation
 	{
 		return $this->path_logo;
 	}
+	
+	public static function getIdOffre()
+	{
+		return $this->id_offre;
+	}
 
 	public static function setDescriptionTypePrestation($desc)
 	{
@@ -71,8 +77,6 @@ SQL
 
 	public function printTypePrestation()
 	{
-
-
 		$prestation = <<<HTML
 			<div class = "row">
 				<div class = "th3">{$this->nom_prestation}</div>
