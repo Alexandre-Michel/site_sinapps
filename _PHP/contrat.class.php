@@ -141,8 +141,8 @@ HTML;
 		{
 			$i = $ctr->getIdContrat();
 			$status = "";
-			$dateFV = date('d-m-Y', $ctr->getFinValidite());
-			$dateSign = date('d-m-Y', $ctr->getDateSignContrat());
+			$dateFV = strtotime(date('d-m-Y', $ctr->getFinValidite()));
+			$dateSign = strtotime(date('d-m-Y', $ctr->getDateSignContrat()));
 			if ($date > date("d-m-Y"))
 			{
 				$status = "<div class = \"status t\">Contrat en cours de validité</div>";
