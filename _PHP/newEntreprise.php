@@ -13,8 +13,15 @@ try {
     if($user->estHabilite()) {	    
 		$msg = ""; 
 		if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
-			if(isset($_REQUEST['dateDeb']) && $_REQUEST['dateDeb'] != "" && isset($_REQUEST['dateFin']) && $_REQUEST['dateFin'] != "" && isset($_REQUEST['entp']) && isset($_REQUEST['offre'])) {
-				//Entreprise::createEntreprise();
+			if(isset($_REQUEST['nom_entp']) && $_REQUEST['nom_entp'] != "" && isset($_REQUEST['rue']) && $_REQUEST['rue'] != "" && isset($_REQUEST['cp']) && $_REQUEST['cp'] != "" && isset($_REQUEST['ville'])  && $_REQUEST['ville'] != "") {
+				$nom = $_REQUEST['nom_entp'];
+				$rue = $_REQUEST['rue'];
+				$cp = $_REQUEST['cp'];
+				$ville = $_REQUEST['ville'];
+				$tel = $_REQUEST['tel'];
+				$pays = $_REQUEST['pays'];
+				$desc = $_REQUEST['desc'];
+				Entreprise::createEntreprise($nom, $rue, $cp, $ville, $tel, $pays, $desc);
 				$msg = 1;
 				header("location: ./newEntreprise.php?msg={$msg}");
 				exit;
