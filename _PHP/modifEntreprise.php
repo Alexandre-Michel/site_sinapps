@@ -347,6 +347,11 @@ HTML
 			header('location: ./index.php');
 			exit;
 		}
+	}
+	else {
+		header('location: ./entreprises.php');
+		exit;
+	}
 }
 
 catch (notInSessionException $e) {
