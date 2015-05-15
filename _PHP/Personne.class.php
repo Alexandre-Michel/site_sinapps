@@ -116,8 +116,8 @@ SQL
 
 			$html .= <<<HTML
 				<div class = "row bordure">
-					<div class = "th2">Membre n° {$ligne->getIdPers()} 
-						<span class="nomEntreprise">({$ligne->getNomPers()})</span>
+					<div class = "th2">Membre : {$ligne->getIdPers()} 
+						<span class="nomEntreprise">({$ligne->getNomPers()} {$ligne->getPrenomPers()})</span>
 					</div>
 					<div class = "row">Mail : {$ligne->getMailPers()}</div>
 					<div>
