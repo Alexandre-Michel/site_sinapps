@@ -122,11 +122,21 @@ SQL
 					<div class = "row">Mail : {$ligne->getMailPers()}</div>
 					<div>
 						<button onclick="location.href='./'">Modifier</button>
+						<input type="button" value="Supprimer" onclick="effacer({$ligne->getIdPers()})">
 					</div>		
 				</div>
 HTML;
 		}	
 		$html .= "</div>";
+
+		$html .="<script>
+			function effacer(num)
+			{
+				var confirm = window.confirm(\"Voulez-vous supprimer ce membre ?\");
+				if (confirm)
+					document.location.href=\"./personne.php?i=\" + num + \"&delete=yes\";
+			};
+		</script>";
 
 		return $html;
 	}

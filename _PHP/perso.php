@@ -35,7 +35,7 @@ try {
 					<div><button onclick=\"location.href='./entreprises.php'\">Visualiser les entreprises</button>
 					<button onclick=\"location.href='./newEntreprise.php'\">Ajouter une entreprise</button></div>
 				</div>
-				<div class=\"row found\">
+				<div class=\"row fond\">
 					<div class=\"th2 center\">Membre(s)</div>
 					<div><button onclick=\"location.href='./membres.php'\">Visualiser les membres</button>
 				</div>";
