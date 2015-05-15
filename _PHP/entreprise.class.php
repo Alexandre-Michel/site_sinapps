@@ -202,7 +202,7 @@ SQL
 
 			$html .= <<<HTML
 				<div class = "row bordure">
-					<div class = "th1">Entreprise n°{$uneEntp->getIdEntreprise()} 
+					<div class = "th2">Entreprise n°{$uneEntp->getIdEntreprise()} 
 						<span class="nomEntreprise">({$uneEntp->getNomEntreprise()})</span>
 					</div>
 					<div class = "row">Localisation : {$uneEntp->getRueEntreprise()} {$uneEntp->getCpEntreprise()} {$uneEntp->getVilleEntreprise()} - {$uneEntp->getPaysEntreprise()}</div>

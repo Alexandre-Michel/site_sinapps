@@ -171,8 +171,8 @@ HTML;
 
 			$html.=<<<HTML
 				<div class = "row bordure fond">
-					<div class = "th1">{$ligne->getNomIncident()}</div>
-					<div class = "th2">{$ligne->getDescriptionIncident()}</div>
+					<div class = "th2">{$ligne->getNomIncident()}</div>
+					<div class = "th3">{$ligne->getDescriptionIncident()}</div>
 					{$status}
 					<div class = "coupable">Déclaré le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
@@ -232,8 +232,8 @@ HTML;
 
 			$html.=<<<HTML
 				<div class = "row bordure fond">
-					<div class = "th1">{$ligne->getNomIncident()}</div>
-					<div class = "th2">{$description}</div>
+					<div class = "th2">{$ligne->getNomIncident()}</div>
+					<div class = "th3">{$description}</div>
 					{$status}
 					<div class = "coupable">{$ligne->getDateIncident()} par {$pers->getPrenomPers()} {$pers->getNomPers()} ({$entp->getNomEntreprise()})</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>

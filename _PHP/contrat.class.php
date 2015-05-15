@@ -105,8 +105,8 @@ HTML;
 			$offre = Offre::createOffreFromId($ctr->getIdOffre());
 
 			$html.=<<<HTML
-				<div class = "row bordure">
-					<div class = "th1">Contrat n°{$ctr->getIdContrat()} 
+				<div class = "row bordure fond">
+					<div class = "th2">Contrat n°{$ctr->getIdContrat()} 
 						<span class="offre">({$offre->getNomOffre()})</span>
 					</div>
 					<div class = "status">{$status}</div>
@@ -153,11 +153,11 @@ HTML;
 			$entp = Entreprise::createEntrepriseFromId($ctr->getIdEntp());
 			$offre = Offre::createOffreFromId($ctr->getIdOffre());
 			$html.=<<<HTML
-				<div class = "row bordure">
-					<div class = "th1">Contrat n°{$ctr->getIdContrat()} 
+				<div class = "row bordure fond">
+					<div class = "th2">Contrat n°{$ctr->getIdContrat()} 
 						<span class="offre">({$offre->getNomOffre()})</span>
 					</div>
-					<div class = "th2">Appartenant à l'entreprise {$entp->getNomEntreprise()}</div>
+					<div class = "th3">Appartenant à l'entreprise {$entp->getNomEntreprise()}</div>
 					<div class = "status">{$status}</div>
 					<div class = "row">Signé le : {$ctr->getDateSignContrat()}</div>
 					<div class = "row">Expire le : {$ctr->getFinValidite()}</div>

@@ -741,6 +741,10 @@ button
 	width: 150px;
 }
 
+.row.bordure.fond .th3 
+{
+	text-transform: none;
+}
 
 /************************* Contrat ********************/
 
@@ -755,4 +759,16 @@ span.offre
 {	
 	width: 440px;
 	height: 36px;
+}
+
+.succes 
+{
+	font-size: 1.5em;
+	color: green;
+}
+
+.rate 
+{
+	font-size: 1.5em;
+	color: red;
 }
