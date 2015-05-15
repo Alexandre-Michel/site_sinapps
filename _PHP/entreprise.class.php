@@ -262,6 +262,17 @@ HTML;
 		return $html;
 	}
 
+	public static function getAllEntreprisesTab() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT * 
+			FROM ENTREPRISE
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->execute();	
+		return $stmt->fetchAll();
+	}
+
 	public static function createEntreprise($nom, $rue, $cp, $ville, $tel, $pays, $desc) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			INSERT INTO ENTREPRISE (nom_entreprise, rue_entreprise, cp_entreprise, ville_entreprise, pays_entreprise, tel_entreprise, description_entreprise)
