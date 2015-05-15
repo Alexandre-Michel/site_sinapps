@@ -37,13 +37,16 @@ try {
 	    	<div class="content">
 				<div class="th1">Nouveau Contrat</div>
 				{$msg}
-				<form method="post"> 
-					<label for="dateDeb">Date de signature :</label>
-					<input type="date" required name="dateDeb"/><br/>
-					<label for="dateFin">Date d'expiration :</label>
-					<input type="date" required name="dateFin"/><br/>
-					<label for="entp">Entreprise concernée :</label>
-					<select name="entp">
+				<form method="post">
+					<div class="form">
+						<div class="row">
+							<div class="champs">
+								<label for="dateDeb">Date de signature :</label>
+								<input type="date" required name="dateDeb"/><br/>
+								<label for="dateFin">Date d'expiration :</label>
+								<input type="date" required name="dateFin"/><br/>
+								<label for="entp">Entreprise concernée :</label>
+								<select name="entp">
 HTML
 		);
 
@@ -78,8 +81,11 @@ SQL
 		}
 
 		$p->appendContent(<<<HTML
-					</select><br/>
-					<input type="submit" name="submit" value="Soumettre">
+								</select><br/>
+								<input type="submit" name="submit" value="Soumettre">
+							</div>
+						</div>
+					</div>
 				</form>
 				<input type="button" name="retour" value="Retour" onclick="history.back()">
 	    	</div>	
