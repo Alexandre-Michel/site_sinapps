@@ -15,9 +15,36 @@ try {
     
     if ($user->estHabilite()) {
 
+    	$msg = "";
+
+    	if(isset($_REQUEST['i'])) {
+    		if(isset($_REQUEST['delete'])) {
+    			try {
+	    			Entreprise::deleteEntreprise($_REQUEST['i']);
+	    			header("location: ./entreprises.php?msg=1");
+	    			exit;
+	    		}
+	    		catch (Exception $e) {
+	    			header("location: ./entreprises.php?msg=2");
+	    			exit;	    			
+	    		}
+    		}
+
+    	}
+
+    	if(isset($_REQUEST['msg'])) {
+    		if($_REQUEST['msg'] == 1) {
+    			$msg = "<div class='succes'>Entreprise supprimée avec succès.</div>";
+    		}
+    		else if($_REQUEST['msg'] == 2) {
+    			$msg = "<div class='rate'>Echec, veuillez réessayer.</div>";
+    		}
+    	}
+
 		$p->appendContent(<<<HTML
 			<div class="content">
 				<div class = "th1">Liste des entreprises</div>
+				{$msg}
 HTML
 		);
 

@@ -210,12 +210,22 @@ SQL
 					<div class = "row">Description : {$uneEntp->getDescriptionEntreprise()}</div>
 					<div>
 						<button onclick="location.href='./modifEntreprise.php'">Modifier</button>	
-						<button onclick="{deleteEntreprise($uneEntp->getIdEntreprise())}">Supprimer</button>
+						<input type="button" value="Supprimer" onclick="effacer({$uneEntp->getIdEntreprise()})">
 					</div>		
 				</div>
 HTML;
 		}	
 		$html .= "</div>";
+
+		$html .=<<<JAVASCRIPT
+			function effacer(num) {
+				var confirm = window.confirm("Voulez-vous supprimer cette entreprise ?");
+				if (confirm) {
+					document.location.href="./entreprises.php?i=" + num + "&delete=yes";
+				}
+			};
+JAVASCRIPT;
+
 		return $html;
 	}
 
