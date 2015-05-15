@@ -48,7 +48,7 @@ try {
 						<input type="text" name="rue" placeholder="Rue de l'entreprise">
 						<input type="text" name="cp" placeholder="Code Postal de l'entreprise">
 						<input type="text" name="ville" placeholder="Siège de l'entreprise"><br/>
-						<select id"select_pays" name="pays"> 
+						<select id="select_pays" name="pays"> 
 							<option value="France" selected="selected">France </option>
 
 							<option value="Afghanistan">Afghanistan </option>
