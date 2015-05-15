@@ -225,7 +225,6 @@ HTML;
 			try
 			{
 				$pers = Personne::createPersFromId($ligne->getIdPersonne());
-				$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
 			}
 			catch(Exception $e)
 			{
@@ -240,6 +239,8 @@ SQL
 				$stmt->execute();
 				$ligne->id_personne = null;
 			}
+
+			$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
 			
 			$txt = $ligne->getDescriptionIncident();
 			/*
