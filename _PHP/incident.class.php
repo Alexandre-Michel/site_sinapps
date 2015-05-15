@@ -222,8 +222,23 @@ HTML;
 					$status = "<div class=\"status t\">Résolu (Type {$type_inc->getDescType()})</div>";
 					break;		
 			}
-
-			$pers = Personne::createPersFromId($ligne->getIdPersonne());
+			try
+			{
+				$pers = Personne::createPersFromId($ligne->getIdPersonne());
+			}
+			catch(Exception $e)
+			{
+				$stmt = myPDO::getInstance()->prepare(<<<SQL
+					UPDATE INCIDENT
+					SET id_personne = null
+					WHERE id_personne = :val
+SQL
+				);
+				$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+				$stmt->bindValue(":val", $ligne->getIdType());
+				$stmt->execute();
+			}
+			
 			$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
 			$txt = $ligne->getDescriptionIncident();
 			if(strlen($txt) > 128)
