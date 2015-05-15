@@ -121,22 +121,12 @@ SQL
 					</div>
 					<div class = "row">Mail : {$ligne->getMailPers()}</div>
 					<div>
-						<button onclick="location.href='./'">Modifier</button>	
-						/*<input type="button" value="Supprimer" onclick="effacer({$ligne->deletePersonne()})">*/
+						<button onclick="location.href='./'">Modifier</button>
 					</div>		
 				</div>
 HTML;
 		}	
 		$html .= "</div>";
-
-		$html .=<<<JAVASCRIPT
-			function effacer(num)
-			{
-				var confirm = window.confirm("Voulez-vous supprimer ce Membre ?");
-				if (confirm)
-					document.location.href="./membre.php?i=" + num + "&delete=yes";
-			};
-JAVASCRIPT;
 
 		return $html;
 	}
