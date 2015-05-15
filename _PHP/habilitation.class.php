@@ -16,7 +16,7 @@ class Habilitation
 
 	public function getNomHab()
 	{
-		return $this->id_habilitation;
+		return $this->type_habilitation;
 	}
 
 
