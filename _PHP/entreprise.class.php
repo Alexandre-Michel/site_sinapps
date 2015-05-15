@@ -217,14 +217,14 @@ HTML;
 		}	
 		$html .= "</div>";
 
-		$html .=<<<JAVASCRIPT
+		$html .="<script>
 			function effacer(num) {
-				var confirm = window.confirm("Voulez-vous supprimer cette entreprise ?");
+				var confirm = window.confirm(\"Voulez-vous supprimer cette entreprise ?\");
 				if (confirm) {
-					document.location.href="./entreprises.php?i=" + num + "&delete=yes";
+					document.location.href=\"./entreprises.php?i=\" + num + \"&delete=yes\";
 				}
 			};
-JAVASCRIPT;
+		</script>";
 
 		return $html;
 	}
