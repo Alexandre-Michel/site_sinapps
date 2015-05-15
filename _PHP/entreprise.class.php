@@ -158,7 +158,8 @@ SQL
 		$stmt->execute();
 	}
 
-	public static function createEntrepriseFromId($id) {
+	public static function createEntrepriseFromId($id)
+	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT * 
 			FROM ENTREPRISE
@@ -185,7 +186,8 @@ SQL
 		$stmt->execute();
 	}
 
-	/*public static function getAllEntreprises() {
+	public static function getAllEntreprises()
+	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT * 
 			FROM ENTREPRISE
@@ -210,11 +212,11 @@ SQL
 						<button onclick="location.href='./modifEntreprise.php'">Modifier</button>	
 					</div>		
 				</div>
-HTML;				
+HTML;
 		}	
 		$html .= "</div>";
 		return $html;
-	}*/
+	}
 
 	public static function createEntreprise($nom, $rue, $cp, $ville, $tel, $pays, $desc) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
