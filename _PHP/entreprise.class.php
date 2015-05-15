@@ -185,23 +185,6 @@ SQL
 		$stmt->execute();
 	}
 
-	public static function createEntreprise($nom, $rue, $cp, $ville, $tel, $pays, $desc) {
-		$stmt = myPDO::getInstance()->prepare(<<<SQL
-			INSERT INTO ENTREPRISE (nom_entreprise, rue_entreprise, cp_entreprise, ville_entreprise, pays_entreprise, tel_entreprise, description_entreprise)
-			VALUES (:nom, :rue, :cp, :ville, :tel, :pays, :description)
-SQL
-		);
-		$stmt->bindValue(":nom", $nom);
-		$stmt->bindValue(":rue", $rue);
-		$stmt->bindValue(":cp", $cp);
-		$stmt->bindValue(":ville", $ville);
-		$stmt->bindValue(":tel", $tel);
-		$stmt->bindValue(":pays", $pays);
-		$stmt->bindValue(":description", $desc);
-		$stmt->execute();
-
-	}
-
 	public static function getAllEntreprises() {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT * 
@@ -232,5 +215,24 @@ HTML;
 		$html .= "</div>";
 		return $html;
 	}
+
+	public static function createEntreprise($nom, $rue, $cp, $ville, $tel, $pays, $desc) {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			INSERT INTO ENTREPRISE (nom_entreprise, rue_entreprise, cp_entreprise, ville_entreprise, pays_entreprise, tel_entreprise, description_entreprise)
+			VALUES (:nom, :rue, :cp, :ville, :tel, :pays, :description)
+SQL
+		);
+		$stmt->bindValue(":nom", $nom);
+		$stmt->bindValue(":rue", $rue);
+		$stmt->bindValue(":cp", $cp);
+		$stmt->bindValue(":ville", $ville);
+		$stmt->bindValue(":tel", $tel);
+		$stmt->bindValue(":pays", $pays);
+		$stmt->bindValue(":description", $desc);
+		$stmt->execute();
+
+	}
+
+
 
 }
