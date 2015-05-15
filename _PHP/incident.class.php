@@ -238,6 +238,9 @@ SQL
 				$stmt->bindValue(":val", $ligne->getIdPersonne());
 				$stmt->execute();
 				$ligne->id_personne = null;
+				
+				$pers = null;
+				$entp = null;
 			}
 
 			$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
@@ -249,20 +252,20 @@ SQL
 			*/
 			$description = self::cleanCut($ligne->getDescriptionIncident(), 150);
 
-			if($pers->getPrenomPers() == null)
+			if(is_null($pers))
 				$prenom = 'Inconnu';
 			else
 				$prenom = $pers->getPrenomPers();
 
-			if($pers->getNomPers() == null)
+			if(is_null($pers))
 				$nom = '';
 			else
 				$nom = $pers->getNomPers();
 
-			if($entp->getNomEntreprise() == null)
-				$entp = '';
+			if(is_null($entp))
+				$ent = '';
 			else
-				$entp = $entp->getNomEntreprise();
+				$ent = $entp->getNomEntreprise();
 
 
 			$html.=<<<HTML
@@ -270,7 +273,7 @@ SQL
 					<div class = "th2">{$ligne->getNomIncident()}</div>
 					<div class = "th3">{$description}</div>
 					{$status}
-					<div class = "coupable">{$ligne->getDateIncident()} par {$prenom} {$nom} ({entp})</div>
+					<div class = "coupable">{$ligne->getDateIncident()} par {$prenom} {$nom} ({$ent})</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
