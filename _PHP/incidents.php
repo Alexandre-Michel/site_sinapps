@@ -61,7 +61,6 @@ try {
 			<div class = "th1">Liste des incidents</div>
 				{$msg}
 				<div class = "th2">Il y a actuellement {$nombre} incident(s) dont {$nbActifs} actif(s)</div>
-				}
 HTML
 	);
 
