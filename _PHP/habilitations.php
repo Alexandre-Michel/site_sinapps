@@ -66,7 +66,7 @@ HTML
 				}
 			}
 			$p->appendContent(<<<HTML
-				<div class = "row bordure fond">
+			<div class = "row bordure fond">
 					<form method="post">
 						<input type="text" placeholder="Nom de l'habilitation" name="nomHab" value="{$uneHab->getNomHab()}">
 						<div class="boutons_objet">
@@ -79,19 +79,17 @@ HTML
 			);
 		}
 
-		$p->appendToJs(<<<JAVASCRIPT
-			function effacer(num)
-			{
-				var confirm = window.confirm(\"Voulez-vous supprimer cette habilitation ?\");
-				if (confirm)
-					document.location.href=\"./habilitations.php?i=\" + num + \"&delete=yes\";
-			};
-JAVASCRIPT			
-		);	
-
-		$p->appendContent(<<<HTML			
+		$p->appendContent(<<<HTML
 				<button type="submit" onclick="history.back()" class="button">Retour</button>
 			</div>	
+			<script>
+				function effacer(num)
+			{
+				var confirm = window.confirm("Voulez-vous supprimer cette habilitation ?");
+				if (confirm)
+					document.location.href="./habilitations.php?i=" + num + "&delete=yes";
+			};
+			</script>
 HTML
 		);
 	}
