@@ -19,7 +19,13 @@ try
 	    {
 	    	Parc::getParcByEntreprise($_GET['i']);
 	    }
+	    else
+		{
+			header('location: ./index.php');
+			exit;
+		}
 	}
+
 }
 catch (notInSessionException $e)
 {
