@@ -640,7 +640,7 @@ button
 
 .box1 .row button.button
 {
-	/*position: absolute;*/
+	float:right;
 	right: 10px;
 	bottom: 10px;
 }
@@ -779,5 +779,5 @@ span.offre
 }
 
 .boutons_objet {
-	float: right;
+	width: 100%;
 }
