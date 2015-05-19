@@ -17,7 +17,17 @@ try
     {
 	    if ($user->estHabilite())
 	    {
-	    	Parc::getParcByEntreprise($_GET['i']);
+			$p->appendContent(<<<HTML
+				<div class="content">
+					<div class = "th1">Liste des membres</div>
+HTML
+			);
+	    	$p->appendContent(Parc::getParcByEntreprise($_GET['i']));
+			$p->appendContent(<<<HTML
+					<input type="button" name="retour" value="Retour" onclick="history.back()">
+				</div>
+HTML
+			);
 	    }
 	    else
 		{
@@ -33,3 +43,5 @@ catch (notInSessionException $e)
     header("Location: ./connexion.php") ;
     exit;
 }
+
+echo $p->toHTML();
