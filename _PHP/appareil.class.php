@@ -57,7 +57,7 @@ SQL
 		$stmt->execute();
 		$array = $stmt->fetchAll();
 		
-		$html = "<div class='box1'><div class='intro_box'>";
+		$html = "<div class='intro_box'><div class='box1'>";
 		foreach($array as $ligne)
 		{
 			//$type = Type_Appareil::createPersFromId($ligne->getIdTypeAppareil());
