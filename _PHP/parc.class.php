@@ -61,6 +61,7 @@ SQL
 				</div>
 HTML;
 		}
+		return $html;
 	}
 	/******SETTER******/
 	public function setNomParc($nom)
