@@ -56,8 +56,6 @@ SQL
 			$html.=<<<HTML
 				<div class = "row bordure fond">
 					<div class="th2">{$ligne->getNomParc()} (Id: {$ligne->getIdParc()})</div>
-					{$status}
-					<div class="coupable">Déclaré le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
