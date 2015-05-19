@@ -12,8 +12,11 @@ try {
 
 	if($user->estHabilite()) {
 		
+		$value = "";
 		if (isset($_REQUEST['i']) && $_REQUEST['i'] != "") {
 			$status = "Modification";
+			$uneHab = Habilitation::createHabilitationFromId($_REQUEST['i']);
+			$value = "value='" . $uneHab->getNomHab() . "'";
 		}
 		else {
 			$status = "Nouvelle";
@@ -22,8 +25,7 @@ try {
 		$msg = ""; 
 		if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
 			if(isset($_REQUEST['nom']) && $_REQUEST['nom'] != "") {
-				if (isset($_REQUEST['i']) && $_REQUEST['i'] != "") {
-					$uneHab = Habilitation::createHabilitationFromId($_REQUEST['i']);
+				if (isset($_REQUEST['i']) && $_REQUEST['i'] != "") {			
 					$uneHab->setNomHab($_REQUEST['nom']);
 					$msg = 3;
 					header("location: ./newHabilitation.php?msg={$msg}");
@@ -58,7 +60,7 @@ try {
 				<div class="th1">{$status} Habilitation</div>
 				{$msg}
 				<form method="post"> 
-					<input type="text" required placeholder="Nom de l'habilitation" name="nom"/><br/>	
+					<input type="text" required placeholder="Nom de l'habilitation" name="nom" {$value}/><br/>	
 					<input type="submit" name="submit" value="Soumettre">
 				</form>
 				<input type="button" name="retour" value="Retour" onclick="history.back()">
