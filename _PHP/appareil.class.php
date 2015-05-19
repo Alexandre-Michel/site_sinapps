@@ -57,7 +57,7 @@ SQL
 		$stmt->execute();
 		$array = $stmt->fetchAll();
 		
-		$html = "<div class='box1'>";
+		$html = "<div class='box1'><div class='intro_box'>";
 		foreach($array as $ligne)
 		{
 			//$type = Type_Appareil::createPersFromId($ligne->getIdTypeAppareil());
@@ -67,11 +67,10 @@ SQL
 					<div class="th2">Appareil n° {$ligne->getIdAppareil()}: {$ligne->getNomAppareil()}</div>
 					<div class="row">MAC: {$ligne->getMacAppareil()}</div>
 					<div class="row">Num. de série: {$ligne->getSerieAppareil()}</div>
-					<button onclick="location.href='./parc.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
 		}
-		$html.="</div>";
+		$html.="</div></div>";
 		return $html;
 	}
 	/******SETTER******/
