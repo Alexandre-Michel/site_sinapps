@@ -242,6 +242,7 @@ SQL
 				$pers = null;
 				$entp = null;
 			}
+			
 			if(!is_null($pers))
 				$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
 			
