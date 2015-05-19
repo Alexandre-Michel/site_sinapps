@@ -57,7 +57,7 @@ SQL
 			$html.=<<<HTML
 				<div class = "row bordure fond">
 					<div class="th2">{$ligne->getNomParc()} (Id: {$ligne->getIdParc()})</div>
-					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					<button onclick="location.href='./parc.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
 		}

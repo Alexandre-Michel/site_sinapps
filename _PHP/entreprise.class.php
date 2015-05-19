@@ -238,8 +238,8 @@ SQL
 					<div class = "row">Téléphone : {$uneEntp->getTelEntreprise()}</div>
 					<div class = "row">Description : {$uneEntp->getDescriptionEntreprise()}</div>
 					<div class = "boutons_objet">
-						<button type="submit" class="button" onclick="modifier({$uneEntp->getIdEntreprise()})">Modifier</button>
 						<button type="submit" class="button" onclick="effacer({$uneEntp->getIdEntreprise()})">Supprimer</button>
+						<button type="submit" class="button" onclick="modifier({$uneEntp->getIdEntreprise()})">Modifier</button>
 						<button type="submit" class="button" onclick="parc({$uneEntp->getIdEntreprise()})">Voir Parc(s)</button>
 					</div>		
 				</div>

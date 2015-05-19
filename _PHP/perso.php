@@ -37,7 +37,7 @@ try {
 				</div>
 				<div class=\"row fond\">
 					<div class=\"th2 center\">Membre(s)</div>
-					<div><button onclick=\"location.href='./membres.php'\">Visualiser les membres</button>
+					<div><button onclick=\"location.href='./membres.php'\">Visualiser les membres</button></div>
 				</div>";
 	}
 
