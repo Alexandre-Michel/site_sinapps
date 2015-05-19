@@ -86,5 +86,16 @@ SQL
 		$count = $stmt->fetch();
 		return $count['nb'];
 	}
+	
+	public static function createHabilitation($nom_hab)
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			INSERT INTO HABILITATION (type_habilitation)
+			VALUES (:nom)
+SQL
+		);
+		$stmt->bindValue(":nom", $nom_hab);
+		$stmt->execute();
+	}
 
 }
