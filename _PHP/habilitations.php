@@ -60,25 +60,24 @@ try {
 HTML
 		);
 
+
 		$arrayHab = Habilitation::getAllHabilitations();
 		foreach ($arrayHab as $uneHab) {
 
-			if(isset($_REQUEST['save']) && $_REQUEST['save'] == "Sauvegarder") {
-				if(isset($_REQUEST['nomHab']) && !empty($_REQUEST['nomHab'])) {
-					$uneHab->setNomHab($_REQUEST['nomHab']);
-					header("location: ./habilitations.php?msg=3");
-	    			exit;
-				}
+		if(isset($_REQUEST['save']) && $_REQUEST['save'] == "Sauvegarder") {
+			if(isset($_REQUEST['nomHab']) && !empty($_REQUEST['nomHab'])) {
+				$uneHab->setNomHab($_REQUEST['nomHab']);
+				header("location: ./habilitations.php?msg=3");
 			}
+		}
 			$p->appendContent(<<<HTML
 					<div class = "row bordure fond">
-						<form method="post">
-							<input type="text" placeholder="Nom de l'habilitation" name="nomHab" value="{$uneHab->getNomHab()}">
+							<div>{$uneHab->getNomHab()}</div>
 							<div class="boutons_objet">
-								<input class="button" type="submit" value="Sauvegarder" name="save">
+								<input class="button" type="submit" onclick="modifier({$uneHab->getIdHab()})" value="Modifier">
 								<input class="button" type="submit" onclick="effacer({$uneHab->getIdHab()})" value="Supprimer">
 							</div>	
-						</form> 
+						
 					</div>	
 HTML
 			);
@@ -90,11 +89,16 @@ HTML
 			</div>	
 			<script>
 				function effacer(num)
-			{
-				var confirm = window.confirm("Voulez-vous supprimer cette habilitation ?");
-				if (confirm)
-					document.location.href="./habilitations.php?i=" + num + "&delete=yes";
-			};
+				{
+					var confirm = window.confirm("Voulez-vous supprimer cette habilitation ?");
+					if (confirm)
+						document.location.href='./habilitations.php?i=' + num + '&delete=yes';
+				};
+				
+				function modifier(num)
+				{
+					document.location.href='./habilitation.php?i=' + num;
+				};
 			</script>
 HTML
 		);

@@ -34,7 +34,19 @@ SQL
 		$stmt->execute();
 	}
 
-
+	public function setNomHabById($nom, $id)
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			UPDATE HABILITATION
+			SET type_habilitation = :nom
+			WHERE id_habilitation = :id
+SQL
+		);
+		$stmt->bindValue(":nom", $nom);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+	}
+	
 	public static function createHabilitationFromId($id)
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
