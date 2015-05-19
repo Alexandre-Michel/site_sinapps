@@ -240,6 +240,7 @@ SQL
 					<div>
 						<input type="button" value="Modifier" onclick="modifier({$uneEntp->getIdEntreprise()})">
 						<input type="button" value="Supprimer" onclick="effacer({$uneEntp->getIdEntreprise()})">
+						<input type="button" value="Voir parc(s)" onclick="parc({$uneEntp->getIdEntreprise()})">
 					</div>		
 				</div>
 HTML;
@@ -257,6 +258,11 @@ HTML;
 			function modifier(num) {
 				document.location.href=\"./modifEntreprise.php?i=\" + num;
 			};
+
+			function parc(num)
+			{
+				document.location.href=\"./parc.php?i=\" + num;
+			}
 		</script>";
 
 		return $html;

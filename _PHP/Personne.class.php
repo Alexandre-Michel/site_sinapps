@@ -117,7 +117,7 @@ SQL
 			$html .= <<<HTML
 				<div class = "row bordure">
 					<div class = "th2">{$ligne->getNomPers()}  {$ligne->getPrenomPers()}
-						<span class>({$ligne->getIdPers()})</span>
+						<span class>(id: {$ligne->getIdPers()})</span>
 					</div>
 					<div class = "row">Mail : {$ligne->getMailPers()}</div>
 					<div>
