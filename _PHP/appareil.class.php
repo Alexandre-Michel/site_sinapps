@@ -142,4 +142,5 @@ SQL
 		$stmt->bindValue(":type", $type);
 		$stmt->bindValue(":id", $this->id_appareil);
 		$stmt->execute();
+	}
 }
