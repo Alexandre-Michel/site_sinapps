@@ -1,6 +1,7 @@
 <?php
 
 require_once 'myPDO.include.php';
+require_once 'Personne.class.php';
 
 class Parc
 {
@@ -54,10 +55,12 @@ SQL
 		$html = "<div class='box1'>";
 		foreach($array as $ligne)
 		{
+			$pers = Personne::createPersFromId($ligne->getIdResponsable());
 			$i = $ligne->getIdParc();
 			$html.=<<<HTML
 				<div class = "row bordure fond">
-					<div class="th2">{$ligne->getNomParc()} (Id: {$ligne->getIdParc()})</div>
+					<div class="th2">Parc n° {$ligne->getIdParc()}: {$ligne->getNomParc()}</div>
+					<div class="row">Responsable: {$pers->getNomPers()} {$pers->getPrenomPers()}</div>
 					<button onclick="location.href='./parc.php?i={$i}'" type="submit" class="button">Voir en détail</button>
 				</div>
 HTML;
