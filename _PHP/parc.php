@@ -20,9 +20,7 @@ try
 				<div class="content">
 					<div class="row th1">Détail du Parc n°{$parc->getIdParc()}</div>
 					<div class="row">
-						<div class="left">
-							<div>Test</div>
-						</div>
+						<div>Test</div>
 					</div>
 					<div class="row">
 						<form method="post">

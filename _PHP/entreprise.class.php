@@ -261,7 +261,7 @@ HTML;
 
 			function parc(num)
 			{
-				document.location.href=\"./parc.php?i=\" + num;
+				document.location.href=\"./parcs.php?i=\" + num;
 			}
 		</script>";
 
