@@ -63,11 +63,12 @@ try {
 					<div><button onclick="location.href='./incidents.php'">Visualiser les incidents</button>{$signaler}</div>
 				</div>
 				{$contrats}
+				{$admin}
 				<div class="row fond">
 					<div class="th2 center">Informations personnelles</div>
 					<div><button onclick="location.href='./profil.php'">Modifier vos infos</button></div>
 				</div>
-				{$admin}
+				
 			</div>
 		</div>
 HTML
