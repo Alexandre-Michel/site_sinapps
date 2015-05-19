@@ -97,7 +97,7 @@ HTML
 				
 				function modifier(num)
 				{
-					document.location.href='./habilitation.php?i=' + num;
+					document.location.href='./newHabilitation.php?i=' + num;
 				};
 			</script>
 HTML
