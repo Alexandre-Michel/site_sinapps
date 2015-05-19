@@ -121,6 +121,23 @@ SQL
 	}
 
 	/******FONCTIONS******/
+	public static function createParcFromId($id)
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT * 
+			FROM PARC
+			WHERE id_parc = :id
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		if (($object = $stmt->fetch()) !== false)
+			return $object;
+		else
+			throw new Exception ("Parc not found");
+	}
+
 	public static function deleteParc($id)
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL

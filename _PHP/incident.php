@@ -150,7 +150,7 @@ HTML
 			}
 		}
 		catch (Exception $e) {
-			header('location: ./index.php?msg=5');
+			header('location: ./index.php');
 			exit;
 		}
 	}

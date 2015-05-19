@@ -7,66 +7,43 @@ require_once 'Entreprise.class.php';
 require_once 'Offre.class.php';
 require_once 'parc.class.php';
 
-$p = new WebPage("Parcs - Sinapp's");
+$p = new WebPage("Détail du parc - Sinapp's");
 
-
-try {
-    // Lecture depuis les données de session
-    $user = Personne::createFromSession();
-    
-    if ($user->estHabilite()) {
-
-    	$msg = "";
-
-    	if(isset($_REQUEST['i'])) {
-    		if(isset($_REQUEST['delete'])) {
-    			try {
-	    			Entreprise::deleteEntreprise($_REQUEST['i']);
-	    			header("location: ./parc.php?msg=1");
-	    			exit;
-	    		}
-	    		catch (Exception $e) {
-	    			header("location: ./parc.php?msg=2");
-	    			exit;	    			
-	    		}
-    		}
-
-    	}
-
-    	if(isset($_REQUEST['msg']))
-    	{
-    		if($_REQUEST['msg'] == 1)
-    			$msg = "<div class='succes'>Parc supprimé avec succès.</div>";
-    		else if($_REQUEST['msg'] == 2)
-    			$msg = "<div class='rate'>Echec, veuillez réessayer.</div>";
-    	}
-
-		$p->appendContent(<<<HTML
-			<div class="content">
-				<div class = "th1">Liste des Parcs</div>
-				{$msg}
+try
+{
+	$user = Personne::createFromSession();
+	if (isset($_GET['i']) && !empty($_GET['i'])) {
+		try
+		{
+			$parc = Parc::createParcFromId($_GET['i']);
+			$p->appendContent(<<<HTML
+				<div class="content">
+					<div class="row th1">Détail du Parc n°{$parc->getIdParc()}</div>
+					<div class="row">
+						<div class="left">
+							<div class="message">NIKSONPAPA</div>
+						</div>
+					</div>
+				</div>
 HTML
-		);
-
-		$p->appendContent(Parc::getParcByEntreprise($_GET['i']));
-
-		$p->appendContent(<<<HTML
-				<input type="button" name="retour" value="Retour" onclick="history.back()">
-			</div>
-HTML
-		);
+			);
+		}
+		catch (Exception $e)
+		{
+			header('location: ./index.php');
+			exit;
+		}
 	}
-
-	else {
-		header('location: ./index.php');
+	else
+	{
+		header('location: ./entreprises.php'); //A changer
 		exit;
 	}
 }
-
 catch (notInSessionException $e) {
     // Pas d'utilisateur connecté
     header("Location: ./connexion.php") ;
-    exit;
+    die();
 }
 
 echo $p->toHTML();
