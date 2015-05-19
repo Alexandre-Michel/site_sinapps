@@ -79,7 +79,7 @@ SQL
 		);	
 		$stmt->bindValue(":nom", $nom);
 		$stmt->bindValue(":id", $this->id_parc);
-		$stmt->execute();		
+		$stmt->execute();
 	}
 
 	public function setLieuParc($lieu)

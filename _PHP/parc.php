@@ -6,6 +6,7 @@ require_once 'Contrat.class.php';
 require_once 'Entreprise.class.php';
 require_once 'Offre.class.php';
 require_once 'parc.class.php';
+require_once 'appareil.class.php';
 
 $p = new WebPage("Détail du parc - Sinapp's");
 
@@ -20,7 +21,7 @@ try
 				<div class="content">
 					<div class="row th1">Détail du Parc n°{$parc->getIdParc()}</div>
 					<div class="row">
-						<div>Test</div>
+						{Appareil::getAppareilByParc()}
 					</div>
 					<div class="row">
 						<form method="post">
