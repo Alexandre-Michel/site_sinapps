@@ -68,6 +68,21 @@ HTML;
 		$html.="</div>";
 		return $html;
 	}
+	
+	public function getParcByIdEntreprise($id)
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT *
+			FROM PARC
+			WHERE id_entreprise = :id
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+	
 	/******SETTER******/
 	public function setNomParc($nom)
 	{
