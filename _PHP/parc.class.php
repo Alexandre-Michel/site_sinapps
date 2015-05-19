@@ -50,6 +50,7 @@ SQL
 		$stmt->bindValue(":id", $id);
 		$stmt->execute();
 		$array = $stmt->fetchAll();
+		
 		$html = "<div class='box1'>";
 		foreach($array as $ligne)
 		{

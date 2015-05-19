@@ -21,8 +21,13 @@ try
 					<div class="row th1">Détail du Parc n°{$parc->getIdParc()}</div>
 					<div class="row">
 						<div class="left">
-							<div class="message">NIKSONPAPA</div>
+							<div>Test</div>
 						</div>
+					</div>
+					<div class="row">
+						<form method="post">
+							<input type="button" name="retour" value="Retour" onclick="history.back()">
+						</form>	
 					</div>
 				</div>
 HTML
