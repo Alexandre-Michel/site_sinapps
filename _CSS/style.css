@@ -162,16 +162,17 @@ strong
 	width: 1000px;
 	overflow: auto;
 	margin: 0 auto;
-
-	/*background-color: lime;*/
 }
 
 .content .intro_box .box_container
 {
 	width: 33.33%;
 	float: left;
+}
 
-	/*background-color: blue;*/
+.introx_box .box1 .row .th3
+{
+	height: 80px;
 }
 
 .content .intro_box .box_container .presta
