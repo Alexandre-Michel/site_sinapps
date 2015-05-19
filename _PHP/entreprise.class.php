@@ -237,9 +237,9 @@ SQL
 					<div class = "row">Localisation : {$uneEntp->getRueEntreprise()} {$uneEntp->getCpEntreprise()} {$uneEntp->getVilleEntreprise()} - {$uneEntp->getPaysEntreprise()}</div>
 					<div class = "row">Téléphone : {$uneEntp->getTelEntreprise()}</div>
 					<div class = "row">Description : {$uneEntp->getDescriptionEntreprise()}</div>
-					<div>
-						<input type="button" value="Modifier" onclick="modifier({$uneEntp->getIdEntreprise()})">
-						<input type="button" value="Supprimer" onclick="effacer({$uneEntp->getIdEntreprise()})">
+					<div class = "boutons_objet">
+						<button type="submit" class="button" onclick="modifier({$uneEntp->getIdEntreprise$()})">Modifier</button>
+						<button type="submit" class="button" onclick="effacer({$uneEntp->getIdEntreprise$()})">Supprimer</button>
 					</div>		
 				</div>
 HTML;
