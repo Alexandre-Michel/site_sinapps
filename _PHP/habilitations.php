@@ -63,42 +63,29 @@ HTML
 		$arrayHab = Habilitation::getAllHabilitations();
 		foreach ($arrayHab as $uneHab) {
 
-			if(isset($_REQUEST['save']) && $_REQUEST['save'] == "Modifier") {
+			if(isset($_REQUEST['save']) && $_REQUEST['save'] == "Sauvegarder") {
 				if(isset($_REQUEST['nomHab']) && !empty($_REQUEST['nomHab'])) {
-					$uneHab->setNomHabilitation($_REQUEST['nomHab']);
+					$uneHab->setNomHab($_REQUEST['nomHab']);
 					header("location: ./habilitations.php?msg=3");
 	    			exit;
 				}
 			}
 			$p->appendContent(<<<HTML
-<<<<<<< HEAD
-			<div class = "row bordure fond">
-					<form method="post">
-						<input type="text" placeholder="Nom de l'habilitation" name="nomHab" value="{$uneHab->getNomHab()}">
-						<div class="boutons_objet">
-							<button type="submit" class="button" onclick="effacer({$uneHab->getIdHab()})">Supprimer</button>
-							<input type="submit" value="Modifier" name="save">
-						</div>	
-					</form> 
-				</div>
-=======
 					<div class = "row bordure fond">
 						<form method="post">
 							<input type="text" placeholder="Nom de l'habilitation" name="nomHab" value="{$uneHab->getNomHab()}">
 							<div class="boutons_objet">
-								<button type="submit" class="button" onclick="effacer({$uneHab->getIdHab()})">Supprimer</button>
-								<input type="submit" value="Modifier" name="save">
+								<input class="button" type="submit" value="Sauvegarder" name="save">
+								<input class="button" type="submit" onclick="effacer({$uneHab->getIdHab()})" value="Supprimer">
 							</div>	
 						</form> 
-					</div>
-				</div>		
-
->>>>>>> origin/master
+					</div>	
 HTML
 			);
 		}
 
 		$p->appendContent(<<<HTML
+				</div>
 				<button type="submit" onclick="history.back()" class="button">Retour</button>
 			</div>	
 			<script>
