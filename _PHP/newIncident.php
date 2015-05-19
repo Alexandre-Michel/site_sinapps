@@ -56,8 +56,7 @@ try {
 			<form method="post"> 
 				<input type="text" required placeholder="Nom de l'incident" name="nom"/><br/>
 				<textarea required row=8 placeholder="Description de votre incident" name="desc"></textarea><br/>
-				<label for='type'>Type d'incident</label>
-				<select name="type">
+				<select required name="type">
 HTML
 	);
 
@@ -72,7 +71,7 @@ SQL
 
 	foreach ($arrayType as $unType) {
 		$desc = ucfirst($unType['description_type_incident']);
-		$p->appendContent("<option selected value='{$unType['id_type_incident']}'>{$desc}</option>");
+		$p->appendContent("<option value='{$unType['id_type_incident']}'>{$desc}</option>");
 	}
 
 	$p->appendContent(<<<HTML
@@ -80,6 +79,7 @@ SQL
 				{$parcs}
 				<input type="submit" name="submit" value="Soumettre">
 			</form>
+			<div class = "obligatoire">Si le parc n'est pas renseigné, les frais forfaitaires s'appliqueront.</div>
 			<input type="button" name="retour" value="Retour" onclick="history.back()">
     	</div>	
 HTML
