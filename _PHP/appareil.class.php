@@ -65,8 +65,8 @@ SQL
 			$html.=<<<HTML
 				<div class = "row bordure fond">
 					<div class="th2">Appareil n° {$ligne->getIdAppareil()}: {$ligne->getNomAppareil()}</div>
-					<div class="row">MAC: {$ligne->getMacAppareil()}</div>
-					<div class="row">Num. de série: {$ligne->getSerieAppareil()}</div>
+					<div class="txt">MAC: {$ligne->getMacAppareil()}</div>
+					<div class="txt">Num. de série: {$ligne->getSerieAppareil()}</div>
 				</div>
 HTML;
 		}
