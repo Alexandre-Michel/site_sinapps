@@ -21,3 +21,9 @@ try
 	    }
 	}
 }
+catch (notInSessionException $e)
+{
+    // Pas d'utilisateur connecté
+    header("Location: ./connexion.php") ;
+    exit;
+}
