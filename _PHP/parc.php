@@ -17,7 +17,7 @@ try
 		try
 		{
 			$parc = Parc::createParcFromId($_GET['i']);
-			$num = $parc->getIdParc()
+			$num = $parc->getIdParc();
 			$appareils = Appareil::getAppareilByParc($num);
 			$p->appendContent(<<<HTML
 				<div class="content">

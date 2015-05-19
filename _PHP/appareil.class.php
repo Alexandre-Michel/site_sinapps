@@ -71,6 +71,7 @@ SQL
 				</div>
 HTML;
 		}
+		$html.="</div>";
 		return $html;
 	}
 	/******SETTER******/
