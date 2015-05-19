@@ -251,9 +251,11 @@ SQL
 				$entp = null;
 			}
 			
-			if(!is_null($pers))
-				if(!is_null($pers->getIdEntpPers))
-				$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
+			if(!is_null($pers) && $pers instanceof Personne) {
+				if(!is_null($pers->getIdEntpPers())) {
+					$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
+				}
+			}
 			
 			$txt = $ligne->getDescriptionIncident();
 			/*
