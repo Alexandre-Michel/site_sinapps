@@ -30,10 +30,38 @@ try {
 		break;
 	}
 
+	$msg = "";
+
+	if(isset($_REQUEST['i'])) {
+		if(isset($_REQUEST['delete'])) {
+			try {
+    			Incident::deleteIncident($_REQUEST['i']);
+    			header("location: ./incidents.php?msg=1");
+    			exit;
+    		}
+    		catch (Exception $e) {
+    			header("location: ./incidents.php?msg=2");
+    			exit;	    			
+    		}
+		}
+
+	}
+
+	if(isset($_REQUEST['msg'])) {
+		if($_REQUEST['msg'] == 1) {
+			$msg = "<div class='succes'>Incident supprimé avec succès.</div>";
+		}
+		else if($_REQUEST['msg'] == 2) {
+			$msg = "<div class='rate'>Echec, veuillez réessayer.</div>";
+		}
+	}
+
 	$p->appendContent(<<<HTML
 		<div class="content">
 			<div class = "th1">Liste des incidents</div>
+				{msg}
 				<div class = "th2">Il y a actuellement {$nombre} incident(s) dont {$nbActifs} actif(s)</div>
+				}
 HTML
 	);
 

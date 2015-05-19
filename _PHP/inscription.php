@@ -21,132 +21,147 @@ $count = $stmt->fetch();
 
 $p = new WebPage("Inscription | Sinapp's");
 
-//Soumission du formulaire
-if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
-{
-	//Existence des variables
-	if((isset($_POST['mail']) && !empty($_POST['mail'])) && (isset($_POST['password']) && !empty($_POST['password'])) && (isset($_POST['confirm']) && !empty($_POST['confirm'])))
+try {
+    // Lecture depuis les données de session
+    $user = Personne::createFromSession();
+}
+catch (NotInSessionException $e) {
+}
+
+if($user == NULL) {
+	//Soumission du formulaire
+	if(isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription')
 	{
-		//Correspondance des mots de passe
-		if($_POST['password'] == $_POST['confirm'])
+		//Existence des variables
+		if((isset($_POST['mail']) && !empty($_POST['mail'])) && (isset($_POST['password']) && !empty($_POST['password'])) && (isset($_POST['confirm']) && !empty($_POST['confirm'])))
 		{
-			//Vérification de la longueur du mot de passs (6 caractères au minimum)
-			if(strlen($_POST['password']) >= 6)
+			//Correspondance des mots de passe
+			if($_POST['password'] == $_POST['confirm'])
 			{
-				//Adresse mail valide ?
-				if(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL))
+				//Vérification de la longueur du mot de passs (6 caractères au minimum)
+				if(strlen($_POST['password']) >= 6)
 				{
-					//Vérification qu'il n'y a pas déjà un utilisateur avec le même mail
-					if($count["nbre"] == 0)
+					//Adresse mail valide ?
+					if(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL))
 					{
-						//Création de l'utilisateur via son nom, prenom, mail et mot de passe
-						Personne::createPersonne($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['password']);
-						$form = false;
-						$message = "Votre inscription s'est bien déroulée.";
+						//Vérification qu'il n'y a pas déjà un utilisateur avec le même mail
+						if($count["nbre"] == 0)
+						{
+							//Création de l'utilisateur via son nom, prenom, mail et mot de passe
+							Personne::createPersonne($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['password']);
+							$form = false;
+							$message = "Votre inscription s'est bien déroulée.";
+						}
+						//Adresse mail déjà utilisée
+						else
+						{
+							$message = "L'adresse mail que vous avez rentrée est déjà utilisée.";
+							$form = true;
+						}
 					}
-					//Adresse mail déjà utilisée
+					//Adresse mail non valide
 					else
 					{
-						$message = "L'adresse mail que vous avez rentrée est déjà utilisée.";
+						$message = "L'adresse mail que vous avez rentrée n'est pas valide.";
 						$form = true;
 					}
 				}
-				//Adresse mail non valide
+				//Mot de passe trop court (moins de 6 caractères)
 				else
 				{
-					$message = "L'adresse mail que vous avez rentrée n'est pas valide.";
+					$message = "Le mot de passe que vous avez saisi n'est pas assez long (6 caractères minimum).";
 					$form = true;
 				}
 			}
-			//Mot de passe trop court (moins de 6 caractères)
+			//Le mot de passe et la confirmation ne coïncident pas
 			else
 			{
-				$message = "Le mot de passe que vous avez saisi n'est pas assez long (6 caractères minimum).";
+				$message = "Les mots de passes saisis ne sont pas identiques.";
 				$form = true;
 			}
 		}
-		//Le mot de passe et la confirmation ne coïncident pas
 		else
 		{
-			$message = "Les mots de passes saisis ne sont pas identiques.";
+			$message = "Vous n'avez pas remplis les champs du formulaire.";
 			$form = true;
 		}
 	}
 	else
-	{
-		$message = "Vous n'avez pas remplis les champs du formulaire.";
 		$form = true;
-	}
-}
-else
-	$form = true;
 
-$p->appendContent(<<<HTML
-	<div class="content">
-		<div class="title">
-			<div class = "th1">Inscription</div>
-		</div>
-HTML
-);
-
-if($form)
-{
-    //On affiche un message s'il y a lieu
-    if(isset($message))
-        $message = "<div class=\"message\">".$message."</div>";
-    else
-    	$message = '';
-
-    if(isset($_POST['nom']))
-    	$nom_value = $_POST['nom'];
-    else
-    	$nom_value = '';
-    if(isset($_POST['prenom']))
-    	$prenom_value = $_POST['prenom'];
-    else
-    	$prenom_value = '';
-    if(isset($_POST['mail']))
-    	$mail_value = $_POST['mail'];
-    else
-    	$mail_value = '';
-    //On affiche le formulaire
 	$p->appendContent(<<<HTML
-		    <form action="inscription.php" method="post">
-		        <div class = "msg">{$message}</div>
-		        <div class="form">
-		        	<div class = "row">
-			        	<div class = "champs">
-				            <label for="nom">Nom d'utilisateur (*)</label>
-				            	<input type="text" name="nom" value="{$nom_value}" placeholder="Votre NOM"><br/>
-				            <label for="prenom">Prénom d'utilisateur (*)</label>
-				            	<input type="text" name="prenom" value="{$prenom_value}" placeholder="Votre Prenom"><br/>
-				            <label for="password">Mot de passe (6 caractères min.) (*)</label>
-				            	<input type="password" name="password" placeholder="Veuillez entrer votre mot de passe"><br/>
-				            <label for="confirm">Mot de passe (vérification) (*)</label>
-				            	<input type="password" name="confirm" placeholder="Veuillez confirmer votre mot de passe"><br/>
-				            <label for="mail">Email (*)</label>
-				            	<input type="text" name="mail" value="{$mail_value}" placeholder="Votre adresse e-mail"><br/>
-				            <div class = "obligatoire">Les champs précédés d'un astérisque (*) sont obligatoires</div>
-				            <input type="submit" name="inscription" value="Inscription">
+		<div class="content">
+			<div class="title">
+				<div class = "th1">Inscription</div>
+			</div>
+HTML
+	);
+
+	if($form)
+	{
+	    //On affiche un message s'il y a lieu
+	    if(isset($message))
+	        $message = "<div class=\"message\">".$message."</div>";
+	    else
+	    	$message = '';
+
+	    if(isset($_POST['nom']))
+	    	$nom_value = $_POST['nom'];
+	    else
+	    	$nom_value = '';
+	    if(isset($_POST['prenom']))
+	    	$prenom_value = $_POST['prenom'];
+	    else
+	    	$prenom_value = '';
+	    if(isset($_POST['mail']))
+	    	$mail_value = $_POST['mail'];
+	    else
+	    	$mail_value = '';
+	    //On affiche le formulaire
+		$p->appendContent(<<<HTML
+			    <form action="inscription.php" method="post">
+			        <div class = "msg">{$message}</div>
+			        <div class="form">
+			        	<div class = "row">
+				        	<div class = "champs">
+					            <label for="nom">Nom d'utilisateur (*)</label>
+					            	<input type="text" name="nom" value="{$nom_value}" placeholder="Votre NOM"><br/>
+					            <label for="prenom">Prénom d'utilisateur (*)</label>
+					            	<input type="text" name="prenom" value="{$prenom_value}" placeholder="Votre Prenom"><br/>
+					            <label for="password">Mot de passe (6 caractères min.) (*)</label>
+					            	<input type="password" name="password" placeholder="Veuillez entrer votre mot de passe"><br/>
+					            <label for="confirm">Mot de passe (vérification) (*)</label>
+					            	<input type="password" name="confirm" placeholder="Veuillez confirmer votre mot de passe"><br/>
+					            <label for="mail">Email (*)</label>
+					            	<input type="text" name="mail" value="{$mail_value}" placeholder="Votre adresse e-mail"><br/>
+					            <div class = "obligatoire">Les champs précédés d'un astérisque (*) sont obligatoires</div>
+					            <input type="submit" name="inscription" value="Inscription">
+					        </div>
 				        </div>
 			        </div>
-		        </div>
-		    </form>
+			    </form>
 HTML
-	);
+		);
+	}
+
+	else
+	{
+		$p->appendContent(<<<HTML
+			<div class="th2">{$message}</div>
+			<div class="th2">Vous pouvez dès à présent vous connecter.</div>
+			<div class="th3">Vous allez être redirigé vers la page de connexion dans un instant.</div>
+HTML
+		);
+	}
+
+	$p->appendContent("</div>");
+
+}
+else {
+	header("Location: ./index.php");
+	exit;
 }
 
-else
-{
-	$p->appendContent(<<<HTML
-		<div class="th2">{$message}</div>
-		<div class="th2">Vous pouvez dès à présent vous connecter.</div>
-		<div class="th3">Vous allez être redirigé vers la page de connexion dans un instant.</div>
-HTML
-	);
-}
-
-$p->appendContent("</div>");
 echo $p->toHTML();
 
 header( "Refresh:5; ./connexion.php", TRUE, 303);

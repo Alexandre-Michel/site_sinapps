@@ -23,9 +23,36 @@ try {
 		break;
 	}
 
+	$msg = "";
+
+	if(isset($_REQUEST['i'])) {
+		if(isset($_REQUEST['delete'])) {
+			try {
+    			Contrat::deleteContrat($_REQUEST['i']);
+    			header("location: ./contrats.php?msg=1");
+    			exit;
+    		}
+    		catch (Exception $e) {
+    			header("location: ./contrats.php?msg=2");
+    			exit;	    			
+    		}
+		}
+
+	}
+
+	if(isset($_REQUEST['msg'])) {
+		if($_REQUEST['msg'] == 1) {
+			$msg = "<div class='succes'>Contrat supprimé avec succès.</div>";
+		}
+		else if($_REQUEST['msg'] == 2) {
+			$msg = "<div class='rate'>Echec, veuillez réessayer.</div>";
+		}
+	}
+
 	$p->appendContent(<<<HTML
 		<div class="content">
 			<div class = "th1">Liste des contrats</div>
+			{$msg}
 HTML
 	);
 

@@ -176,12 +176,22 @@ HTML;
 					{$status}
 					<div class = "coupable">Déclaré le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					<input type="button" value="Supprimer" onclick="effacer({$ligne->getIdIncident()})">
 				</div>
 HTML;
 		}
 		$html.=<<<HTML
 			</div>
 HTML;
+		$html .="<script>
+			function effacer(num)
+			{
+				var confirm = window.confirm(\"Voulez-vous supprimer cet incident ?\");
+				if (confirm)
+					document.location.href=\"./incidents.php?i=\" + num + \"&delete=yes\";
+			};
+		</script>";
+
 		return $html;
 	}
 	
@@ -212,11 +222,9 @@ HTML;
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
 					$status = "<div class=\"status nt\">Non traité (Type {$type_inc->getDescType()})</div>";
-					//$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Traiter</button>";
 					break;
 				case 1 :
 					$status = "<div class=\"status ec\">En cours de traitement (Type {$type_inc->getDescType()})</div>";
-					//$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Effectuer une action</button>";					
 					break;
 				case 2 :
 					$status = "<div class=\"status t\">Résolu (Type {$type_inc->getDescType()})</div>";
@@ -275,12 +283,24 @@ SQL
 					{$status}
 					<div class = "coupable">{$ligne->getDateIncident()} par {$prenom} {$nom} ({$ent})</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					<input type="button" value="Supprimer" onclick="effacer({$ligne->getIdIncident()})">
+
 				</div>
 HTML;
 		}
 		$html.=<<<HTML
 			</div>
 HTML;
+
+		$html .="<script>
+			function effacer(num)
+			{
+				var confirm = window.confirm(\"Voulez-vous supprimer cet incident ?\");
+				if (confirm)
+					document.location.href=\"./incidents.php?i=\" + num + \"&delete=yes\";
+			};
+		</script>";
+		
 		return $html;
 	}
 
