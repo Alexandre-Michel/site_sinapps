@@ -640,7 +640,7 @@ button
 
 .box1 .row button.button
 {
-	position: absolute;
+	/*position: absolute;*/
 	right: 10px;
 	bottom: 10px;
 }
@@ -693,10 +693,10 @@ input[type="button"]
 }
 
 .date_action {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 0.75em;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 0.75em;
 }
 .message 
 {
@@ -776,4 +776,8 @@ span.offre
 {
 	font-size: 1.5em;
 	color: red;
+}
+
+.boutons_objet {
+	float: right;
 }
