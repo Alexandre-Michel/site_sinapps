@@ -118,9 +118,7 @@ SQL
 				<div class = "row bordure">
 					<div class = "th2">Membre n°{$ligne->getIdPers()} 
 						<span class="nomEntreprise">({$ligne->getNomPers()} {$ligne->getPrenomPers()})</span>
-					<div class = "th2">{$ligne->getNomPers()}  {$ligne->getPrenomPers()}
-						<span class>(id: {$ligne->getIdPers()})</span>
-					</div>
+					</div>	
 					<div class = "row">Mail : {$ligne->getMailPers()}</div>
 					<div>
 						<input type="button" value="Modifier" onclick="modifier({$ligne->getIdPers()})">
