@@ -116,6 +116,8 @@ SQL
 
 			$html .= <<<HTML
 				<div class = "row bordure">
+					<div class = "th2">Membre n°{$ligne->getIdPers()} 
+						<span class="nomEntreprise">({$ligne->getNomPers()} {$ligne->getPrenomPers()})</span>
 					<div class = "th2">{$ligne->getNomPers()}  {$ligne->getPrenomPers()}
 						<span class>(id: {$ligne->getIdPers()})</span>
 					</div>
@@ -551,7 +553,7 @@ SQL
 							<input type="email" required placeholder="Votre email" name="mail"/><br/>
 							<input type="password" required placeholder="Votre mot de passe" name="pass"/><br/>
 							<input type="hidden" value='' name="crypt"/>
-							<input type="submit" value={$submitText}>
+							<input type="submit" value={$submitText}><br/>
 							<a href="./inscription.php">Pas encore inscrit ? Cliquez ici</a>
 						</div>
 					</div>

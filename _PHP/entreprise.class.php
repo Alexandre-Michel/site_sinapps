@@ -241,6 +241,9 @@ SQL
 						<input type="button" value="Modifier" onclick="modifier({$uneEntp->getIdEntreprise()})">
 						<input type="button" value="Supprimer" onclick="effacer({$uneEntp->getIdEntreprise()})">
 						<input type="button" value="Voir parc(s)" onclick="parc({$uneEntp->getIdEntreprise()})">
+					<div class = "boutons_objet">
+						<button type="submit" class="button" onclick="modifier({$uneEntp->getIdEntreprise()})">Modifier</button>
+						<button type="submit" class="button" onclick="effacer({$uneEntp->getIdEntreprise()})">Supprimer</button>
 					</div>		
 				</div>
 HTML;

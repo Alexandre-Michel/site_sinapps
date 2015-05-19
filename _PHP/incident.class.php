@@ -175,13 +175,25 @@ HTML;
 					<div class = "th3">{$ligne->getDescriptionIncident()}</div>
 					{$status}
 					<div class = "coupable">Déclaré le {$ligne->getDateIncident()}</div>
-					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					<div class = "boutons_objet">
+						<button type="submit" class="button" onclick="effacer({$ligne->getIdIncident()})">Supprimer</button>					
+						<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					</div>
 				</div>
 HTML;
 		}
 		$html.=<<<HTML
 			</div>
 HTML;
+		$html .="<script>
+			function effacer(num)
+			{
+				var confirm = window.confirm(\"Voulez-vous supprimer cet incident ?\");
+				if (confirm)
+					document.location.href=\"./incidents.php?i=\" + num + \"&delete=yes\";
+			};
+		</script>";
+
 		return $html;
 	}
 	
@@ -212,11 +224,9 @@ HTML;
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
 					$status = "<div class=\"status nt\">Non traité (Type {$type_inc->getDescType()})</div>";
-					//$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Traiter</button>";
 					break;
 				case 1 :
 					$status = "<div class=\"status ec\">En cours de traitement (Type {$type_inc->getDescType()})</div>";
-					//$traitement = "<button onclick=\"location.href='./traiterIncident.php?id={$ligne->getIdIncident()}'\">Effectuer une action</button>";					
 					break;
 				case 2 :
 					$status = "<div class=\"status t\">Résolu (Type {$type_inc->getDescType()})</div>";
@@ -243,9 +253,11 @@ SQL
 				$entp = null;
 			}
 			
-			if(!is_null($pers))
-				if(!is_null($pers->getIdEntpPers))
-				$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
+			if(!is_null($pers) && $pers instanceof Personne) {
+				if(!is_null($pers->getIdEntpPers())) {
+					$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
+				}
+			}
 			
 			$txt = $ligne->getDescriptionIncident();
 			/*
@@ -276,13 +288,26 @@ SQL
 					<div class = "th3">{$description}</div>
 					{$status}
 					<div class = "coupable">{$ligne->getDateIncident()} par {$prenom} {$nom} ({$ent})</div>
-					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					<div class = "boutons_objet">
+						<button type="submit" class="button" onclick="effacer({$ligne->getIdIncident()})">Supprimer</button>					
+						<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					</div>
 				</div>
 HTML;
 		}
 		$html.=<<<HTML
 			</div>
 HTML;
+
+		$html .="<script>
+			function effacer(num)
+			{
+				var confirm = window.confirm(\"Voulez-vous supprimer cet incident ?\");
+				if (confirm)
+					document.location.href=\"./incidents.php?i=\" + num + \"&delete=yes\";
+			};
+		</script>";
+		
 		return $html;
 	}
 

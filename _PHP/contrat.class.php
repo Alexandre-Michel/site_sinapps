@@ -94,8 +94,9 @@ HTML;
 		{
 			$i = $ctr->getIdContrat();
 			$status = "";
-			if ($ctr->getFinValidite() > date("Y-m-d")) 
-			{
+			$dateFV = date('d-m-Y', strtotime($ctr->getFinValidite()));
+			$dateSign = date('d-m-Y', strtotime($ctr->getDateSignContrat()));
+			if (strtotime($dateFV) > strtotime(date("d-m-Y"))) {
 				$status = "<div class = \"status t\">Contrat en cours de validité</div>";
 			}
 			else {
@@ -109,14 +110,25 @@ HTML;
 						<span class="offre">({$offre->getNomOffre()})</span>
 					</div>
 					{$status}
-					<div class = "row">Signé le : {$ctr->getDateSignContrat()}</div>
-					<div class = "row">Expire le : {$ctr->getFinValidite()}</div>				
+					<div class = "row">Signé le : {$dateSign}</div>
+					<div class = "row">Expire le : {$dateFV}</div>	
+					<button type="submit" class="button" onclick="effacer({$ligne->getIdIncident()})">Supprimer</button>		
 				</div>
 HTML;
 		}
 		$html.=<<<HTML
 			</div>
 HTML;
+
+		$html .="<script>
+			function effacer(num)
+			{
+				var confirm = window.confirm(\"Voulez-vous supprimer ce contrat ?\");
+				if (confirm)
+					document.location.href=\"./contrats.php?i=\" + num + \"&delete=yes\";
+			};
+		</script>";
+
 		return $html;
 	}
 
@@ -162,13 +174,25 @@ HTML;
 					{$status}
 					<div class = "row">Signé le : {$dateSign}</div>
 					<div class = "row">Expire le : {$dateFV}</div>
-
+					<div class = "boutons_objet">
+						<button type="submit" class="button" onclick="effacer({$ctr->getIdContrat()})">Supprimer</button>
+					</div>		
 				</div>
 HTML;
 		}
 		$html.=<<<HTML
 			</div>
 HTML;
+
+		$html .="<script>
+			function effacer(num)
+			{
+				var confirm = window.confirm(\"Voulez-vous supprimer ce contrat ?\");
+				if (confirm)
+					document.location.href=\"./contrats.php?i=\" + num + \"&delete=yes\";
+			};
+		</script>";
+
 		return $html;
 	}
 
