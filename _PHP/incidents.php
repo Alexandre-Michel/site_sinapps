@@ -59,7 +59,7 @@ try {
 	$p->appendContent(<<<HTML
 		<div class="content">
 			<div class = "th1">Liste des incidents</div>
-				{msg}
+				{$msg}
 				<div class = "th2">Il y a actuellement {$nombre} incident(s) dont {$nbActifs} actif(s)</div>
 				}
 HTML
