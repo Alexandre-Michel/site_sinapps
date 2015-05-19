@@ -53,6 +53,7 @@ SQL
 		$html = "<div class='box1'>";
 		foreach($array as $ligne)
 		{
+			$i = $ligne->getIdParc();
 			$html.=<<<HTML
 				<div class = "row bordure fond">
 					<div class="th2">{$ligne->getNomParc()} (Id: {$ligne->getIdParc()})</div>
