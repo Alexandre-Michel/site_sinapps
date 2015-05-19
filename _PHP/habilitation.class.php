@@ -75,5 +75,16 @@ SQL
 		return $stmt->fetchAll();
 	}
 
+	public static function getNbHabilitations() 
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM HABILITATION
+SQL
+		);
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
 
 }

@@ -77,7 +77,7 @@ SQL
 		$this->id_type_incident = $type;
 	}
 
-		public static function getNbIncidents() 
+	public static function getNbIncidents() 
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			SELECT COUNT(*) AS nb

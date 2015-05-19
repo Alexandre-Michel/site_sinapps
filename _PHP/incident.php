@@ -117,7 +117,7 @@ HTML
 						<option name=\"statut\" value=0>Non traité</option>
 						<option name=\"statut\" value=1>En cours de traitement</option>
 						<option name=\"statut\" value=2>Résolu</option>
-						</select>";
+						</select><br/>";
 				}
 				else {
 					if ($incident->getStatutIncident() == 2) {

@@ -781,3 +781,8 @@ span.offre
 .boutons_objet {
 	width: 100%;
 }
+
+select {
+	width: 440px;
+	height: 36px;
+}
