@@ -48,9 +48,14 @@ try {
 
 		$p->appendContent(<<<HTML
 			<div class="content">
-				<div class = "th1">Liste des habilitations</div>
-					{$msg}
-					<div class = "th2">Il y a actuellement {$nombre} habilitation(s)</div>
+				<div class = "th1">
+					Liste des habilitations
+				</div>
+				{$msg}
+				<div class = "th2">
+					Il y a actuellement {$nombre} habilitation(s)
+				</div>
+				<div class= "box1">
 					
 HTML
 		);
@@ -66,6 +71,7 @@ HTML
 				}
 			}
 			$p->appendContent(<<<HTML
+<<<<<<< HEAD
 			<div class = "row bordure fond">
 					<form method="post">
 						<input type="text" placeholder="Nom de l'habilitation" name="nomHab" value="{$uneHab->getNomHab()}">
@@ -75,6 +81,19 @@ HTML
 						</div>	
 					</form> 
 				</div>
+=======
+					<div class = "row bordure fond">
+						<form method="post">
+							<input type="text" placeholder="Nom de l'habilitation" name="nomHab" value="{$uneHab->getNomHab()}">
+							<div class="boutons_objet">
+								<button type="submit" class="button" onclick="effacer({$uneHab->getIdHab()})">Supprimer</button>
+								<input type="submit" value="Modifier" name="save">
+							</div>	
+						</form> 
+					</div>
+				</div>		
+
+>>>>>>> origin/master
 HTML
 			);
 		}
