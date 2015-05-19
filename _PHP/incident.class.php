@@ -176,7 +176,7 @@ HTML;
 					{$status}
 					<div class = "coupable">Déclaré le {$ligne->getDateIncident()}</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
-					<input type="button" value="Supprimer" onclick="effacer({$ligne->getIdIncident()})">
+					<button type="submit" class="button" onclick="effacer({$ligne->getIdIncident()})">Supprimer</button>
 				</div>
 HTML;
 		}
@@ -287,7 +287,7 @@ SQL
 					{$status}
 					<div class = "coupable">{$ligne->getDateIncident()} par {$prenom} {$nom} ({$ent})</div>
 					<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
-					<input type="button" value="Supprimer" onclick="effacer({$ligne->getIdIncident()})">
+					<button type="submit" class="button" onclick="effacer({$ligne->getIdIncident()})">Supprimer</button>
 
 				</div>
 HTML;
