@@ -244,6 +244,7 @@ SQL
 			}
 			
 			if(!is_null($pers))
+				if(!is_null($pers->getIdEntpPers))
 				$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
 			
 			$txt = $ligne->getDescriptionIncident();
