@@ -17,11 +17,13 @@ try
 		try
 		{
 			$parc = Parc::createParcFromId($_GET['i']);
+			$num = $parc->getIdParc()
+			$appareils = Appareil::getAppareilByParc($num);
 			$p->appendContent(<<<HTML
 				<div class="content">
-					<div class="row th1">Détail du Parc n°{$parc->getIdParc()}</div>
+					<div class="row th1">Détail du Parc n°{$num}</div>
 					<div class="row">
-						{Appareil::getAppareilByParc()}
+						{$appareils}
 					</div>
 					<div class="row">
 						<form method="post">
