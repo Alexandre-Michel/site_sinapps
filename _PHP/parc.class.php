@@ -121,4 +121,14 @@ SQL
 	}
 
 	/******FONCTIONS******/
+	public static function deleteParc($id)
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			DELETE FROM PARC
+			WHERE id_parc = :id
+SQL
+		);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+	}
 }

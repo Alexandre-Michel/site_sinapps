@@ -22,24 +22,23 @@ try {
     		if(isset($_REQUEST['delete'])) {
     			try {
 	    			Entreprise::deleteEntreprise($_REQUEST['i']);
-	    			header("location: ./entreprises.php?msg=1");
+	    			header("location: ./parc.php?msg=1");
 	    			exit;
 	    		}
 	    		catch (Exception $e) {
-	    			header("location: ./entreprises.php?msg=2");
+	    			header("location: ./parc.php?msg=2");
 	    			exit;	    			
 	    		}
     		}
 
     	}
 
-    	if(isset($_REQUEST['msg'])) {
-    		if($_REQUEST['msg'] == 1) {
-    			$msg = "<div class='succes'>Parc supprimée avec succès.</div>";
-    		}
-    		else if($_REQUEST['msg'] == 2) {
+    	if(isset($_REQUEST['msg']))
+    	{
+    		if($_REQUEST['msg'] == 1)
+    			$msg = "<div class='succes'>Parc supprimé avec succès.</div>";
+    		else if($_REQUEST['msg'] == 2)
     			$msg = "<div class='rate'>Echec, veuillez réessayer.</div>";
-    		}
     	}
 
 		$p->appendContent(<<<HTML
