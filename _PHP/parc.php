@@ -18,7 +18,7 @@ try
 		try
 		{
 			$parc = Parc::createParcFromId($_GET['i']);
-			if($idEntp != $parc->getIdEntreprise());
+			if($idEntp == $parc->getIdEntreprise());
 			{
 				$num = $parc->getIdParc();
 				$appareils = Appareil::getAppareilByParc($num);
@@ -40,6 +40,7 @@ HTML
 			else
 			{
 				header('location: ./perso.php');
+				exit;
 			}
 		}
 		catch (Exception $e)
