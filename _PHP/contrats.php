@@ -39,15 +39,7 @@ try {
 		}
 	}
 
-	$p->appendContent(<<<HTML
-		<div class="content">
-			<div class = "th1">Liste des contrats</div>
-			{$msg}
-			{$listeEntp}
-HTML
-	);
-	
-	$listeEntp = "";
+	$listeEntp = "";	
 
 	if ($user->estHabilite()) {
 		$listeEntp = "<br/><br/><form><select name='id_entp'><option value=0>Tous</option>";
@@ -85,7 +77,12 @@ HTML
 		$p->appendContent(Contrat::getContratByIdEntp($entp->getIdEntreprise()));
 	}
 
-	$p->appendContent(<<<HTML
+		$p->appendContent(<<<HTML
+		<div class="content">
+			<div class = "th1">Liste des contrats</div>
+			{$msg}
+			{$listeEntp}
+
 			<input type="button" name="retour" value="Retour" onclick="history.back()">
 		</div>
 HTML
