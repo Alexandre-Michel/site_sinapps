@@ -31,7 +31,7 @@ try {
 		$signaler = "<button onclick=\"location.href='./newIncident.php'\">Déclarer un nouvel incident</button>";
 		$parc = "<div class=\"row fond\">
 					<div class=\"th2 center\">Parc(s)</div>
-					<div><button onclick=\"location.href='./parcs?i={$idEntp}.php'\">Visualiser les parcs</button></div>
+					<div><button onclick=\"location.href='./parcs.php?i={$idEntp}'\">Visualiser les parcs</button></div>
 				</div>";
 	}
 	else {
