@@ -59,7 +59,7 @@ HTML
 		$p->appendContent(Parc::getParcByEntreprise($_GET['i']));
 
 		$p->appendContent(<<<HTML
-				<button onClick="location.href='./newParc.php'">Ajouter un Parc</button>
+				<button onClick="location.href='./newParc.php?i={$_GET['i']}'">Ajouter un Parc</button>
 				<input type="button" name="retour" value="Retour" onclick="history.back()">
 			</div>
 HTML

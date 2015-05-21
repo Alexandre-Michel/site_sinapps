@@ -14,7 +14,7 @@ try {
 		$msg = ""; 
 		if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
 			if(isset($_REQUEST['responsable']) && $_REQUEST['responsable'] != "") {
-				$idEntp = $user->getIdEntpPers();
+				$idEntp = $_GET['i'];//$user->getIdEntpPers();
 				$idResp = isset($_REQUEST['responsable']) ? $_REQUEST['responsable'] : $user->getIdPers();
 				Parc::createParc($idEntp, $idResp);
 				$msg = 1;
