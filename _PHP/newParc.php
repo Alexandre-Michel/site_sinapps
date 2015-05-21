@@ -70,7 +70,7 @@ HTML
 		$personnes = Personne::getPersByIdEntp($user->getIdEntpPers());
 		$option = "";
 		foreach ($personnes as $personne) {
-			$name = $personne->getNomPers()." ".$personne->getPrenomPers();
+			$name = $personne->getNomPers();//." ".$personne->getPrenomPers();
 			$option .= "<option value=\"{$name}\">{$name}</option>";
 		}
 
