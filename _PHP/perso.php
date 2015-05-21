@@ -25,12 +25,13 @@ try {
 	$admin = "";
 	$contrats = "";
 	$parc = "";
+	$idEntp = $user->getIdEntpPers();
 
 	if($droit != 1) {
 		$signaler = "<button onclick=\"location.href='./newIncident.php'\">Déclarer un nouvel incident</button>";
 		$parc = "<div class=\"row fond\">
 					<div class=\"th2 center\">Parc(s)</div>
-					<div><button onclick=\"location.href='./parcs.php'\">Visualiser les parcs</button></div>
+					<div><button onclick=\"location.href='./parcs?i={$idEntp}.php'\">Visualiser les parcs</button></div>
 				</div>";
 	}
 	else {
@@ -55,7 +56,7 @@ try {
 				</div>";
 	}
 
-	if ($user->getIdEntpPers() != NULL)
+	if ($idEntp != NULL)
 	{
 		$contrats = "<div class = 'row fond'>
 				<div class='th2 center'>Contrat(s)</div>
