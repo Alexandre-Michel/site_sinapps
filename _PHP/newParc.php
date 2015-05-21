@@ -69,7 +69,8 @@ HTML
 		$personnes = Personne::getPersByIdEntp($user->getIdEntpPers());
 		$option = "";
 		foreach ($personnes as $personne) {
-			$option .= "<option value=\"{personne->getNomPers()}\">{personne->getNomPers()}</option>";
+			$name = $personne->getNomPers()
+			$option .= "<option value=\"{$name}\">{$name}</option>";
 		}
 
 		$p->appendContent(<<<HTML
