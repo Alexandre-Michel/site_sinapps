@@ -14,11 +14,12 @@ try
 {
 	$user = Personne::createFromSession();
 	$idEntp = $user->getIdEntpPers();
-	if (isset($_GET['i']) && !empty($_GET['i'])) {
+	if (isset($_GET['i']) && !empty($_GET['i']))
+	{
 		try
 		{
 			$parc = Parc::createParcFromId($_GET['i']);
-			if($idEntp == $parc->getIdEntreprise());
+			if($idEntp == $parc->getIdEntreprise())
 			{
 				$num = $parc->getIdParc();
 				$appareils = Appareil::getAppareilByParc($num);
