@@ -111,10 +111,7 @@ HTML;
 					</div>
 					{$status}
 					<div class = "row">Signé le : {$dateSign}</div>
-					<div class = "row">Expire le : {$dateFV}</div>	
-					<div class = "boutons_objet">
-						<button type="submit" class="button" onclick="effacer({$ctr->getIdContrat()})">Supprimer</button>
-					</div>				
+					<div class = "row">Expire le : {$dateFV}</div>					
 				</div>
 HTML;
 		}

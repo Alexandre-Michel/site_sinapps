@@ -162,7 +162,7 @@ HTML;
 			$status = "";
 
 			$type_inc = Type_incident::createTypeIncidentFromId($ligne->getIdType());
-			
+			$parc = Parc::createParcFromId($ligne->getIdParcIncident());
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
 					$status = "<div class=\"status nt\">Non traité (Type {$type_inc->getDescType()})</div>";
@@ -180,7 +180,7 @@ HTML;
 					<div class = "th2">{$ligne->getNomIncident()}</div>
 					<div class = "th3">{$ligne->getDescriptionIncident()}</div>
 					{$status}
-					<div class = "coupable">Déclaré le {$ligne->getDateIncident()}</div>
+					<div class = "coupable">Déclaré le {$ligne->getDateIncident()} (Parc : {$parc->getNomParc()})</div>
 					<div class = "boutons_objet">
 						<button type="submit" class="button" onclick="effacer({$ligne->getIdIncident()})">Supprimer</button>					
 						<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
@@ -226,6 +226,7 @@ HTML;
 			$i = $ligne->getIdIncident();
 			$status = "";
 			$type_inc = Type_incident::createTypeIncidentFromId($ligne->getIdType());
+			$parc = Parc::createParcFromId($ligne->getIdParcIncident());
 
 			switch($ligne->getStatutIncident()) {
 				case 0 : 
@@ -293,7 +294,122 @@ SQL
 					<div class = "th2">{$ligne->getNomIncident()}</div>
 					<div class = "th3">{$description}</div>
 					{$status}
-					<div class = "coupable">{$ligne->getDateIncident()} par {$prenom} {$nom} ({$ent})</div>
+					<div class = "coupable">{$ligne->getDateIncident()} par {$prenom} {$nom} ({$ent} : Parc {$parc->getNomParc()})</div>
+					<div class = "boutons_objet">
+						<button type="submit" class="button" onclick="effacer({$ligne->getIdIncident()})">Supprimer</button>					
+						<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>
+					</div>
+				</div>
+HTML;
+		}
+		$html.=<<<HTML
+			</div>
+HTML;
+
+		$html .="<script>
+			function effacer(num)
+			{
+				var confirm = window.confirm(\"Voulez-vous supprimer cet incident ?\");
+				if (confirm)
+					document.location.href=\"./incidents.php?i=\" + num + \"&delete=yes\";
+			};
+		</script>";
+		
+		return $html;
+	}
+
+
+		/*
+	Récupération de tous les incidents pour une entreprise
+	*/
+	public static function getIncidentsByIdEntp()
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT *
+			FROM INCIDENT
+			ORDER BY statut_incident, date_incident
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->execute();
+		$array = $stmt->fetchAll();
+		$html = <<<HTML
+			<div class = "box1">
+HTML;
+		foreach ($array as $ligne)
+		{
+			$i = $ligne->getIdIncident();
+			$status = "";
+			$type_inc = Type_incident::createTypeIncidentFromId($ligne->getIdType());
+			$parc = Parc::createParcFromId($ligne->getIdParcIncident());
+
+			switch($ligne->getStatutIncident()) {
+				case 0 : 
+					$status = "<div class=\"status nt\">Non traité (Type {$type_inc->getDescType()})</div>";
+					break;
+				case 1 :
+					$status = "<div class=\"status ec\">En cours de traitement (Type {$type_inc->getDescType()})</div>";
+					break;
+				case 2 :
+					$status = "<div class=\"status t\">Résolu (Type {$type_inc->getDescType()})</div>";
+					break;		
+			}
+			try
+			{
+				$pers = Personne::createPersFromId($ligne->getIdPersonne());
+			}
+			catch(Exception $e)
+			{
+				$stmt = myPDO::getInstance()->prepare(<<<SQL
+					UPDATE INCIDENT
+					SET id_personne = null
+					WHERE id_personne = :val
+SQL
+				);
+				$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+				$stmt->bindValue(":val", $ligne->getIdPersonne());
+				$stmt->execute();
+				$ligne->id_personne = null;
+				
+				$pers = null;
+				$entp = null;
+			}
+			
+			if(!is_null($pers) && $pers instanceof Personne) {
+				if(!is_null($pers->getIdEntpPers())) {
+					$entp = Entreprise::createEntrepriseFromId($pers->getIdEntpPers());
+				}
+			}
+			
+			$txt = $ligne->getDescriptionIncident();
+			/*
+			if(strlen($txt) > 128)
+				$txt = substr($txt, 0, 128);
+			*/
+			$description = self::cleanCut($ligne->getDescriptionIncident(), 150);
+
+			if(is_null($pers))
+				$prenom = 'Inconnu';
+			else
+				$prenom = $pers->getPrenomPers();
+
+			if(is_null($pers))
+				$nom = '';
+			else
+				$nom = $pers->getNomPers();
+
+			if(is_null($entp))
+				$ent = '';
+			else
+				$ent = $entp->getNomEntreprise();
+
+
+			$html.=<<<HTML
+				<div class = "row bordure fond">
+					<div class = "th2">{$ligne->getNomIncident()}</div>
+					<div class = "th3">{$description}</div>
+					{$status}
+					<div class = "coupable">{$ligne->getDateIncident()} par {$prenom} {$nom} ({$ent} : Parc {$parc->getNomParc()})</div>
 					<div class = "boutons_objet">
 						<button type="submit" class="button" onclick="effacer({$ligne->getIdIncident()})">Supprimer</button>					
 						<button onclick="location.href='./incident.php?i={$i}'" type="submit" class="button">Voir en détail</button>

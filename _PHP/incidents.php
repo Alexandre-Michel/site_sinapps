@@ -5,7 +5,7 @@ require_once 'Personne.class.php';
 require_once 'Incident.class.php';
 require_once 'Entreprise.class.php';
 require_once 'Type_incident.class.php';
-
+require_once 'Parc.class.php';
 
 $p = new WebPage("Incidents - Sinapp's");
 
@@ -56,16 +56,30 @@ try {
 		}
 	}
 
+	$listeEntp = "<select name='id_entp'>";
+	$arrayEntp = Entreprise::getAllEntreprisesTab();
+	foreach ($arrayEntp as $uneEntp) {
+		$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
+	}
+	$listeEntp .= "</select>";
+
 	$p->appendContent(<<<HTML
 		<div class="content">
 			<div class = "th1">Liste des incidents</div>
 				{$msg}
 				<div class = "th2">Il y a actuellement {$nombre} incident(s) dont {$nbActifs} actif(s)</div>
+				{$listeEntp}
 HTML
 	);
 
 	if ($droit == 1) {
-		$p->appendContent(Incident::getAllIncident());
+		if(isset($_REQUEST['id_entp']) && $_REQUEST['id_entp'] != "") {
+			$p->appendContent(Incident::getIncidentsByIdEntp($_REQUEST['id_entp']));
+		}
+		else {
+			$p->appendContent(Incident::getAllIncident());	
+		}
+		
 	}
 	else {
 		$p->appendContent(Incident::getIncidentByPers($user->getIdPers()));
