@@ -53,12 +53,6 @@ try {
 				<div class=\"row fond\">
 					<div class=\"th2 center\">Membre(s)</div>
 					<div><button onclick=\"location.href='./membres.php'\">Visualiser les membres</button></div>
-					<div>				
-						<form action='./membres.php'>
-							<br/><input type='text' name='nom' placeholder='Rechercher une personne...'><br/>
-							<input type='submit' value='Rechercher'>
-						</form>
-					</div>	
 				</div>";
 	}
 
