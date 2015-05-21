@@ -140,6 +140,35 @@ SQL
 		$count = $stmt->fetch();
 		return $count['nb'];
 	}
+
+	public static function getNbIncidentsByIdEntp($id) 
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM INCIDENT
+			WHERE id_entreprise_incident = :id_entp
+SQL
+		);
+		$stmt->bindValue(":id_entp", $id);
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
+
+		public static function getNbIncidentsActifsByIdEntp($id) 
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM INCIDENT
+			WHERE statut_incident = 1
+			AND id_entreprise_incident = :id_entp
+SQL
+		);
+		$stmt->bindValue(":id_entp", $id);
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
 	
 	/*
 	Récupération de tous les incidents en fonction de l'ID d'une personne
