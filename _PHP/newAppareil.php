@@ -15,7 +15,7 @@ try {
 		$msg = "";
 		if(isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre")
 		{
-			if(isset($_REQUEST['']) && !empty($_REQUEST['']))
+			if(isset($_REQUEST['parc']) && !empty($_REQUEST['parc']) && isset($_REQUEST['type']) && !empty($_REQUEST['type']))
 			{
 				$idParc = $_GET['i'];
 				$idType = "";
@@ -23,9 +23,13 @@ try {
 				Appareil::createAppareil($idParc, $idType, $name);
 				$msg = 1;
 			}
+			else
+				$msg = 2;
+
 			header("location: ./newAppareil.php?i={$_GET['i']}&msg={$msg}");
 			exit;
 		}
+
 		if(isset($_GET['msg']) && !empty($_GET['msg']))
 		{
 			if ($_GET["msg"] == 1) $msg = "<div class='succes'>Appareil créé avec succès.</div>";
@@ -63,6 +67,7 @@ SQL
 
 		foreach ($array as $ligne)
 			$p->appendContent("<option value={$ligne}>{$ligne}</option>");
+		
 		$p->appendContent(<<<HTML
 								</select><br/>
 								<input type="submit" name="submit" value="Soumettre">

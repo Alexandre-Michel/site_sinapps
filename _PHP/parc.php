@@ -31,7 +31,7 @@ try
 						</div>
 						<div class="row">
 							<form method="post">
-								<button onClick=\"location.href='./newAppareil.php?i={$_GET['i']}'\">Ajouter un Parc</button>
+								<button onClick=\"location.href='./newAppareil.php?i={$_GET['i']}'\">Ajouter un Appareil</button>
 								<input type="button" name="retour" value="Retour" onclick="history.back()">
 							</form>	
 						</div>
