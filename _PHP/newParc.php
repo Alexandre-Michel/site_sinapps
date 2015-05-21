@@ -59,26 +59,28 @@ try {
 		
 		$p->appendContent(<<<HTML
 			<div class="content">
-				<div class="th1">{$status} Parc</div>
+				<div class="th1">Nouveau Parc</div>
 				{$msg}
-				<form method="post">
-					<select id="select_resp" name="responsable"> 
+				<form method="post"> 
+					<div class="champs">
+						<select id="select_resp" name="responsable"> 
 HTML
 		);
 
 		$personnes = Personne::getPersByIdEntp($user->getIdEntpPers());
 		$option = "";
 		foreach ($personnes as $personne) {
-			$name = $personne->getNomPers();
+			$name = $personne->getNomPers()." ".$personne->getPrenomPers();
 			$option .= "<option value=\"{$name}\">{$name}</option>";
 		}
 
 		$p->appendContent(<<<HTML
-						{$option}
-					</select>
+						</select>
+						<input type="submit" name="submit" value="Soumettre">
+					</div>	
 				</form>
 				<input type="button" name="retour" value="Retour" onclick="history.back()">
-			</div>	
+	    	</div>	
 HTML
 		);
 	}

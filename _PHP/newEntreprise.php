@@ -308,10 +308,6 @@ try {
 
 						<input type="tel" required name="tel" placeholder="Téléphone de l'entreprise">
 						<input type="text" name="desc" placeholder="Description de l'entreprise"><br/>
-HTML
-		);			
-
-		$p->appendContent(<<<HTML
 						<input type="submit" name="submit" value="Soumettre">
 					</div>	
 				</form>
