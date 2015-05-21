@@ -19,12 +19,12 @@ try {
 				$nomParc = $_GET['i'].substr($user->getNomPers(), 0, 1).substr($user->getPrenomPers, 0, 1);
 				Parc::createParc($idEntp, $idResp, $nomParc);
 				$msg = 1;
-				header("location: ./newParc.php?msg={$msg}");
+				header("location: ./newParc.php?i={$_GET['i']}&msg={$msg}");
 				exit;
 			}
 			else {
 				$msg = 2;
-				header("location: ./newParc.php?msg={$msg}");
+				header("location: ./newParc.php?i={$_GET['i']}&msg={$msg}");
 				exit;
 			}
 		}
