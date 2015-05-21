@@ -56,18 +56,21 @@ try {
 		}
 	}
 
-	$listeEntp = "<form><select name='id_entp' onclick='appliquer($_REQUEST['id_entp'])'>";
+	$listeEntp = "<br/><br/><form><select name='id_entp'><option value=0>Tous</option>";
 	$arrayEntp = Entreprise::getAllEntreprisesTab();
 	foreach ($arrayEntp as $uneEntp) {
-		$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
+		if(isset($_REQUEST['id_entp'])) {
+			if ($_REQUEST['id_entp'] == $uneEntp->getIdEntreprise())
+				$listeEntp .= "<option selected value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
+			else {
+			$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
+			}
+		}			
+		else {
+			$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
+		}
 	}
-	$listeEntp .= "</select></form>
-		<script>
-			function appliquer(num)
-			{
-				document.location.href=\"./incidents.php?id_entp=\" + num;
-			};
-		</script>";
+	$listeEntp .= "</select><br/><input type='submit' value='Restreindre'></form>";
 
 	$p->appendContent(<<<HTML
 		<div class="content">
@@ -80,7 +83,13 @@ HTML
 
 	if ($droit == 1) {
 		if(isset($_REQUEST['id_entp']) && $_REQUEST['id_entp'] != "") {
-			$p->appendContent(Incident::getIncidentsByIdEntp($_REQUEST['id_entp']));
+			if ($_REQUEST['id_entp'] == 0) {
+				header('location: ./incidents.php');
+				exit;
+			}
+			else {
+				$p->appendContent(Incident::getIncidentsByIdEntp($_REQUEST['id_entp']));
+			}		
 		}
 		else {
 			$p->appendContent(Incident::getAllIncident());	

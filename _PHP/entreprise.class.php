@@ -203,6 +203,7 @@ SQL
 		else
 			throw new Exception ("Entreprise not found");
 	}
+	
 
 	public static function deleteEntreprise($id)
 	{
