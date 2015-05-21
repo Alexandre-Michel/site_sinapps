@@ -65,14 +65,7 @@ try {
 
 	}
 
-	else {
-		if ($user->getIdEntpPers() == NULL) {
-			header("Location: ./perso.php") ;
-			exit;
-		}
-		$entp = Entreprise::createEntrepriseFromId($user->getIdEntpPers());
-		$p->appendContent(Contrat::getContratByIdEntp($entp->getIdEntreprise()));
-	}
+
 
 	$p->appendContent(<<<HTML
 		<div class="content">
@@ -83,12 +76,24 @@ HTML
 	);
 
 	if($user->estHabilite()) {
-		if(isset($_REQUEST['id_entp'])) {
-			$p->appendContent(Contrat::getContratByIdEntp($_REQUEST['id_entp']));
-		}
+		if ($_REQUEST['id_entp'] == 0) {
+				header('location: ./contrats.php');
+				exit;
+			}
+			else {
+				$p->appendContent(Incident::getIncidentsByIdEntp($_REQUEST['id_entp']));
+			}
 		else {
 			$p->appendContent(Contrat::getAllContrats());
 		}
+	}
+	else {
+		if ($user->getIdEntpPers() == NULL) {
+			header("Location: ./perso.php") ;
+			exit;
+		}
+		$entp = Entreprise::createEntrepriseFromId($user->getIdEntpPers());
+		$p->appendContent(Contrat::getContratByIdEntp($entp->getIdEntreprise()));
 	}
 
 	$p->appendContent(<<<HTML
