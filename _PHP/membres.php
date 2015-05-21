@@ -47,7 +47,7 @@ try {
 				<div class = "th1">Liste des membres</div>
 				{$msg}
 				<form>
-					<input type="text" name="nom" placeholder="Rechercher une personne...">
+					<br/><input type="text" name="nom" placeholder="Rechercher une personne..."><br/>
 					<input type="submit" value="Rechercher">
 				</form>	
 HTML
