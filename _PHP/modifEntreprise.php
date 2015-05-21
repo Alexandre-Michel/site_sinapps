@@ -144,7 +144,7 @@ try {
 								<option value="Erythree">Erythree </option>
 								<option value="Espagne">Espagne </option>
 								<option value="Estonie">Estonie </option>
-								<option value="Etats_Unis">Etats-Unis </option>
+								<option value="Etats-Unis">Etats-Unis </option>
 								<option value="Ethiopie">Ethiopie </option>
 
 								<option value="Falkland">Falkland </option>
