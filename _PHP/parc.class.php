@@ -158,13 +158,15 @@ SQL
 			throw new Exception ("Parc not found");
 	}
 
-	public static function createParc($id_entp = "", $id_resp = "")
+	public static function createParc($id_entp = "", $id_resp = "", $name = "")
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
-			INSERT INTO PARC (id_entreprise, id_personne_resp)
-			VALUES (:entp, :resp)
+			INSERT INTO PARC (nom_parc, id_entreprise, id_personne_resp)
+			VALUES (:nom, :entp, :resp)
 SQL
 		);
+
+		$stmt->bindValue(":nom", $name);
 		$stmt->bindValue(":entp", $id_entp);
 		$stmt->bindValue(":resp", $id_resp);
 		$stmt->execute();
