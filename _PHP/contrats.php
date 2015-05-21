@@ -12,16 +12,6 @@ $p = new WebPage("Contrats - Sinapp's");
 try {
     // Lecture depuis les données de session
     $user = Personne::createFromSession();
-    switch ($user->getIdHabilitation()) {
-		// Si l'utilisateur est un administrateur
-		case 1:
-		$droit = 1;
-		break;
-		//Si l'utilisateur n'est qu'un membre lambda sans droits
-		case 2:
-		$droit = 2;
-		break;
-	}
 
 	$msg = "";
 
@@ -56,9 +46,34 @@ try {
 HTML
 	);
 
-	if ($droit == 1) {
-		$p->appendContent(Contrat::getAllContrats());
+	if ($user->estHabilite()) {
+		$listeEntp = "";
+		$listeEntp = "<br/><br/><form><select name='id_entp'><option value=0>Tous</option>";
+		$arrayEntp = Entreprise::getAllEntreprisesTab();
+		foreach ($arrayEntp as $uneEntp) {
+			if(isset($_REQUEST['id_entp'])) {
+				if ($_REQUEST['id_entp'] == $uneEntp->getIdEntreprise())
+					$listeEntp .= "<option selected value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
+				else {
+				$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
+				}
+				$nombre = Incident::getNbIncidentsByIdEntp($_REQUEST['id_entp']);
+				$nbActifs = Incident::getNbIncidentsActifsByIdEntp($_REQUEST['id_entp']);
+			}			
+			else {
+				$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
+			}
+		}
+		$listeEntp .= "</select><br/><input type='submit' value='Restreindre'></form>";
+
+		if(isset($_REQUEST['id_entp'])) {
+			$p->appendContent(Contrat::getContratByIdEntp($_REQUEST['id_entp']));
+		}
+		else {
+			$p->appendContent(Contrat::getAllContrats());
+		}
 	}
+
 	else {
 		if ($user->getIdEntpPers() == NULL) {
 			header("Location: ./perso.php") ;
