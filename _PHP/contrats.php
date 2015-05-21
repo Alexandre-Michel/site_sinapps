@@ -40,14 +40,8 @@ try {
 	}
 
 	$listeEntp = "";
+	$pour = "";
 
-	$p->appendContent(<<<HTML
-		<div class="content">
-			<div class = "th1">Liste des contrats</div>
-			{$msg}
-			{$listeEntp}
-HTML
-	);
 	
 
 	if ($user->estHabilite()) {
@@ -60,6 +54,8 @@ HTML
 				else {
 					$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
 				}
+				$et = Entreprise::createEntrepriseFromId($_REQUEST['id_entp']);
+				$pour = "pour l'entreprise {$et->getNomEntreprise()}";
 			}			
 			else {
 				$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
@@ -67,12 +63,6 @@ HTML
 		}
 		$listeEntp .= "</select><br/><input type='submit' value='Restreindre'></form>";
 
-		if(isset($_REQUEST['id_entp'])) {
-			$p->appendContent(Contrat::getContratByIdEntp($_REQUEST['id_entp']));
-		}
-		else {
-			$p->appendContent(Contrat::getAllContrats());
-		}
 	}
 
 	else {
@@ -82,6 +72,23 @@ HTML
 		}
 		$entp = Entreprise::createEntrepriseFromId($user->getIdEntpPers());
 		$p->appendContent(Contrat::getContratByIdEntp($entp->getIdEntreprise()));
+	}
+
+	$p->appendContent(<<<HTML
+		<div class="content">
+			<div class = "th1">Liste des contrats {$pour}</div>
+			{$msg}
+			{$listeEntp}
+HTML
+	);
+
+	if($user->estHabilite()) {
+		if(isset($_REQUEST['id_entp'])) {
+			$p->appendContent(Contrat::getContratByIdEntp($_REQUEST['id_entp']));
+		}
+		else {
+			$p->appendContent(Contrat::getAllContrats());
+		}
 	}
 
 	$p->appendContent(<<<HTML
