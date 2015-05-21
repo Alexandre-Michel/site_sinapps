@@ -44,7 +44,7 @@ try {
 HTML
 		);
 
-		$personnes = Personne::getPersByIdEntp($_GET['i'];
+		$personnes = Personne::getPersByIdEntp($_GET['i']);
 		$option = "";
 		foreach ($personnes as $personne) {
 			$name = $personne->getNomPers()." ".$personne->getPrenomPers();
