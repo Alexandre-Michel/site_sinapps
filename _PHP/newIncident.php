@@ -31,8 +31,8 @@ try {
 	
 	$msg = ""; 
 	if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
-		if(isset($_REQUEST['nom']) && $_REQUEST['nom'] != "" && isset($_REQUEST['desc']) && $_REQUEST['desc'] != "") {
-			Incident::createIncident($_REQUEST['nom'], $_REQUEST['desc'], $_REQUEST['type']);
+		if(isset($_REQUEST['nom']) && $_REQUEST['nom'] != "" && isset($_REQUEST['desc']) && $_REQUEST['desc'] != "" && isset($_REQUEST['parc'])) {
+			Incident::createIncident($_REQUEST['nom'], $_REQUEST['desc'], $_REQUEST['type'], $_REQUEST['parc']);
 			$msg = 1;
 			header("location: ./newIncident.php?msg={$msg}");
 			exit;

@@ -11,6 +11,7 @@ class Incident
 	private $id_type_incident = null;
 	private $date_incident = null;
 	private $statut_incident = null;
+	private $id_parc_incident = null;
 
 	private function __construct()
 	{
@@ -49,6 +50,11 @@ class Incident
 	public function getStatutIncident() {
 		return $this->statut_incident;
 	}
+
+	public function getIdParcIncident() {
+		return $this->id_parc_incident;
+	}
+
 
 	public function setStatutIncident($valeur) {
 		$this->statut_incident = $valeur;
@@ -335,11 +341,11 @@ SQL
 	/*
 	Permet la déclaration d'un incident
 	*/
-	public static function createIncident($nom_incident, $description = "", $id_type_incident)
+	public static function createIncident($nom_incident, $description = "", $id_type_incident, $id_parc_incident)
 	{
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
-			INSERT INTO INCIDENT (nom_incident, description_incident, id_personne, id_type_incident, date_incident)
-			VALUES (:nom, :description, :id_pers, :id_type, :date_incident)
+			INSERT INTO INCIDENT (nom_incident, description_incident, id_personne, id_type_incident, date_incident, id_parc_incident)
+			VALUES (:nom, :description, :id_pers, :id_type, :date_incident, :id_parc)
 SQL
 		);
 		$stmt->bindValue(":nom", $nom_incident);
@@ -347,6 +353,7 @@ SQL
 		$stmt->bindValue(":id_pers", Personne::createFromSession()->getIdPers());
 		$stmt->bindValue(":id_type", $id_type_incident);
 		$stmt->bindValue(":date_incident", "Posté le " . date("d-m-Y") . " à " . date("H:i") );
+		$stmt->bindValue(":id_parc", $id_parc_incident);
 		$stmt->execute();
 	}
 
