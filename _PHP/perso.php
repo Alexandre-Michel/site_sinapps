@@ -23,12 +23,17 @@ try {
 	$signaler = "";
 	$newContrat = "";
 	$admin = "";
+	$contrats = "";
+	$parc = "";
 
 	if($droit != 1) {
 		$signaler = "<button onclick=\"location.href='./newIncident.php'\">Déclarer un nouvel incident</button>";
+		$parc = "<div class=\"row fond\">
+					<div class=\"th2 center\">Parc(s)</div>
+					<div><button onclick=\"location.href='./parcs.php'\">Visualiser les parcs</button></div>
+				</div>";
 	}
 	else {
-		$signaler = "";
 		$newContrat = "<button onclick=\"location.href='./newContrat.php'\">Nouveau contrat</button>";
 		$admin = "<div class='row fond'>
 					<div class='th2 center'>Entreprise(s)</div>
@@ -50,10 +55,8 @@ try {
 				</div>";
 	}
 
-	$contrats = "";
 	if ($user->getIdEntpPers() != NULL)
 	{
-		
 		$contrats = "<div class = 'row fond'>
 				<div class='th2 center'>Contrat(s)</div>
 				<div>
@@ -72,6 +75,7 @@ try {
 					<div><button onclick="location.href='./incidents.php'">Visualiser les incidents</button>{$signaler}</div>
 				</div>
 				{$contrats}
+				{$parc}
 				{$admin}
 				<div class="row fond">
 					<div class="th2 center">Informations personnelles</div>
