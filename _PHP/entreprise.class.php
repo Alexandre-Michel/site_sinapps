@@ -73,6 +73,17 @@ class Entreprise
 	{
 		return$this->path_logo;
 	}
+	
+	public static function getNbEntreprises() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM ENTREPRISE
+SQL
+		);	
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
 
 	public function setNomEntreprise($nom)
 	{

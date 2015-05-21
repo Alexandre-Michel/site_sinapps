@@ -6,6 +6,7 @@ header('Content-type: text/html; charset=utf-8');
 require_once 'webpage.class.php';
 require_once 'Personne.class.php';
 require_once 'Contrat.class.php';
+require_once 'Entreprise.class.php';
 require_once 'myPDO.include.php';
 
 $pdo = myPDO::getInstance();
@@ -18,6 +19,7 @@ $nbContrats = Contrat::getNbContrats();
 $nbSilver = Contrat::getNbContratsSilver();
 $nbGold = Contrat::getNbContratsGold();
 $nbPlatinum = Contrat::getNbContratsPlatinum();
+$nbEntp = Entreprise::getNbEntreprises();
 
 $p->appendContent(<<<HTML
 <div class = "content">
@@ -32,8 +34,8 @@ $p->appendContent(<<<HTML
 
 	<div class = "intro_box">
 		<div class = "box1">
-			<div class="stats">
-				{$nbPers} personnes inscrites...<br/>
+			<div class="th2">
+				{$nbPers} personnes inscrites pour {$nbEntp} entreprises...<br/>
 				{$nbStaff} personnes qui répondent à vos attentes...<br/>
 				{$nbContrats} contrats souscrits dont :<br/>
 					- {$nbSilver} contrats Silver<br/>

@@ -215,12 +215,9 @@ SQL
 							<ul class="niveau2">
 								<li><a href="./presentation.php" target="_self">Presentation</a>
 									<ul class="niveau3">
-										<li><a href="./presentation.php" target="_self">Hello</a></li>
-										<li><a href="./presentation.php" target="_self">Hello2</a></li>
 									</ul>
 								</li>
 								<li><a href="./statistiques.php" target="_self">Statistiques</a></li>
-								<li><a href="./partenaires.php" target="_self">Partenaires</a></li>
 								<li><a href="./equipe.php" target="_self">L'equipe</a></li>
 								
 							</ul>
