@@ -43,6 +43,7 @@ try {
 		<div class="content">
 			<div class = "th1">Liste des contrats</div>
 			{$msg}
+			{$listeEntp}
 HTML
 	);
 
