@@ -28,7 +28,6 @@ try
 						<div class="row th1">Détail du Parc n°{$num}</div>
 						<div class="row">
 							{$appareils}
-							<button onClick="location.href='./newParc.php'">Ajouter un Parc</button>
 						</div>
 						<div class="row">
 							<form method="post">
