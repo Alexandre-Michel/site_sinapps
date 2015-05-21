@@ -54,6 +54,53 @@ class Contrat
 		return $this->date_signature_ctr;
 	}
 
+	public static function getNbContrats() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM CONTRAT
+SQL
+		);	
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
+	
+	public static function getNbContratsSilver() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM CONTRAT
+			WHERE id_contrat = 1
+SQL
+		);	
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
+	
+	public static function getNbContratsGold() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM CONTRAT
+			WHERE id_contrat = 2
+SQL
+		);	
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
+	
+	public static function getNbContratsPlatinum() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM CONTRAT
+			WHERE id_contrat = 3
+SQL
+		);	
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
+	
 	public function setFinValidite($date)
 	{
 		$this->fin_validite = $date;

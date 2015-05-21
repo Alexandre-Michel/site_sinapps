@@ -72,6 +72,29 @@ class Personne {
 	public function getImagePers() {
 		return $this->image_personne;
 	}
+	
+	public static function getNbPersSite() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM PERSONNE
+SQL
+		);	
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
+	
+	public static function getNbPersStaff() {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT COUNT(*) AS nb
+			FROM PERSONNE
+			WHERE id_habilitation_pers = 1
+SQL
+		);	
+		$stmt->execute();
+		$count = $stmt->fetch();
+		return $count['nb'];
+	}
 
 	public static function getPersByIdEntp($id_entp) {
 		$stmt = myPDO::getInstance()->prepare(<<<SQL

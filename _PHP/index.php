@@ -16,7 +16,7 @@ $p = new WebPage("Accueil - Sinapp's");
 $p->appendContent(<<<HTML
 <div class = "content">
 	<div class = "welcome">
-		<div class = "th1">Bienvenue chez SINAPP'S</div>
+		<div class = "th1">Bienvenue chez Sinapp's</div>
 		<div class = "th2">Agence de maintenance informatique dédiée aux professionnels.</div>
 	</div>
 	<div class = "intro th2">
