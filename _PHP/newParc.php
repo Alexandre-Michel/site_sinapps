@@ -24,9 +24,9 @@ try {
 	
 		$msg = ""; 
 		if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
-			if(isset($_REQUEST['nom']) && $_REQUEST['nom'] != "") {
+			if(isset($_REQUEST['select_resp']) && $_REQUEST['select_resp'] != "") {
 				if (isset($_REQUEST['i']) && $_REQUEST['i'] != "") {			
-					$parc->setNomParc($_REQUEST['nom']);
+					$parc->setNomParc($_REQUEST['select_resp']);
 					$msg = 3;
 					header("location: ./newParc.php?msg={$msg}");
 					exit;
