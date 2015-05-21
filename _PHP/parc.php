@@ -13,26 +13,34 @@ $p = new WebPage("Détail du parc - Sinapp's");
 try
 {
 	$user = Personne::createFromSession();
+	$idEntp = $user->getIdEntpPers();
 	if (isset($_GET['i']) && !empty($_GET['i'])) {
 		try
 		{
 			$parc = Parc::createParcFromId($_GET['i']);
-			$num = $parc->getIdParc();
-			$appareils = Appareil::getAppareilByParc($num);
-			$p->appendContent(<<<HTML
-				<div class="content">
-					<div class="row th1">Détail du Parc n°{$num}</div>
-					<div class="row">
-						{$appareils}
+			if($idEntp != $parc->getIdEntreprise());
+			{
+				$num = $parc->getIdParc();
+				$appareils = Appareil::getAppareilByParc($num);
+				$p->appendContent(<<<HTML
+					<div class="content">
+						<div class="row th1">Détail du Parc n°{$num}</div>
+						<div class="row">
+							{$appareils}
+						</div>
+						<div class="row">
+							<form method="post">
+								<input type="button" name="retour" value="Retour" onclick="history.back()">
+							</form>	
+						</div>
 					</div>
-					<div class="row">
-						<form method="post">
-							<input type="button" name="retour" value="Retour" onclick="history.back()">
-						</form>	
-					</div>
-				</div>
 HTML
-			);
+				);
+			}
+			else
+			{
+				header('location: ./perso.php');
+			}
 		}
 		catch (Exception $e)
 		{
