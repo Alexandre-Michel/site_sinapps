@@ -19,7 +19,7 @@ try
 		try
 		{
 			$parc = Parc::createParcFromId($_GET['i']);
-			if($idEntp == $parc->getIdEntreprise() || $user.estHabilite() == true)
+			if($idEntp == $parc->getIdEntreprise() || $user->estHabilite())
 			{
 				$num = $parc->getIdParc();
 				$appareils = Appareil::getAppareilByParc($num);
