@@ -56,12 +56,18 @@ try {
 		}
 	}
 
-	$listeEntp = "<select name='id_entp'>";
+	$listeEntp = "<form><select name='id_entp' onclick='appliquer($_REQUEST['id_entp'])'>";
 	$arrayEntp = Entreprise::getAllEntreprisesTab();
 	foreach ($arrayEntp as $uneEntp) {
 		$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
 	}
-	$listeEntp .= "</select>";
+	$listeEntp .= "</select></form>
+		<script>
+			function appliquer(num)
+			{
+				document.location.href=\"./incidents.php?id_entp=\" + num;
+			};
+		</script>";
 
 	$p->appendContent(<<<HTML
 		<div class="content">
