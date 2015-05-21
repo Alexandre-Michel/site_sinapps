@@ -73,6 +73,7 @@ HTML;
 		$html.="</div></div>";
 		return $html;
 	}
+	
 	/******SETTER******/
 	public function setNomAppareil($nom)
 	{
@@ -143,4 +144,7 @@ SQL
 		$stmt->bindValue(":id", $this->id_appareil);
 		$stmt->execute();
 	}
+
+	/******FONCTIONS******/
+
 }
