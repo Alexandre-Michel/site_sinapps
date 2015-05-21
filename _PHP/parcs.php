@@ -54,14 +54,21 @@ try {
 			{$msg}
 HTML
 	);
+	if(!($droit == 2 && $_GET['i'] != $user->getIdEntpPers()))
+	{
+		$p->appendContent(Parc::getParcByEntreprise($_GET['i']));
 
-	$p->appendContent(Parc::getParcByEntreprise($_GET['i']));
-
-	$p->appendContent(<<<HTML
-			<input type="button" name="retour" value="Retour" onclick="history.back()">
-		</div>
+		$p->appendContent(<<<HTML
+				<input type="button" name="retour" value="Retour" onclick="history.back()">
+			</div>
 HTML
-	);
+		);
+	}
+	else
+	{
+		header("Location: ./perso.php") ;
+		exit;
+	}
 }
 
 catch (notInSessionException $e) {
