@@ -11,34 +11,15 @@ try {
     $user = Personne::createFromSession();
 
 	if($user->estHabilite()) {
-		
-		$value = "";
-		if (isset($_REQUEST['i']) && !empty($_GET['i'])) {
-			$status = "Modification";
-			$parc = Parc::createParcFromId($_REQUEST['i']);
-			$value = "value='" . $parc->getNomParc() . "'";
-		}
-		else {
-			$status = "Nouveau";
-		}
-	
 		$msg = ""; 
 		if (isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre") {
-			if(isset($_REQUEST['select_resp']) && $_REQUEST['select_resp'] != "") {
-				if (isset($_REQUEST['i']) && $_REQUEST['i'] != "") {			
-					$parc->setNomParc($_REQUEST['select_resp']);
-					$msg = 3;
-					header("location: ./newParc.php?msg={$msg}");
-					exit;
-				}
-				else {
-					$idEntp = $user->getIdEntpPers();
-					$idResp = isset($_REQUEST['select_resp']) ? $_REQUEST['select_resp'] : $user->getIdPers();
-					Parc::createParc($idEntp, $idResp);
-					$msg = 1;
-					header("location: ./newParc.php?msg={$msg}");
-					exit;
-				}
+			if(isset($_REQUEST['responsable']) && $_REQUEST['responsable'] != "") {
+				$idEntp = $user->getIdEntpPers();
+				$idResp = isset($_REQUEST['responsable']) ? $_REQUEST['responsable'] : $user->getIdPers();
+				Parc::createParc($idEntp, $idResp);
+				$msg = 1;
+				header("location: ./newParc.php?msg={$msg}");
+				exit;
 			}
 			else {
 				$msg = 2;
@@ -49,12 +30,7 @@ try {
 		
 		if (isset($_GET["msg"]) && $_GET["msg"] != "") {
 			if ($_GET["msg"] == 1) $msg = "<div class='succes'>Parc créée avec succès.</div>";
-			else if ($_GET["msg"] == 2) $msg = "<div class='rate'>Echec, veuillez réessayer.</div>";
-			else if ($_GET["msg"] == 3) {
-				$msg = "<div class='succes'>Parc modifié avec succès.</div>";
-				$status = "Modification";
-			}
-			
+			else if ($_GET["msg"] == 2) $msg = "<div class='rate'>Echec, veuillez réessayer.</div>";		
 		}
 		
 		$p->appendContent(<<<HTML
