@@ -61,26 +61,15 @@ try {
 			<div class="content">
 				<div class="th1">{$status} Parc</div>
 				{$msg}
-				<form method="post"> 
-					<input type="text" placeholder="Personne responsable" name="resp" {$value}/><br/>	
+				<form method="post">
 					<select id="select_resp" name="responsable"> 
 HTML
 		);
 
-		$stmt = myPDO::getInstance()->prepare(<<<SQL
-			SELECT nom_personne
-			FROM PERSONNE
-			WHERE id_entreprise_pers = :id
-SQL
-		);
-		$stmt->bindValue(":id", $user->getIdEntpPers());
-		$stmt->execute();
-		$array = $stmt->fetchAll();
+		$personnes = getPersByIdEntp($user->getIdEntpPers());
 		$option = "";
-
-		foreach ($stmt as $ligne)
-		{
-			$option .= "<option value=\"{$ligne}\">{$ligne} </option>";
+		foreach ($personnes as $personne) {
+			$option .= "<option value=\"{personne.getNomPers()}\">{personne.getNomPers()}</option>";
 		}
 
 		$p->appendContent(<<<HTML
