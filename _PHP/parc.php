@@ -31,6 +31,7 @@ try
 						</div>
 						<div class="row">
 							<form method="post">
+								<button onClick=\"location.href='./newAppareil.php?i={$_GET['i']}'\">Ajouter un Parc</button>
 								<input type="button" name="retour" value="Retour" onclick="history.back()">
 							</form>	
 						</div>
@@ -52,7 +53,7 @@ HTML
 	}
 	else
 	{
-		header('location: ./entreprises.php'); //A changer
+		header('location: ./entreprises.php'); //A changer ?
 		exit;
 	}
 }

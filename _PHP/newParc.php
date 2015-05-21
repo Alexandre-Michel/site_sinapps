@@ -16,7 +16,7 @@ try {
 			if(isset($_REQUEST['responsable']) && $_REQUEST['responsable'] != "") {
 				$idEntp = $_GET['i'];//$user->getIdEntpPers();
 				$idResp = isset($_REQUEST['responsable']) ? $_REQUEST['responsable'] : $user->getIdPers();
-				$nomParc = $_GET['i'].substr($user->getNomPers(), 0, 1).substr($user->getPrenomPers, 0, 1);
+				$nomParc = $_GET['i'].substr($user->getNomPers(), 0, 1).substr($user->getPrenomPers, 0, 1).rand();
 				Parc::createParc($idEntp, $idResp, $nomParc);
 				$msg = 1;
 				header("location: ./newParc.php?i={$_GET['i']}&msg={$msg}");

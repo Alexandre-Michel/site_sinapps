@@ -9,7 +9,7 @@ class Appareil
 	private $mac_appareil = null;
 	private $num_serie_appareil = null;
 	private $id_parc = null;
-	private $id_type_apapreil = null;
+	private $id_type_appareil = null;
 
 	private function __construct() {}
 
@@ -41,7 +41,7 @@ class Appareil
 
 	public function getIdTypeAppareil()
 	{
-		return $this->id_type_apapreil;
+		return $this->id_type_appareil;
 	}
 
 	public function getAppareilByParc($id)
@@ -133,10 +133,10 @@ SQL
 
 	public function setTypeAppareil($type)
 	{
-		$this->id_type_apapreil = $type;
+		$this->id_type_appareil = $type;
 		$stmt = myPDO::getInstance()->prepare(<<<SQL
 			UPDATE APPAREIL
-			SET id_type_apapreil = :type
+			SET id_type_appareil = :type
 			WHERE id_appareil = :id
 SQL
 		);
@@ -146,5 +146,45 @@ SQL
 	}
 
 	/******FONCTIONS******/
+	public static function createAppareilFromId($id)
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT * 
+			FROM APPAREIL
+			WHERE id_appareil = :id
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+		if (($object = $stmt->fetch()) !== false)
+			return $object;
+		else
+			throw new Exception ("Appareil not found");
+	}
 
+	public static function createAppareil($id_parc = "", $id_type = "", $name = "")
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			INSERT INTO APPAREIL (nom_appareil, id_parc, id_type_appareil)
+			VALUES (:nom, :parc, :type)
+SQL
+		);
+
+		$stmt->bindValue(":nom", $name);
+		$stmt->bindValue(":parc", $id_parc);
+		$stmt->bindValue(":type", $id_type);
+		$stmt->execute();
+	}
+
+	public static function deleteAppareil($id)
+	{
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			DELETE FROM APPAREIL
+			WHERE id_appareil = :id
+SQL
+		);
+		$stmt->bindValue(":id", $id);
+		$stmt->execute();
+	}
 }
