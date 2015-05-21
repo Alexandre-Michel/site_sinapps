@@ -54,8 +54,10 @@ try {
 				else {
 					$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
 				}
-				$et = Entreprise::createEntrepriseFromId($_REQUEST['id_entp']);
-				$pour = "pour l'entreprise {$et->getNomEntreprise()}";
+				if ($_REQUEST['id_entp'] != 0) {
+					$et = Entreprise::createEntrepriseFromId($_REQUEST['id_entp']);
+					$pour = "pour l'entreprise {$et->getNomEntreprise()}";
+				}
 			}			
 			else {
 				$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
@@ -76,17 +78,20 @@ HTML
 	);
 
 	if($user->estHabilite()) {
-		if ($_REQUEST['id_entp'] == 0) {
-				header('location: ./contrats.php');
-				exit;
+		if (isset($_REQUEST['id_entp'])) {
+			if ($_REQUEST['id_entp'] != 0){
+				$p->appendContent(Contrat::getContratByIdEntp($_REQUEST['id_entp']));
 			}
 			else {
-				$p->appendContent(Incident::getIncidentsByIdEntp($_REQUEST['id_entp']));
+				header("location: ./contrats.php");
+				exit;
 			}
+		}
 		else {
 			$p->appendContent(Contrat::getAllContrats());
 		}
 	}
+	
 	else {
 		if ($user->getIdEntpPers() == NULL) {
 			header("Location: ./perso.php") ;
