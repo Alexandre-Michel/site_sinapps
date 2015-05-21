@@ -39,7 +39,16 @@ try {
 		}
 	}
 
-	$listeEntp = "";	
+	$listeEntp = "";
+
+	$p->appendContent(<<<HTML
+		<div class="content">
+			<div class = "th1">Liste des contrats</div>
+			{$msg}
+			{$listeEntp}
+HTML
+	);
+	
 
 	if ($user->estHabilite()) {
 		$listeEntp = "<br/><br/><form><select name='id_entp'><option value=0>Tous</option>";
@@ -49,10 +58,8 @@ try {
 				if ($_REQUEST['id_entp'] == $uneEntp->getIdEntreprise())
 					$listeEntp .= "<option selected value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
 				else {
-				$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
+					$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
 				}
-				$nombre = Incident::getNbIncidentsByIdEntp($_REQUEST['id_entp']);
-				$nbActifs = Incident::getNbIncidentsActifsByIdEntp($_REQUEST['id_entp']);
 			}			
 			else {
 				$listeEntp .= "<option value='{$uneEntp->getIdEntreprise()}'>{$uneEntp->getNomEntreprise()}</option>";
@@ -77,12 +84,7 @@ try {
 		$p->appendContent(Contrat::getContratByIdEntp($entp->getIdEntreprise()));
 	}
 
-		$p->appendContent(<<<HTML
-		<div class="content">
-			<div class = "th1">Liste des contrats</div>
-			{$msg}
-			{$listeEntp}
-
+	$p->appendContent(<<<HTML
 			<input type="button" name="retour" value="Retour" onclick="history.back()">
 		</div>
 HTML
