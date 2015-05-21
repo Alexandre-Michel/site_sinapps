@@ -112,7 +112,7 @@ HTML;
 					{$status}
 					<div class = "row">Signé le : {$dateSign}</div>
 					<div class = "row">Expire le : {$dateFV}</div>	
-					<button type="submit" class="button" onclick="effacer({$ligne->getIdIncident()})">Supprimer</button>		
+					<button type="submit" class="button" onclick="effacer({$ctr->getIdIncident()})">Supprimer</button>		
 				</div>
 HTML;
 		}
