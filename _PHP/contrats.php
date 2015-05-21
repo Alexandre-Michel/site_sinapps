@@ -46,9 +46,10 @@ try {
 			{$listeEntp}
 HTML
 	);
+	
+	$listeEntp = "";
 
 	if ($user->estHabilite()) {
-		$listeEntp = "";
 		$listeEntp = "<br/><br/><form><select name='id_entp'><option value=0>Tous</option>";
 		$arrayEntp = Entreprise::getAllEntreprisesTab();
 		foreach ($arrayEntp as $uneEntp) {
