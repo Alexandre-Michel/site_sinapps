@@ -13,6 +13,7 @@ try {
 
 	if($user->estHabilite()) {
 		$msg = "";
+		$idParc = "";
 		if(isset($_REQUEST['submit']) && $_REQUEST['submit'] == "Soumettre")
 		{
 			if(isset($_REQUEST['parc']) && !empty($_REQUEST['parc']) && isset($_REQUEST['type']) && !empty($_REQUEST['type']))
@@ -66,7 +67,7 @@ SQL
 		$array = $stmt->fetchAll();
 
 		foreach ($array as $ligne)
-			$p->appendContent("<option value={$ligne}>{$ligne}</option>");
+			$p->appendContent("<option value={$ligne['type_appareil']}>{$ligne['type_appareil']}</option>");
 		
 		$p->appendContent(<<<HTML
 								</select><br/>
