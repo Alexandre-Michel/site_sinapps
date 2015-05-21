@@ -70,11 +70,12 @@ HTML
 		$personnes = Personne::getPersByIdEntp($user->getIdEntpPers());
 		$option = "";
 		foreach ($personnes as $personne) {
-			$name = $personne->getNomPers();//." ".$personne->getPrenomPers();
+			$name = $personne->getNomPers()." ".$personne->getPrenomPers();
 			$option .= "<option value=\"{$name}\">{$name}</option>";
 		}
 
 		$p->appendContent(<<<HTML
+							{$option}
 						</select>
 						<input type="submit" name="submit" value="Soumettre">
 					</div>	
