@@ -26,6 +26,7 @@ try {
     $user = Personne::createFromSession();
 }
 catch (NotInSessionException $e) {
+	$user = NULL;
 }
 
 if($user == NULL) {
@@ -164,4 +165,4 @@ else {
 
 echo $p->toHTML();
 
-header( "Refresh:5; ./connexion.php", TRUE, 303);
+//header( "Refresh:5; ./connexion.php", TRUE, 303);

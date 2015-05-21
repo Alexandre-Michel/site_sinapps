@@ -18,12 +18,12 @@ try {
 	
 	try {
 		$listeParcs = Parc::getParcByIdEntreprise($user->getIdEntpPers());
-		$parcs = "<label for='parc'>Nom du parc</label><select name='parc'>";
+		$parcs = "<div class='obligatoire'>Nom du parc</div><select name='parc'>";
 		foreach($listeParcs as $unParc) {
 			$parcs .= "<option value='{$unParc->getIdParc()}'>{$unParc->getNomParc()}</option>";
 		}
-		$parcs .= "<option value='null'>Non renseigné</option>
-		</select>";
+		$parcs .= "<option selected value='null'>Non renseigné</option>
+		</select><br/>";
 	}
 	catch (Exception $e) {
 		
@@ -51,11 +51,13 @@ try {
 	
     $p->appendContent(<<<HTML
     	<div class="content">
+			<div class="box1">
 			<div class="th1">Nouvel Incident</div>
 			{$msg}
 			<form method="post"> 
 				<input type="text" required placeholder="Nom de l'incident" name="nom"/><br/>
 				<textarea required row=8 placeholder="Description de votre incident" name="desc"></textarea><br/>
+				<div class='obligatoire'>Type du problème</div>
 				<select required name="type">
 HTML
 	);
@@ -77,10 +79,11 @@ SQL
 	$p->appendContent(<<<HTML
 				</select><br/>
 				{$parcs}
+				<div class = "obligatoire">Si le parc n'est pas renseigné, les frais forfaitaires s'appliqueront.</div><br/>
 				<input type="submit" name="submit" value="Soumettre">
 			</form>
-			<div class = "obligatoire">Si le parc n'est pas renseigné, les frais forfaitaires s'appliqueront.</div>
 			<input type="button" name="retour" value="Retour" onclick="history.back()">
+			</div>
     	</div>	
 HTML
     );

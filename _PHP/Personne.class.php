@@ -169,8 +169,8 @@ SQL
 					</div>	
 					<div class = "row">Mail : {$ligne->getMailPers()}</div>
 					<div>
-						<input type="button" value="Supprimer" onclick="effacer({$ligne->getIdPers()})">
 						<input type="button" value="Modifier" onclick="modifier({$ligne->getIdPers()})">
+						<input type="button" value="Supprimer" onclick="effacer({$ligne->getIdPers()})">
 					</div>		
 				</div>
 HTML;
