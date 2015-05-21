@@ -33,7 +33,7 @@ try {
 				}
 				else {
 					$idEntp = $user->getIdEntpPers();
-					$idResp = isset($_REQUEST['resp']) ? $_REQUEST['resp'] : $user->getIdPers();
+					$idResp = isset($_REQUEST['select_resp']) ? $_REQUEST['select_resp'] : $user->getIdPers();
 					Parc::createParc($idEntp, $idResp);
 					$msg = 1;
 					header("location: ./newParc.php?msg={$msg}");
@@ -71,7 +71,7 @@ HTML
 		$option = "";
 		foreach ($personnes as $personne) {
 			$name = $personne->getNomPers()." ".$personne->getPrenomPers();
-			$option .= "<option value=\"{$name}\">{$name}</option>";
+			$option .= "<option value=\"{$personne->getIdPers()}\">{$name}</option>";
 		}
 
 		$p->appendContent(<<<HTML
