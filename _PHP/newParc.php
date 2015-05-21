@@ -63,7 +63,29 @@ try {
 				{$msg}
 				<form method="post"> 
 					<input type="text" placeholder="Personne responsable" name="resp" {$value}/><br/>	
-					<input type="submit" name="submit" value="Soumettre">
+					<select id="select_resp" name="responsable"> 
+HTML
+		);
+
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT nom_personne
+			FROM PERSONNE
+			WHERE id_entreprise_pers = :id
+SQL
+		);
+		$stmt->bindValue(":id", $user->getIdEntpPers());
+		$stmt->execute();
+		$array = $stmt->fetchAll();
+		$option = "";
+
+		foreach ($stmt as $ligne)
+		{
+			$option .= "<option value=\"{$ligne}\">{$ligne} </option>";
+		}
+
+		$p->appendContent(<<<HTML
+						{$option}
+					</select>
 				</form>
 				<input type="button" name="retour" value="Retour" onclick="history.back()">
 			</div>	
