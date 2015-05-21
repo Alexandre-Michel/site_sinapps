@@ -66,7 +66,7 @@ try {
 HTML
 		);
 
-		$personnes = getPersByIdEntp($user->getIdEntpPers());
+		$personnes = Personne::getPersByIdEntp($user->getIdEntpPers());
 		$option = "";
 		foreach ($personnes as $personne) {
 			$option .= "<option value=\"{personne.getNomPers()}\">{personne.getNomPers()}</option>";
