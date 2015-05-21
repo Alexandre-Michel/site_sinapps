@@ -145,7 +145,53 @@ HTML;
 		return $html;
 	}
 
+	public static function getPersonnesWithName($chaine) {
+		$stmt = myPDO::getInstance()->prepare(<<<SQL
+			SELECT *
+			FROM PERSONNE
+			WHERE prenom_personne LIKE :chaine
+			OR nom_personne LIKE :chaine
+SQL
+		);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
+		$stmt->bindValue(":chaine", "%" . $chaine . "%");
+		$stmt->execute();
+		$array = $stmt->fetchAll();
 
+
+		$html = "<div class='box1'>";
+		foreach($array as $ligne) {
+
+			$html .= <<<HTML
+				<div class = "row bordure">
+					<div class = "th2">Membre n°{$ligne->getIdPers()} 
+						<span class="nomEntreprise">({$ligne->getNomPers()} {$ligne->getPrenomPers()})</span>
+					</div>	
+					<div class = "row">Mail : {$ligne->getMailPers()}</div>
+					<div>
+						<input type="button" value="Supprimer" onclick="effacer({$ligne->getIdPers()})">
+						<input type="button" value="Modifier" onclick="modifier({$ligne->getIdPers()})">
+					</div>		
+				</div>
+HTML;
+		}	
+		$html .= "</div>";
+
+		$html .="<script>
+			function effacer(num)
+			{
+				var confirm = window.confirm(\"Voulez-vous supprimer ce membre ?\");
+				if (confirm)
+					document.location.href=\"./membres.php?i=\" + num + \"&delete=yes\";
+			};
+
+			function modifier(num) {
+				document.location.href=\"./modifMembre.php?i=\" + num;
+			}
+		</script>";
+
+		return $html;		
+	}
 
 
 
@@ -599,5 +645,7 @@ From: {$from} <mail@{$_SERVER['HTTP_HOST']}>
 HEADERS*/
 		);
 	}
+
+
 
 }

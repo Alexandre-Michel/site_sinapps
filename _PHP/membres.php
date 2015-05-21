@@ -46,10 +46,19 @@ try {
 			<div class="content">
 				<div class = "th1">Liste des membres</div>
 				{$msg}
+				<form>
+					<input type="text" name="nom" placeholder="Rechercher une personne...">
+					<input type="submit" value="Rechercher">
+				</form>	
 HTML
 		);
 
-		$p->appendContent(Personne::getAllPersonne());
+		if(isset($_REQUEST['nom']) && $_REQUEST['nom']) {	
+			$p->appendContent(Personne::getPersonnesWithName($_REQUEST['nom']));
+		}
+		else {
+			$p->appendContent(Personne::getAllPersonne());
+		}
 
 		$p->appendContent(<<<HTML
 				<input type="button" name="retour" value="Retour" onclick="history.back()">
